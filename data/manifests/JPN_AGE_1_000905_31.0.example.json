@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "case_id": "JPN_AGE_1_000905_31.0",
+  "path_base": "manifest_directory",
+  "video": {
+    "path": "../../../TFM/jumping_score/output_clips/JPN_AGE_1_000905_31.0.mp4",
+    "expected": {
+      "width_px": 960,
+      "height_px": 1080,
+      "fps": 30.0,
+      "frame_count": 930,
+      "duration_s": 31.0
+    }
+  },
+  "detections": {
+    "primary": {
+      "format": "openpose_json_zip",
+      "path": "../../../TFM/Tracking_system/output_videos/JPN_AGE_1_000905_31.0_fused_json.zip",
+      "variant": "legacy_fused",
+      "skeleton_schema": "openpose_body25",
+      "frame_index_base": 1,
+      "coordinate_space": "original_frame_pixels",
+      "rotation_provenance": "unknown"
+    },
+    "comparison": {
+      "format": "legacy_openpose_csv",
+      "path": "../../../TFM/Tracking_system/csv/real_2/JPN_AGE_1_000905_31.0fused_salida.csv",
+      "skeleton_schema": "openpose_body25",
+      "frame_index_base": 1,
+      "coordinate_space": "original_frame_pixels"
+    }
+  },
+  "reference_metadata": {
+    "path": "../../../TFM/jumping_score/output_clips/clips_metadata_AGE_1.csv",
+    "delimiter": ";",
+    "row_match": {
+      "Clip Path": "/clips/JPN_AGE_1_000905_31.0.mp4"
+    },
+    "role": "external_reference_only",
+    "declared_duration_s": 25.0
+  },
+  "known_issues": [
+    "Video duration is 31 seconds; matching metadata declares 25 seconds.",
+    "Rotation source per detection is not available in the inspected fused JSON.",
+    "Frame alignment must be checked visually; equal counts do not prove alignment."
+  ]
+}

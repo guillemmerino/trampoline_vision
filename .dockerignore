@@ -1,0 +1,20 @@
+# Context de construcció per llista permesa: primer exclou tot.
+# Les excepcions següents reobren carpetes i els fitxers necessaris per construir/provar.
+# Dades, pesos, runs, entorns i credencials queden fora del context.
+**
+!pyproject.toml
+!README.md
+!src/
+!src/**
+!configs/
+!configs/**
+!data/
+!data/manifests/
+!data/manifests/*.example.json
+!tests/
+!tests/**
+**/__pycache__
+**/*.pyc
+**/*.local.json
+tests/fixtures/*.mp4
+tests/fixtures/*.zip

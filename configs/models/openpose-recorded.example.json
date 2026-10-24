@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1-draft",
+  "implementation_status": "design-only",
+  "source_id": "openpose_recorded",
+  "kind": "recorded_detections",
+  "adapter": "openpose_json_zip",
+  "skeleton_schema": "openpose_body25",
+  "device": "not_required",
+  "weights": null,
+  "rotation_provenance": "read_from_manifest",
+  "executes_inference": false
+}

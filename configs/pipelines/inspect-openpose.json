@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "task": "inspect_recorded_detections",
+  "case_manifest": "../../data/manifests/JPN_AGE_1_000905_31.0.example.json",
+  "missing_frames_policy": "report"
+}

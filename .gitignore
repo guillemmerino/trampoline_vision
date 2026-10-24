@@ -1,0 +1,44 @@
+# Caches Python i artefactes de construcció; es regeneren localment.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Configuració personal i credencials; no formen part del projecte compartit.
+.env
+.env.*
+!.env.example
+*.local.json
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Dades i sortides locals; només es versionen instruccions i manifests d’exemple.
+/data/*
+!/data/README.md
+!/data/manifests/
+/data/manifests/*
+!/data/manifests/README.md
+!/data/manifests/*.example.json
+/artifacts/
+/runs/
+/weights/
+/cache/
+*.log
+
+# Pesos i artefactes grans; les petites fixtures de prova requereixen revisió explícita.
+*.pt
+*.pth
+*.onnx
+*.keras
+*.h5
+*.pkl

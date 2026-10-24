@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1-draft",
+  "implementation_status": "design-only",
+  "scenario_id": "fixed_camera_individual_trampoline",
+  "discipline": "trampoline",
+  "camera": {
+    "motion": "fixed",
+    "continuous_shot_expected": true
+  },
+  "scene": {
+    "multiple_people_expected": true,
+    "target_gymnast_count": 1
+  },
+  "apparatus_region": null,
+  "flight_region": null,
+  "subject_selection": {
+    "strategy": "unselected",
+    "allow_ambiguous_result": true
+  }
+}

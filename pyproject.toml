@@ -1,0 +1,25 @@
+# Eines que pip necessita per construir la wheel; no són dependències d’anàlisi.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+# Metadades del paquet instal·lable. El nucli actual usa només biblioteca estàndard Python.
+[project]
+name = "trampoline-vision"
+dynamic = ["version"]
+description = "Modular 2D video analysis for trampoline gymnastics"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+# Relaciona la comanda de terminal amb la funció main de la CLI.
+[project.scripts]
+trampoline-vision = "trampoline_vision.interfaces.cli.main:main"
+
+# Busca paquets sota src/ perquè tests i experiments no s’instal·lin accidentalment.
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Llegeix la versió del paquet per no mantenir dos números diferents.
+[tool.setuptools.dynamic]
+version = {attr = "trampoline_vision.__version__"}

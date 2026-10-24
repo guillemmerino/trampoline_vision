@@ -1,0 +1,47 @@
+# Execucions puntuals: docker compose run --rm. No s’inicia encara cap API persistent.
+services:
+  # Servei per inspeccionar vídeo i OpenPose enregistrat, sense inferència GPU.
+  replay:
+    image: trampoline-vision:cpu
+    build:
+      context: .
+      # Selecciona el target d’execució del Dockerfile, que conté la wheel i ffprobe.
+      target: cpu
+    init: true
+    # La capa de la imatge és immutable; /tmp és temporal i runs és la sortida.
+    read_only: true
+    tmpfs:
+      - /tmp
+    volumes:
+      - type: bind
+        # Font externa configurable; el valor per defecte és el projecte germà TFM.
+        source: ${TFM_DATA_DIR:-../TFM}
+        # Manté el mateix destí intern encara que canviï la ruta del host.
+        target: /workspace/TFM
+        # Els originals de TFM es consumeixen sense modificar-los.
+        read_only: true
+        bind:
+          # Una ruta errònia ha de fallar, sense crear una carpeta buida silenciosament.
+          create_host_path: false
+      - type: bind
+        # Única sortida persistent muntada: informes i exportacions locals.
+        source: ./runs
+        target: /workspace/trampoline-vision/runs
+        bind:
+          # Una ruta errònia ha de fallar, sense crear una carpeta buida silenciosament.
+          create_host_path: false
+
+  # Servei separat de proves. El perfil test evita activar-lo per defecte.
+  tests:
+    image: trampoline-vision:test
+    # S’activa amb docker compose --profile test ...
+    profiles: [test]
+    build:
+      context: .
+      # Afegeix els tests a la mateixa base CPU; les proves generen vídeos temporals.
+      target: test
+    init: true
+    # Les proves escriuen només a /tmp; no modifiquen la imatge ni les dades de TFM.
+    read_only: true
+    tmpfs:
+      - /tmp

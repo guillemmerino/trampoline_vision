@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1-draft",
+  "implementation_status": "design-only",
+  "pipeline_id": "replay_openpose",
+  "mode": "recorded_detections",
+  "case_manifest": "../../data/manifests/JPN_AGE_1_000905_31.0.example.json",
+  "model_config": "../models/openpose-recorded.example.json",
+  "scenario_config": "../scenarios/fixed-camera-trampoline.example.json",
+  "preparation": {
+    "deduplication": {
+      "strategy": "unselected"
+    }
+  },
+  "tracking": {
+    "strategy": "unselected"
+  },
+  "segmentation": {
+    "strategy": "unselected"
+  },
+  "scoring": {
+    "enabled": false,
+    "evaluators": []
+  },
+  "outputs": [
+    "structured_result",
+    "annotated_video",
+    "quality_report"
+  ]
+}
