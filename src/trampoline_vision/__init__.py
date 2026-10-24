@@ -5,4 +5,4 @@ el paquet no carrega models ni executa processos: les capacitats s'activen
 explícitament des de la CLI o, més endavant, l'API.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

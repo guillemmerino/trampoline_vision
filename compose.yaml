@@ -12,6 +12,7 @@ services:
     read_only: true
     tmpfs:
       - /tmp
+
     volumes:
       - type: bind
         # Font externa configurable; el valor per defecte és el projecte germà TFM.
@@ -42,6 +43,18 @@ services:
       target: test
     init: true
     # Les proves escriuen només a /tmp; no modifiquen la imatge ni les dades de TFM.
+    read_only: true
+    tmpfs:
+      - /tmp
+
+  # Proves opcionals de l'API OC-SORT; no processen ni munten vídeos de TFM.
+  tests-tracking:
+    image: trampoline-vision:test-tracking
+    profiles: [tracking]
+    build:
+      context: .
+      target: test-tracking
+    init: true
     read_only: true
     tmpfs:
       - /tmp

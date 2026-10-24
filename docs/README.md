@@ -23,6 +23,9 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [14. Desenvolupament](14-development-guide.md) | Convencions i ordre de construcció. |
 | [15. Execució CPU](15-cpu-replay-guide.md) | Comandes, formats implementats i resultats de lectura. |
 | [16. Lectura del codi](16-code-reading-guide.md) | Ordre de lectura, contractes, funcions i configuracions. |
+| [17. Visualització](17-visualization-guide.md) | Vídeo anotat, filtres visuals i verificació temporal. |
+| [18. Revisió del cas](18-reference-visual-review.md) | Artefactes generats, comprovacions i observacions del vídeo actual. |
+| [19. Contractes de tracking](19-tracking-contracts-and-backend.md) | Backend OC-SORT escollit, contractes implementats, proves i límits. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions
@@ -33,8 +36,10 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 - **Implementada:** només s'utilitzarà quan existeixin el codi i la verificació corresponents.
 
 Estan implementats Docker CPU, els contractes bàsics d’observacions, el lector JSON/ZIP o carpeta,
-el manifest 1.0, la línia temporal ffprobe i la CLI d’inspecció amb proves. El tracking, la segmentació,
-la visualització i l’API continuen pendents. Els contractes avançats i les rutes API són propostes.
+el manifest 1.0, la línia temporal ffprobe i les CLI d’inspecció i visualització amb proves. El tracking, la
+segmentació i l’API continuen pendents. Els contractes de tracking per fotograma ja estan
+implementats i el backend inicial està escollit; l'adaptador encara no s'executa.
+Els altres contractes avançats i les rutes API són propostes.
 Els canvis de comportament hauran d'actualitzar el document afectat i, si canvien una frontera
 o una decisió important, afegir un registre a `decisions/`.
 

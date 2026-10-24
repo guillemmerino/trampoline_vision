@@ -4,7 +4,7 @@ Sistema modular d'anàlisi de gimnàstica de trampolí a partir de vídeo 2D amb
 L'objectiu final és obtenir un diagnòstic esportiu; la primera etapa construeix el seguiment
 del gimnasta i la detecció dels salts en escenes amb múltiples persones.
 
-## Estat actual: passos 1 i 2
+## Estat actual: ingestió, visualització i contractes de tracking
 
 - Docker CPU amb FFmpeg/ffprobe, paquet instal·lat i servei Compose per executar proves.
 - Contractes interns per a vídeo, fotogrames, punts BODY_25, deteccions i procedència.
@@ -12,9 +12,14 @@ del gimnasta i la detecció dels salts en escenes amb múltiples persones.
 - Temps reals de presentació del vídeo, índex intern zero-based i fotogrames buits explícits.
 - Comanda `inspect` amb informe JSON i exportació opcional de deteccions en JSONL.
 - Proves unitàries i d'integració, inclosa una amb vídeo sintètic i FFmpeg.
+- Contractes de tracking amb procedència, candidats parcials i observació/predicció separades.
+- Backend inicial escollit: OC-SORT de `trackers==2.6.1`, extra opcional verificable en Docker.
 
-Encara no s'executen inferència, deduplicació, tracking, selecció del gimnasta, detecció de salts,
-puntuació, API ni vídeo anotat. La comprovació visual de sincronització és el pas 3.
+La comanda `visualize` genera vídeo anotat i informe per revisar coordenades i sincronització,
+amb vistes all/filtered/compare i intervals temporals. Els llindars només afecten el dibuix.
+Encara no s’executen inferència, deduplicació, tracking, selecció, salts, puntuació ni API.
+La [guia de tracking](docs/19-tracking-contracts-and-backend.md) explica els contractes,
+la biblioteca, les proves i les limitacions abans de construir l'adaptador.
 
 ## Primera execució amb Docker
 
@@ -38,6 +43,18 @@ Per exportar també totes les observacions internes, afegir:
 
 Aquest fitxer pot ser gran. No és un vídeo ni conté identitats temporals.
 
+## Vídeo anotat
+
+```powershell
+docker compose run --rm replay visualize --config configs/pipelines/visualize-openpose.json --start 0 --end 3 --view compare --output runs/review-short.mp4
+docker compose run --rm replay visualize --config configs/pipelines/visualize-openpose.json --output runs/review-full.mp4
+```
+
+La capçalera s’afegeix fora de la imatge; els colors i IDs corresponen a deteccions, encara sense
+tracking. La sortida és sense àudio i es comproven fotogrames i temps després de codificar.
+Instruccions a la [guia de visualització](docs/17-visualization-guide.md).
+La [revisió del cas actual](docs/18-reference-visual-review.md) recull artefactes, temps i limitacions observades.
+
 ## Proves en l'entorn CPU
 
 ```powershell
@@ -47,7 +64,7 @@ docker compose --profile test run --rm tests
 
 ## Execució local opcional
 
-Python >= 3.10, FFmpeg instal·lat i `ffprobe` al PATH. El paquet no requereix dependències Python
+Python >= 3.10, FFmpeg instal·lat i `ffprobe` al PATH. Per visualitzar, instal·lar també l’extra `visualization` amb `pip install -e ".[visualization]"`. El paquet no requereix dependències Python
 d'execució. La construcció necessita setuptools >= 61, que pip pot obtenir de l'índex configurat.
 
 ```powershell
@@ -62,7 +79,7 @@ s'executa. No cal GPU ni OpenPose instal·lat per reproduir les deteccions enreg
 
 ## Configuració executable i disseny futur
 
-`configs/pipelines/inspect-openpose.json` i el manifest de referència són executables (versió 1.0).
+`configs/pipelines/inspect-openpose.json`, `visualize-openpose.json` i el manifest són executables (1.0).
 Els altres exemples de pipeline/model/escenari amb `design-only` documenten etapes futures i
 no són acceptats com a configuració de la comanda actual.
 

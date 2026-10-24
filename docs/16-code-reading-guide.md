@@ -12,7 +12,8 @@ de blocs expliquen decisions del flux, sense substituir les validacions que exec
 4. [openpose.py](../src/trampoline_vision/ingestion/openpose.py): conversió dels JSON a observacions.
 5. [inspection.py](../src/trampoline_vision/application/inspection.py): consum i resum de les dades.
 6. [main.py](../src/trampoline_vision/interfaces/cli/main.py): com s'activa el recorregut des de terminal.
-7. [proves](../tests/): quins errors i comportaments es comproven.
+7. [visualization.py](../src/trampoline_vision/application/visualization.py), [overlay.py](../src/trampoline_vision/results/overlay.py) i [video.py de resultats](../src/trampoline_vision/results/video.py): dibuix i codificació del pas 3.
+8. [proves](../tests/): quins errors i comportaments es comproven.
 
 ## Com llegir un contracte
 
@@ -71,6 +72,7 @@ la seva explicació és aquí i als documents [05](05-inputs-and-legacy-data.md)
 
 | Fitxer | Claus i intenció |
 | --- | --- |
+| [visualize-openpose.json](../configs/pipelines/visualize-openpose.json) | Configuració executable del pas 3: fonts i política de buits compartides, més l’estil `render`. Els llindars no alteren les dades. |
 | [inspect-openpose.json](../configs/pipelines/inspect-openpose.json) | `schema_version` i `task` identifiquen el contracte executable; `case_manifest` resol les fonts; `missing_frames_policy` determina si s'informen o es rebutgen registres absents. |
 | [Manifest del cas](../data/manifests/JPN_AGE_1_000905_31.0.example.json) | `video` i `detections.primary` relacionen fonts; `frame_index_base`, `skeleton_schema` i `coordinate_space` eviten inferències ambigües; `expected` i `reference_metadata` donen context de comparació; `known_issues` informa limitacions. `detections.comparison` descriu un CSV futur que el recorregut actual no consumeix. |
 | [replay-openpose.example.json](../configs/pipelines/replay-openpose.example.json) | Documenta el pipeline complet futur. `design-only` i les estratègies `unselected` indiquen que no es pot executar com a inspecció actual. |
@@ -78,6 +80,12 @@ la seva explicació és aquí i als documents [05](05-inputs-and-legacy-data.md)
 | [fixed-camera-trampoline.example.json](../configs/scenarios/fixed-camera-trampoline.example.json) | Documenta càmera fixa, múltiples actors, un objectiu i regions encara no definides. La política de selecció continua pendent de prova. |
 
 ## Com llegir les proves
+
+Per al nou límit de seguiment, llegir `contracts/tracking.py` i la
+[guia 19](19-tracking-contracts-and-backend.md). `tests/unit/test_tracking_contracts.py`
+prova geometria, procedència, candidats parcials i assignacions;
+`tests/integration/test_ocsort_dependency.py` comprova l'API externa amb caixes
+sintètiques si s'ha instal·lat l'extra. No hi ha adaptador de seguiment encara.
 
 [helpers.py](../tests/helpers.py) construeix fixtures temporals. El seu vídeo placeholder només
 serveix quan s'injecten metadades; no és un MP4 descodificable. La prova amb FFmpeg genera un vídeo real.

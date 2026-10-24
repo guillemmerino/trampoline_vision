@@ -12,6 +12,14 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
 
+# Dibuix i codificació opcionals. El nucli i inspect no importen aquestes eines.
+# PyAV 16 manté compatibilitat amb Python 3.10/3.11 del projecte i del contenidor.
+[project.optional-dependencies]
+visualization = ["av>=16,<17", "Pillow>=11,<14"]
+# Backend OC-SORT opcional; la versió fixa l'API comprovada, sense detectors ni pesos.
+# Les dependències transitives encara no constitueixen un lock de desplegament.
+tracking = ["trackers==2.6.1"]
+
 # Relaciona la comanda de terminal amb la funció main de la CLI.
 [project.scripts]
 trampoline-vision = "trampoline_vision.interfaces.cli.main:main"

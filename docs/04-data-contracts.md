@@ -3,7 +3,11 @@
 Versió implementada per al recorregut d’entrada: 1.0. `contracts/observations.py` defineix
 `VideoAsset`, `FrameContext`, `KeypointObservation`, `DetectionProvenance`, `PersonDetection` i
 `FrameDetections` amb validació i dataclasses immutables. BODY_25 té 25 noms fixos. Els contractes
-de tracking, selecció, salts i avaluació de la taula continuen sent propostes de vocabulari.
+de selecció, salts i avaluació de la taula continuen sent propostes de vocabulari.
+`contracts/tracking.py` implementa també la frontera de preparació/seguiment 1.0:
+`BoundingBox`, `BoxMeasurement`, `TrackingCandidate`, `TrackingFrame`, `TrackSample`
+i `TrackingFrameResult`. Semàntica i invariants a la [guia 19](19-tracking-contracts-and-backend.md).
+Encara no hi ha algoritme de preparació ni adaptador de tracking.
 
 ## Convencions comunes
 
@@ -28,7 +32,7 @@ de tracking, selecció, salts i avaluació de la taula continuen sent propostes 
 | `KeypointObservation` | Nom/índex semàntic, X, Y, confiança opcional, validesa i procedència. |
 | `PersonDetection` | ID de detecció, context de fotograma, esquelet, punts, caixa opcional, confiança global opcional i origen del backend. |
 | `FrameDetections` | Context i llista de deteccions; la llista pot ser buida. |
-| `TrackSample` | ID de trajectòria, context, detecció associada si existeix, estimació separada i estat. |
+| `TrackSample` | Implementat: ID temporal, estat, tipus d'evidència, caixa, candidat i últim temps observat; context al resultat que el conté. |
 | `PersonTrack` | Seqüència temporal de mostres d'una identitat i esdeveniments del seu cicle de vida. |
 | `SubjectSelection` | Candidats, trajectòries seleccionades, política, evidències i estat resolt/ambigu. |
 | `JumpSegment` | ID de segment, subjecte/trajectòria, inici/final, límits incerts, fases opcionals i qualitat. |
@@ -66,7 +70,8 @@ diferències de temps o FPS s’indica amb un avís.
 
 ## Identitat i buits
 
-Una trajectòria pot tenir mostres sense detecció. `observation` i `estimate` es mantenen separats.
+Una trajectòria pot tenir mostres sense detecció. Al contracte implementat, `evidence`
+distingeix `observed` i `predicted`; només observed pot referenciar un candidat actual.
 Una recuperació pot unir fragments només amb evidència i un esdeveniment explícit; les trajectòries
 originals es poden auditar. Un segment no canvia de persona perquè un altre candidat tingui més
 confiança en un fotograma. La selecció del subjecte pot referenciar fragments reconciliats.

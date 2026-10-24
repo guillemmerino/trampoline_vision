@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "task": "visualize_recorded_detections",
+  "case_manifest": "../../data/manifests/JPN_AGE_1_000905_31.0.example.json",
+  "missing_frames_policy": "report",
+  "render": {
+    "view": "filtered",
+    "min_confidence": 0.25,
+    "min_visible_points": 6,
+    "show_labels": true
+  }
+}

@@ -130,3 +130,31 @@ def load_inspection_config(path: Path) -> tuple[Path, str]:
         return (path.parent / value).resolve(), policy
     except (InputError, ValueError, KeyError, TypeError) as exc:
         raise ManifestError(f"Invalid inspection configuration {path}: {exc}") from exc
+
+
+def load_visualization_config(path: Path) -> tuple[Path, str, dict]:
+    """Resol manifest, política i estil de la configuració executable del pas 3.
+
+    La forma dels camps es valida aquí i RenderStyle en valida els valors.
+    No es consumeixen els exemples design-only ni opcions de tracking futures.
+    """
+    path = path.resolve()
+    try:
+        obj = read_json(path)
+        allowed = {"schema_version", "task", "case_manifest", "missing_frames_policy", "render"}
+        if set(obj) - allowed:
+            raise ValueError(f"Unknown configuration keys: {sorted(set(obj) - allowed)}")
+        if obj.get("schema_version") != "1.0" or obj.get("task") != "visualize_recorded_detections":
+            raise ValueError("Expected schema 1.0 and task visualize_recorded_detections")
+        policy = obj.get("missing_frames_policy", "report")
+        if policy not in {"report", "error"}:
+            raise ValueError("missing_frames_policy must be report or error")
+        value = obj["case_manifest"]
+        if not isinstance(value, str) or not value:
+            raise ValueError("case_manifest must be a path string")
+        style = obj.get("render", {})
+        if not isinstance(style, dict) or set(style) - {"view", "min_confidence", "min_visible_points", "show_labels"}:
+            raise ValueError("render must contain only view, min_confidence, min_visible_points and show_labels")
+        return (path.parent / value).resolve(), policy, style
+    except (InputError, ValueError, KeyError, TypeError) as exc:
+        raise ManifestError(f"Invalid visualization configuration {path}: {exc}") from exc

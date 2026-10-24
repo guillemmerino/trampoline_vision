@@ -1,5 +1,5 @@
-"""Coordinació dels casos d'ús del sistema.
+"""Coordinació dels casos d'ús d'inspecció i visualització.
 
-inspection combina les fonts ja validades i genera l'informe del pas 2.
-La coordinació es reutilitzarà des de les interfícies sense traslladar-hi algoritmes.
+    inspection resumeix dades enregistrades; visualization genera i verifica
+    un vídeo anotat sobre la mateixa ingestió. La CLI només resol les peticions.
 """

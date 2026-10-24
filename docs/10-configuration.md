@@ -9,7 +9,7 @@
 | Pipeline | Font de dades, components activats i artefactes. | [Reproducció](../configs/pipelines/replay-openpose.example.json). |
 
 Els tres exemples de model/escenari/pipeline complet continuen com a disseny `0.1-draft`.
-Hi ha una configuració executable independent: [inspect-openpose.json](../configs/pipelines/inspect-openpose.json),
+La configuració d’inspecció executable és: [inspect-openpose.json](../configs/pipelines/inspect-openpose.json),
 amb `schema_version: 1.0`, `task: inspect_recorded_detections`, `case_manifest` i
 `missing_frames_policy` (`report` o `error`). El carregador rebutja claus desconegudes i pipelines
 de disseny. El manifest 1.0 també s’ha implementat; encara no hi ha un JSON Schema formal.
@@ -48,3 +48,11 @@ El primer carregador ha de ser petit i estricte. No cal construir un sistema de 
 abans del primer adaptador, però el registre de backends ha de quedar centralitzat. Els canvis
 de configuració requereixen documentar-ne migracions quan canviïn el significat d'una opció.
 La tria del tracker, el segmentador i els llindars queda pendent de les primeres proves.
+
+## Visualització executable
+
+`visualize-openpose.json` utilitza schema 1.0 i task `visualize_recorded_detections`.
+Comparteix `case_manifest` i `missing_frames_policy` amb inspecció. `render` admet
+`view`, `min_confidence`, `min_visible_points` i `show_labels`; les opcions explícites de CLI
+hi prevalen. Els intervals `--start` i `--end` es donen per terminal. Vegeu la
+[guia de visualització](17-visualization-guide.md).

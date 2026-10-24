@@ -20,7 +20,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && useradd --create-home --uid 1000 analyst
 COPY --from=builder /wheels/ /wheels/
+# La variant CPU també incorpora l'extra de dibuix/codificació per executar visualize.
+# El paquet instal·lat sense extras continua permetent inspect només amb ffprobe.
 RUN python -m pip install --no-cache-dir --no-deps /wheels/*.whl \
+    && python -m pip install --no-cache-dir 'trampoline-vision[visualization]' \
     && rm -rf /wheels
 # La ubicació conserva la relació de germans amb /workspace/TFM usada pel manifest.
 WORKDIR /workspace/trampoline-vision
@@ -38,3 +41,10 @@ FROM cpu AS test
 COPY tests/ /tests/
 ENTRYPOINT ["python", "-B", "-m", "unittest"]
 CMD ["discover", "-s", "/tests", "-v"]
+
+# Verifica la biblioteca escollida sense ampliar la imatge CPU d'inspecció/visualització.
+FROM test AS test-tracking
+USER root
+# La base amb FFmpeg ja proporciona les llibreries de sistema d'OpenCV, inclosa libGL.
+RUN python -m pip install --no-cache-dir 'trampoline-vision[tracking]'
+USER analyst

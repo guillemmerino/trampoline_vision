@@ -1,8 +1,9 @@
-"""Interfície de terminal per executar la inspecció CPU sobre un cas enregistrat.
+"""Interfície de terminal per inspeccionar i visualitzar un cas enregistrat a CPU.
 
 Tradueix arguments a un cas d'ús, comprova les sortides i presenta errors.
 La lectura de vídeo i OpenPose viu a ingestion; els recomptes viuen a
-application. No importa backends de models. Es pot invocar des de
+application. Les dependències de dibuix només es carreguen en visualitzar;
+no s'importen backends de models. Es pot invocar des de
 trampoline-vision o python -m trampoline_vision.
 """
 
@@ -15,9 +16,45 @@ import sys
 import tempfile
 
 from trampoline_vision.application.inspection import inspect_case
+from trampoline_vision.application.visualization import visualize_case
 from trampoline_vision.ingestion.errors import InputError
-from trampoline_vision.ingestion.manifest import load_inspection_config, load_manifest
+from trampoline_vision.ingestion.manifest import load_inspection_config, load_manifest, load_visualization_config
 from trampoline_vision.ingestion.video import probe_video
+from trampoline_vision.results.overlay import RenderStyle
+
+
+def _render_progress(done: int, total: int) -> None:
+    """Informa periòdicament per stderr sense barrejar el progrés amb els artefactes."""
+    if done == 1 or done % 100 == 0 or done == total:
+        print(f"Rendering {done}/{total} frames", file=sys.stderr, flush=True)
+
+
+def _run_visualization(args) -> int:
+    """Resol opcions de visualització i delega la generació i verificació dels artefactes.
+
+    Els valors explícits de terminal prevalen sobre render de la configuració.
+    El sondeig i els lectors són els mateixos del pas 2, sense inferència nova.
+    """
+    config_policy, settings = "report", {}
+    if args.config:
+        manifest_path, config_policy, settings = load_visualization_config(args.config)
+    else:
+        manifest_path = args.manifest
+    for key in ("view", "min_confidence", "min_visible_points", "show_labels"):
+        value = getattr(args, key)
+        if value is not None:
+            settings[key] = value
+    style = RenderStyle(**settings)
+    manifest = load_manifest(manifest_path)
+    video = probe_video(manifest.video_path, manifest.case_id, ffprobe=args.ffprobe, timeout_s=args.probe_timeout)
+    report = args.report if args.report else args.output.with_suffix(".json")
+    visualize_case(manifest, video, args.output, report, style=style, start_s=args.start, end_s=args.end,
+                   missing_frames_policy=args.missing_frames_policy or config_policy,
+                   ffprobe=args.ffprobe, probe_timeout_s=args.probe_timeout, progress=_render_progress,
+                   protected_paths=(args.config,) if args.config else ())
+    print(f"Visualization complete: {args.output.resolve()}")
+    print(f"Report: {report.resolve()}")
+    return 0
 
 
 def _publish(staged: Path, destination: Path) -> None:
@@ -42,16 +79,17 @@ def _publish(staged: Path, destination: Path) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    """Executa la CLI i retorna el codi de sortida del recorregut d'inspecció.
+    """Executa inspecció o visualització i retorna el codi de sortida del recorregut.
 
     argv permet injectar arguments en proves; None utilitza els de terminal.
     Resol configuració/manifest, rebutja sortides existents, sondeja el vídeo,
-    llegeix deteccions en temporals i després publica els artefactes.
-    Sense --output envia l'informe a stdout. Retorna 0 en completar la
+    llegeix deteccions en temporals i després publica els artefactes. La branca
+    de visualització delega codificació i publicació al seu cas d'ús.
+    A inspect, sense --output envia l'informe a stdout. Retorna 0 en completar la
     lectura amb o sense avisos i 2 per errors esperats d'entrada o sortida.
     argparse gestiona per separat l'ajuda i els errors de sintaxi d'arguments.
     """
-    parser = argparse.ArgumentParser(prog="trampoline-vision", description="Inspect video + recorded OpenPose data on CPU.")
+    parser = argparse.ArgumentParser(prog="trampoline-vision", description="Inspect or visualize recorded OpenPose data on CPU.")
     subparsers = parser.add_subparsers(dest="command", required=True)
     inspect = subparsers.add_parser("inspect", help="Read recorded BODY_25 detections; no inference, tracking or scoring.")
     # Es parteix d’un manifest directe o d’una configuració; exigir-ne un evita ambigüitat.
@@ -63,10 +101,27 @@ def main(argv: list[str] | None = None) -> int:
     inspect.add_argument("--probe-timeout", type=float, default=120.0, metavar="SECONDS")
     inspect.add_argument("--output", type=Path, help="Write a summary JSON, refusing an existing file; default is stdout.")
     inspect.add_argument("--frames-output", type=Path, help="Optional internal observations JSONL (potentially large).")
+    visual = subparsers.add_parser("visualize", help="Render observed BODY_25 detections; no tracking or scoring.")
+    sources = visual.add_mutually_exclusive_group(required=True)
+    sources.add_argument("--manifest", type=Path)
+    sources.add_argument("--config", type=Path, help="Executable visualization configuration.")
+    visual.add_argument("--output", type=Path, required=True, help="New MP4 path; existing files are refused.")
+    visual.add_argument("--report", type=Path, help="JSON report path; default is output with .json suffix.")
+    visual.add_argument("--start", type=float, default=0.0, metavar="SECONDS")
+    visual.add_argument("--end", type=float, default=None, metavar="SECONDS", help="Exclusive presentation-time limit.")
+    visual.add_argument("--view", choices=["all", "filtered", "compare"], default=None)
+    visual.add_argument("--min-confidence", type=float, default=None)
+    visual.add_argument("--min-visible-points", type=int, default=None)
+    visual.add_argument("--labels", dest="show_labels", action=argparse.BooleanOptionalAction, default=None)
+    visual.add_argument("--missing-frames-policy", choices=["report", "error"], default=None)
+    visual.add_argument("--ffprobe", default="ffprobe")
+    visual.add_argument("--probe-timeout", type=float, default=120.0, metavar="SECONDS")
     args = parser.parse_args(argv)
     try:
         if not math.isfinite(args.probe_timeout) or args.probe_timeout <= 0:
             raise InputError("--probe-timeout must be positive")
+        if args.command == "visualize":
+            return _run_visualization(args)
         # La política explícita de CLI preval sobre la configuració; si no n’hi ha, conservem els buits.
         config_policy = "report"
         if args.config:

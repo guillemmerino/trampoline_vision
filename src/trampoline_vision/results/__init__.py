@@ -1,5 +1,6 @@
-"""Espai reservat per a representacions i exportacions de resultats.
+"""Sortides de revisió visual i errors associats.
 
-La CLI actual publica JSON i JSONL; encara no hi ha vídeo anotat. Aquest domini
-permetrà construir sortides de revisió sense recalcular identitats o salts.
+    overlay dibuixa observacions sense modificar-les i video gestiona la
+    codificació CPU. Els resultats encara no inclouen identitats ni salts.
+    Les dependències visuals es carreguen quan es genera una visualització.
 """

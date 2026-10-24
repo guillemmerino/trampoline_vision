@@ -10,7 +10,8 @@ instal·lació i no obliga a instal·lar biblioteques visuals per llegir la docu
 ## Increment 1 — Contractes i reproducció d'un cas
 
 Estat: contractes d’entrada, manifest, lector JSON/ZIP/carpeta, ffprobe, CLI i Docker CPU
-implementats. La visualització i la comprovació visual de l’alineació són el següent pas.
+implementats. La visualització ja està implementada amb filtres i verificació de la sortida;
+la correspondència anatòmica es revisa sobre els artefactes del cas real.
 El lector CSV de compatibilitat continua pendent.
 
 Implementar context de vídeo, esquema BODY_25, deteccions, manifest i font OpenPose JSON/ZIP.
@@ -23,13 +24,18 @@ Les proves cobreixen fotogrames buits, ordre dels fitxers, últim fotograma i í
 
 ## Increment 2 — Preparació i seguiment
 
+Estat parcial: passos 1 i 2 completats. Biblioteca inicial escollida i fixada
+(`trackers==2.6.1`, OC-SORT), extra opcional, contractes de tracking implementats
+i proves de frontera/API. Veure [guia 19](19-tracking-contracts-and-backend.md).
+Encara no hi ha preparador de caixes, deduplicació ni adaptador sobre el cas real.
+
 Implementar validació, deduplicació configurable i un primer tracker amb vida explícita.
 Comparar casos amb pose deficient, múltiples actors i desaparicions. Registrar assignacions
 i generar vídeo anotat amb trajectòries.
 
 Finalització: una identitat sobreviu als casos breus definits de pèrdua i cap detecció té dues
 assignacions. Els casos que continuïn fallant queden identificats, no amagats amb farciments.
-El tracker concret i els seus llindars es trien amb evidència dels casos.
+La continuïtat del backend escollit i els seus llindars es decidiran amb evidència dels casos.
 
 ## Increment 3 — Subjecte i salts
 

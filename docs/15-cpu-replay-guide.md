@@ -6,13 +6,13 @@ La comanda `inspect` llegeix el vídeo original amb ffprobe, obté marques tempo
 obre les deteccions OpenPose i les converteix al contracte intern 1.0. No torna a executar OpenPose,
 no deduplica, no assigna identitats, no detecta salts i no genera un vídeo anotat.
 
-El pas 3 afegirà la visualització per comprovar l'alineació. L'índex extern declarat al manifest
+La comanda del pas 3 ja està disponible a la [guia de visualització](17-visualization-guide.md). L'índex extern declarat al manifest
 permet sincronitzar per numeració, però encara no constitueix una comprovació visual.
 
 ## Docker CPU
 
 El Dockerfile té un builder de wheel, un target `cpu` i un target `test`. El runtime inclou
-Python 3.11 i FFmpeg/ffprobe, i executa com a usuari sense privilegis. No conté CUDA, pesos,
+Python 3.11, FFmpeg/ffprobe i les dependències opcionals de visualització, i executa com a usuari sense privilegis. No conté CUDA, pesos,
 vídeos ni biblioteques de models. Compose deixa la imatge en mode només lectura, `/tmp` temporal,
 TFM muntat només per a lectura i `runs/` com a sortida.
 
