@@ -1,9 +1,9 @@
-"""Interfície de terminal per inspeccionar i visualitzar un cas enregistrat a CPU.
+"""Interfície de terminal per inspecció, visualització, tracking i avaluació a CPU.
 
 Tradueix arguments a un cas d'ús, comprova les sortides i presenta errors.
 La lectura de vídeo i OpenPose viu a ingestion; els recomptes viuen a
 application. Les dependències de dibuix només es carreguen en visualitzar;
-no s'importen backends de models. Es pot invocar des de
+els backends pesants es carreguen només en executar tracking. Es pot invocar des de
 trampoline-vision o python -m trampoline_vision.
 """
 
@@ -17,9 +17,13 @@ import tempfile
 
 from trampoline_vision.application.inspection import inspect_case
 from trampoline_vision.application.visualization import visualize_case
+from trampoline_vision.application.tracking import track_case
+from trampoline_vision.application.tracking_evaluation import evaluate_tracking
+from trampoline_vision.infrastructure.artifacts import publish_exclusive
 from trampoline_vision.ingestion.errors import InputError
 from trampoline_vision.ingestion.manifest import load_inspection_config, load_manifest, load_visualization_config
 from trampoline_vision.ingestion.video import probe_video
+from trampoline_vision.ingestion.tracking_config import load_tracking_config
 from trampoline_vision.results.overlay import RenderStyle
 
 
@@ -78,8 +82,39 @@ def _publish(staged: Path, destination: Path) -> None:
         raise
 
 
+def _run_tracking(args) -> int:
+    """Resol el pipeline de seguiment i delega exportació, vídeo opcional i informe a application."""
+    settings = load_tracking_config(args.config)
+    manifest = load_manifest(settings.manifest_path)
+    video = probe_video(manifest.video_path, manifest.case_id, ffprobe=args.ffprobe, timeout_s=args.probe_timeout)
+    frames = args.frames_output or args.output.with_suffix(".frames.jsonl")
+    track_case(manifest, video, args.output, frames, preparation=settings.preparation, tracker=settings.tracker,
+               video_output=args.video_output, start_s=args.start, end_s=args.end,
+               missing_frames_policy=settings.missing_frames_policy, ffprobe=args.ffprobe,
+               probe_timeout_s=args.probe_timeout, progress=_render_progress,
+               protected_paths=(args.config, settings.preparation_path))
+    print(f"Tracking complete: {args.output.resolve()}")
+    print(f"Frame export: {frames.resolve()}")
+    return 0
+
+
+def _run_tracking_evaluation(args) -> int:
+    """Publica diagnòstics d'anotacions revisades sense carregar dependències de tracking o vídeo."""
+    destination = args.output.resolve()
+    if destination.exists() or destination in {args.tracks.resolve(), args.annotations.resolve()}:
+        raise InputError("Refusing to overwrite evaluation input or existing output")
+    result = evaluate_tracking(args.tracks, args.annotations)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="trampoline-evaluate-") as temporary:
+        staged = Path(temporary) / "evaluation.json"
+        staged.write_text(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+        publish_exclusive(staged, destination)
+    print(f"Tracking evaluation complete: {destination}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
-    """Executa inspecció o visualització i retorna el codi de sortida del recorregut.
+    """Executa el cas d'ús seleccionat i retorna 0 en èxit o 2 per errors esperats.
 
     argv permet injectar arguments en proves; None utilitza els de terminal.
     Resol configuració/manifest, rebutja sortides existents, sondeja el vídeo,
@@ -89,7 +124,7 @@ def main(argv: list[str] | None = None) -> int:
     lectura amb o sense avisos i 2 per errors esperats d'entrada o sortida.
     argparse gestiona per separat l'ajuda i els errors de sintaxi d'arguments.
     """
-    parser = argparse.ArgumentParser(prog="trampoline-vision", description="Inspect or visualize recorded OpenPose data on CPU.")
+    parser = argparse.ArgumentParser(prog="trampoline-vision", description="Inspect, visualize, track and evaluate recorded poses on CPU.")
     subparsers = parser.add_subparsers(dest="command", required=True)
     inspect = subparsers.add_parser("inspect", help="Read recorded BODY_25 detections; no inference, tracking or scoring.")
     # Es parteix d’un manifest directe o d’una configuració; exigir-ne un evita ambigüitat.
@@ -116,12 +151,29 @@ def main(argv: list[str] | None = None) -> int:
     visual.add_argument("--missing-frames-policy", choices=["report", "error"], default=None)
     visual.add_argument("--ffprobe", default="ffprobe")
     visual.add_argument("--probe-timeout", type=float, default=120.0, metavar="SECONDS")
+    track = subparsers.add_parser("track", help="Track recorded detections and export auditable identities; no scoring.")
+    track.add_argument("--config", type=Path, required=True)
+    track.add_argument("--output", type=Path, required=True, help="New summary JSON path.")
+    track.add_argument("--frames-output", type=Path, help="JSONL path; default is output stem with .frames.jsonl.")
+    track.add_argument("--video-output", type=Path, help="Optional annotated MP4 with observed and predicted boxes.")
+    track.add_argument("--start", type=float, default=0.0)
+    track.add_argument("--end", type=float, default=None)
+    track.add_argument("--ffprobe", default="ffprobe")
+    track.add_argument("--probe-timeout", type=float, default=120.0)
+    evaluate = subparsers.add_parser("evaluate-tracking", help="Evaluate manually reviewed sparse identity annotations.")
+    evaluate.add_argument("--tracks", type=Path, required=True)
+    evaluate.add_argument("--annotations", type=Path, required=True)
+    evaluate.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == "evaluate-tracking":
+            return _run_tracking_evaluation(args)
         if not math.isfinite(args.probe_timeout) or args.probe_timeout <= 0:
             raise InputError("--probe-timeout must be positive")
         if args.command == "visualize":
             return _run_visualization(args)
+        if args.command == "track":
+            return _run_tracking(args)
         # La política explícita de CLI preval sobre la configuració; si no n’hi ha, conservem els buits.
         config_policy = "report"
         if args.config:

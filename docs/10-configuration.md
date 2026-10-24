@@ -47,7 +47,27 @@ immutable equivalent. No es tria el model per data de modificació d'un director
 El primer carregador ha de ser petit i estricte. No cal construir un sistema de plugins externs
 abans del primer adaptador, però el registre de backends ha de quedar centralitzat. Els canvis
 de configuració requereixen documentar-ne migracions quan canviïn el significat d'una opció.
-La tria del tracker, el segmentador i els llindars queda pendent de les primeres proves.
+El primer backend de tracking és OC-SORT de trackers 2.6.1. Segmentador i llindars
+de seguiment continuen pendents de proves.
+
+## Preparació de candidats des de Python
+
+`configs/preparation/pose-candidates.json` és una configuració de component 1.0,
+amb seccions `box` i `deduplication`. La valida `PreparationConfig.from_dict` després
+de la lectura JSON estricta. Les claus desconegudes es rebutgen i els camps omesos
+es resolen amb defaults. La deduplicació està desactivada inicialment.
+No és per si sola una configuració de pipeline; `track-openpose.json` la referencia. Opcions i ús a la
+[guia 20](20-pose-candidate-preparation.md).
+
+## Tracking executable
+
+`configs/pipelines/track-openpose.json` utilitza schema 1.0 i task
+`track_recorded_detections`. Resol `case_manifest` i `preparation_config` respecte
+del mateix fitxer i valida `tracker` i `missing_frames_policy`. Només hi ha backend
+`ocsort`; noms desconeguts i errors de claus es rebutgen. El fitxer no activa
+cap inferència visual. Rang temporal i rutes de sortida s'indiquen per CLI.
+L'informe desa tots els defaults resolts i el pressupost temporal efectiu.
+Veure [guia 21](21-tracking-validation-guide.md).
 
 ## Visualització executable
 

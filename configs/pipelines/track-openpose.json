@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "task": "track_recorded_detections",
+  "case_manifest": "../../data/manifests/JPN_AGE_1_000905_31.0.example.json",
+  "preparation_config": "../preparation/pose-candidates.json",
+  "missing_frames_policy": "report",
+  "tracker": {
+    "backend": "ocsort",
+    "confidence_threshold": 0.1,
+    "confirmation_frames": 3,
+    "max_lost_s": 0.5,
+    "min_iou": 0.1,
+    "direction_weight": 0.2,
+    "velocity_lookback_frames": 3
+  }
+}

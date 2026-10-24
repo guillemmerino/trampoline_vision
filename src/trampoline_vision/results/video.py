@@ -45,13 +45,16 @@ def _mux_packets(destination, packets, durations: dict[int, Fraction]) -> None:
 
 def encode_visualization(video: VideoAsset, observations: Iterator[FrameDetections], output: Path,
                          style: RenderStyle, first_index: int, stop_index: int,
-                         progress: Callable[[int, int], None] | None = None) -> dict:
+                         progress: Callable[[int, int], None] | None = None, *,
+                         renderer: Callable = render_frame) -> dict:
     """Escriu un MP4 temporal per a l'interval [first_index, stop_index).
 
     Es descodifica des de l'inici per mantenir correspondència exacta d'índexs.
     Cada temps descodificat es contrasta amb ffprobe. El temps de sortida
     comença a zero, mentre la capçalera conserva el temps del vídeo original.
     Les dades es consumeixen en ordre i només es reté una imatge cada vegada.
+    renderer pot dibuixar un altre contracte amb context/source_status/detections,
+    com TrackingOverlayFrame; codificació i verificació temporal són compartides.
     """
     av = _pyav()
     frame_reports = []
@@ -79,7 +82,7 @@ def encode_visualization(video: VideoAsset, observations: Iterator[FrameDetectio
                     raise VisualizationError(f"Decoded dimensions disagree at frame {index}")
                 if index < first_index:
                     continue
-                image, stats = render_frame(decoded.to_image(), observed, style)
+                image, stats = renderer(decoded.to_image(), observed, style)
                 if stream is None:
                     rate = Fraction(str(video.fps)) if video.fps else Fraction(1 / context.duration_s).limit_denominator(100000)
                     stream = destination.add_stream("libx264", rate=rate)

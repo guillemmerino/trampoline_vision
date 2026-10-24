@@ -7,7 +7,9 @@ d'inferència, un escenari i opcions de sortida. CLI, procés de treball i API c
 operació. Els algoritmes no coneixeran objectes HTTP ni rutes de contenidors.
 
 El primer recorregut s'executarà localment amb deteccions enregistrades. Després s'exposarà per
-API i s'incorporarà inferència GPU. Les CLI `inspect` i `visualize` ja executen ingestió i revisió visual; l’API i els endpoints continuen pendents.
+API i s'incorporarà inferència GPU. Les CLI `inspect`, `visualize` i `track` ja executen
+ingestió, revisió visual i seguiment enregistrat; `evaluate-tracking` revisa anotacions.
+L'API i els endpoints continuen pendents.
 
 ## API asíncrona proposada
 

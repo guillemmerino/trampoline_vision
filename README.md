@@ -4,7 +4,7 @@ Sistema modular d'anàlisi de gimnàstica de trampolí a partir de vídeo 2D amb
 L'objectiu final és obtenir un diagnòstic esportiu; la primera etapa construeix el seguiment
 del gimnasta i la detecció dels salts en escenes amb múltiples persones.
 
-## Estat actual: ingestió, visualització i contractes de tracking
+## Estat actual: seguiment executable de deteccions enregistrades
 
 - Docker CPU amb FFmpeg/ffprobe, paquet instal·lat i servei Compose per executar proves.
 - Contractes interns per a vídeo, fotogrames, punts BODY_25, deteccions i procedència.
@@ -14,12 +14,31 @@ del gimnasta i la detecció dels salts en escenes amb múltiples persones.
 - Proves unitàries i d'integració, inclosa una amb vídeo sintètic i FFmpeg.
 - Contractes de tracking amb procedència, candidats parcials i observació/predicció separades.
 - Backend inicial escollit: OC-SORT de `trackers==2.6.1`, extra opcional verificable en Docker.
+- Preparació de candidats amb caixa de pose, score explícit i deduplicació opcional, amb proves sintètiques.
 
 La comanda `visualize` genera vídeo anotat i informe per revisar coordenades i sincronització,
 amb vistes all/filtered/compare i intervals temporals. Els llindars només afecten el dibuix.
-Encara no s’executen inferència, deduplicació, tracking, selecció, salts, puntuació ni API.
+La comanda `track` integra preparació, deduplicació opcional i OC-SORT amb
+identitats persistents, informe, JSONL i vídeo opcional. `evaluate-tracking`
+compara l'exportació amb anotacions manuals disperses. La precisió sobre el
+vídeo real continua pendent de validació; no s'executen inferència, selecció
+del gimnasta, salts, puntuació ni API.
 La [guia de tracking](docs/19-tracking-contracts-and-backend.md) explica els contractes,
-la biblioteca, les proves i les limitacions abans de construir l'adaptador.
+la biblioteca, els contractes i les seves limitacions.
+La [guia de preparació](docs/20-pose-candidate-preparation.md) descriu el nou pas
+i la configuració independent dels filtres visuals.
+
+## Provar i validar el tracking
+
+```powershell
+docker compose --profile tracking build tracking tests-tracking
+docker compose --profile tracking run --rm tests-tracking
+docker compose --profile tracking run --rm tracking track --config configs/pipelines/track-openpose.json --start 0 --end 3 --output runs/tracking-01.json --video-output runs/tracking-01.mp4
+```
+
+La primera execució de seguiment del vídeo real queda per a la propera revisió.
+La [guia de validació](docs/21-tracking-validation-guide.md) explica estats,
+anotacions manuals, comparació de configuracions i criteris per millorar.
 
 ## Primera execució amb Docker
 
@@ -79,7 +98,8 @@ s'executa. No cal GPU ni OpenPose instal·lat per reproduir les deteccions enreg
 
 ## Configuració executable i disseny futur
 
-`configs/pipelines/inspect-openpose.json`, `visualize-openpose.json` i el manifest són executables (1.0).
+`configs/pipelines/inspect-openpose.json`, `visualize-openpose.json`, `track-openpose.json`
+i el manifest són executables (1.0).
 Els altres exemples de pipeline/model/escenari amb `design-only` documenten etapes futures i
 no són acceptats com a configuració de la comanda actual.
 

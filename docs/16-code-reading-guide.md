@@ -81,11 +81,22 @@ la seva explicació és aquí i als documents [05](05-inputs-and-legacy-data.md)
 
 ## Com llegir les proves
 
+Per al recorregut complet de seguiment, la [guia 21](21-tracking-validation-guide.md)
+ordena els fitxers de configuració, backend, sessió temporal, cas d'ús, exportació,
+dibuix i avaluació. Les proves sintètiques inclouen l'API real de la biblioteca,
+seqüències amb pèrdua/recuperació/expiració, vídeo VFR i fallades de publicació.
+
+Per al preparador, llegir `preparation/config.py`, `pose.py`, `deduplication.py`
+i `pipeline.py`, en aquest ordre. Les proves `unit/test_preparation.py` i
+`integration/test_preparation.py` cobreixen geometria, agrupació i la connexió
+amb el lector. La [guia 20](20-pose-candidate-preparation.md) explica cada política.
+
 Per al nou límit de seguiment, llegir `contracts/tracking.py` i la
 [guia 19](19-tracking-contracts-and-backend.md). `tests/unit/test_tracking_contracts.py`
 prova geometria, procedència, candidats parcials i assignacions;
 `tests/integration/test_ocsort_dependency.py` comprova l'API externa amb caixes
-sintètiques si s'ha instal·lat l'extra. No hi ha adaptador de seguiment encara.
+sintètiques si s'ha instal·lat l'extra. L'adaptador complet es prova també a
+`tests/integration/test_tracking.py`.
 
 [helpers.py](../tests/helpers.py) construeix fixtures temporals. El seu vídeo placeholder només
 serveix quan s'injecten metadades; no és un MP4 descodificable. La prova amb FFmpeg genera un vídeo real.

@@ -5,12 +5,16 @@
 El tracker manté identitats perquè l'escena conté més actors que el gimnasta objectiu. Una identitat
 no depèn de conservar tots els punts de la pose. Es poden combinar moviment, caixes, evidència de
 pose i aparença quan estigui disponible. El primer baseline escollit és OC-SORT de
-`trackers==2.6.1`; l'adaptador encara no està implementat. Els contractes per fotograma
+`trackers==2.6.1`; l'adaptador i el registre temporal ja estan implementats. Els contractes per fotograma
 ja existeixen a `contracts/tracking.py`. API, proves i límits a la [guia 19](19-tracking-contracts-and-backend.md).
 
 La deduplicació entre propostes del mateix instant continua a `preparation`; el tracking
 associa candidats entre instants. Aquesta versió d'OC-SORT no té una passada diferenciada
 d'associació de baixa confiança: conservar evidència feble no implica que ja la sàpiga usar.
+La preparació inicial ja està implementada, inclosa deduplicació opcional; veure
+[guia 20](20-pose-candidate-preparation.md). Encara no s'ha executat el tracker sobre el cas real.
+La [guia 21](21-tracking-validation-guide.md) descriu execució, observacions/prediccions,
+confirmació pública, censura al final de l'interval i diagnòstic amb anotacions.
 
 L'objectiu inicial és una associació coherent i auditable. Afegir diversos predictors sense
 mesurar-los no és un criteri de qualitat. Un predictor temporal, inclòs LSTM, només s'incorporarà

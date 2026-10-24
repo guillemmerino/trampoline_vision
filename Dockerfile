@@ -42,9 +42,15 @@ COPY tests/ /tests/
 ENTRYPOINT ["python", "-B", "-m", "unittest"]
 CMD ["discover", "-s", "/tests", "-v"]
 
-# Verifica la biblioteca escollida sense ampliar la imatge CPU d'inspecció/visualització.
-FROM test AS test-tracking
+# Runtime de seguiment; manté l'extra separat de la imatge CPU d'inspecció.
+FROM cpu AS tracking
 USER root
 # La base amb FFmpeg ja proporciona les llibreries de sistema d'OpenCV, inclosa libGL.
 RUN python -m pip install --no-cache-dir 'trampoline-vision[tracking]'
 USER analyst
+
+# Mateix runtime de seguiment amb proves sintètiques, sense dades del projecte antic.
+FROM tracking AS test-tracking
+COPY tests/ /tests/
+ENTRYPOINT ["python", "-B", "-m", "unittest"]
+CMD ["discover", "-s", "/tests", "-v"]

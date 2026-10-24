@@ -4,8 +4,11 @@
 
 Aquest increment completa els passos 1 i 2 del seguiment: elecció de biblioteca,
 dependència opcional i contractes d'entrada/sortida amb validacions i proves.
-No executa tracking sobre OpenPose. La preparació de caixes, deduplicació,
-adaptador, configuració executable i vídeo amb identitats venen després.
+No executa tracking sobre OpenPose. En el pas 3 posterior ja s'han implementat
+preparació de caixes i deduplicació opcional: vegeu la [guia 20](20-pose-candidate-preparation.md).
+Estat posterior: adaptador, sessió d'identitats, CLI, exportació i vídeo ja estan
+implementats; veure [guia 21](21-tracking-validation-guide.md). Aquest document
+conserva el context de l'elecció i els contractes; la precisió real continua pendent.
 
 L'elecció inicial és **OC-SORT mitjançant `trackers==2.6.1` de Roboflow**.
 És una implementació de l'algoritme a partir de l'article, no un embolcall del
@@ -103,7 +106,8 @@ serialitzador ni esquema d'API pública de tracking.
 multirotades. Una detecció no pot alimentar dos candidats. Agrupar-les no
 modifica ni fusiona automàticament les articulacions originals. Les observacions
 que no tenen candidat també continuen disponibles a `TrackingFrame.source`.
-No s'ha implementat encara la decisió de quines deteccions s'agrupen o s'exclouen.
+El preparador del pas 3 implementa una primera política d'agrupació conservadora
+i no exclou cap detecció de les referències dels candidats. Encara no està calibrada.
 
 Un candidat sense mesura necessita un motiu, per exemple
 `insufficient_spatial_support`. Un score zero és vàlid i es conserva. Els
@@ -125,9 +129,9 @@ es recuperen de la font original; no es reemeten punts predits com a observats.
 Les assignacions són unívoques. Els candidats sense caixa també consten entre
 els no assignats. El resultat rebutja IDs inexistents, assignacions dobles,
 caixes observades inventades i candidats que desapareixen de la partició.
-La validació és per fotograma: ordre temporal, no reutilitzar IDs finalitzats,
-coherència històrica de l'última observació i transicions de vida seran obligacions
-del servei/adaptador. No s'afirma que aquestes invariants de seqüència ja s'executin.
+La validació dels contractes és per fotograma. El nou `tracking/session.py`
+completa aquesta frontera amb ordre temporal, no reutilització d'IDs finalitzats,
+registre de l'última observació i transicions de vida. Veure la guia 21.
 
 ## Exemple de flux, encara sense algoritme
 
@@ -191,12 +195,12 @@ Rich 15.0.0, Requests 2.34.2 i pyDeprecate 0.13.0. És el registre d'una
 execució, no un fitxer de bloqueig. En Python 3.10 local les proves de domini
 també passen; les d'extres absents i FFmpeg s'ometen explícitament.
 
-## Propera iteració
+## Continuació implementada
 
-1. Preparar candidats des de les observacions existents: suficiència espacial,
-   caixes, score documentat i deduplicació configurable, mantenint la font.
-2. Construir l'adaptador OC-SORT, el registre d'identitats i les proves de seqüència.
-3. Exposar configuració i cas d'ús amb exportació/visualització de tracking.
+1. Completat al pas 3: preparació de candidats, caixes, score documentat i
+   deduplicació configurable, mantenint la font; guia 20. Revisió real pendent.
+2. Completat: adaptador OC-SORT, registre d'identitats i proves de seqüència.
+3. Completat: configuració i cas d'ús amb exportació/visualització de tracking.
 4. Només aleshores executar i revisar el vídeo real, amb criteris explícits
    de pèrdua, recuperació i canvi d'identitat; comparar ByteTrack si cal.
 

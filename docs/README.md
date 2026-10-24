@@ -26,6 +26,9 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [17. Visualització](17-visualization-guide.md) | Vídeo anotat, filtres visuals i verificació temporal. |
 | [18. Revisió del cas](18-reference-visual-review.md) | Artefactes generats, comprovacions i observacions del vídeo actual. |
 | [19. Contractes de tracking](19-tracking-contracts-and-backend.md) | Backend OC-SORT escollit, contractes implementats, proves i límits. |
+| [20. Preparació de candidats](20-pose-candidate-preparation.md) | Caixes, confiança, deduplicació opcional i ús des de Python. |
+| [21. Validació del tracking](21-tracking-validation-guide.md) | CLI, identitats, exportació/vídeo, anotacions i iteració de criteris. |
+| [22. Primer baseline real](22-first-tracking-baseline-review.md) | Proves 0–3/14–17 s, canvi d'identitat i limitació de reconfirmació descoberta. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions
@@ -36,9 +39,13 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 - **Implementada:** només s'utilitzarà quan existeixin el codi i la verificació corresponents.
 
 Estan implementats Docker CPU, els contractes bàsics d’observacions, el lector JSON/ZIP o carpeta,
-el manifest 1.0, la línia temporal ffprobe i les CLI d’inspecció i visualització amb proves. El tracking, la
-segmentació i l’API continuen pendents. Els contractes de tracking per fotograma ja estan
-implementats i el backend inicial està escollit; l'adaptador encara no s'executa.
+el manifest 1.0, la línia temporal ffprobe i les CLI d’inspecció, visualització i tracking.
+El seguiment integra preparació, deduplicació opcional i adaptador OC-SORT amb registre
+temporal, JSONL, informe i vídeo opcional. Hi ha diagnòstic d'anotacions disperses i
+proves sintètiques; la precisió sobre el vídeo real continua pendent de validació.
+La primera revisió real ja s'ha executat: el baseline falla en continuïtat d'identitat
+i revela una limitació de reconfirmació de l'adaptador; veure document 22.
+La selecció del gimnasta, la segmentació i l'API continuen pendents.
 Els altres contractes avançats i les rutes API són propostes.
 Els canvis de comportament hauran d'actualitzar el document afectat i, si canvien una frontera
 o una decisió important, afegir un registre a `decisions/`.

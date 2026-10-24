@@ -7,7 +7,8 @@ de selecció, salts i avaluació de la taula continuen sent propostes de vocabul
 `contracts/tracking.py` implementa també la frontera de preparació/seguiment 1.0:
 `BoundingBox`, `BoxMeasurement`, `TrackingCandidate`, `TrackingFrame`, `TrackSample`
 i `TrackingFrameResult`. Semàntica i invariants a la [guia 19](19-tracking-contracts-and-backend.md).
-Encara no hi ha algoritme de preparació ni adaptador de tracking.
+La [preparació inicial](20-pose-candidate-preparation.md) ja produeix candidats;
+el [recorregut de tracking](21-tracking-validation-guide.md) produeix identitats i exportacions.
 
 ## Convencions comunes
 
@@ -62,7 +63,8 @@ Cada fotograma intern conté `context`, `detections` i `source_status`. `present
 indica un JSON amb `people: []`; `missing` indica que manca el registre d’origen i no equival a una
 detecció negativa. `valid` significa observat amb confiança positiva, no una garantía d’exactitud.
 `in_frame` informa de punts fora de la imatge sense retallar-los. Els punts absents tenen X/Y i
-`in_frame` null. La caixa de persona encara no es calcula.
+`in_frame` null. El lector no calcula caixes; el preparador posterior pot obtenir
+una `pose_extent` amb procedència i suficiència explícites.
 
 Els temps de presentació es llegeixen amb ffprobe, es normalitzen al primer fotograma i es conserva
 `source_start_s`. La durada final prové del paquet/fotograma si està disponible; un fallback a

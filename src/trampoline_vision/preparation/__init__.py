@@ -1,7 +1,8 @@
-"""Espai reservat per preparar deteccions abans del seguiment.
+"""Preparació de deteccions abans del seguiment, sense dependències visuals.
 
-Inclourà transformacions i deduplicació entre orientacions. El lector actual
-exigeix coordenades originals, però encara no implementa aquestes operacions.
-La futura sortida serà TrackingFrame: candidats amb referències originals,
-mesura rectangular quan sigui justificable i limitacions explícites si falta.
+pipeline.prepare_frame/prepare_frames produeixen TrackingFrame. config
+defineix polítiques; pose calcula extensions justificades i deduplication
+agrupa propostes compatibles del mateix instant si s'activa expressament.
+No es transformen rotacions ni es fusionen punts; les coordenades d'entrada
+ja han de ser les originals. El seguiment temporal encara és una etapa futura.
 """

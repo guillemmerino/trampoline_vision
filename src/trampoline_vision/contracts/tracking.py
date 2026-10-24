@@ -94,7 +94,7 @@ class TrackingCandidate:
     Diverses deteccions poden alimentar un candidat si preparation les agrupa.
     Una pose insuficient es conserva amb measurement=None i un motiu explícit;
     no es fabrica una caixa per satisfer l'API externa. La deduplicació i els
-    criteris de suficiència s'implementaran a preparation, fora d'aquests tipus.
+    criteris de suficiència són a preparation, fora d'aquests tipus.
     """
 
     candidate_id: str  # ID únic dins del fotograma, encara sense identitat temporal.

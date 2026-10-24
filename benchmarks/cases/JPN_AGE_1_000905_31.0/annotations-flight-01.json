@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "video_id": "JPN_AGE_1_000905_31.0",
+  "samples": [
+    {
+      "frame_index": 420,
+      "subject_id": "gymnast",
+      "source_detection_id": "420:3"
+    },
+    {
+      "frame_index": 420,
+      "subject_id": "rear_spotter",
+      "source_detection_id": "420:12"
+    },
+    {
+      "frame_index": 435,
+      "subject_id": "gymnast",
+      "source_detection_id": "435:82"
+    },
+    {
+      "frame_index": 450,
+      "subject_id": "gymnast",
+      "source_detection_id": "450:85"
+    },
+    {
+      "frame_index": 450,
+      "subject_id": "rear_spotter",
+      "source_detection_id": "450:7"
+    },
+    {
+      "frame_index": 465,
+      "subject_id": "gymnast",
+      "source_detection_id": "465:65"
+    },
+    {
+      "frame_index": 465,
+      "subject_id": "rear_spotter",
+      "source_detection_id": "465:7"
+    },
+    {
+      "frame_index": 480,
+      "subject_id": "rear_spotter",
+      "source_detection_id": "480:11"
+    },
+    {
+      "frame_index": 495,
+      "subject_id": "gymnast",
+      "source_detection_id": "495:84"
+    },
+    {
+      "frame_index": 495,
+      "subject_id": "rear_spotter",
+      "source_detection_id": "495:5"
+    },
+    {
+      "frame_index": 509,
+      "subject_id": "gymnast",
+      "source_detection_id": "509:58"
+    },
+    {
+      "frame_index": 509,
+      "subject_id": "rear_spotter",
+      "source_detection_id": "509:13"
+    }
+  ]
+}

@@ -27,7 +27,18 @@ Les proves cobreixen fotogrames buits, ordre dels fitxers, últim fotograma i í
 Estat parcial: passos 1 i 2 completats. Biblioteca inicial escollida i fixada
 (`trackers==2.6.1`, OC-SORT), extra opcional, contractes de tracking implementats
 i proves de frontera/API. Veure [guia 19](19-tracking-contracts-and-backend.md).
-Encara no hi ha preparador de caixes, deduplicació ni adaptador sobre el cas real.
+Pas 3 implementat: preparador pur de candidats, caixes derivades de pose,
+score explícit i deduplicació opcional conservadora, amb proves sintètiques.
+Veure [guia 20](20-pose-candidate-preparation.md). Passos 4 i 5 implementats:
+adaptador OC-SORT, sessió d'identitats, configuració, CLI, exportació i vídeo anotat.
+El pas 6 té proves sintètiques i eines d'anotació/diagnòstic preparades. La revisió
+i acceptació sobre el cas real continuen pendents; no es declara l'increment validat
+esportivament. Procediment a la [guia 21](21-tracking-validation-guide.md).
+
+Primera prova real completada als trams 0–3 s i 14–17 s. El baseline no supera
+la validació de continuïtat: hi ha canvis d'actor i una bretxa de semàntica en la
+reconfirmació. L'increment continua obert; prioritats i evidència al
+[document 22](22-first-tracking-baseline-review.md).
 
 Implementar validació, deduplicació configurable i un primer tracker amb vida explícita.
 Comparar casos amb pose deficient, múltiples actors i desaparicions. Registrar assignacions

@@ -1,7 +1,7 @@
-"""Espai reservat per associar deteccions i conservar identitats.
+"""Seguiment de candidats amb OC-SORT i registre temporal propi.
 
-Consumirà TrackingFrame inclosos els fotogrames buits i generarà
-TrackingFrameResult. Els contractes són a contracts.tracking. El primer
-backend escollit és OC-SORT de trackers 2.6.1, però encara no hi ha adaptador,
-predictor propi ni assignació de track_id implementats en aquest domini.
+backend adapta trackers 2.6.1 sense pesos; session valida seqüència i
+explicita confirmació, pèrdua, recuperació i finalització. Els contractes
+són independents a contracts.tracking. Importar el domini no carrega NumPy
+ni el backend: les dependències només s'activen en construir una sessió.
 """

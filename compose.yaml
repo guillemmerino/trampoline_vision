@@ -1,5 +1,14 @@
 # Execucions puntuals: docker compose run --rm. No s’inicia encara cap API persistent.
 services:
+  # Runtime amb OC-SORT; hereta els muntatges de replay i només s'activa sota demanda.
+  tracking:
+    extends:
+      service: replay
+    profiles: [tracking]
+    image: trampoline-vision:tracking
+    build:
+      context: .
+      target: tracking
   # Servei per inspeccionar vídeo i OpenPose enregistrat, sense inferència GPU.
   replay:
     image: trampoline-vision:cpu
