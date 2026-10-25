@@ -1,0 +1,17 @@
+{
+  "cases": {
+    "JPN_AGE_1_000905_31.0": {
+      "video_sha256": "4dcb631c2d42f41ebe1375c37697f14041fff11a76f5e3459ab0e3aea220a67e",
+      "csv_sha256": "3e4113fac77a187fcfe2c59b002c5a5f0c91fcd1b4509afe28ebf5486317e096"
+    },
+    "JPN_AGE_1_001814_34.0": {
+      "video_sha256": "8829f533bf312bee91206fa5b7eaa3931861f3c9dccab392b34a3e5fcd6b119f",
+      "csv_sha256": "ea7f85af7faf0f33bd6bfe8e193f7a8468a9442ae76f51c029b212cd84606635"
+    },
+    "JPN_AGE_3_001351_19.0": {
+      "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "csv_sha256": "b88120a4a01e775abf0d58f44a9b472abea358b5893092cb5c15b61af435edc5"
+    }
+  },
+  "meaning": "candidate_references_are_valid_only_for_these_exact_recorded_inputs"
+}

@@ -1,5 +1,27 @@
 # Execucions puntuals: docker compose run --rm. No s’inicia encara cap API persistent.
 services:
+  # Tots els backends, inclòs BoT-SORT amb descriptors OSNet opcionals.
+  tracking-reid:
+    extends:
+      service: replay
+    profiles: [reid]
+    image: trampoline-vision:tracking-reid
+    build:
+      context: .
+      target: tracking-reid
+
+  # Proves del runtime complet; no munta vídeos ni models del host.
+  tests-tracking-reid:
+    profiles: [reid]
+    image: trampoline-vision:test-tracking-reid
+    build:
+      context: .
+      target: test-tracking-reid
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+
   # Runtime amb OC-SORT; hereta els muntatges de replay i només s'activa sota demanda.
   tracking:
     extends:

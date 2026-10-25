@@ -8,7 +8,7 @@ Pillow es carrega quan es dibuixa, mantenint la ingestió sense dependències vi
 from dataclasses import dataclass
 import math
 
-from trampoline_vision.contracts.observations import FrameDetections
+from trampoline_vision.contracts.observations import FrameDetections, PersonBoxDetection
 from trampoline_vision.results.errors import VisualizationError
 
 
@@ -83,6 +83,16 @@ def _draw_panel(image, observations: FrameDetections, style: RenderStyle, view: 
     minimum = style.min_visible_points if view == "filtered" else 1
     counts = {"detections_drawn": 0, "keypoints_drawn": 0, "edges_drawn": 0}
     for index, detection in enumerate(observations.detections):
+        if isinstance(detection, PersonBoxDetection):
+            if view == "filtered" and detection.score < confidence:
+                continue
+            box = detection.bbox
+            color = PALETTE[index % len(PALETTE)]
+            draw.rectangle((box.x_min, box.y_min, box.x_max, box.y_max), outline=color, width=2)
+            if style.show_labels:
+                draw.text((box.x_min, max(0, box.y_min-17)), detection.detection_id, font=font, fill=color)
+            counts["detections_drawn"] += 1
+            continue
         visible = {i: p for i, p in enumerate(detection.keypoints)
                    if p.valid and p.in_frame and p.confidence >= confidence}
         if len(visible) < minimum:

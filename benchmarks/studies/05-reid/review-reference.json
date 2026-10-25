@@ -1,0 +1,1822 @@
+{
+  "schema_version": "1.0",
+  "independent_human_review": false,
+  "reviewer": "assistant_visual_review",
+  "tracker_results_hidden_during_initial_annotation": true,
+  "coordinate_system": "original_video_pixels",
+  "index_base": 0,
+  "duplicate_policy": "any_listed_detection_may_represent_same_actor_simultaneously",
+  "quality_policy": "primary_metrics_exclude_ambiguous_overlap; missing_candidates_remain_missing; not_a_formal_benchmark",
+  "samples": [
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 0,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 15,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 30,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 45,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 60,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 75,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 90,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 105,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 120,
+      "acceptable_det_ids": [
+        2,
+        3
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 135,
+      "acceptable_det_ids": [
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 150,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 165,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 180,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 195,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 210,
+      "acceptable_det_ids": [
+        0,
+        2,
+        8
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 225,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 240,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 255,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 270,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 285,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 300,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 301,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 302,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 303,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 304,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 305,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 306,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 307,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 308,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 309,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 310,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 315,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 330,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 345,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 360,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 375,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 390,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 405,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 420,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 435,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 436,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 437,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 438,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 439,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 440,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 441,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 442,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 443,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 444,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 445,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 446,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 447,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 448,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 449,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 450,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 451,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 465,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 475,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 476,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 477,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 478,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 479,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 480,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 481,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 482,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 483,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 484,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 485,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 486,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 487,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 488,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 489,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 490,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 491,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 492,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 493,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 494,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 495,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 510,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 525,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 540,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 555,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 570,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 585,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 600,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 615,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 630,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 645,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 660,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 675,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 690,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 705,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 720,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 735,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 750,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 765,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 780,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 795,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 810,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 825,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 840,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 855,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 870,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 885,
+      "acceptable_det_ids": [
+        0,
+        2,
+        18
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 900,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 915,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 0,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 30,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 60,
+      "acceptable_det_ids": [
+        1,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 90,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 120,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 150,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 180,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 210,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 240,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 270,
+      "acceptable_det_ids": [
+        1,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 300,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 330,
+      "acceptable_det_ids": [
+        3
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 360,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 390,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 420,
+      "acceptable_det_ids": [
+        1,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 450,
+      "acceptable_det_ids": [
+        1,
+        2,
+        3
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 480,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 510,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 540,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 570,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 600,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 630,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 660,
+      "acceptable_det_ids": [
+        1,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 690,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 720,
+      "acceptable_det_ids": [
+        1,
+        2,
+        4
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 750,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 780,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 810,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 840,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 870,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 900,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 930,
+      "acceptable_det_ids": [
+        1,
+        2
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 960,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 990,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 0,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 15,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 30,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 45,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 60,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 75,
+      "acceptable_det_ids": [
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 90,
+      "acceptable_det_ids": [
+        2
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 105,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 120,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 135,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 150,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 165,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 180,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 195,
+      "acceptable_det_ids": [
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 210,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 225,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 240,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 255,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 270,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 285,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 300,
+      "acceptable_det_ids": [
+        0,
+        2
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 315,
+      "acceptable_det_ids": [
+        0,
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 330,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 345,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 360,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 375,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 390,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 405,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 420,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 435,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 450,
+      "acceptable_det_ids": [],
+      "quality": "no_detector_candidate",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 465,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 480,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 495,
+      "acceptable_det_ids": [
+        2
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 510,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 525,
+      "acceptable_det_ids": [
+        1
+      ],
+      "quality": "clear_identity",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 540,
+      "acceptable_det_ids": [
+        2
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 555,
+      "acceptable_det_ids": [
+        0
+      ],
+      "quality": "ambiguous_overlap",
+      "subject_id": "gymnast",
+      "annotation_source": "original_video_and_recorded_boxes_without_tracker_results"
+    }
+  ],
+  "limitations": [
+    "sparse_samples_except_three_known_failure_windows",
+    "no_independent_human_ground_truth",
+    "detection_references_measure_identity_not_box_extent_or_anatomy"
+  ],
+  "revision": 2,
+  "parent_reference_sha256": "325406510f68083fa1560780b673f526c8575f7236d74e3e9387384801887583",
+  "revision_tracker_results_visible": true,
+  "revision_reason": "source_video_QC_of_unlisted_overlapping_boxes_and_one_misidentified_front_spotter; all_variants_recomputed"
+}

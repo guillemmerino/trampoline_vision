@@ -54,3 +54,17 @@ FROM tracking AS test-tracking
 COPY tests/ /tests/
 ENTRYPOINT ["python", "-B", "-m", "unittest"]
 CMD ["discover", "-s", "/tests", "-v"]
+
+# Variant CPU completa: conserva OC-SORT/ByteTrack i afegeix BoT-SORT/OSNet.
+# No incorpora pesos ni executa descàrregues de models en arrencar.
+FROM tracking AS tracking-reid
+USER root
+RUN python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu 'torch==2.5.1' 'torchvision==0.20.1' \
+    && python -m pip install --no-cache-dir 'trampoline-vision[tracking-reid]'
+USER analyst
+
+# Comprova tots els adaptadors sense necessitar vídeos ni pesos externs.
+FROM tracking-reid AS test-tracking-reid
+COPY tests/ /tests/
+ENTRYPOINT ["python", "-B", "-m", "unittest"]
+CMD ["discover", "-s", "/tests", "-v"]

@@ -1,5 +1,9 @@
 # 16. Guia de lectura del codi
 
+> Actualització 0.5.0: el tracker de caixes és responsable de la identitat;
+> els backends i ReID són configurables. El recorregut implementat i els
+> nous contractes s’expliquen al [document 27](27-configurable-box-tracking.md).
+
 El codi executable i les proves tenen docstrings en català a cada mòdul, classe, funció i mètode.
 Els comentaris dels camps expliquen unitats, àmbits dels identificadors i absències. Els comentaris
 de blocs expliquen decisions del flux, sense substituir les validacions que executa el programa.

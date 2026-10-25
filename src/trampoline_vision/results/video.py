@@ -46,7 +46,7 @@ def _mux_packets(destination, packets, durations: dict[int, Fraction]) -> None:
 def encode_visualization(video: VideoAsset, observations: Iterator[FrameDetections], output: Path,
                          style: RenderStyle, first_index: int, stop_index: int,
                          progress: Callable[[int, int], None] | None = None, *,
-                         renderer: Callable = render_frame) -> dict:
+                         renderer: Callable = render_frame, decoded_callback: Callable | None = None) -> dict:
     """Escriu un MP4 temporal per a l'interval [first_index, stop_index).
 
     Es descodifica des de l'inici per mantenir correspondència exacta d'índexs.
@@ -67,6 +67,11 @@ def encode_visualization(video: VideoAsset, observations: Iterator[FrameDetectio
             decoded_frames = iter(source.decode(video=0))
             for index in range(stop_index):
                 decoded = next(decoded_frames, None)
+                if decoded_callback is not None:
+                    # El model consumeix els mateixos píxels originals que després es dibuixen.
+                    from trampoline_vision.ingestion.video_frames import validate_decoded
+                    validate_decoded(video, index, decoded)
+                    decoded_callback(index, decoded)
                 observed = next(observations, None)
                 if decoded is None or observed is None:
                     raise VisualizationError(f"Video/detections ended before frame {index}")

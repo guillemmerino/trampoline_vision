@@ -10,3 +10,12 @@ consumible des de Python amb `PreparationConfig.from_dict`; no és un pipeline d
 Documentació a la [guia de preparació](../docs/20-pose-candidate-preparation.md).
 
 Vegeu [configuració](../docs/10-configuration.md) i [execució CPU](../docs/15-cpu-replay-guide.md).
+
+## Caixes i perfils (0.5.0)
+
+`pipelines/track-boxes.json` és executable (2.0). `tracker_config` selecciona
+un perfil de `trackers/`: OC-SORT, ByteTrack, BoT-SORT o BoT-SORT amb ReID.
+Només l’últim referencia `models/osnet-msmt17.json`, amb pesos locals,
+SHA-256, dispositiu i cache. Les rutes són relatives al fitxer que les declara.
+Cap d’aquests fitxers no executa matching d’esquelets ni coherència de l’actor.
+Veure la [guia 27](../docs/27-configurable-box-tracking.md).

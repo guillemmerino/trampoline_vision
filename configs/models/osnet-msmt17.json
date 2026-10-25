@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "provider": "osnet",
+  "weights": "../../runs/reid-models/osnet_x0_25_msmt17.pt",
+  "sha256": "6f57607fed9f502b9efed546108132ee715df5a5b6e6932c6269bacb47f59f99",
+  "device": "cpu",
+  "threads": 4,
+  "cache_dir": "../../runs/cache/reid"
+}

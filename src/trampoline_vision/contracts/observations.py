@@ -14,6 +14,8 @@ from dataclasses import dataclass
 import math
 from pathlib import Path
 
+from trampoline_vision.contracts.geometry import BoundingBox
+
 
 # L’ordre és el d’OpenPose BODY_25. Els noms fan explícita la semàntica
 # dels índexs i permeten detectar vectors incomplets o reordenats.
@@ -204,6 +206,42 @@ class PersonDetection:
 
 
 @dataclass(frozen=True)
+class PersonBoxDetection:
+    """Persona detectada per caixa, sense obligar a disposar d'una pose.
+
+    detection_id és local al fotograma. El tracker crea les identitats
+    temporals; un futur matching hi associarà observacions articulars.
+    """
+
+    detection_id: str  # Referència local, independent del tracker i del detector concret.
+    bbox: BoundingBox  # Caixa observada en coordenades originals.
+    score: float  # Confiança original, sense reinterpretar-la com a qualitat de tracking.
+    provenance: DetectionProvenance  # Fitxer, fila i índex extern que permeten auditar-la.
+    class_id: int = 0  # Aquesta font només admet deteccions de persona.
+
+    def __post_init__(self) -> None:
+        """Valida identitat local, geometria, confiança i procedència sense fabricar punts."""
+        if not isinstance(self.detection_id, str) or not self.detection_id.strip():
+            raise ValueError("Box detection requires a local ID")
+        if not isinstance(self.bbox, BoundingBox) or not isinstance(self.provenance, DetectionProvenance):
+            raise ValueError("Box detection requires geometry and provenance")
+        if type(self.score) not in (int, float) or not math.isfinite(self.score) or not 0 <= self.score <= 1:
+            raise ValueError("Box detection score must be in [0, 1]")
+        if type(self.class_id) is not int or self.class_id != 0:
+            raise ValueError("Only person class 0 is supported")
+
+    @property
+    def keypoints(self) -> tuple:
+        """Exposa absència real de pose: cap punt ni coordenada artificial."""
+        return ()
+
+    @property
+    def skeleton_schema(self) -> None:
+        """Indica que aquesta observació de caixa no conté un esquelet."""
+        return None
+
+
+@dataclass(frozen=True)
 class FrameDetections:
     """Unitat del pipeline: un context temporal i totes les deteccions d'aquell instant.
 
@@ -212,7 +250,7 @@ class FrameDetections:
     fotograma. Ambdues situacions mantenen el temps, però tenen causes diferents.
     """
     context: FrameContext  # Temps i geometria comuns a les deteccions del fotograma.
-    detections: tuple[PersonDetection, ...]  # Zero o més propostes de persona, encara sense tracking.
+    detections: tuple[PersonDetection | PersonBoxDetection, ...]  # Zero o més propostes de persona, encara sense tracking.
     source_status: str  # present: hi ha registre; missing: manca el registre d’origen.
 
     def __post_init__(self) -> None:

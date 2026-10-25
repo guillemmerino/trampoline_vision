@@ -16,7 +16,7 @@ from trampoline_vision import __version__
 from trampoline_vision.contracts.observations import VideoAsset
 from trampoline_vision.infrastructure.artifacts import publish_exclusive
 from trampoline_vision.ingestion.manifest import CaseManifest
-from trampoline_vision.ingestion.openpose import iter_openpose_frames
+from trampoline_vision.ingestion.detections import iter_recorded_frames
 from trampoline_vision.ingestion.video import probe_video
 from trampoline_vision.results.errors import VisualizationError
 from trampoline_vision.results.overlay import HEADER_HEIGHT, RenderStyle, output_dimensions
@@ -84,7 +84,7 @@ def visualize_case(manifest: CaseManifest, video: VideoAsset, output: Path, repo
         path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="trampoline-visualize-") as temporary:
         staged_video = Path(temporary) / "annotated.mp4"
-        with closing(iter_openpose_frames(manifest, video, missing_frames_policy=missing_frames_policy)) as observations:
+        with closing(iter_recorded_frames(manifest, video, missing_frames_policy=missing_frames_policy)) as observations:
             details = encode_visualization(video, observations, staged_video, style, first, stop, progress)
         rendered = probe_video(staged_video, manifest.case_id, ffprobe=ffprobe, timeout_s=probe_timeout_s)
         validation = validate_rendered_video(video, rendered, first, stop, style)

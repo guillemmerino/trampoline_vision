@@ -6,8 +6,8 @@ vídeos, no executen inferència ni OC-SORT i no publiquen artefactes.
 
 from collections.abc import Iterable, Iterator
 
-from trampoline_vision.contracts.observations import FrameDetections
-from trampoline_vision.contracts.tracking import TrackingCandidate, TrackingFrame
+from trampoline_vision.contracts.observations import FrameDetections, PersonBoxDetection
+from trampoline_vision.contracts.tracking import BoxMeasurement, TrackingCandidate, TrackingFrame
 from trampoline_vision.preparation.config import PreparationConfig
 from trampoline_vision.preparation.deduplication import group_poses
 from trampoline_vision.preparation.pose import prepare_pose
@@ -23,6 +23,15 @@ def prepare_frame(source: FrameDetections, config: PreparationConfig = Preparati
     """
     if not isinstance(source, FrameDetections) or not isinstance(config, PreparationConfig):
         raise ValueError("prepare_frame requires FrameDetections and PreparationConfig")
+    boxes = tuple(d for d in source.detections if isinstance(d, PersonBoxDetection))
+    if boxes:
+        if len(boxes) != len(source.detections):
+            raise ValueError("Box and pose sources must be associated explicitly, not mixed by preparation")
+        # Les caixes de detector no es recalculen ni depenen de confiança articular.
+        return TrackingFrame(source, tuple(TrackingCandidate(
+            f"{source.context.frame_index}:box_candidate:{d.provenance.source_person_index}",
+            (d.detection_id,), BoxMeasurement(d.bbox, "detector", d.score, "recorded_detector_confidence"),
+            ("pose_not_available",)) for d in boxes))
     poses = tuple(prepare_pose(d, source.context, config.box) for d in source.detections)
     candidates = []
     for group in group_poses(poses, config.deduplication):

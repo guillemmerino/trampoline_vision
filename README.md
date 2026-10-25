@@ -13,22 +13,45 @@ del gimnasta i la detecció dels salts en escenes amb múltiples persones.
 - Comanda `inspect` amb informe JSON i exportació opcional de deteccions en JSONL.
 - Proves unitàries i d'integració, inclosa una amb vídeo sintètic i FFmpeg.
 - Contractes de tracking amb procedència, candidats parcials i observació/predicció separades.
-- Backend inicial escollit: OC-SORT de `trackers==2.6.1`, extra opcional verificable en Docker.
+- Backends configurables: OC-SORT i ByteTrack (`trackers==2.6.1`), BoT-SORT (`boxmot==16.0.9`) amb/sense ReID OSNet.
+- Entrada CSV de caixes independents, descriptors externs i cache incremental verificat.
 - Preparació de candidats amb caixa de pose, score explícit i deduplicació opcional, amb proves sintètiques.
 
 La comanda `visualize` genera vídeo anotat i informe per revisar coordenades i sincronització,
 amb vistes all/filtered/compare i intervals temporals. Els llindars només afecten el dibuix.
-La comanda `track` integra preparació, deduplicació opcional i OC-SORT amb
+La comanda `track` integra caixes independents o el baseline OpenPose, un tracker configurable i
 identitats persistents, informe, JSONL i vídeo opcional. `evaluate-tracking`
 compara l'exportació amb anotacions manuals disperses. La precisió sobre el
-vídeo real continua pendent de validació; no s'executen inferència, selecció
-del gimnasta, salts, puntuació ni API.
+vídeo real continua pendent de validació. ReID pot executar inferència d’aparença;
+la inferència de persones/poses, el matching d’esquelets, la coherència de l’actor,
+la selecció del gimnasta, els salts, la puntuació i l’API continuen pendents.
 La [guia de tracking](docs/19-tracking-contracts-and-backend.md) explica els contractes,
 la biblioteca, els contractes i les seves limitacions.
 La [guia de preparació](docs/20-pose-candidate-preparation.md) descriu el nou pas
 i la configuració independent dels filtres visuals.
 
-## Provar i validar el tracking
+## Tracking de caixes i ReID (0.5.0)
+
+El tracker de caixes manté les identitats; les poses independents s’hi associaran
+en una fase posterior. Canvia `tracker_config` a
+`configs/pipelines/track-boxes.json` per escollir `ocsort.json`, `bytetrack.json`,
+`botsort.json` o `botsort-reid.json` de `configs/trackers/`.
+La [guia de perfils i ReID](docs/27-configurable-box-tracking.md) explica
+els fluxos, els pesos locals, el cache i els límits de cada adaptador.
+
+```powershell
+docker compose --profile reid build tracking-reid tests-tracking-reid
+docker compose --profile reid run --rm tests-tracking-reid
+docker compose --profile reid run --rm tracking-reid track --config configs/pipelines/track-boxes.json --start 0 --end 3 --output runs/boxes-01.json --video-output runs/boxes-01.mp4
+```
+
+El perfil amb ReID requereix els pesos verificats a `runs/reid-models/`;
+ja existeixen en aquest equip des de l’estudi 05. La imatge és CPU i no
+incorpora dades ni pesos. La regressió compara els tres clips amb l’estudi
+anterior; el [protocol d’integració](benchmarks/studies/06-configurable-tracking/README.md)
+distingeix aquesta comprovació d’una avaluació de precisió.
+
+## Provar i validar el baseline OpenPose
 
 ```powershell
 docker compose --profile tracking build tracking tests-tracking
@@ -101,7 +124,8 @@ s'executa. No cal GPU ni OpenPose instal·lat per reproduir les deteccions enreg
 ## Configuració executable i disseny futur
 
 `configs/pipelines/inspect-openpose.json`, `visualize-openpose.json`, `track-openpose.json`
-i el manifest són executables (1.0).
+i el manifest són executables (1.0). `track-boxes.json` i els perfils de tracker
+són executables (2.0); el model d’aparença és una configuració 1.0 independent.
 Els altres exemples de pipeline/model/escenari amb `design-only` documenten etapes futures i
 no són acceptats com a configuració de la comanda actual.
 

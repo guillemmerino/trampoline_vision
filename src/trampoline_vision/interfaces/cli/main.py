@@ -92,7 +92,7 @@ def _run_tracking(args) -> int:
                video_output=args.video_output, start_s=args.start, end_s=args.end,
                missing_frames_policy=settings.missing_frames_policy, ffprobe=args.ffprobe,
                probe_timeout_s=args.probe_timeout, progress=_render_progress,
-               protected_paths=(args.config, settings.preparation_path))
+               protected_paths=(args.config, *settings.protected_paths))
     print(f"Tracking complete: {args.output.resolve()}")
     print(f"Frame export: {frames.resolve()}")
     return 0

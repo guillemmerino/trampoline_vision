@@ -60,6 +60,17 @@ explícites; no resol la continuïtat global. El següent treball necessita
 anotació més densa, recuperació d'identitat i validació de l'associació de poses;
 veure [document 25](25-independent-box-tracking-study.md).
 
+L'estudi 05 compara BoT-SORT amb/sense ReID i OC-SORT en tres vídeos complets.
+Els canvis mínims entre matches revisats es redueixen amb aparença, però la
+continuïtat completa encara falla i la cobertura no millora en tots els casos.
+Hi ha vídeos comparatius, trajectòries, controls sintètics i cache verificat per
+refinar sense repetir inferència; veure [document 26](26-reid-tracking-comparison.md).
+A 0.5.0 els adaptadors del pilot s’han integrat darrere de perfils configurables,
+amb lector de caixes independent i cache d’aparença. Veure [document 27](27-configurable-box-tracking.md).
+L’increment de fiabilitat continua obert: prioritzar contactes amb assistents, caixes
+mixtes i recuperació davant canvis grans de postura. La integració preserva el
+comportament estudiat; encara cal validar continuïtat física i el futur matching de poses.
+
 Implementar validació, deduplicació configurable i un primer tracker amb vida explícita.
 Comparar casos amb pose deficient, múltiples actors i desaparicions. Registrar assignacions
 i generar vídeo anotat amb trajectòries.

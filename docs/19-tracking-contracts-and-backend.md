@@ -1,5 +1,9 @@
 # 19. Contractes de tracking i primer backend
 
+> Actualització 0.5.0: el tracker de caixes és responsable de la identitat;
+> els backends i ReID són configurables. El recorregut implementat i els
+> nous contractes s’expliquen al [document 27](27-configurable-box-tracking.md).
+
 ## Abast implementat
 
 Aquest increment completa els passos 1 i 2 del seguiment: elecció de biblioteca,

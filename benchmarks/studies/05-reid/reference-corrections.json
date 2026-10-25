@@ -1,0 +1,135 @@
+{
+  "initial_reference_sha256": "325406510f68083fa1560780b673f526c8575f7236d74e3e9387384801887583",
+  "corrections": [
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 285,
+      "before": {
+        "acceptable_det_ids": [
+          0
+        ],
+        "quality": "clear_identity"
+      },
+      "after": {
+        "acceptable_det_ids": [
+          1
+        ],
+        "quality": "clear_identity"
+      },
+      "reason": "Original frame confirms det_0 is front spotter; gymnast is det_1"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 210,
+      "before": {
+        "acceptable_det_ids": [
+          0,
+          2
+        ],
+        "quality": "clear_identity"
+      },
+      "after": {
+        "acceptable_det_ids": [
+          0,
+          2,
+          8
+        ],
+        "quality": "clear_identity"
+      },
+      "reason": "Additional overlapping duplicate on gymnast head"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 225,
+      "before": {
+        "acceptable_det_ids": [
+          0
+        ],
+        "quality": "clear_identity"
+      },
+      "after": {
+        "acceptable_det_ids": [
+          0,
+          2
+        ],
+        "quality": "clear_identity"
+      },
+      "reason": "Additional overlapping duplicate on gymnast"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 484,
+      "before": {
+        "acceptable_det_ids": [
+          0
+        ],
+        "quality": "clear_identity"
+      },
+      "after": {
+        "acceptable_det_ids": [
+          0,
+          1
+        ],
+        "quality": "ambiguous_overlap"
+      },
+      "reason": "Both extents overlap another body near the bed"
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 885,
+      "before": {
+        "acceptable_det_ids": [
+          0,
+          2
+        ],
+        "quality": "clear_identity"
+      },
+      "after": {
+        "acceptable_det_ids": [
+          0,
+          2,
+          18
+        ],
+        "quality": "clear_identity"
+      },
+      "reason": "Additional overlapping duplicate on gymnast head"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frame_index": 315,
+      "before": {
+        "acceptable_det_ids": [
+          0
+        ],
+        "quality": "clear_identity"
+      },
+      "after": {
+        "acceptable_det_ids": [
+          0,
+          1
+        ],
+        "quality": "clear_identity"
+      },
+      "reason": "Additional overlapping duplicate on gymnast"
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "frame_index": 660,
+      "before": {
+        "acceptable_det_ids": [
+          1
+        ],
+        "quality": "clear_identity"
+      },
+      "after": {
+        "acceptable_det_ids": [
+          1,
+          2
+        ],
+        "quality": "clear_identity"
+      },
+      "reason": "Additional overlapping duplicate on gymnast"
+    }
+  ],
+  "limitation": "revision_is_not_independent_or_blind; original_analysis_is_retained"
+}

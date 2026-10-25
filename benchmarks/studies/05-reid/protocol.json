@@ -1,0 +1,40 @@
+{
+  "study": "05-reid",
+  "frozen_before_tracking_comparison": true,
+  "cases": [
+    {"case_id": "JPN_AGE_1_000905_31.0", "role": "existing_failure_case", "frames": 930},
+    {"case_id": "JPN_AGE_1_001814_34.0", "role": "additional_clip", "frames": 1020},
+    {"case_id": "JPN_AGE_3_001351_19.0", "role": "additional_age_group_clip", "frames": 570}
+  ],
+  "variants": ["ocsort", "botsort_motion", "botsort_reid"],
+  "reid_weights": "osnet_x0_25_msmt17.pt",
+  "reid_sha256": "6f57607fed9f502b9efed546108132ee715df5a5b6e6932c6269bacb47f59f99",
+  "reid_source": "https://drive.google.com/uc?id=1sSwXSUlj4_tHZequ_iZ8w_Jh0VaRQMqF",
+  "reid_input_hw": [256, 128],
+  "reid_rotations": [0],
+  "all_recorded_actors_retained": true,
+  "manual_roi": false,
+  "strong_confidence": 0.1,
+  "weak_confidence": 0.02,
+  "birth_consecutive_strong_matches": 3,
+  "lost_buffer_s": 0.5,
+  "botsort": {
+    "track_high_thresh": 0.1,
+    "track_low_thresh": 0.02,
+    "new_track_thresh": 0.1,
+    "track_buffer": 15,
+    "match_thresh": 0.9,
+    "proximity_thresh": 0.9,
+    "appearance_thresh": 0.25,
+    "cmc_method": "ecc",
+    "frame_rate": 30,
+    "fuse_first_associate": false
+  },
+  "camera_motion_compensation": "identity_transform_fixed_camera_component_override",
+  "evaluation": {
+    "initial_sparse_review_step_frames": 15,
+    "dense_review_required_for_continuity_claim": true,
+    "metrics": ["observed_matches", "distinct_ids", "id_changes", "missing_samples", "actor_transfers", "recovery_gaps"],
+    "no_formal_hota_mota_without_dense_independent_ground_truth": true
+  }
+}

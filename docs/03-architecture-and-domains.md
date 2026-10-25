@@ -1,5 +1,9 @@
 # 03. Arquitectura i dominis
 
+> Actualització 0.5.0: el tracker de caixes és responsable de la identitat;
+> els backends i ReID són configurables. El recorregut implementat i els
+> nous contractes s’expliquen al [document 27](27-configurable-box-tracking.md).
+
 ## Organització adoptada
 
 Un únic paquet Python amb dominis funcionals, contractes compartits, coordinació d'aplicació i

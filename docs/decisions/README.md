@@ -17,3 +17,5 @@ Per una decisió nova: número següent, títol, data, estat, context, decisió,
 alternatives. Si queda substituïda, conservar el document i referenciar el nou ADR. Els
 models i criteris de selecció continuen oberts. El primer tracker té una decisió explícita,
 però la seva eficàcia sobre trampolí encara s'ha de mesurar.
+
+- [0008 — Identitat temporal de caixes i backends substituïbles](0008-box-identity-and-configurable-backends.md), implementada a 0.5.0.

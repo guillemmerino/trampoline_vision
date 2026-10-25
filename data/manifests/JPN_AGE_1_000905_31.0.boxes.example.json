@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "case_id": "JPN_AGE_1_000905_31.0",
+  "path_base": "manifest_directory",
+  "video": {
+    "path": "../../../TFM/jumping_score/output_clips/JPN_AGE_1_000905_31.0.mp4",
+    "expected": {
+      "width_px": 960,
+      "height_px": 1080,
+      "fps": 30.0,
+      "frame_count": 930,
+      "duration_s": 31.0
+    }
+  },
+  "detections": {
+    "primary": {
+      "format": "person_boxes_csv",
+      "path": "../../../TFM/Tracking_system/output_videos/JPN_AGE_1_000905_31.0_bboxes.csv",
+      "variant": "legacy_yolo_person_full_frame",
+      "frame_index_base": 0,
+      "coordinate_space": "original_frame_pixels",
+      "frame_coverage": "complete_video",
+      "rotation_provenance": "original_orientation"
+    }
+  },
+  "reference_metadata": {
+    "path": "../../../TFM/jumping_score/output_clips/clips_metadata_AGE_1.csv",
+    "delimiter": ";",
+    "row_match": {
+      "Clip Path": "/clips/JPN_AGE_1_000905_31.0.mp4"
+    },
+    "role": "external_reference_only",
+    "declared_duration_s": 25.0
+  },
+  "known_issues": [
+    "CSV det_id is local to each frame, not a person identity.",
+    "complete_video declares that absent CSV rows are negative detections, not missing records.",
+    "Detector confidence is not calibrated and low-confidence background boxes are preserved.",
+    "Independent pose matching and gymnast selection are not executed."
+  ]
+}

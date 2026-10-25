@@ -15,7 +15,7 @@ class TrackingSessionTests(unittest.TestCase):
 
     def session(self, confirmation_frames=1):
         """Injecta només el port extern; la lògica de sessió i els contractes són els reals."""
-        with patch("trampoline_vision.tracking.session.OCSortBackend") as factory:
+        with patch("trampoline_vision.tracking.session.create_backend") as factory:
             session = TrackingSession(TrackerConfig(confirmation_frames=confirmation_frames), 25)
         return session, factory.return_value
 

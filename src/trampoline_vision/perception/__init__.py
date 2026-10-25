@@ -1,5 +1,6 @@
-"""Espai reservat per executar models visuals i orientacions d'entrada.
+"""Models visuals desacoblats dels dominis de seguiment i puntuació.
 
-Encara no hi ha inferència implementada. Els backends futurs produiran dades
-compatibles amb els contractes interns que avui alimenta el lector enregistrat.
+appearance implementa descriptors OSNet preentrenats amb pesos locals verificats.
+La inferència de persones i poses i les orientacions continuen sent extensions
+futures. Importar aquest paquet no carrega cap xarxa ni biblioteca opcional.
 """

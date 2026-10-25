@@ -1,5 +1,9 @@
 # 07. Seguiment i selecció del gimnasta
 
+> Actualització 0.5.0: el tracker de caixes és responsable de la identitat;
+> els backends i ReID són configurables. El recorregut implementat i els
+> nous contractes s’expliquen al [document 27](27-configurable-box-tracking.md).
+
 ## Seguiment de múltiples persones
 
 El tracker manté identitats perquè l'escena conté més actors que el gimnasta objectiu. Una identitat

@@ -9,7 +9,8 @@ from dataclasses import dataclass
 import math
 
 from trampoline_vision.contracts.tracking import TrackSample, TrackingFrame, TrackingFrameResult
-from trampoline_vision.tracking.backend import OCSortBackend
+from trampoline_vision.tracking.factory import create_backend
+from trampoline_vision.contracts.appearance import FrameAppearance
 from trampoline_vision.tracking.config import TrackerConfig
 from trampoline_vision.tracking.errors import TrackingError
 
@@ -26,12 +27,13 @@ class TrackEvent:
 class TrackingSession:
     """Consumeix tots els fotogrames consecutius, inclosos buits, preservant el temps original."""
 
-    def __init__(self, config: TrackerConfig, nominal_fps: float):
+    def __init__(self, config: TrackerConfig, nominal_fps: float, *, backend=None):
         """Valida la freqüència de referència i inicialitza un backend i registre nous."""
         if isinstance(nominal_fps, bool) or not isinstance(nominal_fps, (int, float)) or not math.isfinite(nominal_fps) or nominal_fps <= 0:
             raise TrackingError("nominal_fps must be positive and finite")
         self.config = config
-        self.backend = OCSortBackend(config, nominal_fps)
+        self.backend = backend if backend is not None else create_backend(config, nominal_fps)
+        self.appearance_fingerprint = None
         self.previous_context = None
         self.live: dict[int, TrackSample] = {}
         self.pending: dict[int, int] = {}  # ID públic extern -> ratxa de mesures; encara no és identitat confirmada.
@@ -39,7 +41,7 @@ class TrackingSession:
         self.events: tuple[TrackEvent, ...] = ()
         self.failed = False  # Un backend que ha fallat pot tenir estat parcial: cal crear una sessió nova.
 
-    def update(self, frame: TrackingFrame) -> TrackingFrameResult:
+    def update(self, frame: TrackingFrame, appearance: FrameAppearance | None = None) -> TrackingFrameResult:
         """Valida seqüència, executa associació i retorna mostres i partició completa de candidats."""
         if self.failed:
             raise TrackingError("Session failed previously; start a new session")
@@ -52,17 +54,30 @@ class TrackingSession:
               or context.timestamp_s <= previous.timestamp_s
               or (context.width_px, context.height_px) != (previous.width_px, previous.height_px)):
             raise TrackingError("Tracking requires consecutive frames, increasing times and a single video geometry")
+        required = getattr(self.backend, "requires_appearance", False) is True
+        if required:
+            if not isinstance(appearance, FrameAppearance) or appearance.context != context:
+                raise TrackingError("Selected backend requires appearance from the same frame")
+            measured = {c.candidate_id for c in frame.candidates if c.measurement is not None}
+            if {e.candidate_id for e in appearance.embeddings} != measured:
+                raise TrackingError("Appearance does not cover measured candidates exactly")
+            if self.appearance_fingerprint is not None and self.appearance_fingerprint != appearance.model_fingerprint:
+                raise TrackingError("Appearance model changed during the tracking session")
+        elif appearance is not None:
+            raise TrackingError("Selected backend does not consume appearance")
         try:
-            result = self._update(frame)
+            result = self._update(frame, appearance)
         except Exception:
             self.failed = True
             raise
         self.previous_context = context
+        if appearance is not None:
+            self.appearance_fingerprint = appearance.model_fingerprint
         return result
 
-    def _update(self, frame: TrackingFrame) -> TrackingFrameResult:
+    def _update(self, frame: TrackingFrame, appearance: FrameAppearance | None = None) -> TrackingFrameResult:
         """Reconcilia la resposta pública del backend amb evidència actual i identitats anteriors."""
-        response = self.backend.update(frame)
+        response = self.backend.update(frame) if appearance is None else self.backend.update(frame, appearance)
         candidates = {c.candidate_id: c for c in frame.candidates}
         measured = {cid for cid, c in candidates.items() if c.measurement is not None}
         assignment_ids = [cid for cid, _ in response.assignments]
@@ -88,7 +103,8 @@ class TrackingSession:
                     raise TrackingError("Backend exposed a new identity without a current observation")
                 # Un miss interromp la ratxa de naixement; no comptem la primera
                 # detecció -1 perquè encara no tenim una identitat externa auditable.
-                streak = self.pending.get(tid, 0) + 1 if tid in associated else 0
+                strong = tid in associated and candidates[associated[tid]].measurement.score >= self.config.confidence_threshold
+                streak = self.pending.get(tid, 0) + 1 if strong else 0
                 if streak < self.config.confirmation_frames:
                     next_pending[tid] = streak
                     continue

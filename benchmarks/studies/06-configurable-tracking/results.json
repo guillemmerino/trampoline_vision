@@ -1,0 +1,182 @@
+{
+  "software_version": "0.5.0",
+  "purpose": "integration_regression_not_accuracy_evaluation",
+  "cases": {
+    "JPN_AGE_1_000905_31.0": {
+      "descriptor_max_absolute_error": {
+        "0": 0.0,
+        "465": 0.0,
+        "929": 0.0
+      },
+      "variants": {
+        "ocsort": {
+          "compared_frames": 930,
+          "different_frames": [],
+          "exact": true
+        },
+        "botsort_motion": {
+          "compared_frames": 930,
+          "different_frames": [],
+          "exact": true
+        },
+        "botsort_reid": {
+          "compared_frames": 930,
+          "different_frames": [],
+          "exact": true
+        }
+      },
+      "bytetrack_smoke_frames": 930
+    },
+    "JPN_AGE_1_001814_34.0": {
+      "descriptor_max_absolute_error": {
+        "0": 0.0,
+        "510": 0.0,
+        "1019": 0.0
+      },
+      "variants": {
+        "ocsort": {
+          "compared_frames": 1020,
+          "different_frames": [],
+          "exact": true
+        },
+        "botsort_motion": {
+          "compared_frames": 1020,
+          "different_frames": [],
+          "exact": true
+        },
+        "botsort_reid": {
+          "compared_frames": 1020,
+          "different_frames": [],
+          "exact": true
+        }
+      },
+      "bytetrack_smoke_frames": 1020
+    },
+    "JPN_AGE_3_001351_19.0": {
+      "descriptor_max_absolute_error": {
+        "0": 0.0,
+        "285": 0.0,
+        "569": 0.0
+      },
+      "variants": {
+        "ocsort": {
+          "compared_frames": 570,
+          "different_frames": [],
+          "exact": true
+        },
+        "botsort_motion": {
+          "compared_frames": 570,
+          "different_frames": [],
+          "exact": true
+        },
+        "botsort_reid": {
+          "compared_frames": 570,
+          "different_frames": [],
+          "exact": true
+        }
+      },
+      "bytetrack_smoke_frames": 570
+    }
+  },
+  "public_replay": {
+    "frames": 930,
+    "appearance": {
+      "provider": "osnet_x0_25_msmt17",
+      "weights_sha256": "6f57607fed9f502b9efed546108132ee715df5a5b6e6932c6269bacb47f59f99",
+      "preprocessing": "boxmot-16.0.9-bgr-rgb-imagenet-256x128-v1",
+      "dimensions": 512,
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "boxmot": "16.0.9",
+        "torch": "2.5.1+cpu",
+        "torchvision": "0.20.1+cpu",
+        "numpy": "2.4.6",
+        "opencv-python": "4.14.0.94",
+        "av": "16.1.0"
+      },
+      "fingerprint": "89aeb7b2311273b2498ab157bca76079b643854f2316659dc3f7c3f1035ce0ba",
+      "weights_path": "/workspace/trampoline-vision/runs/reid-models/osnet_x0_25_msmt17.pt",
+      "model_loaded": false,
+      "verified_backbone_tensors": null,
+      "cache_path": "/workspace/trampoline-vision/runs/tracking-integration-06/cache/8c2c9a4f4d0244af07eb2742e0e1d801b3d1a41d9246543b9b359c98e59b5099.sqlite3",
+      "cache_hit_frames": 930,
+      "cache_miss_frames": 0,
+      "extracted_candidates": 0
+    }
+  },
+  "public_inference": {
+    "first_appearance": {
+      "provider": "osnet_x0_25_msmt17",
+      "weights_sha256": "6f57607fed9f502b9efed546108132ee715df5a5b6e6932c6269bacb47f59f99",
+      "preprocessing": "boxmot-16.0.9-bgr-rgb-imagenet-256x128-v1",
+      "dimensions": 512,
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "boxmot": "16.0.9",
+        "torch": "2.5.1+cpu",
+        "torchvision": "0.20.1+cpu",
+        "numpy": "2.4.6",
+        "opencv-python": "4.14.0.94",
+        "av": "16.1.0"
+      },
+      "fingerprint": "89aeb7b2311273b2498ab157bca76079b643854f2316659dc3f7c3f1035ce0ba",
+      "weights_path": "/workspace/trampoline-vision/runs/reid-models/osnet_x0_25_msmt17.pt",
+      "model_loaded": true,
+      "verified_backbone_tensors": 565,
+      "cache_path": "/workspace/trampoline-vision/runs/tracking-integration-06/live-cache/8c2c9a4f4d0244af07eb2742e0e1d801b3d1a41d9246543b9b359c98e59b5099.sqlite3",
+      "cache_hit_frames": 0,
+      "cache_miss_frames": 3,
+      "extracted_candidates": 60
+    },
+    "second_appearance": {
+      "provider": "osnet_x0_25_msmt17",
+      "weights_sha256": "6f57607fed9f502b9efed546108132ee715df5a5b6e6932c6269bacb47f59f99",
+      "preprocessing": "boxmot-16.0.9-bgr-rgb-imagenet-256x128-v1",
+      "dimensions": 512,
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "boxmot": "16.0.9",
+        "torch": "2.5.1+cpu",
+        "torchvision": "0.20.1+cpu",
+        "numpy": "2.4.6",
+        "opencv-python": "4.14.0.94",
+        "av": "16.1.0"
+      },
+      "fingerprint": "89aeb7b2311273b2498ab157bca76079b643854f2316659dc3f7c3f1035ce0ba",
+      "weights_path": "/workspace/trampoline-vision/runs/reid-models/osnet_x0_25_msmt17.pt",
+      "model_loaded": false,
+      "verified_backbone_tensors": null,
+      "cache_path": "/workspace/trampoline-vision/runs/tracking-integration-06/live-cache/8c2c9a4f4d0244af07eb2742e0e1d801b3d1a41d9246543b9b359c98e59b5099.sqlite3",
+      "cache_hit_frames": 3,
+      "cache_miss_frames": 0,
+      "extracted_candidates": 0
+    },
+    "video_validation": {
+      "frame_sequence_verified": true,
+      "identity_accuracy": "not_evaluated",
+      "visual_alignment_status": "pending_human_review",
+      "frame_count_verified": true,
+      "timestamps_verified": true,
+      "max_timestamp_error_s": 0.0,
+      "duration_error_s": 0.0
+    }
+  },
+  "all_traces_exact": true,
+  "verification": {
+    "docker_installed_wheel_tests": 112,
+    "windows_core_tests_passed": 89,
+    "windows_optional_tests_skipped": 23,
+    "pip_check": "passed",
+    "compose_config": "passed",
+    "example_cli": {
+      "software_version": "0.5.0",
+      "backend": "botsort",
+      "appearance_enabled": true,
+      "frames": 6,
+      "extracted_candidates": 120
+    }
+  }
+}

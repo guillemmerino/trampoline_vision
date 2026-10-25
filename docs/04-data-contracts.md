@@ -1,5 +1,9 @@
 # 04. Contractes de dades
 
+> Actualització 0.5.0: el tracker de caixes és responsable de la identitat;
+> els backends i ReID són configurables. El recorregut implementat i els
+> nous contractes s’expliquen al [document 27](27-configurable-box-tracking.md).
+
 Versió implementada per al recorregut d’entrada: 1.0. `contracts/observations.py` defineix
 `VideoAsset`, `FrameContext`, `KeypointObservation`, `DetectionProvenance`, `PersonDetection` i
 `FrameDetections` amb validació i dataclasses immutables. BODY_25 té 25 noms fixos. Els contractes

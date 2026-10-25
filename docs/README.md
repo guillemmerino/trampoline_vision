@@ -32,6 +32,8 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [23. Correcció i millores](23-confirmation-fix-and-improvement-study.md) | Confirmació 0.4.0, regressió i tres experiments de configuració. |
 | [24. Diagnòstic de geometria i evidència feble](24-final-geometry-and-weak-evidence-diagnosis.md) | Set prototips aïllats, ByteTrack, revisió de caixes i decisió del següent increment. |
 | [25. Tracking amb caixes independents](25-independent-box-tracking-study.md) | Set proves amb YOLO enregistrat, mostra de trajectòria i límits de continuïtat. |
+| [26. Comparació amb ReID](26-reid-tracking-comparison.md) | Tres clips, BoT-SORT amb/sense aparença, vídeos comparatius i cache per refinar. |
+| [27. Tracking configurable](27-configurable-box-tracking.md) | Identitat de caixes, quatre perfils, ReID extern, cache i Docker. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions
@@ -54,6 +56,14 @@ L'estudi 04 ja prova les caixes YOLO independents sobre el clip complet:
 milloren la cobertura, però persisteixen fragmentació i transferències d'actor.
 Hi ha una mostra local revisada amb prediccions i ambigüitats explícites;
 veure document 25. L'associació de poses independents encara no s'ha validat.
+L'estudi 05 compara OC-SORT i BoT-SORT amb/sense ReID en tres clips complets.
+L'aparença redueix els canvis mínims entre matches revisats, però encara hi ha
+fragmentació. Es conserven vídeos, trajectòries i cache de descriptors per
+refinar sense repetir inferència; veure document 26. El backend de producció
+es va mantenir sense canvis durant aquest pilot.
+A 0.5.0 el seguiment de caixes ja té adaptadors configurables OC-SORT, ByteTrack
+i BoT-SORT amb/sense ReID extern, CSV canònic i cache verificat. El matching de
+poses i la coherència de l’actor continuen pendents; veure document 27.
 La selecció del gimnasta, la segmentació i l'API continuen pendents.
 Els altres contractes avançats i les rutes API són propostes.
 Els canvis de comportament hauran d'actualitzar el document afectat i, si canvien una frontera

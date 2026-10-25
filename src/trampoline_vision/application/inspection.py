@@ -17,7 +17,7 @@ from uuid import uuid4
 from trampoline_vision import __version__
 from trampoline_vision.contracts.observations import SCHEMA_VERSION, VideoAsset
 from trampoline_vision.ingestion.manifest import CaseManifest
-from trampoline_vision.ingestion.openpose import iter_openpose_frames
+from trampoline_vision.ingestion.detections import iter_recorded_frames
 
 
 def inspect_case(manifest: CaseManifest, video: VideoAsset, *, missing_frames_policy: str = "report",
@@ -39,7 +39,7 @@ def inspect_case(manifest: CaseManifest, video: VideoAsset, *, missing_frames_po
               "valid_observed_keypoints": 0, "missing_keypoints": 0, "out_of_frame_keypoints": 0}
     # L’informe limita la mostra de buits a 100 índexs; el JSONL opcional conserva tots els fotogrames.
     missing_sample = []
-    for frame in iter_openpose_frames(manifest, video, missing_frames_policy=missing_frames_policy):
+    for frame in iter_recorded_frames(manifest, video, missing_frames_policy=missing_frames_policy):
         counts["frames"] += 1
         if frame.source_status == "missing":
             counts["missing_source_records"] += 1
@@ -87,12 +87,12 @@ def inspect_case(manifest: CaseManifest, video: VideoAsset, *, missing_frames_po
         "software_version": __version__, "case_id": manifest.case_id,
         "inputs": {"manifest": str(manifest.path), "video": str(video.path), "detections": str(manifest.detections_path)},
         "resolved_options": {"missing_frames_policy": missing_frames_policy, "frame_index_base": manifest.frame_index_base,
-                             "coordinate_space": "original_frame_pixels", "skeleton_schema": "openpose_body25",
+                             "coordinate_space": "original_frame_pixels", "skeleton_schema": None if manifest.detections_format == "person_boxes_csv" else "openpose_body25",
                              "variant": manifest.variant, "rotation_provenance": manifest.rotation_provenance},
         "video": {**actual, "source_start_s": video.source_start_s,
                   "first_timestamp_s": video.timestamps_s[0], "last_timestamp_s": video.timestamps_s[-1],
                   "timeline_source": "ffprobe_presentation_timestamps"},
         "counts": counts, "warnings": warnings, "known_input_issues": list(manifest.known_issues),
-        "capabilities_executed": ["video_timeline", "recorded_openpose_reading", "internal_contract_conversion"],
+        "capabilities_executed": ["video_timeline", ("recorded_boxes_reading" if manifest.detections_format == "person_boxes_csv" else "recorded_openpose_reading"), "internal_contract_conversion"],
         "capabilities_not_executed": ["inference", "deduplication", "tracking", "subject_selection", "segmentation", "scoring", "annotated_video"],
     }

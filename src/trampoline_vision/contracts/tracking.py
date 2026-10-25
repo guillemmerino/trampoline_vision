@@ -11,6 +11,7 @@ import math
 from typing import Literal
 
 from trampoline_vision.contracts.observations import FrameDetections
+from trampoline_vision.contracts.geometry import BoundingBox
 
 
 TRACKING_SCHEMA_VERSION = "1.0"  # Versió semàntica dels contractes; encara sense serialitzador públic.
@@ -36,29 +37,6 @@ def _identifiers(values: tuple[str, ...], name: str) -> None:
         _identifier(value, name)
     if len(set(values)) != len(values):
         raise ValueError(f"Duplicate {name}")
-
-
-@dataclass(frozen=True)
-class BoundingBox:
-    """Rectangle xyxy d'àrea positiva en píxels del fotograma original.
-
-    X creix cap a la dreta i Y cap avall; xmax/ymax són límits geomètrics,
-    sense sumar un píxel al càlcul de l'àrea. Pot sortir de la imatge: retallar
-    és una política de preparació o dibuix, no una mutació del contracte.
-    Una caixa de punts visibles no garanteix representar el cos complet.
-    """
-
-    x_min: float  # Límit esquerre en píxels, que pot ser negatiu.
-    y_min: float  # Límit superior en píxels, que pot ser negatiu.
-    x_max: float  # Límit dret estrictament superior a x_min.
-    y_max: float  # Límit inferior estrictament superior a y_min.
-
-    def __post_init__(self) -> None:
-        """Impedeix caixes degenerades o nombres incompatibles amb l'associació."""
-        for name in ("x_min", "y_min", "x_max", "y_max"):
-            _finite(getattr(self, name), name)
-        if self.x_max <= self.x_min or self.y_max <= self.y_min:
-            raise ValueError("Bounding box must have positive width and height")
 
 
 @dataclass(frozen=True)

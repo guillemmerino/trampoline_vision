@@ -33,6 +33,8 @@ class CaseManifest:
     expected: dict  # Metadades de referència per comparar, no per substituir el vídeo real.
     declared_reference_duration_s: float | None  # Durada externa opcional; una diferència genera avís.
     known_issues: tuple[str, ...]  # Limitacions declarades del cas que es traslladen a l’informe.
+    detections_format: str = "openpose_json_zip"  # Lector seleccionat, independent del tracker.
+    frame_coverage: str = "listed_frames_only"  # Semàntica explícita dels buits del CSV.
 
 
 def load_manifest(path: Path) -> CaseManifest:
@@ -56,10 +58,18 @@ def load_manifest(path: Path) -> CaseManifest:
             raise ValueError("case_id must be a non-empty string")
         video = obj["video"]
         detections = obj["detections"]["primary"]
-        if detections["format"] not in {"openpose_json_zip", "openpose_json_directory"}:
-            raise ValueError("Only OpenPose JSON ZIP/directory sources are implemented")
-        if detections["skeleton_schema"] != "openpose_body25":
-            raise ValueError("Only openpose_body25 is supported")
+        if detections["format"] not in {"openpose_json_zip", "openpose_json_directory", "person_boxes_csv"}:
+            raise ValueError("Unsupported recorded detections format")
+        if detections["format"] != "person_boxes_csv":
+            if detections["skeleton_schema"] != "openpose_body25":
+                raise ValueError("Only openpose_body25 is supported")
+        elif detections.get("skeleton_schema") is not None:
+            raise ValueError("Box detections do not declare a skeleton")
+        coverage = detections.get("frame_coverage", "listed_frames_only")
+        if coverage not in ("complete_video", "listed_frames_only"):
+            raise ValueError("Unknown frame_coverage")
+        if detections["format"] == "person_boxes_csv" and "frame_coverage" not in detections:
+            raise ValueError("Box CSV requires explicit frame_coverage")
         if detections["coordinate_space"] != "original_frame_pixels":
             raise ValueError("Preconvert detections to original_frame_pixels before replay")
         base = detections["frame_index_base"]
@@ -74,7 +84,7 @@ def load_manifest(path: Path) -> CaseManifest:
             resolved.append((path.parent / value).resolve())
         if not resolved[0].is_file():
             raise ValueError(f"Video does not exist: {resolved[0]}")
-        if detections["format"] == "openpose_json_zip" and not resolved[1].is_file():
+        if detections["format"] in ("openpose_json_zip", "person_boxes_csv") and not resolved[1].is_file():
             raise ValueError(f"Detection ZIP does not exist: {resolved[1]}")
         if detections["format"] == "openpose_json_directory" and not resolved[1].is_dir():
             raise ValueError(f"Detection directory does not exist: {resolved[1]}")
@@ -100,7 +110,7 @@ def load_manifest(path: Path) -> CaseManifest:
         return CaseManifest(path, case_id, *resolved, base,
                             str(detections.get("variant", "recorded")),
                             str(detections.get("rotation_provenance", "unknown")),
-                            expected, duration, tuple(issues))
+                            expected, duration, tuple(issues), detections["format"], coverage)
     except (InputError, ValueError, TypeError, KeyError) as exc:
         raise ManifestError(f"Invalid manifest {path}: {exc}") from exc
 
