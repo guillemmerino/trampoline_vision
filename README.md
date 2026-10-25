@@ -36,7 +36,9 @@ docker compose --profile tracking run --rm tests-tracking
 docker compose --profile tracking run --rm tracking track --config configs/pipelines/track-openpose.json --start 0 --end 3 --output runs/tracking-01.json --video-output runs/tracking-01.mp4
 ```
 
-La primera execució de seguiment del vídeo real queda per a la propera revisió.
+El baseline real i la correcció de confirmació 0.4.0 s'han estudiat als
+trams 0–3 s i 14–17 s. La [comparació](docs/23-confirmation-fix-and-improvement-study.md)
+explica què s'ha corregit i per què la identitat física encara no està validada.
 La [guia de validació](docs/21-tracking-validation-guide.md) explica estats,
 anotacions manuals, comparació de configuracions i criteris per millorar.
 

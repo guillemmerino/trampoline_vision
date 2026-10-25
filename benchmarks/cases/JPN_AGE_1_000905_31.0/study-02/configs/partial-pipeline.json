@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "task": "track_recorded_detections",
+  "case_manifest": "/workspace/trampoline-vision/data/manifests/JPN_AGE_1_000905_31.0.example.json",
+  "preparation_config": "/experiments/partial-preparation.json",
+  "missing_frames_policy": "report",
+  "tracker": {
+    "backend": "ocsort",
+    "confirmation_policy": "birth_streak_v1",
+    "confidence_threshold": 0.1,
+    "confirmation_frames": 3,
+    "max_lost_s": 0.5,
+    "min_iou": 0.1,
+    "direction_weight": 0.2,
+    "velocity_lookback_frames": 3
+  }
+}

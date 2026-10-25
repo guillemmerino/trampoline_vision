@@ -1,0 +1,25 @@
+{
+  "video_id": "JPN_AGE_1_000905_31.0",
+  "variant": "ocsort_boxes",
+  "track_id": "ocsort:36",
+  "range": [400, 486],
+  "selection": "manual_diagnostic_id_and_interval_after_replay",
+  "review_method": "visual_contact_sheets_all_87_frames_original_video_and_observed_boxes",
+  "independent_human_review": false,
+  "ambiguous_frames": [437, 438, 439, 440, 441, 442, 486],
+  "ambiguity_reason": "athlete_near_front_spotter_box_extent_can_include_both_bodies",
+  "predicted_frames": [406, 408, 449, 450, 474, 475, 481],
+  "observed_unflagged_contiguous_example": [409, 436],
+  "outside_interval_failures": [
+    {"frames": [300, 360, 390], "observation": "same_id_on_judge_row_while_athlete_elsewhere"},
+    {"frame": 495, "observation": "athlete_matches_ocsort_78_not_ocsort_36"}
+  ],
+  "limitations": [
+    "not_a_dense_independent_ground_truth",
+    "unflagged_does_not_mean_precise_body_extent",
+    "no_claim_of_full_clip_identity_continuity",
+    "box_center_not_center_of_mass_or_joint_trajectory",
+    "predictions_are_not_observations",
+    "no_pose_association_evaluated"
+  ]
+}

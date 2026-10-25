@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "box": {
+    "min_keypoint_confidence": 0.0,
+    "min_points": 4,
+    "min_anatomical_groups": 2,
+    "require_core": true,
+    "min_span_px": 1.0,
+    "min_span_image_ratio": 0.002,
+    "padding_ratio": 0.05
+  },
+  "deduplication": {
+    "enabled": false,
+    "min_box_iou": 0.7,
+    "min_shared_points": 4,
+    "max_point_distance_ratio": 0.08
+  }
+}

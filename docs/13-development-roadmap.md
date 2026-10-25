@@ -40,6 +40,26 @@ la validació de continuïtat: hi ha canvis d'actor i una bretxa de semàntica e
 reconfirmació. L'increment continua obert; prioritats i evidència al
 [document 22](22-first-tracking-baseline-review.md).
 
+La bretxa de reconfirmació està corregida a 0.4.0, amb confirmació pròpia de
+naixements i recuperació immediata, 95 proves i repetició dels dos trams.
+S'han comparat confiança 0.05, deduplicació i suport sense core; cap variant
+justifica canviar els defaults. L'acceptació de continuïtat continua oberta;
+veure [document 23](23-confirmation-fix-and-improvement-study.md).
+
+L'estudi 03 contrasta set variants de geometria i associació alta/baixa,
+inclosa una política estricta de naixements forts. Cap variant demostra
+seguiment prou estable del gimnasta amb les mesures actuals. El següent
+experiment prioritari és separar caixes de persona i pose, amb anotació
+independent i validació d'inversions; veure [diagnòstic 24](24-final-geometry-and-weak-evidence-diagnosis.md).
+
+L'estudi 04 ja ha executat l'experiment de caixes independents: set controls
+sobre els 930 fotogrames del clip. La cobertura geomètrica del gimnasta millora,
+però els IDs encara es fragmenten i es transfereixen a altres actors.
+S'ha exportat una mostra revisada de 2,9 s amb prediccions i caixes ambigües
+explícites; no resol la continuïtat global. El següent treball necessita
+anotació més densa, recuperació d'identitat i validació de l'associació de poses;
+veure [document 25](25-independent-box-tracking-study.md).
+
 Implementar validació, deduplicació configurable i un primer tracker amb vida explícita.
 Comparar casos amb pose deficient, múltiples actors i desaparicions. Registrar assignacions
 i generar vídeo anotat amb trajectòries.

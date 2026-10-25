@@ -11,6 +11,7 @@ la decisió guia el desenvolupament; no significa que totes les funcionalitats e
 | [0004](0004-separate-scoring-and-quality.md) | accepted | Separar qualitat visual i puntuació esportiva. |
 | [0005](0005-ocsort-library-and-tracking-boundary.md) | accepted | OC-SORT via trackers 2.6.1 com a baseline i contractes independents. |
 | [0006](0006-tracking-session-and-sparse-review.md) | accepted | Sessió temporal amb confirmació pública, exportació i revisió dispersa. |
+| [0007](0007-confirm-births-without-reconfirmation.md) | accepted | Confirmar només naixements; substitueix la política de confirmació de 0006. |
 
 Per una decisió nova: número següent, títol, data, estat, context, decisió, conseqüències i
 alternatives. Si queda substituïda, conservar el document i referenciar el nou ADR. Els

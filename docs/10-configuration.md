@@ -69,6 +69,12 @@ cap inferència visual. Rang temporal i rutes de sortida s'indiquen per CLI.
 L'informe desa tots els defaults resolts i el pressupost temporal efectiu.
 Veure [guia 21](21-tracking-validation-guide.md).
 
+Des de 0.4.0, `tracker.confirmation_policy` admet `birth_streak_v1` i
+`confirmation_frames` compta associacions consecutives d'un naixement al domini.
+El backend sempre usa mínim intern 1 per exposar recuperacions immediates.
+Ometre la política resol el nou default; no reprodueix 0.3.0. Migració i
+comparació a la [guia 23](23-confirmation-fix-and-improvement-study.md).
+
 ## Visualització executable
 
 `visualize-openpose.json` utilitza schema 1.0 i task `visualize_recorded_detections`.

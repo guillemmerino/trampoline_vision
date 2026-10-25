@@ -16,8 +16,8 @@ from trampoline_vision.tracking.errors import TrackingError
 class BackendUpdate:
     """Resposta normalitzada: assignacions actuals i caixes estimades de totes les identitats vives."""
 
-    assignments: tuple[tuple[str, int], ...]  # candidate_id -> ID extern, inclòs -1 sense confirmar.
-    alive: tuple[tuple[int, BoundingBox | None], ...]  # ID extern confirmat -> estimació; None si és invàlida.
+    assignments: tuple[tuple[str, int], ...]  # candidate_id -> ID extern; -1 encara sense ID públic del backend.
+    alive: tuple[tuple[int, BoundingBox | None], ...]  # ID extern -> estimació; la sessió decideix confirmació de domini.
 
 
 class OCSortBackend:
@@ -36,7 +36,10 @@ class OCSortBackend:
         self.np, self.sv = np, sv
         self.tracker = OCSORTTracker(
             lost_track_buffer=config.lost_buffer, frame_rate=nominal_fps,
-            minimum_consecutive_frames=config.confirmation_frames,
+            # Amb 1, una mesura d'un ID existent sempre s'exposa en reapareixer.
+            # La confirmació de naixements es gestiona a TrackingSession; no es
+            # consulta estat privat ni es reconfirma cada recuperació.
+            minimum_consecutive_frames=1,
             minimum_iou_threshold=config.min_iou,
             direction_consistency_weight=config.direction_weight,
             high_conf_det_threshold=config.confidence_threshold,

@@ -9,6 +9,8 @@ preparació de caixes i deduplicació opcional: vegeu la [guia 20](20-pose-candi
 Estat posterior: adaptador, sessió d'identitats, CLI, exportació i vídeo ja estan
 implementats; veure [guia 21](21-tracking-validation-guide.md). Aquest document
 conserva el context de l'elecció i els contractes; la precisió real continua pendent.
+La confirmació actual de naixements i la correcció 0.4.0 es descriuen a la
+[guia 23](23-confirmation-fix-and-improvement-study.md), que substitueix la política del baseline 0.3.0.
 
 L'elecció inicial és **OC-SORT mitjançant `trackers==2.6.1` de Roboflow**.
 És una implementació de l'algoritme a partir de l'article, no un embolcall del

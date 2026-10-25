@@ -37,5 +37,10 @@ recuperació es poden exportar com lost/predicted tot i existir detecció actual
 No llegeix estat privat ni modifica el codi o els paràmetres del baseline real.
 Sortida guardada a `runs/tracking-review-01/confirmation-probe.json`.
 
+El reproduïdor anterior descriu 0.3.0 i requereix el seu runtime històric:
+les seves assercions ja no han de passar amb el paquet corregit. La regressió
+0.4.0 és a `tests/integration/test_tracking.py`. La correcció i els experiments
+posteriors són a [study-02](study-02/README.md) i al document 23.
+
 L'estudi complet descriu aquesta limitació de la integració: els comptatges
 lost/predicted no són una mesura directa de fotogrames sense detecció real.

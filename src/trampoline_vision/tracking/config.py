@@ -11,8 +11,9 @@ class TrackerConfig:
     """Política d'OC-SORT en unitats explícites, independent del dibuix i de la selecció del gimnasta."""
 
     backend: str = "ocsort"  # Únic backend registrat; altres noms generen error.
+    confirmation_policy: str = "birth_streak_v1"  # Confirmar només naixements, sense ocultar recuperacions.
     confidence_threshold: float = 0.1  # Admissió a associació i naixement, sense passada de confiança baixa.
-    confirmation_frames: int = 3  # Confirmació gestionada pel backend; -1 no es publica com a identitat.
+    confirmation_frames: int = 3  # Mesures consecutives amb el mateix ID públic extern per confirmar un naixement.
     max_lost_s: float = 0.5  # Temps des de l'última observació abans d'expirar, arrodonit a unitats d'1/30 s.
     min_iou: float = 0.1  # Solapament mínim per associació; hipòtesi inicial a provar.
     direction_weight: float = 0.2  # Pes de consistència de direcció, sense unitats.
@@ -22,6 +23,8 @@ class TrackerConfig:
         """Rebutja opcions incompatibles abans de carregar dependències o processar dades."""
         if self.backend != "ocsort":
             raise ValueError("Only the ocsort backend is implemented")
+        if self.confirmation_policy != "birth_streak_v1":
+            raise ValueError("Only birth_streak_v1 confirmation is implemented")
         _number(self.confidence_threshold, "confidence_threshold", 0, 1)
         _count(self.confirmation_frames, "confirmation_frames", 1, 1000)
         _number(self.max_lost_s, "max_lost_s", 0, 3600)

@@ -6,14 +6,15 @@ Ja existeix el recorregut executable complet de deteccions enregistrades:
 ingestió → preparació → OC-SORT → registre d'identitats → JSONL/informe i
 vídeo opcional. També hi ha una comanda de diagnòstic amb anotacions manuals.
 El codi i les proves utilitzen els mateixos contractes i no depenen del clip de
-referència. **El vídeo real no s'ha executat en aquest increment.**
+referència. El baseline real 0.3.0 i la correcció 0.4.0 estan documentats als
+[estudis 22](22-first-tracking-baseline-review.md) i [23](23-confirmation-fix-and-improvement-study.md).
 
 La validació sintètica comprova funcionament, temps, procedència i publicació.
 No demostra encara precisió sobre gimnastes petits, invertits o parcialment
 observats. L'increment de tracking queda tècnicament preparat; la seva acceptació
 sobre les dades reals continua pendent. Selecció del gimnasta i salts vindran després.
 
-La versió del paquet d'aquest lliurable és 0.3.0. La verificació cobreix 91
+La versió actual és 0.4.0. La verificació cobreix 95
 proves a Docker Linux CPU amb Python 3.11, inclosa la dependència real i vídeos
 sintètics. Cap d'aquestes proves utilitza el vídeo original de TFM.
 
@@ -33,7 +34,7 @@ continua disponible per a inspecció i visualització sense instal·lar OC-SORT.
 Fora de Docker: entorn virtual nou amb `pip install ".[tracking,visualization]"`
 i FFmpeg/ffprobe al PATH. No actualitzar l'entorn antic de TFM.
 
-## Primera prova real, a executar en la propera revisió
+## Executar una prova real
 
 Començar amb tres segons i noms nous per a cada execució:
 
@@ -62,7 +63,7 @@ ometre `--start` i `--end`. Per estudiar només dades, ometre `--video-output`.
 
 ## Què significa cada estat
 
-- Les deteccions amb ID extern -1 encara no tenen identitat confirmada. Queden
+- Les deteccions amb ID extern -1 encara no tenen ID públic del backend. Queden
   com a candidats sense assignar; no es creen IDs provisionals a partir de la
   seva posició a l'array ni es reconstrueixen identitats passades silenciosament.
 - `active`/`observed`: mesura actual assignada. La caixa és la del candidat,
@@ -75,9 +76,11 @@ ometre `--start` i `--end`. Per estudiar només dades, ometre `--video-output`.
 
 Es registren esdeveniments `confirmed`, `lost`, `recovered` i `finished` amb
 temps original. `tentative` és part del vocabulari del contracte, però aquest
-adaptador no l'emet: la biblioteca no exposa identitats provisionals estables
-mitjançant l'API pública utilitzada. `confirmation_frames` es passa a la seva
-política de confirmació; la primera emissió depèn també del naixement del track.
+adaptador no l'emet: els IDs externs pendents es mantenen interns fins a
+confirmar-los. `confirmation_frames` controla la ratxa de naixement al domini,
+amb política `birth_streak_v1`. El mínim intern d'OC-SORT és 1, de manera que
+una recuperació d'identitat coneguda no es reconfirma. La primera detecció -1
+no suma a la ratxa perquè encara no sabem a quin ID pertany. Veure guia 23.
 
 Una sessió exigeix inici a índex/temps zero, fotogrames consecutius, temps
 estrictament creixents i vídeo/dimensions constants. Per canviar de vídeo,

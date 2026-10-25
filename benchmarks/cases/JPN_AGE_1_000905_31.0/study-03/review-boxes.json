@@ -1,0 +1,258 @@
+{
+  "schema_version": "review-boxes-1.0",
+  "video_id": "JPN_AGE_1_000905_31.0",
+  "annotation_type": "approximate_visible_extent_visual_review",
+  "independently_validated": false,
+  "samples": [
+    {
+      "frame_index": 15,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        205,
+        695,
+        265,
+        880
+      ]
+    },
+    {
+      "frame_index": 15,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 30,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        220,
+        515,
+        270,
+        710
+      ]
+    },
+    {
+      "frame_index": 30,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 45,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        195,
+        345,
+        290,
+        605
+      ]
+    },
+    {
+      "frame_index": 45,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 60,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        225,
+        525,
+        305,
+        720
+      ]
+    },
+    {
+      "frame_index": 60,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 75,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        250,
+        650,
+        330,
+        855
+      ]
+    },
+    {
+      "frame_index": 75,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 89,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        240,
+        405,
+        325,
+        610
+      ]
+    },
+    {
+      "frame_index": 89,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 420,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        285,
+        405,
+        340,
+        615
+      ]
+    },
+    {
+      "frame_index": 420,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 435,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        295,
+        665,
+        355,
+        870
+      ]
+    },
+    {
+      "frame_index": 450,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        245,
+        535,
+        425,
+        710
+      ]
+    },
+    {
+      "frame_index": 450,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 465,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        280,
+        365,
+        370,
+        575
+      ]
+    },
+    {
+      "frame_index": 465,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 480,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        255,
+        625,
+        385,
+        765
+      ]
+    },
+    {
+      "frame_index": 480,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 495,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        255,
+        625,
+        395,
+        755
+      ]
+    },
+    {
+      "frame_index": 495,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    },
+    {
+      "frame_index": 509,
+      "subject_id": "gymnast",
+      "bbox_xyxy": [
+        285,
+        385,
+        375,
+        615
+      ]
+    },
+    {
+      "frame_index": 509,
+      "subject_id": "rear_spotter",
+      "bbox_xyxy": [
+        285,
+        750,
+        350,
+        822
+      ]
+    }
+  ]
+}

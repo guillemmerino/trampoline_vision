@@ -1,5 +1,8 @@
 # 22. Primera prova real del tracking i estudi del baseline
 
+Document històric del baseline 0.3.0. La correcció i comparació posterior són
+al [document 23](23-confirmation-fix-and-improvement-study.md); els artefactes d'aquest estudi es preserven.
+
 ## Resultat
 
 El recorregut tècnic funciona sobre els dos trams reals, però **el baseline
@@ -74,8 +77,10 @@ de la persona. Aquest fet limita la interpretació de l'avaluador pilot actual.
 ### Hi ha evidència del gimnasta que la preparació deixa sense caixa
 
 Al fotograma 450, `450:85` té 5 punts observats a la zona del gimnasta. Es
-conserva, però `require_core` impedeix obtenir mesura per falta d'ancoratge
-anatòmic. `450:88` té 3 punts i també falla el mínim de punts.
+conserva, però incompleix el suport anatòmic: no té core i els cinc noms
+pertanyen al mateix grup legs, per sota del mínim de dos grups. L'estudi 02
+ha confirmat que desactivar només require_core no resol aquest cas.
+`450:88` té 3 punts i també falla el mínim de punts.
 No és correcte resumir aquest cas dient que OpenPose no ha detectat res.
 Tampoc es pot afirmar que aquests fragments siguin una pose completa correcta.
 

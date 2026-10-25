@@ -29,6 +29,9 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [20. Preparació de candidats](20-pose-candidate-preparation.md) | Caixes, confiança, deduplicació opcional i ús des de Python. |
 | [21. Validació del tracking](21-tracking-validation-guide.md) | CLI, identitats, exportació/vídeo, anotacions i iteració de criteris. |
 | [22. Primer baseline real](22-first-tracking-baseline-review.md) | Proves 0–3/14–17 s, canvi d'identitat i limitació de reconfirmació descoberta. |
+| [23. Correcció i millores](23-confirmation-fix-and-improvement-study.md) | Confirmació 0.4.0, regressió i tres experiments de configuració. |
+| [24. Diagnòstic de geometria i evidència feble](24-final-geometry-and-weak-evidence-diagnosis.md) | Set prototips aïllats, ByteTrack, revisió de caixes i decisió del següent increment. |
+| [25. Tracking amb caixes independents](25-independent-box-tracking-study.md) | Set proves amb YOLO enregistrat, mostra de trajectòria i límits de continuïtat. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions
@@ -45,6 +48,12 @@ temporal, JSONL, informe i vídeo opcional. Hi ha diagnòstic d'anotacions dispe
 proves sintètiques; la precisió sobre el vídeo real continua pendent de validació.
 La primera revisió real ja s'ha executat: el baseline falla en continuïtat d'identitat
 i revela una limitació de reconfirmació de l'adaptador; veure document 22.
+La limitació de reconfirmació ja està corregida a 0.4.0 amb 95 proves i
+noves execucions reals; els canvis d'actor continuen pendents de resolució, veure document 23.
+L'estudi 04 ja prova les caixes YOLO independents sobre el clip complet:
+milloren la cobertura, però persisteixen fragmentació i transferències d'actor.
+Hi ha una mostra local revisada amb prediccions i ambigüitats explícites;
+veure document 25. L'associació de poses independents encara no s'ha validat.
 La selecció del gimnasta, la segmentació i l'API continuen pendents.
 Els altres contractes avançats i les rutes API són propostes.
 Els canvis de comportament hauran d'actualitzar el document afectat i, si canvien una frontera

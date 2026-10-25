@@ -54,6 +54,24 @@ class TrackingBackendIntegrationTests(unittest.TestCase):
         result = session.update(tracking_frame(3, 1.04))
         self.assertNotEqual(result.tracks[0].track_id, first)
 
+    def test_default_confirmation_has_no_hidden_associations_after_a_miss(self):
+        """Regressió real del cas 0.3.0: amb naixements a 3, les mesures 7 i 8 ja són observades després del buit 6."""
+        session = TrackingSession(TrackerConfig(confirmation_frames=3), 30)
+        results = []
+        for i in range(10):
+            results.append(session.update(tracking_frame(i, i / 30, () if i == 6 else ("a",))))
+        self.assertEqual(results[0].tracks, ())
+        self.assertEqual(results[1].tracks, ())
+        self.assertEqual(results[2].tracks, ())
+        self.assertEqual(results[3].tracks[0].evidence, "observed")
+        identity = results[5].tracks[0].track_id
+        self.assertEqual(results[6].tracks[0].evidence, "predicted")
+        for i in (7, 8, 9):
+            self.assertEqual(results[i].tracks[0].track_id, identity)
+            self.assertEqual(results[i].tracks[0].evidence, "observed")
+            self.assertAlmostEqual(results[i].tracks[0].last_observed_timestamp_s, i / 30)
+            self.assertEqual(results[i].unassigned_candidate_ids, ())
+
 
 @unittest.skipUnless(importlib.util.find_spec("trackers") and importlib.util.find_spec("av") and shutil.which("ffmpeg") and shutil.which("ffprobe"),
                      "Tracking Docker image with FFmpeg and visualization required")

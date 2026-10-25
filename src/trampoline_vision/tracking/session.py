@@ -1,6 +1,6 @@
 """Seguiment temporal amb registre propi d'identitats i transicions auditables.
 
-El backend decideix associació i confirmació. La sessió preserva últimes
+El backend decideix associació; la sessió confirma només els naixements. Preserva últimes
 observacions i explicita pèrdues, recuperacions i expiracions sense fabricar
 articulacions. Una sessió mai es reutilitza per un altre vídeo.
 """
@@ -34,6 +34,7 @@ class TrackingSession:
         self.backend = OCSortBackend(config, nominal_fps)
         self.previous_context = None
         self.live: dict[int, TrackSample] = {}
+        self.pending: dict[int, int] = {}  # ID públic extern -> ratxa de mesures; encara no és identitat confirmada.
         self.finished: set[int] = set()
         self.events: tuple[TrackEvent, ...] = ()
         self.failed = False  # Un backend que ha fallat pot tenir estat parcial: cal crear una sessió nova.
@@ -67,21 +68,33 @@ class TrackingSession:
         assignment_ids = [cid for cid, _ in response.assignments]
         if len(set(assignment_ids)) != len(assignment_ids) or set(assignment_ids) != measured:
             raise TrackingError("Backend assignments do not cover measured candidates exactly once")
-        assigned = {tid: cid for cid, tid in response.assignments if tid >= 0}
+        associated = {tid: cid for cid, tid in response.assignments if tid >= 0}
         valid_ids = [tid for _, tid in response.assignments if tid >= 0]
         alive = dict(response.alive)
-        if (len(assigned) != len(valid_ids) or len(alive) != len(response.alive)
+        if (len(associated) != len(valid_ids) or len(alive) != len(response.alive)
                 or any(tid < -1 for _, tid in response.assignments) or any(tid < 0 for tid in alive)
-                or not set(assigned) <= set(alive) or set(alive) & self.finished):
+                or not set(associated) <= set(alive) or set(alive) & self.finished):
             raise TrackingError("Backend returned invalid, repeated or reused track identities")
         now = frame.source.context.timestamp_s
         samples, events = [], []
         next_live = {}
+        next_pending = {}
+        assigned = {}  # Només les associacions d'identitats confirmades consumeixen candidats de sortida.
         for tid in sorted(alive):
             track_id = f"{self.config.backend}:{tid}"
             before = self.live.get(tid)
-            if tid in assigned:
-                cid = assigned[tid]
+            if before is None:
+                if tid not in associated and tid not in self.pending:
+                    raise TrackingError("Backend exposed a new identity without a current observation")
+                # Un miss interromp la ratxa de naixement; no comptem la primera
+                # detecció -1 perquè encara no tenim una identitat externa auditable.
+                streak = self.pending.get(tid, 0) + 1 if tid in associated else 0
+                if streak < self.config.confirmation_frames:
+                    next_pending[tid] = streak
+                    continue
+            if tid in associated:
+                cid = associated[tid]
+                assigned[tid] = cid
                 sample = TrackSample(track_id, "active", "observed", candidates[cid].measurement.bbox, cid, now)
                 if before is None:
                     events.append(TrackEvent(track_id, "confirmed", now))
@@ -100,7 +113,10 @@ class TrackingSession:
             samples.append(TrackSample(before.track_id, "finished", "predicted", None, None, before.last_observed_timestamp_s))
             events.append(TrackEvent(before.track_id, "finished", now))
             self.finished.add(tid)
+        # Els pendents que expiren no emeten finalització pública, però el seu
+        # ID extern queda retirat igualment per impedir-ne una reutilització.
+        self.finished.update(set(self.pending) - set(alive))
         unassigned = tuple(cid for cid in candidates if cid not in set(assigned.values()))
         result = TrackingFrameResult(frame, tuple(samples), unassigned)
-        self.live, self.events = next_live, tuple(events)
+        self.live, self.pending, self.events = next_live, next_pending, tuple(events)
         return result

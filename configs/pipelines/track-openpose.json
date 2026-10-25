@@ -6,6 +6,7 @@
   "missing_frames_policy": "report",
   "tracker": {
     "backend": "ocsort",
+    "confirmation_policy": "birth_streak_v1",
     "confidence_threshold": 0.1,
     "confirmation_frames": 3,
     "max_lost_s": 0.5,

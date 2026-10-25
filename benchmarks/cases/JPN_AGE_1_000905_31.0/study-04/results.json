@@ -1,0 +1,5620 @@
+{
+  "study": "04_recorded_independent_yolo_boxes",
+  "software_version": "0.4.0",
+  "trackers_version": "2.6.1",
+  "replay": {
+    "software_version": "0.4.0",
+    "video_id": "JPN_AGE_1_000905_31.0",
+    "video": {
+      "path": "/workspace/TFM/jumping_score/output_clips/JPN_AGE_1_000905_31.0.mp4",
+      "frames": 930,
+      "width": 960,
+      "height": 1080,
+      "duration_s": 31.0
+    },
+    "csv": {
+      "path": "/workspace/TFM/Tracking_system/output_videos/JPN_AGE_1_000905_31.0_bboxes.csv",
+      "sha256": "3e4113fac77a187fcfe2c59b002c5a5f0c91fcd1b4509afe28ebf5486317e096",
+      "rows": 18600,
+      "frame_index_base": 0,
+      "per_frame_counts": [
+        20
+      ]
+    },
+    "variants": {
+      "ocsort_boxes": {
+        "kind": "ocsort",
+        "tracker_config": {
+          "backend": "ocsort",
+          "confirmation_policy": "birth_streak_v1",
+          "confidence_threshold": 0.1,
+          "confirmation_frames": 3,
+          "max_lost_s": 0.5,
+          "min_iou": 0.1,
+          "direction_weight": 0.2,
+          "velocity_lookback_frames": 3
+        }
+      },
+      "byte_boxes_high": {
+        "kind": "byte_high",
+        "tracker_config": {
+          "backend": "ocsort",
+          "confirmation_policy": "birth_streak_v1",
+          "confidence_threshold": 0.1,
+          "confirmation_frames": 3,
+          "max_lost_s": 0.5,
+          "min_iou": 0.1,
+          "direction_weight": 0.2,
+          "velocity_lookback_frames": 3
+        }
+      },
+      "byte_boxes_weak": {
+        "kind": "byte_strict",
+        "tracker_config": {
+          "backend": "ocsort",
+          "confirmation_policy": "birth_streak_v1",
+          "confidence_threshold": 0.1,
+          "confirmation_frames": 3,
+          "max_lost_s": 0.5,
+          "min_iou": 0.1,
+          "direction_weight": 0.2,
+          "velocity_lookback_frames": 3
+        }
+      },
+      "ocsort_low": {
+        "kind": "ocsort",
+        "tracker_config": {
+          "backend": "ocsort",
+          "confirmation_policy": "birth_streak_v1",
+          "confidence_threshold": 0.02,
+          "confirmation_frames": 3,
+          "max_lost_s": 0.5,
+          "min_iou": 0.1,
+          "direction_weight": 0.2,
+          "velocity_lookback_frames": 3
+        }
+      },
+      "ocsort_iou002": {
+        "kind": "ocsort",
+        "tracker_config": {
+          "backend": "ocsort",
+          "confirmation_policy": "birth_streak_v1",
+          "confidence_threshold": 0.1,
+          "confirmation_frames": 3,
+          "max_lost_s": 0.5,
+          "min_iou": 0.02,
+          "direction_weight": 0.2,
+          "velocity_lookback_frames": 3
+        }
+      },
+      "ocsort_low_iou002": {
+        "kind": "ocsort",
+        "tracker_config": {
+          "backend": "ocsort",
+          "confirmation_policy": "birth_streak_v1",
+          "confidence_threshold": 0.02,
+          "confirmation_frames": 3,
+          "max_lost_s": 0.5,
+          "min_iou": 0.02,
+          "direction_weight": 0.2,
+          "velocity_lookback_frames": 3
+        }
+      },
+      "ocsort_low_iou002_dir0": {
+        "kind": "ocsort",
+        "tracker_config": {
+          "backend": "ocsort",
+          "confirmation_policy": "birth_streak_v1",
+          "confidence_threshold": 0.02,
+          "confirmation_frames": 3,
+          "max_lost_s": 0.5,
+          "min_iou": 0.02,
+          "direction_weight": 0,
+          "velocity_lookback_frames": 3
+        }
+      }
+    },
+    "counters_all_actors": {
+      "ocsort_boxes": {
+        "observed_samples": 11985,
+        "predicted_samples": 3022,
+        "confirmed": 111,
+        "lost": 635,
+        "recovered": 537,
+        "finished": 97
+      },
+      "byte_boxes_high": {
+        "observed_samples": 11901,
+        "predicted_samples": 3008,
+        "confirmed": 120,
+        "lost": 602,
+        "recovered": 495,
+        "finished": 106
+      },
+      "byte_boxes_weak": {
+        "observed_samples": 15981,
+        "predicted_samples": 2533,
+        "confirmed": 94,
+        "lost": 576,
+        "recovered": 502,
+        "finished": 73
+      },
+      "ocsort_low": {
+        "observed_samples": 17997,
+        "predicted_samples": 3625,
+        "confirmed": 126,
+        "lost": 793,
+        "recovered": 687,
+        "finished": 105
+      },
+      "ocsort_iou002": {
+        "observed_samples": 12001,
+        "predicted_samples": 2939,
+        "confirmed": 107,
+        "lost": 626,
+        "recovered": 532,
+        "finished": 93
+      },
+      "ocsort_low_iou002": {
+        "observed_samples": 18057,
+        "predicted_samples": 3527,
+        "confirmed": 115,
+        "lost": 812,
+        "recovered": 717,
+        "finished": 94
+      },
+      "ocsort_low_iou002_dir0": {
+        "observed_samples": 18049,
+        "predicted_samples": 3574,
+        "confirmed": 119,
+        "lost": 812,
+        "recovered": 713,
+        "finished": 98
+      }
+    },
+    "notes": [
+      "det_id_is_not_track_id",
+      "no_pose_input",
+      "no_new_inference",
+      "historical_detector_weights_not_recorded_in_csv",
+      "all_actors_retained"
+    ]
+  },
+  "geometry": {
+    "ocsort_boxes": {
+      "0.3": {
+        "threshold": 0.3,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 13,
+            "observed_matches": 11,
+            "id_changes_across_matches": 4,
+            "track_ids": [
+              "ocsort:0",
+              "ocsort:18",
+              "ocsort:24",
+              "ocsort:36",
+              "ocsort:78"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 2,
+            "observed_matches": 1,
+            "id_changes_across_matches": 0,
+            "track_ids": [
+              "ocsort:20"
+            ]
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:0",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:0",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": "ocsort:20",
+            "track_iou": 0.39786324786324784
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:0",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": "ocsort:24",
+            "track_iou": 0.44878048780487806
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:36",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": "ocsort:36",
+            "track_iou": 0.4399574920297556
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:36",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:36",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:78",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:78",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      },
+      "0.5": {
+        "threshold": 0.5,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 11,
+            "observed_matches": 9,
+            "id_changes_across_matches": 3,
+            "track_ids": [
+              "ocsort:0",
+              "ocsort:18",
+              "ocsort:36",
+              "ocsort:78"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 0,
+            "observed_matches": 0,
+            "id_changes_across_matches": 0,
+            "track_ids": []
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:0",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:0",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:0",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:36",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:36",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:36",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:78",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:78",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      }
+    },
+    "byte_boxes_high": {
+      "0.3": {
+        "threshold": 0.3,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 13,
+            "observed_matches": 12,
+            "id_changes_across_matches": 8,
+            "track_ids": [
+              "bytetrack:17",
+              "bytetrack:18",
+              "bytetrack:20",
+              "bytetrack:27",
+              "bytetrack:29",
+              "bytetrack:44",
+              "bytetrack:71",
+              "bytetrack:80",
+              "bytetrack:81"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 2,
+            "observed_matches": 1,
+            "id_changes_across_matches": 0,
+            "track_ids": [
+              "bytetrack:22"
+            ]
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "bytetrack:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "bytetrack:20",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": "bytetrack:22",
+            "track_iou": 0.39786324786324784
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": "bytetrack:27",
+            "track_iou": 0.44878048780487806
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "bytetrack:29",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "bytetrack:44",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": "bytetrack:44",
+            "track_iou": 0.4399574920297556
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "bytetrack:71",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "bytetrack:80",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "bytetrack:81",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "bytetrack:81",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      },
+      "0.5": {
+        "threshold": 0.5,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 11,
+            "observed_matches": 10,
+            "id_changes_across_matches": 7,
+            "track_ids": [
+              "bytetrack:17",
+              "bytetrack:18",
+              "bytetrack:20",
+              "bytetrack:29",
+              "bytetrack:44",
+              "bytetrack:71",
+              "bytetrack:80",
+              "bytetrack:81"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 0,
+            "observed_matches": 0,
+            "id_changes_across_matches": 0,
+            "track_ids": []
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "bytetrack:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "bytetrack:20",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "bytetrack:29",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "bytetrack:44",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "bytetrack:71",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "bytetrack:80",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "bytetrack:81",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "bytetrack:81",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      }
+    },
+    "byte_boxes_weak": {
+      "0.3": {
+        "threshold": 0.3,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 13,
+            "observed_matches": 13,
+            "id_changes_across_matches": 8,
+            "track_ids": [
+              "bytetrack:17",
+              "bytetrack:18",
+              "bytetrack:20",
+              "bytetrack:27",
+              "bytetrack:29",
+              "bytetrack:40",
+              "bytetrack:56",
+              "bytetrack:63",
+              "bytetrack:64"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 2,
+            "observed_matches": 1,
+            "id_changes_across_matches": 0,
+            "track_ids": [
+              "bytetrack:22"
+            ]
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "bytetrack:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "bytetrack:20",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": "bytetrack:22",
+            "track_iou": 0.39786324786324784
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": "bytetrack:27",
+            "track_iou": 0.44878048780487806
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "bytetrack:29",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "bytetrack:40",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": "bytetrack:40",
+            "track_iou": 0.4399574920297556
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "bytetrack:56",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "bytetrack:56",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "bytetrack:63",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "bytetrack:64",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "bytetrack:64",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      },
+      "0.5": {
+        "threshold": 0.5,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 11,
+            "observed_matches": 11,
+            "id_changes_across_matches": 7,
+            "track_ids": [
+              "bytetrack:17",
+              "bytetrack:18",
+              "bytetrack:20",
+              "bytetrack:29",
+              "bytetrack:40",
+              "bytetrack:56",
+              "bytetrack:63",
+              "bytetrack:64"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 0,
+            "observed_matches": 0,
+            "id_changes_across_matches": 0,
+            "track_ids": []
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "bytetrack:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "bytetrack:20",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "bytetrack:17",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "bytetrack:29",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "bytetrack:40",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "bytetrack:56",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "bytetrack:56",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "bytetrack:63",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "bytetrack:64",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "bytetrack:64",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      }
+    },
+    "ocsort_low": {
+      "0.3": {
+        "threshold": 0.3,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 13,
+            "observed_matches": 13,
+            "id_changes_across_matches": 6,
+            "track_ids": [
+              "ocsort:22",
+              "ocsort:27",
+              "ocsort:34",
+              "ocsort:37",
+              "ocsort:81",
+              "ocsort:92",
+              "ocsort:96"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 2,
+            "observed_matches": 1,
+            "id_changes_across_matches": 0,
+            "track_ids": [
+              "ocsort:30"
+            ]
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:22",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:27",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:27",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": "ocsort:30",
+            "track_iou": 0.39786324786324784
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:27",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": "ocsort:34",
+            "track_iou": 0.44878048780487806
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:37",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:81",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": "ocsort:81",
+            "track_iou": 0.4399574920297556
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "ocsort:92",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:92",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:92",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:96",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:96",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      },
+      "0.5": {
+        "threshold": 0.5,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 11,
+            "observed_matches": 11,
+            "id_changes_across_matches": 5,
+            "track_ids": [
+              "ocsort:22",
+              "ocsort:27",
+              "ocsort:37",
+              "ocsort:81",
+              "ocsort:92",
+              "ocsort:96"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 0,
+            "observed_matches": 0,
+            "id_changes_across_matches": 0,
+            "track_ids": []
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:22",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:27",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:27",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:27",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:37",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:81",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "ocsort:92",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:92",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:92",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:96",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:96",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      }
+    },
+    "ocsort_iou002": {
+      "0.3": {
+        "threshold": 0.3,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 13,
+            "observed_matches": 12,
+            "id_changes_across_matches": 5,
+            "track_ids": [
+              "ocsort:0",
+              "ocsort:18",
+              "ocsort:20",
+              "ocsort:26",
+              "ocsort:35",
+              "ocsort:75"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 2,
+            "observed_matches": 1,
+            "id_changes_across_matches": 0,
+            "track_ids": [
+              "ocsort:20"
+            ]
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:0",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:0",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": "ocsort:20",
+            "track_iou": 0.39786324786324784
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:0",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": "ocsort:20",
+            "track_iou": 0.44878048780487806
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:26",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:35",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": "ocsort:35",
+            "track_iou": 0.4399574920297556
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:35",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:35",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:75",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:75",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": [
+          "ocsort:20"
+        ]
+      },
+      "0.5": {
+        "threshold": 0.5,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 11,
+            "observed_matches": 10,
+            "id_changes_across_matches": 4,
+            "track_ids": [
+              "ocsort:0",
+              "ocsort:18",
+              "ocsort:26",
+              "ocsort:35",
+              "ocsort:75"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 0,
+            "observed_matches": 0,
+            "id_changes_across_matches": 0,
+            "track_ids": []
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:18",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:0",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:0",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:0",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:26",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:35",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:35",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:35",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:75",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:75",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      }
+    },
+    "ocsort_low_iou002": {
+      "0.3": {
+        "threshold": 0.3,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 13,
+            "observed_matches": 13,
+            "id_changes_across_matches": 5,
+            "track_ids": [
+              "ocsort:21",
+              "ocsort:31",
+              "ocsort:34",
+              "ocsort:74",
+              "ocsort:85",
+              "ocsort:89"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 2,
+            "observed_matches": 1,
+            "id_changes_across_matches": 0,
+            "track_ids": [
+              "ocsort:26"
+            ]
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:21",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": "ocsort:26",
+            "track_iou": 0.39786324786324784
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:21",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": "ocsort:31",
+            "track_iou": 0.44878048780487806
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:34",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:74",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": "ocsort:74",
+            "track_iou": 0.4399574920297556
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "ocsort:85",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:85",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:85",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      },
+      "0.5": {
+        "threshold": 0.5,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 11,
+            "observed_matches": 11,
+            "id_changes_across_matches": 4,
+            "track_ids": [
+              "ocsort:21",
+              "ocsort:34",
+              "ocsort:74",
+              "ocsort:85",
+              "ocsort:89"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 0,
+            "observed_matches": 0,
+            "id_changes_across_matches": 0,
+            "track_ids": []
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:21",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:21",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:34",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:74",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "ocsort:85",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:85",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:85",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      }
+    },
+    "ocsort_low_iou002_dir0": {
+      "0.3": {
+        "threshold": 0.3,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 13,
+            "observed_matches": 13,
+            "id_changes_across_matches": 5,
+            "track_ids": [
+              "ocsort:21",
+              "ocsort:31",
+              "ocsort:34",
+              "ocsort:77",
+              "ocsort:85",
+              "ocsort:89"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 2,
+            "observed_matches": 1,
+            "id_changes_across_matches": 0,
+            "track_ids": [
+              "ocsort:26"
+            ]
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:21",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": "ocsort:26",
+            "track_iou": 0.39786324786324784
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:21",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": "ocsort:31",
+            "track_iou": 0.44878048780487806
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:34",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:77",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": "ocsort:77",
+            "track_iou": 0.4399574920297556
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "ocsort:85",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:85",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:85",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      },
+      "0.5": {
+        "threshold": 0.5,
+        "subjects": {
+          "gymnast": {
+            "samples": 13,
+            "box_available": 11,
+            "observed_matches": 11,
+            "id_changes_across_matches": 4,
+            "track_ids": [
+              "ocsort:21",
+              "ocsort:34",
+              "ocsort:77",
+              "ocsort:85",
+              "ocsort:89"
+            ]
+          },
+          "rear_spotter": {
+            "samples": 12,
+            "box_available": 0,
+            "observed_matches": 0,
+            "id_changes_across_matches": 0,
+            "track_ids": []
+          }
+        },
+        "details": [
+          {
+            "frame_index": 15,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              205,
+              695,
+              265,
+              880
+            ],
+            "candidate_iou": 0.6804123711340206,
+            "candidate_score": 0.541874349117279,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6804123711340206
+          },
+          {
+            "frame_index": 15,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03504928806133625,
+            "candidate_score": 0.37029528617858887,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              220,
+              515,
+              270,
+              710
+            ],
+            "candidate_iou": 0.749565927892963,
+            "candidate_score": 0.5023928284645081,
+            "track_id": "ocsort:21",
+            "track_iou": 0.749565927892963
+          },
+          {
+            "frame_index": 30,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.38974358974358975,
+            "candidate_score": 0.5512974262237549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              195,
+              345,
+              290,
+              605
+            ],
+            "candidate_iou": 0.6710526315789473,
+            "candidate_score": 0.39627912640571594,
+            "track_id": "ocsort:21",
+            "track_iou": 0.6710526315789473
+          },
+          {
+            "frame_index": 45,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.39786324786324784,
+            "candidate_score": 0.5393667817115784,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              225,
+              525,
+              305,
+              720
+            ],
+            "candidate_iou": 0.5855050408978505,
+            "candidate_score": 0.28848695755004883,
+            "track_id": "ocsort:21",
+            "track_iou": 0.5855050408978505
+          },
+          {
+            "frame_index": 60,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03537735849056604,
+            "candidate_score": 0.36450332403182983,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              250,
+              650,
+              330,
+              855
+            ],
+            "candidate_iou": 0.44878048780487806,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 75,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.1514919663351186,
+            "candidate_score": 0.5127426981925964,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              240,
+              405,
+              325,
+              610
+            ],
+            "candidate_iou": 0.6783958602846054,
+            "candidate_score": 0.22536659240722656,
+            "track_id": "ocsort:34",
+            "track_iou": 0.6783958602846054
+          },
+          {
+            "frame_index": 89,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.029797377830750895,
+            "candidate_score": 0.4290340840816498,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              405,
+              340,
+              615
+            ],
+            "candidate_iou": 0.8138528138528138,
+            "candidate_score": 0.6332553625106812,
+            "track_id": "ocsort:77",
+            "track_iou": 0.8138528138528138
+          },
+          {
+            "frame_index": 420,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.572921633720398,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 435,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              295,
+              665,
+              355,
+              870
+            ],
+            "candidate_iou": 0.4399574920297556,
+            "candidate_score": 0.3729779124259949,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              245,
+              535,
+              425,
+              710
+            ],
+            "candidate_iou": 0.6135873015873016,
+            "candidate_score": 0.09486006200313568,
+            "track_id": "ocsort:85",
+            "track_iou": 0.6135873015873016
+          },
+          {
+            "frame_index": 450,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.04089887640449438,
+            "candidate_score": 0.5238588452339172,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              280,
+              365,
+              370,
+              575
+            ],
+            "candidate_iou": 0.7032858479775398,
+            "candidate_score": 0.43783020973205566,
+            "track_id": "ocsort:85",
+            "track_iou": 0.7032858479775398
+          },
+          {
+            "frame_index": 465,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03591160220994475,
+            "candidate_score": 0.547727644443512,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              385,
+              765
+            ],
+            "candidate_iou": 0.5754676413674479,
+            "candidate_score": 0.14537470042705536,
+            "track_id": "ocsort:85",
+            "track_iou": 0.5754676413674479
+          },
+          {
+            "frame_index": 480,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03561643835616438,
+            "candidate_score": 0.5459263324737549,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              255,
+              625,
+              395,
+              755
+            ],
+            "candidate_iou": 0.6638835877862596,
+            "candidate_score": 0.2514805197715759,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6638835877862596
+          },
+          {
+            "frame_index": 495,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.0968156137647663,
+            "candidate_score": 0.2514805197715759,
+            "track_id": null,
+            "track_iou": null
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "gymnast",
+            "bbox_xyxy": [
+              285,
+              385,
+              375,
+              615
+            ],
+            "candidate_iou": 0.6060386473429952,
+            "candidate_score": 0.5651987791061401,
+            "track_id": "ocsort:89",
+            "track_iou": 0.6060386473429952
+          },
+          {
+            "frame_index": 509,
+            "subject_id": "rear_spotter",
+            "bbox_xyxy": [
+              285,
+              750,
+              350,
+              822
+            ],
+            "candidate_iou": 0.03474387527839644,
+            "candidate_score": 0.5425026416778564,
+            "track_id": null,
+            "track_iou": null
+          }
+        ],
+        "ids_seen_on_both_subjects": []
+      }
+    }
+  },
+  "sample": {
+    "records": "runs/tracking-yolo-study-04/ocsort_boxes.frames.jsonl",
+    "selected_track_id": "ocsort:36",
+    "selection_method": "manual_diagnostic",
+    "range": [
+      400,
+      486
+    ],
+    "frames": 87,
+    "duration_s": 2.9,
+    "review": {
+      "video_id": "JPN_AGE_1_000905_31.0",
+      "variant": "ocsort_boxes",
+      "track_id": "ocsort:36",
+      "range": [
+        400,
+        486
+      ],
+      "selection": "manual_diagnostic_id_and_interval_after_replay",
+      "review_method": "visual_contact_sheets_all_87_frames_original_video_and_observed_boxes",
+      "independent_human_review": false,
+      "ambiguous_frames": [
+        437,
+        438,
+        439,
+        440,
+        441,
+        442,
+        486
+      ],
+      "ambiguity_reason": "athlete_near_front_spotter_box_extent_can_include_both_bodies",
+      "predicted_frames": [
+        406,
+        408,
+        449,
+        450,
+        474,
+        475,
+        481
+      ],
+      "observed_unflagged_contiguous_example": [
+        409,
+        436
+      ],
+      "outside_interval_failures": [
+        {
+          "frames": [
+            300,
+            360,
+            390
+          ],
+          "observation": "same_id_on_judge_row_while_athlete_elsewhere"
+        },
+        {
+          "frame": 495,
+          "observation": "athlete_matches_ocsort_78_not_ocsort_36"
+        }
+      ],
+      "limitations": [
+        "not_a_dense_independent_ground_truth",
+        "unflagged_does_not_mean_precise_body_extent",
+        "no_claim_of_full_clip_identity_continuity",
+        "box_center_not_center_of_mass_or_joint_trajectory",
+        "predictions_are_not_observations",
+        "no_pose_association_evaluated"
+      ]
+    },
+    "validation": {
+      "frame_count_verified": true,
+      "timestamps_verified": true,
+      "max_timestamp_error_s": 1.7763568394002505e-15,
+      "duration_error_s": 1.3322676295501878e-15,
+      "visual_alignment_status": "pending_human_review"
+    },
+    "totals": {
+      "tracking": {
+        "observed": 80,
+        "predicted": 7,
+        "ambiguous": 7
+      }
+    },
+    "limitations": [
+      "box_center_is_not_center_of_mass",
+      "no_pose_association",
+      "no_identity_stitching",
+      "video_timing_validation_does_not_validate_identity",
+      "no_exhaustive_independent_annotations"
+    ]
+  },
+  "limitations": [
+    "sparse_approximate_review_boxes",
+    "no_dense_ground_truth",
+    "no_pose_quality_evaluation"
+  ]
+}
