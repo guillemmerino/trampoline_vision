@@ -34,6 +34,7 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [25. Tracking amb caixes independents](25-independent-box-tracking-study.md) | Set proves amb YOLO enregistrat, mostra de trajectòria i límits de continuïtat. |
 | [26. Comparació amb ReID](26-reid-tracking-comparison.md) | Tres clips, BoT-SORT amb/sense aparença, vídeos comparatius i cache per refinar. |
 | [27. Tracking configurable](27-configurable-box-tracking.md) | Identitat de caixes, quatre perfils, ReID extern, cache i Docker. |
+| [28. Estructura de recovery](28-recovery-package-design.md) | Reconstrucció posterior al tracking: fitxers reservats, perfils de disseny i pla de construcció. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions

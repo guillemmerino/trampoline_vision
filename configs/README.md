@@ -19,3 +19,7 @@ Només l’últim referencia `models/osnet-msmt17.json`, amb pesos locals,
 SHA-256, dispositiu i cache. Les rutes són relatives al fitxer que les declara.
 Cap d’aquests fitxers no executa matching d’esquelets ni coherència de l’actor.
 Veure la [guia 27](../docs/27-configurable-box-tracking.md).
+
+`recovery/` conté únicament exemples `0.1-draft`, `design-only`, tots desactivats.
+No són acceptats pel pipeline executable. El seu abast i pla d'implementació
+s'expliquen al [document 28](../docs/28-recovery-package-design.md).

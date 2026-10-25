@@ -79,6 +79,15 @@ Finalització: una identitat sobreviu als casos breus definits de pèrdua i cap 
 assignacions. Els casos que continuïn fallant queden identificats, no amagats amb farciments.
 La continuïtat del backend escollit i els seus llindars es decidiran amb evidència dels casos.
 
+### Preparació de recovery
+
+S'ha creat l'estructura del paquet posterior al tracking complet, amb
+reconstrucció global prevista i exemples de configuració desactivats.
+Encara no hi ha contractes implementats ni algoritmes, i el tracking actual
+manté el seu comportament. El [document 28](28-recovery-package-design.md)
+defineix l'ordre: contractes/configuració, fragments, evidències, associació
+i validació, cas d'ús i proves sobre traces existents.
+
 ## Increment 3 — Subjecte i salts
 
 Construir polítiques de candidats, primera selecció provisional i segmentador interpretable.

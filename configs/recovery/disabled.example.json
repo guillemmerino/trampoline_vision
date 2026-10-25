@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1-draft",
+  "implementation_status": "design-only",
+  "enabled": false,
+  "execution": "offline_global",
+  "mode": "audit",
+  "strategy": null,
+  "appearance": null,
+  "parameters": {}
+}

@@ -51,6 +51,13 @@ incorpora dades ni pesos. La regressió compara els tres clips amb l’estudi
 anterior; el [protocol d’integració](benchmarks/studies/06-configurable-tracking/README.md)
 distingeix aquesta comprovació d’una avaluació de precisió.
 
+## Recovery: estructura preparada
+
+`src/trampoline_vision/recovery/` reserva el mòdul posterior al tracking complet
+per relacionar fragments amb actors. Els fitxers documenten responsabilitats;
+encara no hi ha algoritme ni integració executable. Els perfils de recovery
+són exemples de disseny desactivats. Vegeu el [pla de construcció](docs/28-recovery-package-design.md).
+
 ## Provar i validar el baseline OpenPose
 
 ```powershell
