@@ -1,9 +1,10 @@
 # 28. Estructura i construcció del paquet recovery
 
-Estat: estructura preparada; algoritmes, contractes i integració pendents.
-L'acord és començar pel paquet i derivar criteris de recuperació mitjançant
-intents i proves. Aquest increment crea ubicacions i responsabilitats,
-no una funcionalitat activable en execució. Es manté la versió 0.5.0.
+Estat actual: passos 1–3 implementats a 0.6.0 (contractes, lectura/fragmentació
+i diagnòstic). La reconstrucció d'actors dels passos 4–6 continua pendent.
+La [guia executable 29](29-recovery-fragment-inspection.md) descriu com revisar
+fragments abans d'estudiar les unions. Els criteris de recuperació es derivaran
+de proves; no es considera el mòdul de recovery complet o robust encara.
 
 ## Lloc dins del projecte
 
@@ -34,14 +35,14 @@ d'actor pot passar sense canvi d'ID. La política de detecció/divisió serà
 explícita i contrastada amb exemples, sense interpretar una inversió com
 una prova automàtica de canvi de persona.
 
-Els contractes hauran de preservar timestamps, caixes, candidate_id,
+Els contractes de fragments ja preserven timestamps, caixes, candidate_id,
 procedència i evidència observada/predita, així com l'estat de cada decisió.
 Unir fragments no genera una mesura dins del buit que els separa.
 L'absència d'una correspondència prou clara serà un resultat vàlid.
 
-## Mapa dels fitxers reservats
+## Mapa de components
 
-| Fitxer sota `src/trampoline_vision/` | Responsabilitat futura |
+| Fitxer sota `src/trampoline_vision/` | Responsabilitat |
 | --- | --- |
 | `contracts/recovery.py` | Fragments, evidències, enllaços, decisions i trajectòries d'actor. |
 | `recovery/config.py` | Valors validats, activació i opcions experimentals. |
@@ -58,16 +59,18 @@ L'absència d'una correspondència prou clara serà un resultat vàlid.
 | `application/recovery.py` | Recursos, dades, aparença i publicació del cas d'ús. |
 | `results/recovery.py` | Exportació de decisions i futura visualització d'actors. |
 
-Els fitxers Python contenen només docstrings. No s'exposen signatures,
-classes o funcions provisionals que puguin semblar operatives. Els comentaris
-expliquen les entrades, sortides i dependències que caldrà concretar.
+Contractes, configuració de fragments, pipeline de preparació, tracklets,
+validació, lectors, cas d'ús i resultats ja són executables. motion, appearance,
+coherence i association continuen reservats a les etapes d'unió. La validació
+actual prova partició i vida del tracker; encara no valida cadenes d'actors.
 
 ## Activació i perfils
 
-`configs/recovery/` reserva tres exemples: desactivat, geometria i geometria
-amb aparença. Tots declaren `enabled: false` i `implementation_status: design-only`.
-Els camps són un esborrany; canviar el booleà no activa una funcionalitat.
-El pipeline actual no accepta recovery_config i no s'ha modificat.
+`configs/recovery/fragments.json` i `fragments-disabled.json` són perfils
+executables 1.0 de la comanda inspect-fragments. Activen/desactiven la preparació,
+mai un rematching. Els tres *.example.json d'associació continuen desactivats
+i design-only, i són rebutjats pel lector executable. El pipeline de tracking
+encara no accepta recovery_config: la preparació és un cas d'ús posterior independent.
 
 Quan s'implementi, disabled conservarà el recorregut existent; audit
 exportarà propostes i apply publicarà també la reconstrucció d'actors.
@@ -85,8 +88,8 @@ La validació de trajectòries i les alternatives competidores són parts pròpi
 El JSONL actual exporta decisions i candidats; no inclou els descriptors.
 Caldrà associar-los amb els mateixos inputs i fingerprint del model, des
 del cache o l'extractor actual. No s'acceptaran vectors només perquè tinguin
-la mateixa dimensió. També caldrà validar cobertura: un JSONL pot ser un
-interval i no el vídeo complet que espera el primer mode global.
+la mateixa dimensió. La cobertura ja es valida contra la timeline sondejada: el primer increment
+rebutja intervals parcials i exigeix el vídeo complet.
 
 Ara application.tracking obté aparença quan la necessita el tracker.
 En integrar recovery caldrà permetre que la demani el tracker o el
@@ -99,24 +102,17 @@ tracking original. La reconstrucció es podrà repetir canviant criteris
 sense tornar a executar el detector o tracker, amb els inputs necessaris
 disponibles. La inferència d'aparença faltant serà un cost separat i explícit.
 
-## Ordre proposat dels increments
+## Seqüència acordada de desenvolupament
 
-1. Definir contractes, invariants i configuració executable desactivada.
-2. Llegir traces completes i construir fragments amb casos sintètics.
-3. Implementar evidències geomètriques i generar propostes en mode audit.
-4. Incorporar aparença verificada, resolució global i validació de cadenes.
-5. Connectar cas d'ús, perfils, artefactes i visualització; després habilitar apply.
-6. Comparar variants sobre els clips existents i refinar a partir dels errors.
+1. Contractes i invariants — implementat a 0.6.0.
+2. Lector de tracking complet i constructor de fragments — implementat.
+3. Diagnòstic amb informe, JSONL i visualització — implementat.
+4. Propostes d'enllaç amb geometria/moviment en audit — futur.
+5. Aparença verificada, resolució global i validació de cadenes — futur.
+6. Comparació independent i posterior habilitació d'apply — futur.
 
-Es reserven carpetes amb plans de proves a tests/unit/recovery,
-tests/integration/recovery i tests/regression/recovery. Encara no contenen
-tests executables. Cal mesurar unions equivocades, recuperacions correctes,
-fragmentació i cobertura observada amb referències independents. No es
-presentarà una trajectòria contínua visualment com a identitat validada.
-
-## Abast d'aquest increment
-
-S'han creat estructura, exemples i documentació, sense nous algorismes,
-dependències, API pública, comandes CLI ni canvis de comportament de tracking.
-No s'han executat vídeos ni reconstruït actors. El següent treball comença
-amb els contractes i la construcció de fragments, no amb l'ajust d'un solver.
+Els passos 4–6 i els seus criteris es detallen a la [guia 29](29-recovery-fragment-inspection.md).
+Hi ha proves unitàries, d'integració i regressió sintètica executables a
+tests/unit/recovery, tests/integration/recovery i tests/regression/recovery.
+Les unions equivocades, la cobertura i la continuïtat física encara no
+s'han avaluat: no hi ha actors reconstruïts en aquest increment.

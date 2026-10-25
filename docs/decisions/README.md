@@ -19,4 +19,6 @@ models i criteris de selecció continuen oberts. El primer tracker té una decis
 però la seva eficàcia sobre trampolí encara s'ha de mesurar.
 
 - [0008 — Identitat temporal de caixes i backends substituïbles](0008-box-identity-and-configurable-backends.md), implementada a 0.5.0.
-- [0009 — Reconstrucció separada després del tracking complet](0009-offline-recovery-boundary.md), disseny adoptat i estructura creada; implementació pendent.
+- [0009 — Reconstrucció separada després del tracking complet](0009-offline-recovery-boundary.md), disseny adoptat; preparació implementada a 0.6.0 i associació pendent.
+
+- [0010 — Fragments observats i buits explícits abans del rematching](0010-observed-fragments-and-explicit-gaps.md), implementada a 0.6.0.

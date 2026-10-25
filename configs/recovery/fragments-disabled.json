@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "task": "inspect_tracking_fragments",
+  "enabled": false,
+  "policy": "consecutive_observations_v1"
+}

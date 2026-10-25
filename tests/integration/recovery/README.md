@@ -1,7 +1,6 @@
-# Proves d'integració futures de recovery
+# Proves de recovery
 
-Espai preparat; encara no hi ha proves executables ni cas d'ús.
-Comprovar lectura de tracking complet, fingerprints/procedència, perfils,
-reutilització d'aparença, desactivació, auditoria/aplicació i artefactes nous.
-Verificar que els resultats originals es preserven i que un error tardà
-no publica una reconstrucció parcial com a completa.
+CLI, publicació, preservació d’inputs, perfils i vídeo sintètic amb timestamps verificats.
+Les proves de vídeo requereixen l’extra visualization i FFmpeg/ffprobe.
+
+Vegeu [guia 29](../../../docs/29-recovery-fragment-inspection.md).

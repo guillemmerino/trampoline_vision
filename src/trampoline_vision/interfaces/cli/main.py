@@ -15,6 +15,9 @@ import shutil
 import sys
 import tempfile
 
+from trampoline_vision.application.recovery import inspect_tracking_fragments
+from trampoline_vision.ingestion.recovery_config import load_fragmentation_config
+from trampoline_vision.recovery.config import FragmentationConfig
 from trampoline_vision.application.inspection import inspect_case
 from trampoline_vision.application.visualization import visualize_case
 from trampoline_vision.application.tracking import track_case
@@ -98,6 +101,17 @@ def _run_tracking(args) -> int:
     return 0
 
 
+def _run_fragment_inspection(args) -> int:
+    """Diagnostica tracking acabat amb perfils de preparació, sense inferència ni associació."""
+    config = load_fragmentation_config(args.config) if args.config else FragmentationConfig()
+    inspect_tracking_fragments(args.tracking_report, args.output, tracks_path=args.tracks,
+        video_path=args.video, fragments_output=args.fragments_output, video_output=args.video_output,
+        config=config, ffprobe=args.ffprobe, probe_timeout_s=args.probe_timeout, progress=_render_progress,
+        protected_paths=(args.config,) if args.config else ())
+    print(f"Fragment inspection complete: {args.output.resolve()}")
+    return 0
+
+
 def _run_tracking_evaluation(args) -> int:
     """Publica diagnòstics d'anotacions revisades sense carregar dependències de tracking o vídeo."""
     destination = args.output.resolve()
@@ -124,7 +138,7 @@ def main(argv: list[str] | None = None) -> int:
     lectura amb o sense avisos i 2 per errors esperats d'entrada o sortida.
     argparse gestiona per separat l'ajuda i els errors de sintaxi d'arguments.
     """
-    parser = argparse.ArgumentParser(prog="trampoline-vision", description="Inspect, visualize, track and evaluate recorded poses on CPU.")
+    parser = argparse.ArgumentParser(prog="trampoline-vision", description="Inspect, track, evaluate and prepare trajectory fragments on CPU.")
     subparsers = parser.add_subparsers(dest="command", required=True)
     inspect = subparsers.add_parser("inspect", help="Read recorded BODY_25 detections; no inference, tracking or scoring.")
     # Es parteix d’un manifest directe o d’una configuració; exigir-ne un evita ambigüitat.
@@ -164,12 +178,24 @@ def main(argv: list[str] | None = None) -> int:
     evaluate.add_argument("--tracks", type=Path, required=True)
     evaluate.add_argument("--annotations", type=Path, required=True)
     evaluate.add_argument("--output", type=Path, required=True)
+    fragments = subparsers.add_parser("inspect-fragments", help="Inspect fragments of completed full-video tracking; no actor reconstruction.")
+    fragments.add_argument("--tracking-report", type=Path, required=True, help="Report produced by track over the complete video.")
+    fragments.add_argument("--tracks", type=Path, help="Override input JSONL path, e.g. after moving artifacts from Docker.")
+    fragments.add_argument("--video", type=Path, help="Override original video path for coverage verification and optional rendering.")
+    fragments.add_argument("--config", type=Path, help="Executable fragmentation profile; draft recovery profiles are refused.")
+    fragments.add_argument("--output", type=Path, required=True, help="New diagnostic JSON report.")
+    fragments.add_argument("--fragments-output", type=Path, help="New fragment/gap JSONL; default: output stem + .fragments.jsonl.")
+    fragments.add_argument("--video-output", type=Path, help="Optional MP4 with original track IDs and fragment IDs.")
+    fragments.add_argument("--ffprobe", default="ffprobe")
+    fragments.add_argument("--probe-timeout", type=float, default=120.0)
     args = parser.parse_args(argv)
     try:
         if args.command == "evaluate-tracking":
             return _run_tracking_evaluation(args)
         if not math.isfinite(args.probe_timeout) or args.probe_timeout <= 0:
             raise InputError("--probe-timeout must be positive")
+        if args.command == "inspect-fragments":
+            return _run_fragment_inspection(args)
         if args.command == "visualize":
             return _run_visualization(args)
         if args.command == "track":

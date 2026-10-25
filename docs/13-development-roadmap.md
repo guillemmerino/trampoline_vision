@@ -79,14 +79,23 @@ Finalització: una identitat sobreviu als casos breus definits de pèrdua i cap 
 assignacions. Els casos que continuïn fallant queden identificats, no amagats amb farciments.
 La continuïtat del backend escollit i els seus llindars es decidiran amb evidència dels casos.
 
-### Preparació de recovery
+### Primer increment de recovery — passos 1–3 implementats a 0.6.0
 
-S'ha creat l'estructura del paquet posterior al tracking complet, amb
-reconstrucció global prevista i exemples de configuració desactivats.
-Encara no hi ha contractes implementats ni algoritmes, i el tracking actual
-manté el seu comportament. El [document 28](28-recovery-package-design.md)
-defineix l'ordre: contractes/configuració, fragments, evidències, associació
-i validació, cas d'ús i proves sobre traces existents.
+Contractes de traça/fragments, lectura de tracking complet, política
+consecutive_observations_v1, partició de mesures/prediccions i diagnòstic
+amb informe, JSONL i overlay ja són executables. La comanda independent
+inspect-fragments conserva track_id i no reexecuta cap model ni tracker.
+La [guia 29](29-recovery-fragment-inspection.md) descriu inputs, perfils i proves.
+
+Continuen com a passos naturals per obtenir recovery robust:
+
+4. Propostes d'enllaç amb temps/moviment i alternatives en mode audit.
+5. Aparença verificada, resolució global, coherència de fragments i validació de cadenes.
+6. Comparació amb referències independents abans d'habilitar apply.
+
+L'hongarès és una opció de solver, no una garantia de coherència. Els criteris
+i llindars es derivaran d'experiments. El primer increment no corregeix
+transferències d'actor dins del mateix track ni demostra continuïtat física.
 
 ## Increment 3 — Subjecte i salts
 

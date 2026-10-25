@@ -1,9 +1,14 @@
-"""Espai reservat per llegir i resoldre configuracions de recovery.
+"""Lectura del perfil de diagnòstic sense alterar el pipeline de tracking."""
 
-Llegirà perfils versionats, resoldrà cada ruta respecte del fitxer declarant
-i delegarà la validació de valors a recovery.config. Rebutjarà claus alienes,
-versions no implementades i opcions d'aparença incompatibles.
+from trampoline_vision.ingestion.errors import InputError
+from trampoline_vision.ingestion.json_io import read_json
+from trampoline_vision.recovery.config import FragmentationConfig
+from trampoline_vision.recovery.errors import RecoveryError
 
-Els exemples 0.1-draft són només disseny. Aquest mòdul no els consumeix encara
-i no s'ha afegit recovery_config al loader actual del pipeline executable.
-"""
+
+def load_fragmentation_config(path):
+    """Converteix el JSON executable o comunica perquè un perfil draft no ho és."""
+    try:
+        return FragmentationConfig.from_dict(read_json(path))
+    except (InputError, ValueError, TypeError) as exc:
+        raise RecoveryError(f'Invalid fragmentation configuration {path}: {exc}') from exc

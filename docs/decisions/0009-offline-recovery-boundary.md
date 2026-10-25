@@ -1,6 +1,6 @@
 # 0009 — Reconstrucció separada després del tracking complet
 
-Estat: disseny adoptat; estructura creada, implementació pendent.
+Estat: disseny adoptat; preparació de fragments implementada a 0.6.0, associació d’actors pendent.
 
 ## Context
 
@@ -26,7 +26,8 @@ una demostració de fiabilitat. Els criteris es derivaran d'intents i proves.
 La sortida del tracker es mantindrà auditable i la reconstrucció es podrà
 repetir independentment. Caldrà lectura validada de traces i accés a
 descriptors verificats quan la reconstrucció els demani. Els perfils
-actuals de recovery són design-only, tots desactivats, i la CLI no els consumeix.
+d'associació continuen design-only; la preparació de fragments té perfils
+executables i CLI independent, segons la [guia 29](../29-recovery-fragment-inspection.md).
 
 ## Alternatives
 

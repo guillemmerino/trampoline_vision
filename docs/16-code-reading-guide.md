@@ -112,3 +112,15 @@ cada test explica el comportament protegit, especialment les regressions d'índe
 Per comprovar que aquest increment és documental, es comparen els arbres sintàctics Python
 abans i després d'eliminar-ne les docstrings. També es comprova la cobertura documental de tots
 els mòduls, classes i funcions. Les configuracions i els JSON conserven els seus valors.
+
+
+## Preparació de recovery (0.6.0)
+
+Llegir contracts/recovery.py, ingestion/recovery.py i recovery/tracklets.py
+per seguir el flux des d'un tracking acabat fins a observacions consecutives
+i buits explícits. recovery/pipeline.py coordina la preparació i validation.py
+n'exigeix partició exacta. application/recovery.py i results/recovery.py
+gestionen el diagnòstic/overlay de la comanda inspect-fragments.
+
+La [guia 29](29-recovery-fragment-inspection.md) diferencia aquest primer
+increment dels futurs passos 4–6 d'enllaç i reconstrucció d'actors.

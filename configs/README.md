@@ -20,6 +20,7 @@ SHA-256, dispositiu i cache. Les rutes són relatives al fitxer que les declara.
 Cap d’aquests fitxers no executa matching d’esquelets ni coherència de l’actor.
 Veure la [guia 27](../docs/27-configurable-box-tracking.md).
 
-`recovery/` conté únicament exemples `0.1-draft`, `design-only`, tots desactivats.
-No són acceptats pel pipeline executable. El seu abast i pla d'implementació
-s'expliquen al [document 28](../docs/28-recovery-package-design.md).
+`recovery/fragments.json` i `fragments-disabled.json` són perfils executables
+1.0 de la comanda independent inspect-fragments. La preparació està implementada;
+el rematching continua pendent. Els *.example.json 0.1-draft són només disseny
+i es rebutgen en execució. Vegeu la [guia 29](../docs/29-recovery-fragment-inspection.md).

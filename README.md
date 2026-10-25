@@ -51,12 +51,22 @@ incorpora dades ni pesos. La regressió compara els tres clips amb l’estudi
 anterior; el [protocol d’integració](benchmarks/studies/06-configurable-tracking/README.md)
 distingeix aquesta comprovació d’una avaluació de precisió.
 
-## Recovery: estructura preparada
+## Recovery: preparació de fragments (0.6.0)
 
-`src/trampoline_vision/recovery/` reserva el mòdul posterior al tracking complet
-per relacionar fragments amb actors. Els fitxers documenten responsabilitats;
-encara no hi ha algoritme ni integració executable. Els perfils de recovery
-són exemples de disseny desactivats. Vegeu el [pla de construcció](docs/28-recovery-package-design.md).
+`inspect-fragments` llegeix un tracking complet, valida la cobertura i prepara
+fragments observats i buits amb prediccions. Exporta informe, JSONL auditable
+i MP4 opcional amb fragment_id i track_id. No associa actors ni executa models.
+La [guia del primer increment](docs/29-recovery-fragment-inspection.md) descriu
+la política, els perfils enabled/disabled i els següents passos 4–6.
+
+```powershell
+docker compose build replay
+docker compose run --rm replay inspect-fragments --tracking-report runs/my-tracking.json --config configs/recovery/fragments.json --output runs/my-fragments.json --video-output runs/my-fragments.mp4
+```
+
+Cal un informe de tracking del vídeo complet i el seu JSONL. Els overrides
+`--tracks` i `--video` permeten resoldre rutes d'un altre equip/contenidor.
+La reconstrucció global amb unions continua sent el [pla posterior](docs/28-recovery-package-design.md).
 
 ## Provar i validar el baseline OpenPose
 

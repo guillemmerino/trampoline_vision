@@ -35,6 +35,7 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [26. Comparació amb ReID](26-reid-tracking-comparison.md) | Tres clips, BoT-SORT amb/sense aparença, vídeos comparatius i cache per refinar. |
 | [27. Tracking configurable](27-configurable-box-tracking.md) | Identitat de caixes, quatre perfils, ReID extern, cache i Docker. |
 | [28. Estructura de recovery](28-recovery-package-design.md) | Reconstrucció posterior al tracking: fitxers reservats, perfils de disseny i pla de construcció. |
+| [29. Diagnòstic de fragments](29-recovery-fragment-inspection.md) | Contractes, lectura completa, fragmentació, CLI i continuació 4–6. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions
@@ -65,6 +66,9 @@ es va mantenir sense canvis durant aquest pilot.
 A 0.5.0 el seguiment de caixes ja té adaptadors configurables OC-SORT, ByteTrack
 i BoT-SORT amb/sense ReID extern, CSV canònic i cache verificat. El matching de
 poses i la coherència de l’actor continuen pendents; veure document 27.
+A 0.6.0 el primer increment de recovery prepara fragments del tracking complet,
+amb contractes, validació, informe/JSONL i visualització. Encara no uneix tracks
+ni assigna actors; passos futurs 4–6 al document 29.
 La selecció del gimnasta, la segmentació i l'API continuen pendents.
 Els altres contractes avançats i les rutes API són propostes.
 Els canvis de comportament hauran d'actualitzar el document afectat i, si canvien una frontera

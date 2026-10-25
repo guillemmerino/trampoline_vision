@@ -1,11 +1,17 @@
-"""Espai reservat per orquestrar la reconstrucció després del tracking complet.
+"""Preparació offline després del tracking; encara no resol enllaços entre fragments."""
 
-Rebrà la seqüència d'un únic vídeo/run, la configuració i l'aparença opcional.
-Coordinarà fragments, evidències, parelles admissibles, associació global i
-validació de cadenes. Retornarà decisions i assignacions d'actor explícites.
+from trampoline_vision.recovery.config import FragmentationConfig
+from trampoline_vision.recovery.errors import RecoveryError
+from trampoline_vision.recovery.tracklets import build_fragments
+from trampoline_vision.recovery.validation import validate_fragmentation, validate_lifecycle
 
-No executarà TrackingSession per fotograma ni modificarà el tracker. Tampoc
-llegirà fitxers o renderitzarà vídeos: aquests recursos pertanyen als casos
-d'ús i adaptadors externs. Desactivat, el futur flux conservarà el tracking.
-No hi ha encara una classe pública ni una reconstrucció implementada.
-"""
+
+def prepare_recovery(trace, config=FragmentationConfig()):
+    """Construeix fragments i comprova que cap mostra es perd, duplica o reescriu."""
+    try:
+        validate_lifecycle(trace)
+    except ValueError as exc:
+        raise RecoveryError(f'Cannot prepare inconsistent tracking: {exc}') from exc
+    result = build_fragments(trace, config)
+    validate_fragmentation(result, enabled=config.enabled)
+    return result

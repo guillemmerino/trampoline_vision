@@ -1,19 +1,17 @@
-# Perfils de recovery en disseny
+# Configuració de recovery
 
-Tots els exemples són `0.1-draft`, `design-only` i `enabled: false`.
-No són configuració executable: canviar enabled a true no activa cap mòdul.
-Els loaders i pipelines actuals no els llegeixen.
+## Preparació executable (0.6.0)
 
-| Exemple | Intenció futura |
-| --- | --- |
-| `disabled.example.json` | Conservar el seguiment sense reconstrucció. |
-| `geometry.example.json` | Comparar fragments amb temps i moviment. |
-| `geometry-appearance.example.json` | Afegir descriptors verificats a la comparació. |
+fragments.json i fragments-disabled.json són esquema 1.0 de la comanda
+inspect-fragments. Activar-los prepara observacions consecutives i buits;
+desactivar-los valida la font però no crea fragments. No apliquen unions.
 
-`execution: offline_global` recull el recorregut acordat de tracking complet
-seguit de reconstrucció. `mode: audit` reserva la generació de propostes;
-el futur apply publicarà també assignacions d'actor. Els camps són un
-esborrany i parameters és buit deliberadament: pesos i llindars s'estudiaran.
+## Associació futura
 
-La referència de model de l'últim perfil no carrega pesos ni descriptors.
-Vegeu la [guia del paquet](../../docs/28-recovery-package-design.md).
+disabled.example.json, geometry.example.json i geometry-appearance.example.json
+continuen 0.1-draft, design-only i enabled: false. No són executables i el
+lector els rebutja; canviar el booleà no activa rematching. Els criteris i
+llindars s'obtindran amb els experiments dels futurs passos 4–6.
+
+El pipeline track continua sense recovery_config. El diagnòstic és posterior
+i independent: [guia 29](../../docs/29-recovery-fragment-inspection.md).
