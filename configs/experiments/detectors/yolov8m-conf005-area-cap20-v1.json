@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "task": "record_detector_experiment_recipe",
+  "profile_id": "yolov8m-conf005-area-cap20-v1",
+  "revision": 1,
+  "status": "experimental",
+  "implementation_status": "recorded_recipe_not_integrated_detector",
+  "model": "yolov8m",
+  "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+  "parameters": {
+    "confidence": 0.05,
+    "class_ids": [
+      0
+    ],
+    "imgsz": 1280,
+    "resize_factor": 1.5,
+    "max_det": 300,
+    "post_area_cap": 20
+  },
+  "tracker_profile": "../../trackers/botsort-reid.json",
+  "note": "This records a tested detector recipe; current tracking reads recorded boxes. No detector CLI or default changed."
+}

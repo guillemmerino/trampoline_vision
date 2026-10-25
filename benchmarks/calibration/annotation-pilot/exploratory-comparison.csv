@@ -1,0 +1,7 @@
+case_id,variant,reference_status,human_reviewed,visible_samples,excluded_samples,detector_available_samples,observed_matches,observed_coverage,distinct_matched_ids,id_changes_between_reviewed_matches
+JPN_AGE_1_000905_31.0,ocsort,model_provisional,False,19,5,17,16,0.8421052631578947,7,8
+JPN_AGE_1_000905_31.0,botsort_motion,model_provisional,False,19,5,17,16,0.8421052631578947,6,6
+JPN_AGE_1_000905_31.0,botsort_reid,model_provisional,False,19,5,17,16,0.8421052631578947,4,3
+JPN_AGE_3_001351_19.0,ocsort,model_provisional,False,20,4,15,14,0.7,4,3
+JPN_AGE_3_001351_19.0,botsort_motion,model_provisional,False,20,4,15,14,0.7,4,3
+JPN_AGE_3_001351_19.0,botsort_reid,model_provisional,False,20,4,15,14,0.7,5,4

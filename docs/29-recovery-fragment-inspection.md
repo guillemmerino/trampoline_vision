@@ -196,7 +196,13 @@ Aquest increment no ofereix encara recuperació robusta d'actors. Un fragment
 pot contenir una transferència a un jutge sense que el tracker canviï d'ID;
 la detecció d'aquest cas exigeix coherència i evidència addicional.
 
-## Passos futurs naturals: 4–6
+## Passos 4–6: estat posterior a 0.7.0
+
+La [guia 30](30-experimental-recovery-audit.md) implementa un primer recorregut
+experimental dels passos 4–5 amb `audit-recovery`, separat d'aquesta comanda
+d'inspecció. Els perfils draft antics continuen rebutjats. Duplicats,
+contaminació, precisió independent i apply encara no estan resolts. La resta
+d'aquesta secció descriu els objectius complets, no garanties de l'increment.
 
 **4. Propostes d'enllaç en auditoria.** Consumir fragments verificats, definir
 compatibilitat temporal i espacial, estimar moviment/incertesa i exportar

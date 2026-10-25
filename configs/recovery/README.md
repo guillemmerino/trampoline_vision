@@ -1,5 +1,10 @@
 # Configuració de recovery
 
+Actualització 0.7.0: els nous perfils executables d'auditoria són a
+`../experiments/recovery/`, amb esquema propi i selecció explícita.
+No substitueixen aquests perfils de fragments ni activen els drafts antics.
+Veure [guia 30](../../docs/30-experimental-recovery-audit.md).
+
 ## Preparació executable (0.6.0)
 
 fragments.json i fragments-disabled.json són esquema 1.0 de la comanda

@@ -214,10 +214,11 @@ class TrajectoryGap:
 
 @dataclass(frozen=True)
 class FragmentLink:
-    """Contracte de futures propostes: aquest increment no produeix unions.
+    """Evidència de proposta experimental, sense aplicar unions al tracking.
 
 Els costos són evidències, no probabilitats calibrades. La compatibilitat
-temporal i de cadena s'implementarà als passos següents.
+    temporal i de cadena es valida al pipeline; això no certifica identitat.
+    A audit, proposed significa escollit pel solver i pendent de revisió.
 """
 
     source_fragment_id: str

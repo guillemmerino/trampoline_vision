@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0",
+  "status": "experimental_not_independently_validated",
+  "case_id": "JPN_AGE_1_000905_31.0",
+  "frames": 930,
+  "duration_s": 31,
+  "original_pilot_code_sha256": "5f6059098df8e79b068bec95fde0e68367a2094e6c83b954b14d1254824b94e7",
+  "reference_policy": "Existing sparse gymnast anchors: positive IoU>=.5, negative PROXY IoU<=.1, otherwise uncertain. Proxies are not ground truth.",
+  "references_independent": false,
+  "video_sha256": "4dcb631c2d42f41ebe1375c37697f14041fff11a76f5e3459ab0e3aea220a67e",
+  "source_results_sha256": "abb20dd7db82d9ba299547a56ec68a3d927aa7851daa02e4dd49b07a9414a3e0",
+  "source_tracking_results_sha256": "44fddb1d916478057cdf1569430157206083ce7a9304b23654a9ac70c163b829",
+  "tracking_variants": [
+    {
+      "variant": "conf002_all",
+      "detector_threshold": 0.02,
+      "area_cap": null,
+      "tracker_strong": 0.1,
+      "tracker_weak": 0.02,
+      "counts": {
+        "input_boxes": 59580,
+        "observed_samples": 35407,
+        "event_confirmed": 65,
+        "lost_samples": 644,
+        "event_lost": 115,
+        "event_recovered": 91,
+        "event_finished": 24
+      },
+      "review_samples_with_historical_anchor": 85,
+      "matched_review_samples": 79,
+      "target_ids": [
+        "botsort:1",
+        "botsort:106",
+        "botsort:112",
+        "botsort:16",
+        "botsort:41",
+        "botsort:56",
+        "botsort:61",
+        "botsort:71",
+        "botsort:86",
+        "botsort:88",
+        "botsort:93"
+      ],
+      "minimum_id_changes_sparse": 9,
+      "dominant_id": "botsort:61",
+      "dominant_positive_samples": 45,
+      "dominant_negative_proxy_samples": 0,
+      "tracks": 65,
+      "fragments": 156
+    },
+    {
+      "variant": "conf005_all",
+      "detector_threshold": 0.05,
+      "area_cap": null,
+      "tracker_strong": 0.1,
+      "tracker_weak": 0.02,
+      "counts": {
+        "input_boxes": 41764,
+        "observed_samples": 32676,
+        "event_confirmed": 74,
+        "lost_samples": 955,
+        "event_lost": 158,
+        "event_recovered": 119,
+        "event_finished": 37
+      },
+      "review_samples_with_historical_anchor": 85,
+      "matched_review_samples": 79,
+      "target_ids": [
+        "botsort:1",
+        "botsort:103",
+        "botsort:105",
+        "botsort:111",
+        "botsort:125",
+        "botsort:132",
+        "botsort:16",
+        "botsort:42",
+        "botsort:57",
+        "botsort:78"
+      ],
+      "minimum_id_changes_sparse": 8,
+      "dominant_id": "botsort:57",
+      "dominant_positive_samples": 48,
+      "dominant_negative_proxy_samples": 0,
+      "tracks": 74,
+      "fragments": 193
+    },
+    {
+      "variant": "conf005_cap20",
+      "detector_threshold": 0.05,
+      "area_cap": 20,
+      "tracker_strong": 0.1,
+      "tracker_weak": 0.02,
+      "counts": {
+        "input_boxes": 18600,
+        "observed_samples": 14618,
+        "event_confirmed": 77,
+        "lost_samples": 2186,
+        "event_lost": 481,
+        "event_recovered": 421,
+        "event_finished": 60
+      },
+      "review_samples_with_historical_anchor": 85,
+      "matched_review_samples": 79,
+      "target_ids": [
+        "botsort:1",
+        "botsort:11",
+        "botsort:129",
+        "botsort:137",
+        "botsort:174",
+        "botsort:185",
+        "botsort:32",
+        "botsort:75",
+        "botsort:81"
+      ],
+      "minimum_id_changes_sparse": 7,
+      "dominant_id": "botsort:1",
+      "dominant_positive_samples": 56,
+      "dominant_negative_proxy_samples": 0,
+      "tracks": 77,
+      "fragments": 498
+    }
+  ],
+  "recovery_variants": {
+    "conf002_all": {
+      "appearance_2s_055": {
+        "mode": "appearance",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.55,
+        "minimum_changes_track": 9,
+        "minimum_changes_fragment": 17,
+        "minimum_changes_actor": 5,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "supported_sparse": 7,
+          "unreviewed": 12,
+          "mixed_fragment": 1
+        },
+        "best_actor_matched_instants": 31,
+        "initial_actor_matched_instants": 28,
+        "proposed_chains": 58,
+        "selected_links": 98
+      },
+      "geometry_2s_055": {
+        "mode": "geometry",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.55,
+        "minimum_changes_track": 9,
+        "minimum_changes_fragment": 17,
+        "minimum_changes_actor": 9,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "contradicted_proxy": 6,
+          "unreviewed": 24,
+          "mixed_fragment": 1,
+          "supported_sparse": 1
+        },
+        "best_actor_matched_instants": 29,
+        "initial_actor_matched_instants": 19,
+        "proposed_chains": 50,
+        "selected_links": 106
+      },
+      "appearance_2s_045": {
+        "mode": "appearance",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.45,
+        "minimum_changes_track": 9,
+        "minimum_changes_fragment": 17,
+        "minimum_changes_actor": 6,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "supported_sparse": 6,
+          "unreviewed": 11,
+          "mixed_fragment": 1
+        },
+        "best_actor_matched_instants": 53,
+        "initial_actor_matched_instants": 53,
+        "proposed_chains": 62,
+        "selected_links": 94
+      },
+      "appearance_2s_065": {
+        "mode": "appearance",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.65,
+        "minimum_changes_track": 9,
+        "minimum_changes_fragment": 17,
+        "minimum_changes_actor": 8,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "supported_sparse": 7,
+          "unreviewed": 12,
+          "mixed_fragment": 1
+        },
+        "best_actor_matched_instants": 31,
+        "initial_actor_matched_instants": 28,
+        "proposed_chains": 57,
+        "selected_links": 99
+      },
+      "appearance_31s_055": {
+        "mode": "appearance",
+        "horizon_s": 31.0,
+        "no_link_cost": 0.55,
+        "minimum_changes_track": 9,
+        "minimum_changes_fragment": 17,
+        "minimum_changes_actor": 9,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "supported_sparse": 5,
+          "unreviewed": 24,
+          "mixed_fragment": 1
+        },
+        "best_actor_matched_instants": 40,
+        "initial_actor_matched_instants": 40,
+        "proposed_chains": 46,
+        "selected_links": 110
+      }
+    },
+    "conf005_all": {
+      "appearance_2s_055": {
+        "mode": "appearance",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.55,
+        "minimum_changes_track": 8,
+        "minimum_changes_fragment": 19,
+        "minimum_changes_actor": 7,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "supported_sparse": 5,
+          "unreviewed": 22
+        },
+        "best_actor_matched_instants": 35,
+        "initial_actor_matched_instants": 24,
+        "proposed_chains": 66,
+        "selected_links": 127
+      },
+      "geometry_2s_055": {
+        "mode": "geometry",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.55,
+        "minimum_changes_track": 8,
+        "minimum_changes_fragment": 19,
+        "minimum_changes_actor": 8,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "supported_sparse": 3,
+          "unreviewed": 28,
+          "contradicted_proxy": 6
+        },
+        "best_actor_matched_instants": 25,
+        "initial_actor_matched_instants": 24,
+        "proposed_chains": 53,
+        "selected_links": 140
+      }
+    },
+    "conf005_cap20": {
+      "appearance_2s_055": {
+        "mode": "appearance",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.55,
+        "minimum_changes_track": 7,
+        "minimum_changes_fragment": 19,
+        "minimum_changes_actor": 8,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "unreviewed": 37,
+          "supported_sparse": 3
+        },
+        "best_actor_matched_instants": 56,
+        "initial_actor_matched_instants": 56,
+        "proposed_chains": 54,
+        "selected_links": 444
+      },
+      "geometry_2s_055": {
+        "mode": "geometry",
+        "horizon_s": 2.0,
+        "no_link_cost": 0.55,
+        "minimum_changes_track": 7,
+        "minimum_changes_fragment": 19,
+        "minimum_changes_actor": 9,
+        "matched_reference_instants": 79,
+        "reviewed_anchor_instants": 85,
+        "cross_track_link_counts": {
+          "unreviewed": 51,
+          "contradicted_proxy": 3,
+          "supported_sparse": 1,
+          "mixed_fragment": 1
+        },
+        "best_actor_matched_instants": 23,
+        "initial_actor_matched_instants": 23,
+        "proposed_chains": 38,
+        "selected_links": 460
+      }
+    }
+  }
+}

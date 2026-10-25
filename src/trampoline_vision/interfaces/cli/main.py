@@ -16,6 +16,7 @@ import sys
 import tempfile
 
 from trampoline_vision.application.recovery import inspect_tracking_fragments
+from trampoline_vision.application.recovery_audit import audit_tracking_recovery
 from trampoline_vision.ingestion.recovery_config import load_fragmentation_config
 from trampoline_vision.recovery.config import FragmentationConfig
 from trampoline_vision.application.inspection import inspect_case
@@ -188,12 +189,30 @@ def main(argv: list[str] | None = None) -> int:
     fragments.add_argument("--video-output", type=Path, help="Optional MP4 with original track IDs and fragment IDs.")
     fragments.add_argument("--ffprobe", default="ffprobe")
     fragments.add_argument("--probe-timeout", type=float, default=120.0)
+    audit = subparsers.add_parser('audit-recovery', help='Experimental global link proposals; original tracking is preserved, no apply.')
+    audit.add_argument('--tracking-report', type=Path, required=True)
+    audit.add_argument('--config', type=Path, required=True, help='Explicit executable experimental audit profile.')
+    audit.add_argument('--output', type=Path, required=True)
+    audit.add_argument('--links-output', type=Path)
+    audit.add_argument('--tracks', type=Path)
+    audit.add_argument('--video', type=Path)
+    audit.add_argument('--appearance-cache', type=Path, help='Existing native SQLite; never infer missing descriptors.')
+    audit.add_argument('--detections', type=Path, help='Override original detection file for cache content verification.')
+    audit.add_argument('--ffprobe', default='ffprobe')
+    audit.add_argument('--probe-timeout', type=float, default=120.)
     args = parser.parse_args(argv)
     try:
         if args.command == "evaluate-tracking":
             return _run_tracking_evaluation(args)
         if not math.isfinite(args.probe_timeout) or args.probe_timeout <= 0:
             raise InputError("--probe-timeout must be positive")
+        if args.command == 'audit-recovery':
+            audit_tracking_recovery(args.tracking_report, args.output, config_file=args.config,
+                tracks_path=args.tracks, video_path=args.video, appearance_cache=args.appearance_cache,
+                detections_path=args.detections, links_output=args.links_output,
+                ffprobe=args.ffprobe, probe_timeout_s=args.probe_timeout)
+            print(f'Recovery audit complete (experimental, not applied): {args.output.resolve()}')
+            return 0
         if args.command == "inspect-fragments":
             return _run_fragment_inspection(args)
         if args.command == "visualize":

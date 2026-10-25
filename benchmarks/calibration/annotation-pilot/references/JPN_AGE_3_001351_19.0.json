@@ -1,0 +1,423 @@
+{
+  "schema_version": "1.0",
+  "case_id": "JPN_AGE_3_001351_19.0",
+  "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+  "status": "provisional",
+  "reviewer": "OpenAI agent visual annotation; no human review",
+  "reviewer_type": "model",
+  "human_reviewed": false,
+  "provenance": {
+    "method": "native vision in this agent session, raw frame/crop inspection",
+    "exact_model_identifier": "not_recorded",
+    "separate_api_calls": false,
+    "tracker_outputs_shown_during_annotation": false,
+    "old_annotation_coordinates_used": false,
+    "overlay_qa": "completed_by_same_model_session; 72 frames viewed; not independent human review",
+    "selection_uses_known_failure_windows": false
+  },
+  "notes": "Exploratory model-generated reference, not independent human ground truth. Original-pixel xyxy visible extent. No automatic promotion to reviewed.",
+  "samples": [
+    {
+      "frame_index": 0,
+      "timestamp_s": 0.0,
+      "state": "visible",
+      "bbox_xyxy": [
+        603,
+        296,
+        649,
+        526
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "0421bb47064ae4a0ec9f0539e7c37a048f4752efbb77462e09b758d60515a022"
+    },
+    {
+      "frame_index": 81,
+      "timestamp_s": 2.7,
+      "state": "visible",
+      "bbox_xyxy": [
+        512,
+        598,
+        590,
+        765
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "6c9289b5911d7a74f6dab84d64de80c4b941559237b8e8172712a69aaf1264d5"
+    },
+    {
+      "frame_index": 84,
+      "timestamp_s": 2.8,
+      "state": "visible",
+      "bbox_xyxy": [
+        537,
+        650,
+        591,
+        829
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "near_assistant_or_apparatus",
+        "review_priority"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "4b206acdd031b2ce9c96c63c1fd94d2a57b72bf3729e33698e08b482482f21a0"
+    },
+    {
+      "frame_index": 87,
+      "timestamp_s": 2.9,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "overlap_or_occlusion",
+        "excluded_from_geometric_matching"
+      ],
+      "notes": "Target extent cannot be separated confidently from the foreground assistant/apparatus at rebound. No merged or amodal box proposed.",
+      "source_frame_png_sha256": "30cd5d51d72f34a11bdc4f891c8b42bd0ac725c096eb5d9e266e6eaba322df6b"
+    },
+    {
+      "frame_index": 90,
+      "timestamp_s": 3.0,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "overlap_or_occlusion",
+        "excluded_from_geometric_matching"
+      ],
+      "notes": "Target extent cannot be separated confidently from the foreground assistant/apparatus at rebound. No merged or amodal box proposed.",
+      "source_frame_png_sha256": "82a20961c170413c31e5175cc376bd47d38fa948e5dda6204787bdcebdf8ddd7"
+    },
+    {
+      "frame_index": 93,
+      "timestamp_s": 3.1,
+      "state": "visible",
+      "bbox_xyxy": [
+        537,
+        635,
+        625,
+        840
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "near_assistant_or_apparatus",
+        "review_priority"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "96cd6b09edefa225b2df4eb24df4e562d9d8c9dae3e1e553afb220b72ce8dbfd"
+    },
+    {
+      "frame_index": 96,
+      "timestamp_s": 3.2,
+      "state": "visible",
+      "bbox_xyxy": [
+        523,
+        552,
+        617,
+        757
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "64f7fd7b327950539c002ffc61f75106497e9eced017560acaa9738d261dece4"
+    },
+    {
+      "frame_index": 99,
+      "timestamp_s": 3.3,
+      "state": "visible",
+      "bbox_xyxy": [
+        488,
+        519,
+        635,
+        651
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "f32b5a16d165c7c8880f6e8bb27f9c556323c14668f25b125002ff26bc01708b"
+    },
+    {
+      "frame_index": 102,
+      "timestamp_s": 3.4,
+      "state": "visible",
+      "bbox_xyxy": [
+        479,
+        496,
+        634,
+        553
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "92bcef17d5f8cc6cf608608d54e25eab723ad65ef3026680e60f2735286c5358"
+    },
+    {
+      "frame_index": 105,
+      "timestamp_s": 3.5,
+      "state": "visible",
+      "bbox_xyxy": [
+        464,
+        453,
+        626,
+        532
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review. Full original frame was inspected because the initial review crop did not contain the whole target.",
+      "source_frame_png_sha256": "d2ca9f6183a0b6a87e0f701b4ad1c2d949fbe55c1dab26903be8b63760cfc5dd"
+    },
+    {
+      "frame_index": 180,
+      "timestamp_s": 6.0,
+      "state": "visible",
+      "bbox_xyxy": [
+        441,
+        504,
+        623,
+        555
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review. Full original frame was inspected because the initial review crop did not contain the whole target.",
+      "source_frame_png_sha256": "9ac7a91828c06fa196c1e32245e4f8645503a681936440dd9048136c88a51bec"
+    },
+    {
+      "frame_index": 252,
+      "timestamp_s": 8.4,
+      "state": "visible",
+      "bbox_xyxy": [
+        551,
+        650,
+        684,
+        781
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "b53f40afeb7f50ff3eb83313fbdd792cc9ea8c4884f2318203974ce0a8616158"
+    },
+    {
+      "frame_index": 255,
+      "timestamp_s": 8.5,
+      "state": "visible",
+      "bbox_xyxy": [
+        545,
+        586,
+        657,
+        659
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "d474bde31cdf700a5485a1316357d6ef833fcc6823804f31becf5eeebd2fed66"
+    },
+    {
+      "frame_index": 258,
+      "timestamp_s": 8.6,
+      "state": "visible",
+      "bbox_xyxy": [
+        538,
+        538,
+        657,
+        611
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "9002a19263a310c7228a58dbb976a1e400686db46817eb55d64198e9e3b38de1"
+    },
+    {
+      "frame_index": 261,
+      "timestamp_s": 8.7,
+      "state": "visible",
+      "bbox_xyxy": [
+        550,
+        468,
+        647,
+        590
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "003071b2a990f4f16bbc9252e5c067b41d8d41fe099b19cbbe1dcae6faf4c826"
+    },
+    {
+      "frame_index": 264,
+      "timestamp_s": 8.8,
+      "state": "visible",
+      "bbox_xyxy": [
+        558,
+        405,
+        642,
+        564
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "89f6b15dd15090eaf32eef9bb54d491af7ebda4f45747e58df009a9b7292aa0a"
+    },
+    {
+      "frame_index": 267,
+      "timestamp_s": 8.9,
+      "state": "visible",
+      "bbox_xyxy": [
+        586,
+        369,
+        633,
+        553
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "e030058fce6480f689f0d981c6a7560ebae8c408d835e73000b63837e874c939"
+    },
+    {
+      "frame_index": 270,
+      "timestamp_s": 9.0,
+      "state": "visible",
+      "bbox_xyxy": [
+        572,
+        363,
+        644,
+        525
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "d650c9b48d030ea7cd17ea03c53bb50094feb9252e13fb9542d04a10ff3c9060"
+    },
+    {
+      "frame_index": 273,
+      "timestamp_s": 9.1,
+      "state": "visible",
+      "bbox_xyxy": [
+        552,
+        382,
+        685,
+        526
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "13d1c15a6eac5f56a563fc25a844626e35f22b36da5dd2c8c88205ea3e67d018"
+    },
+    {
+      "frame_index": 276,
+      "timestamp_s": 9.2,
+      "state": "visible",
+      "bbox_xyxy": [
+        543,
+        415,
+        707,
+        521
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "90bc2425826f407f4e609dcc528509e63450a18626be894b507f57e8f75eab10"
+    },
+    {
+      "frame_index": 360,
+      "timestamp_s": 12.0,
+      "state": "visible",
+      "bbox_xyxy": [
+        527,
+        525,
+        700,
+        635
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "88a645eb5364abca3d919530005d705dd099597bd2b9ac5c1216d155a71db87e"
+    },
+    {
+      "frame_index": 450,
+      "timestamp_s": 15.0,
+      "state": "occluded",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "overlap_or_occlusion",
+        "excluded_from_geometric_matching"
+      ],
+      "notes": "Target extent cannot be separated confidently from the foreground assistant/apparatus at rebound. No merged or amodal box proposed. Full original frame was inspected because the initial review crop did not contain the whole target.",
+      "source_frame_png_sha256": "c4b176e2063e6eceb9730a323dbcd2b0466c006e9358687cb6fa06ed6f9070a7"
+    },
+    {
+      "frame_index": 540,
+      "timestamp_s": 18.0,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "overlap_or_occlusion",
+        "excluded_from_geometric_matching"
+      ],
+      "notes": "Target extent cannot be separated confidently from the foreground assistant/apparatus at rebound. No merged or amodal box proposed.",
+      "source_frame_png_sha256": "70e658b1814931c30de4696187efeebedc3856b9de7619e81f44c92f0c40bc31"
+    },
+    {
+      "frame_index": 569,
+      "timestamp_s": 18.966666666666665,
+      "state": "visible",
+      "bbox_xyxy": [
+        573,
+        686,
+        660,
+        836
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "near_assistant_or_apparatus",
+        "review_priority"
+      ],
+      "notes": "Approximate visible-body extent from original pixels; boundary precision requires human review.",
+      "source_frame_png_sha256": "d26f892287735ed0a447412e80482538af9e8ae4280132e494438f97fab11490"
+    }
+  ]
+}

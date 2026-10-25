@@ -22,3 +22,4 @@ però la seva eficàcia sobre trampolí encara s'ha de mesurar.
 - [0009 — Reconstrucció separada després del tracking complet](0009-offline-recovery-boundary.md), disseny adoptat; preparació implementada a 0.6.0 i associació pendent.
 
 - [0010 — Fragments observats i buits explícits abans del rematching](0010-observed-fragments-and-explicit-gaps.md), implementada a 0.6.0.
+- [0011 — Auditoria i perfils experimentals de recovery](0011-experimental-recovery-audit-and-profiles.md), mode audit implementat a 0.7.0; fiabilitat d'identitat i apply pendents.

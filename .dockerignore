@@ -13,6 +13,9 @@
 !data/manifests/*.example.json
 !tests/
 !tests/**
+!benchmarks/
+!benchmarks/calibration/
+!benchmarks/calibration/**
 **/__pycache__
 **/*.pyc
 **/*.local.json

@@ -1,7 +1,14 @@
 # 28. Estructura i construcció del paquet recovery
 
-Estat actual: passos 1–3 implementats a 0.6.0 (contractes, lectura/fragmentació
-i diagnòstic). La reconstrucció d'actors dels passos 4–6 continua pendent.
+Actualització 0.7.0: els passos 4–5 tenen una primera implementació **experimental
+en mode auditoria**, descrita a la [guia 30](30-experimental-recovery-audit.md).
+Els paràgrafs de 0.6.0 següents documenten el primer increment: ara motion,
+appearance, association i diagnòstics de coherence produeixen propostes i
+hipòtesis sense apply. La identitat física i la resolució fiable de duplicats
+i contaminació continuen pendents. El pilot queda registrat a benchmark 07.
+
+Estat actual: passos 1–3 implementats a 0.6.0 i recorregut experimental d'auditoria
+dels passos 4–5 a 0.7.0. La reconstrucció fiable i l'avaluació del pas 6 continuen pendents.
 La [guia executable 29](29-recovery-fragment-inspection.md) descriu com revisar
 fragments abans d'estudiar les unions. Els criteris de recuperació es derivaran
 de proves; no es considera el mòdul de recovery complet o robust encara.
@@ -61,8 +68,9 @@ L'absència d'una correspondència prou clara serà un resultat vàlid.
 
 Contractes, configuració de fragments, pipeline de preparació, tracklets,
 validació, lectors, cas d'ús i resultats ja són executables. motion, appearance,
-coherence i association continuen reservats a les etapes d'unió. La validació
-actual prova partició i vida del tracker; encara no valida cadenes d'actors.
+association i diagnòstics de coherence participen en l'auditoria experimental.
+Es valida partició, vida del tracker i temporalitat de cadenes provisionals;
+la identitat física de les cadenes continua pendent de validació.
 
 ## Activació i perfils
 
@@ -72,8 +80,8 @@ mai un rematching. Els tres *.example.json d'associació continuen desactivats
 i design-only, i són rebutjats pel lector executable. El pipeline de tracking
 encara no accepta recovery_config: la preparació és un cas d'ús posterior independent.
 
-Quan s'implementi, disabled conservarà el recorregut existent; audit
-exportarà propostes i apply publicarà també la reconstrucció d'actors.
+A 0.7.0 els nous perfils disabled/audit validen o proposen unions sense
+alterar tracking. Apply continua sense implementar.
 La configuració serà independent de la selecció del tracker. No es fixen
 encara temps, pesos, llindars d'unió ni marges d'ambigüitat: s'obtindran
 d'experiments reproduïbles i quedaran registrats amb la configuració efectiva.
@@ -107,8 +115,8 @@ disponibles. La inferència d'aparença faltant serà un cost separat i explíci
 1. Contractes i invariants — implementat a 0.6.0.
 2. Lector de tracking complet i constructor de fragments — implementat.
 3. Diagnòstic amb informe, JSONL i visualització — implementat.
-4. Propostes d'enllaç amb geometria/moviment en audit — futur.
-5. Aparença verificada, resolució global i validació de cadenes — futur.
+4. Propostes d'enllaç amb geometria/moviment en audit — experimental a 0.7.0.
+5. Aparença verificada, resolució global i temporalitat de cadenes — experimental a 0.7.0; identitat física pendent.
 6. Comparació independent i posterior habilitació d'apply — futur.
 
 Els passos 4–6 i els seus criteris es detallen a la [guia 29](29-recovery-fragment-inspection.md).

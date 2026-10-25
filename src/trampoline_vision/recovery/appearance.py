@@ -1,10 +1,11 @@
-"""Espai reservat per resumir i comparar aparença de fragments i actors.
+"""Distància entre descriptors mitjans verificats; no és confiança d'identitat."""
 
-Consumirà descriptors de contracts.appearance, referenciats per candidat i
-fingerprint del model. Prepararà galeries basades en observacions fiables i
-costos de compatibilitat, amb política explícita per a evidència insuficient.
+from trampoline_vision.recovery.errors import RecoveryError
 
-No carregarà OSNet ni llegirà el cache directament: perception extreu vectors
-i application coordina la seva obtenció. No barrejarà fingerprints diferents
-ni reforçarà una galeria amb prediccions o caixes de qualitat dubtosa.
-"""
+
+def appearance_cost(a,b,scale):
+    """Evita comparar vectors absents o incompatibles encara que el solver ho permetés."""
+    if a.appearance is None or b.appearance is None or len(a.appearance)!=len(b.appearance):
+        raise RecoveryError('Verified appearance is required for this strategy')
+    distance=max(0.,min(2.,1-sum(x*y for x,y in zip(a.appearance,b.appearance))))
+    return min(1.,distance/scale),distance

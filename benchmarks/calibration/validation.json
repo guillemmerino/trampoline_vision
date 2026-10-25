@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-25",
+  "status": "cpu_verified_gpu_pending",
+  "corpus_id": "tfm-trampoline-calibration-v1",
+  "corpus_validation": {
+    "report": "corpus-validation.json",
+    "sha256": "60005538857102078f771c3119716c43faeceab2d5c3bd80b8563c4017e8e8aa",
+    "videos": 94,
+    "decoded_frames": 82890,
+    "duration_s": 2763,
+    "models_sha256_verified": 3
+  },
+  "transfer_archive": {
+    "local_path": "runs/calibration-transfer-v1.tar",
+    "size_bytes": 319723520,
+    "sha256": "8f132252aa81d710b12c660325162654646175b2b3e955dd02ded3060be529d3",
+    "contains": "94 unchanged MP4 copies, 3 local weight files, corpus snapshot; no code or private configuration"
+  },
+  "tests": {
+    "existing_package_tests_passed": 150,
+    "calibration_tests_passed": 22,
+    "real_offline_yolo_on_synthetic_video": true,
+    "synthetic_tracking_with_real_ocsort": true,
+    "resume_checksums_partial_attempts_failures_and_lock": true,
+    "bash_syntax_checked": true,
+    "preflight_cpu_passed": true,
+    "dry_run_pilot": {
+      "videos": 18,
+      "detector_jobs": 108,
+      "tracking_jobs": 432
+    },
+    "dry_run_all": {
+      "videos": 94,
+      "detector_jobs": 564,
+      "tracking_jobs": 2256
+    }
+  },
+  "validation_runtime": {
+    "platform": "Linux x86_64 via Docker Desktop",
+    "python": "3.11.17",
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "ultralytics": "8.3.114",
+    "boxmot": "16.0.9",
+    "trackers": "2.6.1",
+    "av": "16.1.0",
+    "psutil": "7.0.0"
+  },
+  "code_sha256": {
+    "__init__.py": "702ec3faae2a8166700571a50b9aa39553e6e9b8ad7eca5713096291e19fcd44",
+    "common.py": "13e8678f3e917b0f29b35dd78b7317108f6564a76ae8466005c60b46103796a3",
+    "compare_annotation_sample.py": "bcdc9e7c7131f8f5a9200ed31bba9ff76b00bf14b2f9eada806ac3308d653801",
+    "detector.py": "927053ae393e4f55915ee9cada0448c47c472592ec0a2ba81727a1bd81041ea0",
+    "evaluation.py": "e4d60072c6d554c5cc18f9c68689e6571f93b89f1c4566938a8c78435b175119",
+    "prepare.py": "9a9257c8319ca35dd028861de1873e649231cb16b288777675d4dfa38b79a473",
+    "prepare_annotation_sample.py": "5891b1fe6e295379dbc4a657909d9dfa022ed8ec9f54efe21257253efc398ad9",
+    "reference_templates.py": "cb16561e3d9d7a81fd560b67c989bbab2d140c952acd1fbf0145d58bbb7667a3",
+    "review_annotation_sample.py": "b8508c3fa9edeb8ea46227b511d9d455b47fa2876d9ee0568fcaad1c364d5745",
+    "run.py": "868a163ab915dbf31120fcb96e5a3d16cb44da8e05886842105ff405aaa34118",
+    "verify_corpus.py": "82973ed90ee50dfa36b7aea3f36f57e5d8a1d1b854badaf5cd4788f9350c5a60"
+  },
+  "limitations": [
+    "GPU image and CUDA kernels must be validated on the destination NVIDIA server",
+    "No independent reviewed identity references; no accuracy ranking or chosen default",
+    "Dataset is exploratory from the same competition/capture family, not an independent holdout",
+    "Direct dependency versions pinned; a complete CUDA transitive lock is not claimed"
+  ],
+  "original_tfm_files": "read only; copied video/model hashes verified; no modification by this preparation",
+  "previous_validation": {
+    "before_annotation_pilot": {
+      "calibration_tests_passed": 18,
+      "code_sha256": {
+        "__init__.py": "702ec3faae2a8166700571a50b9aa39553e6e9b8ad7eca5713096291e19fcd44",
+        "common.py": "13e8678f3e917b0f29b35dd78b7317108f6564a76ae8466005c60b46103796a3",
+        "detector.py": "927053ae393e4f55915ee9cada0448c47c472592ec0a2ba81727a1bd81041ea0",
+        "evaluation.py": "40e19a20102e0d7a21d4ef85e128582593bfb590b28b8922dd8566ae0c4794ca",
+        "prepare.py": "9a9257c8319ca35dd028861de1873e649231cb16b288777675d4dfa38b79a473",
+        "reference_templates.py": "cb16561e3d9d7a81fd560b67c989bbab2d140c952acd1fbf0145d58bbb7667a3",
+        "run.py": "9aecce1667a2594f3e4b841406c8c93ff31a236603aacebc56a42b4d3b6f4592",
+        "verify_corpus.py": "82973ed90ee50dfa36b7aea3f36f57e5d8a1d1b854badaf5cd4788f9350c5a60"
+      }
+    }
+  },
+  "annotation_pilot": {
+    "validation": "annotation-pilot/validation.json",
+    "human_reviewed": false,
+    "samples": 72,
+    "proposed_boxes": 61
+  }
+}

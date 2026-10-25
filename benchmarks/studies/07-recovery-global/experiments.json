@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "study_id": "07-recovery-global",
+  "status": "experimental",
+  "date": "2026-10-25",
+  "purpose": "Integration and reproducible audit; not validated recovery accuracy",
+  "recovery_profiles": {
+    "disabled-v1": {
+      "path": "configs/experiments/recovery/disabled-v1.json",
+      "sha256": "ab7bb440fc37320f1ff5622786b359f32f14f0e03a6a0026963caeae92f7f22d"
+    },
+    "global-geometry-v1": {
+      "path": "configs/experiments/recovery/global-geometry-v1.json",
+      "sha256": "1c178bb4f11a3936ea9abd37bbe4b4aed733c25e9046b4895dfc94f5e99a40b1"
+    },
+    "global-osnet-hungarian-v1": {
+      "path": "configs/experiments/recovery/global-osnet-hungarian-v1.json",
+      "sha256": "2c6571aa58d142d4bb0d3bc895c6e3042a33a0c5b8b2f2032707ed6f1952c7d5"
+    },
+    "global-osnet-conservative-v1": {
+      "path": "configs/experiments/recovery/global-osnet-conservative-v1.json",
+      "sha256": "624e7e761164e93dcbf606ce2da5810c5a781eac4eceba4da38d4699114b0c49"
+    },
+    "global-osnet-permissive-v1": {
+      "path": "configs/experiments/recovery/global-osnet-permissive-v1.json",
+      "sha256": "a942ed0bea5cbd4bf9ca5115e5946c0ca0119e42f55d6b9cb3e0155c2a91ee1d"
+    },
+    "global-osnet-long-gap-v1": {
+      "path": "configs/experiments/recovery/global-osnet-long-gap-v1.json",
+      "sha256": "701dad8701a7a48a73a36b55d2644bddcd1f7445b6fce795eafffc0a14faf91f"
+    }
+  },
+  "detector_recipes": {
+    "yolov8m-conf002-no-area-cap-v1": {
+      "path": "configs/experiments/detectors/yolov8m-conf002-no-area-cap-v1.json",
+      "sha256": "0f414bb7cca3e5cf892c1d286ecd73a40aff3a0aa6470f32db4634faf162dae1"
+    },
+    "yolov8m-conf005-no-area-cap-v1": {
+      "path": "configs/experiments/detectors/yolov8m-conf005-no-area-cap-v1.json",
+      "sha256": "46c7d11262722d9f2f134cc684f649b934354a82c41278c07c49c9a6a8e18a5d"
+    },
+    "yolov8m-conf005-area-cap20-v1": {
+      "path": "configs/experiments/detectors/yolov8m-conf005-area-cap20-v1.json",
+      "sha256": "76ac68beea9299d8229ac6993f4304cf48e8db47d3d634502173c82bdbfbc9b0"
+    }
+  },
+  "tracker_profile": "configs/trackers/botsort-reid.json",
+  "tracker_profile_sha256": "64ed18d4d316e0c764fd7bee2318fa35963e8177304ed44203d586edd58fb64d",
+  "artifact_sources": {
+    "historical-and-window": {
+      "external_root": "../TFM/audits/detector-confidence-20261025",
+      "files_sha256": {
+        "artifact-sha256.json": "395048b845478c6aab97f29e616605cd2af0bac4cfb80f31c5023fee6236640d",
+        "audit_recorded.py": "c97856b0b0cbac566eee80cf776b73520cc8952443e589f806480182291bd572",
+        "audit_window.py": "20eb953bf268c16ccea5443fe37b6daf610fa1f863cda8b7dd0bb279491b91d7",
+        "detect_window.py": "a9477172173705c0c8da14e0f09f9d2c43db8072e1fba45236f845f9ff043b86",
+        "evaluate_two_actors.py": "bbb5d5e255e76b88442581c8b555a5c5f935c2bc349cf7de8dee83baf2ed8fb8",
+        "fresh-detector-metadata.json": "b919c10d694f6dc4ba5799696964621bba36ce29361e3a83a2e94ad54f1f3ebc",
+        "fresh-window-results.json": "868d5d21cba2a11565e065a11511f97378c1c80bc5f70ca67ca508ec86a4c387",
+        "README.md": "a08672d95fbdf3154a51e7af1d1236807d61f1716d237082eb7652225450a009",
+        "recorded-threshold-results.json": "1b6b7fc88610e5ab07d5fae1718f84aa6f20f8e5b84485d7c2847e5730650824",
+        "render_comparison.py": "968087ae32135ba7a68b8cf2400a3f3314dbf56e4dac5caa3ff1d0404480252c",
+        "two-actor-proxy-results.json": "f7bd05fa008f7b8f9fa249ad6596d3d856e77bb70c7aa431f6edcd81153c351f"
+      },
+      "artifact_sha256": {
+        "audit_recorded.py": "c97856b0b0cbac566eee80cf776b73520cc8952443e589f806480182291bd572",
+        "audit_window.py": "20eb953bf268c16ccea5443fe37b6daf610fa1f863cda8b7dd0bb279491b91d7",
+        "conf001_all.frames.jsonl": "8b371625f259cb8115070f15263b3354087fa76f8f72bc30d407b36c61aec9fe",
+        "conf001_all_weak0005.frames.jsonl": "517196c58f638661a66d6ed00da44a80d43137a14dba26c56ee06487b240b507",
+        "conf001_cap20.frames.jsonl": "f577a065a718383748f28be036db4f22a698f2ae1ba985eb3d97d7860c67a8ba",
+        "conf002_all.frames.jsonl": "e5838fcd3166f2e12b06e15ad5431dc7de83f41441f4a881cd105691ecbb94ce",
+        "conf002_cap20.frames.jsonl": "68f7d3064ef58727dad9bd2bf48bbcbf081ca37d538d1c7ea62b96c6db9341f7",
+        "conf005_all.frames.jsonl": "acb6fd21546c67d0228c7d1de26fdd6a9d41ad467966adb4f15cc6c20d593384",
+        "conf005_all_weak0005.frames.jsonl": "acb6fd21546c67d0228c7d1de26fdd6a9d41ad467966adb4f15cc6c20d593384",
+        "conf005_cap20.frames.jsonl": "05fa68f9e007831ca12e8c651a3b3e7ca2a204c7b4e7c0c4ff439940c96fe1dc",
+        "detector-preview-475-492.png": "f6aef2cca19a55a882291332580a8e6136a44c7c569ec0b01ff4031d0f91b63f",
+        "detect_window.py": "a9477172173705c0c8da14e0f09f9d2c43db8072e1fba45236f845f9ff043b86",
+        "evaluate_two_actors.py": "bbb5d5e255e76b88442581c8b555a5c5f935c2bc349cf7de8dee83baf2ed8fb8",
+        "frame492-candidates.png": "232486df64a376e6fb9a2cddfe98500b139907542236079f675bcd72763e6a90",
+        "fresh-detections.jsonl": "41d329f831e534b1de069ee784c9c32bb80da625ab562e7ce5a5d3e758f49f75",
+        "fresh-detector-metadata.json": "b919c10d694f6dc4ba5799696964621bba36ce29361e3a83a2e94ad54f1f3ebc",
+        "fresh-embeddings.npz": "cb5600fa70ccc874b2be87c918826dfab498c851121e5efd6c1a74cce74ab8e5",
+        "fresh-window-results.json": "868d5d21cba2a11565e065a11511f97378c1c80bc5f70ca67ca508ec86a4c387",
+        "README.md": "a08672d95fbdf3154a51e7af1d1236807d61f1716d237082eb7652225450a009",
+        "recorded-threshold-results.json": "1b6b7fc88610e5ab07d5fae1718f84aa6f20f8e5b84485d7c2847e5730650824",
+        "render_comparison.py": "968087ae32135ba7a68b8cf2400a3f3314dbf56e4dac5caa3ff1d0404480252c",
+        "tracking-comparison-preview.png": "d0a73b3eee461450c434a2df961e3bf0b628a8de9483fcefefdf63cc5c23d32a",
+        "tracking-comparison.mp4": "03f8a198f4370c922cd65a5c9cb363f6d7763862da08d9c1914672ec4e12c247",
+        "two-actor-proxy-results.json": "f7bd05fa008f7b8f9fa249ad6596d3d856e77bb70c7aa431f6edcd81153c351f"
+      },
+      "large_artifacts": "Original JSONL, NPZ, videos and screenshots remain external; existing source manifests bind their bytes."
+    },
+    "full-tracking": {
+      "external_root": "../TFM/audits/detector-confidence-full-20261025",
+      "files_sha256": {
+        "artifact-sha256.json": "a2f0d0ec7ac7976c85cfe4f86e330218ba9efb9a7cd824d04e63d535c456cfef",
+        "detector-metadata.json": "91a8dbd6d92b9ea19204dc29b795ad6f7e9281ea9769eed58279d8bdb2d8759b",
+        "detector-state.json": "3228712fdfbfa0e771453700486378873fa8f5a84d5c96a79f237a0a82803f78",
+        "detect_full.py": "496062a59caa2a59695851512aa88d201d04a7d01379da055052f34750cee5cd",
+        "full-video-results.json": "44fddb1d916478057cdf1569430157206083ce7a9304b23654a9ac70c163b829",
+        "inspect_progress.py": "b05c30c1b60064fe16b4011a3774d1f7c74780cfd2f644641bb1dadbdda8d827",
+        "protocol.json": "ca20d4cbe571a0701b3ed7be9a136e790fc0af427685f43ae3f2eb3fbf9b8931",
+        "README.md": "58c36c7c32ba50c5c6917bc1228f398f858e8d1b84c78a7c57955d4db5876b07",
+        "render_full.py": "b0524657f03c122c14f9065677794e32d1703fb65b973231fb2074bf005b5558",
+        "runtime-clarification.json": "721a1f572fb6d015ede7ff9b816af29c784bada5bea6b8f70b04eaf4dceeca66",
+        "summarize_full.py": "067352707ded335445bbce8ac4eba41362461b470853a3f56c72b55e22452966",
+        "tracking-state.json": "2d5d8fca2cfbf33b2b5666e016eea7f9550e2b8f48fefece542ba79fe4d7e3ff",
+        "track_full.py": "66ffb0a6a3aad1fa0c6deb4b4853471fcfee8d50b7f9b2ed02019c63d1ed9589",
+        "verification.json": "d20e954b836c63be7c41757d0d25f8eab5dce26c6668e686e8f2104ce5a01168"
+      },
+      "artifact_sha256": {
+        "conf002_all.frames.jsonl": "40ee061ca10b52b9e9b8aa4e980fe914a230c2268d54d741efe9c4e8a35f2230",
+        "conf005_all.frames.jsonl": "9da8fbc4e15c05ff5061d53c5f55885ec37c17f9e342362267b305d4dfab71e6",
+        "conf005_cap20.frames.jsonl": "940e045c258efe87e1f53a6533bdfd6923c39a422f2d2665342025d6077f89ef",
+        "detections.jsonl": "9f2657e7b20d4c8c20251dcb3a05c724ee107a2bcce17a61be62b39765cdfd5b",
+        "detector-metadata.json": "91a8dbd6d92b9ea19204dc29b795ad6f7e9281ea9769eed58279d8bdb2d8759b",
+        "detector-state.json": "3228712fdfbfa0e771453700486378873fa8f5a84d5c96a79f237a0a82803f78",
+        "detect_full.py": "496062a59caa2a59695851512aa88d201d04a7d01379da055052f34750cee5cd",
+        "embeddings.npz": "01ea271cdadffc2c6c787606793ef18d0f45038a8335341fa81517a7880d1034",
+        "first-identity-loss-120-135-150.png": "de6f1b4489abfa430e40c3f0c0b3b7a41685ed4c04ea7c765b076a22522cec53",
+        "frame-0300.png": "2e80eec77a8521aa70c60ba7b1871b57bf108cdceb279e3666595761780e4f2f",
+        "frame-0360.png": "1191b1395a2aaef305a0007bccf2e61fde6363cc5238d4168710b7591576280f",
+        "frame-0390.png": "f64e3bd5f9c49686aff112967635c463afa66a97013490d8c62f8c3d636115fc",
+        "frame-0491.png": "6b74f9e739cc2259eb1ebe244c7bc8b79094ea0521856d0ab6d97fb73d34060f",
+        "frame-0492.png": "3d57b38d316afd45d563ff9f716f5bc477b46fe24f5d988b3139b078f21166ef",
+        "frame-0493.png": "1e1db1213bf3443e4766bedb248037209bff3cc8f7e12148680ac8646dfab80d",
+        "frame-0494.png": "ea07c7fb2df35b0b3074ea3b3cb62ca93ab0223e52f435283b55a3105a5e49e1",
+        "frame-0495.png": "89343c1bf19dd16fa3fb5ab1f6c953726e713506d01a25f472e365fbdacece53",
+        "frame-0645.png": "ca3c840c0ad7b0d99f038e37e723a55ba8098ed569d95a639e8fda0a3bccf725",
+        "frame-0690.png": "9c7900fb8f29d699588c0a67fff15995ae970552d104b16def7b049afe8fd201",
+        "full-tracking-comparison.mp4": "e6e164e7599a0d1b0d683020652bba9e566e9124eee494100760f51e7ae3eb63",
+        "full-video-results.json": "44fddb1d916478057cdf1569430157206083ce7a9304b23654a9ac70c163b829",
+        "inspect_progress.py": "b05c30c1b60064fe16b4011a3774d1f7c74780cfd2f644641bb1dadbdda8d827",
+        "loss-context-123-125-130.png": "26c1639fb686729bbd6548a736365f85fa8775ce772627cab0129e7b5358588e",
+        "overview-01.png": "1c6728ecf8e85c6ec9ea58f343d5bd9e4af0ba8155cb6f096b849be8bf7666e0",
+        "overview-02.png": "056970bea35096711e76c99c7228f954f2f721b44ce4dee09271f74af6ab004b",
+        "overview-03.png": "9cb07313c7d60e78d585cdd117afa8b5da9702fdbb3b926fed5b457492621b5b",
+        "overview-04.png": "f8147fd267b888e80fbbbeeb22afcfa18ae6fcb4baf1b6f06421cdd949d8affc",
+        "overview-05.png": "ecaccad8d35594afd10b081e1c819337fee4473e029b3103e9fa6fbcecbca485",
+        "overview-06.png": "58735cae4b40effdedf22ae3f7f03fd4dde962e7dee674707dd6fe99993b46db",
+        "protocol.json": "ca20d4cbe571a0701b3ed7be9a136e790fc0af427685f43ae3f2eb3fbf9b8931",
+        "README.md": "58c36c7c32ba50c5c6917bc1228f398f858e8d1b84c78a7c57955d4db5876b07",
+        "render_full.py": "b0524657f03c122c14f9065677794e32d1703fb65b973231fb2074bf005b5558",
+        "runtime-clarification.json": "721a1f572fb6d015ede7ff9b816af29c784bada5bea6b8f70b04eaf4dceeca66",
+        "summarize_full.py": "067352707ded335445bbce8ac4eba41362461b470853a3f56c72b55e22452966",
+        "tracking-state.json": "2d5d8fca2cfbf33b2b5666e016eea7f9550e2b8f48fefece542ba79fe4d7e3ff",
+        "track_full.py": "66ffb0a6a3aad1fa0c6deb4b4853471fcfee8d50b7f9b2ed02019c63d1ed9589",
+        "verification.json": "d20e954b836c63be7c41757d0d25f8eab5dce26c6668e686e8f2104ce5a01168"
+      },
+      "large_artifacts": "Original JSONL, NPZ, videos and screenshots remain external; existing source manifests bind their bytes."
+    },
+    "global-recovery": {
+      "external_root": "../TFM/audits/recovery-global-20261025",
+      "files_sha256": {
+        "artifact-sha256.json": "36be64abc9a60eebe649d019a3ca46429fd19a5d02f403aad294d50bde07b905",
+        "audit.py": "5f6059098df8e79b068bec95fde0e68367a2094e6c83b954b14d1254824b94e7",
+        "conf002_all.fragments.json": "a36fa27d4b015a6e02b81938c54ce2506eb9acba9a63aa9dd5b3c8ba3967ad59",
+        "conf005_all.fragments.json": "20a8a9b2cdd21c6ae5de6be97fa85f92b2abcfca4d8221388b9e2de57e10e8fe",
+        "conf005_cap20.fragments.json": "43bf1a25da65dee38e21cff2cf947f992e278f5b67dcd765be33da6616f3e1cb",
+        "README.md": "27eaae0b9e11581ee9d02539f6ba284a15fa7aa229e27b774b0731663c874567",
+        "render.py": "01f74e6b78d562c22aa7496f95b348be6977f1807455e853185446215bde3f7f",
+        "report.py": "8dec9e8ce131f2f58235a7bb5bf5e66bdfd364f4c4c4adff460a0c41f81bba80",
+        "results.json": "abb20dd7db82d9ba299547a56ec68a3d927aa7851daa02e4dd49b07a9414a3e0",
+        "review_endpoints.py": "dbd0513e6491aeba95c97cd084021f943e483a0270a3fc0876e6d76b1f668332",
+        "source-code-sha256.json": "3b82d7c00ac08087886714b668145c8cbb79858c8e37025cc98ec01ec80ec05a",
+        "verification.json": "826ad0158d63d7b5546730c62c30e9bdc987c6019e95a8a0ee338a97fc40bcbb",
+        "visual-review.json": "ed9efc94c645ad424a452d4c3329df93e22486c469811e7960d818945046c090"
+      },
+      "artifact_sha256": {
+        "audit.py": "5f6059098df8e79b068bec95fde0e68367a2094e6c83b954b14d1254824b94e7",
+        "chain-break-306-315.png": "bc4eec56660fbb5f01871cc745388db2b0e7839be2a69010998d9e94522d0927",
+        "conf002_all.fragments.json": "a36fa27d4b015a6e02b81938c54ce2506eb9acba9a63aa9dd5b3c8ba3967ad59",
+        "conf005_all.fragments.json": "20a8a9b2cdd21c6ae5de6be97fa85f92b2abcfca4d8221388b9e2de57e10e8fe",
+        "conf005_cap20.fragments.json": "43bf1a25da65dee38e21cff2cf947f992e278f5b67dcd765be33da6616f3e1cb",
+        "endpoint-contamination.png": "595cdcedf57cfd3cfedd300d4c369cf168ceda2c296c2c2497f8acee66c254d7",
+        "endpoint-reconnections.png": "eb8d8235be801b8c2923a6f238ca96f15deaff32d678a769fb58243af905a9ba",
+        "late-chain-43.png": "0eefc45be2f94650333d58447dfdba5a7768e56035540bb7fa11c515d60a15df",
+        "mixed-fragments.png": "1215103c5d40f5708e7f17929aeab7294f1b5d4c0107968127971cbbeb10d16e",
+        "README.md": "27eaae0b9e11581ee9d02539f6ba284a15fa7aa229e27b774b0731663c874567",
+        "recovery-comparison.mp4": "84c50d15b755593bb2afa4d67c1202877b553032fe6d520aae64e1300be403c0",
+        "render.py": "01f74e6b78d562c22aa7496f95b348be6977f1807455e853185446215bde3f7f",
+        "report.py": "8dec9e8ce131f2f58235a7bb5bf5e66bdfd364f4c4c4adff460a0c41f81bba80",
+        "results.json": "abb20dd7db82d9ba299547a56ec68a3d927aa7851daa02e4dd49b07a9414a3e0",
+        "review_endpoints.py": "dbd0513e6491aeba95c97cd084021f943e483a0270a3fc0876e6d76b1f668332",
+        "source-code-sha256.json": "3b82d7c00ac08087886714b668145c8cbb79858c8e37025cc98ec01ec80ec05a",
+        "successful-reconnections.png": "ac040393c7a7b65f931703b06cd9732d7529fa5774e89c575cf87913bef8455d",
+        "suspect-chain-42.png": "224a9b23a511d64ba422d3aa5d6683ea90945a6a2b04e989fc6f7916d04b9daf",
+        "verification.json": "826ad0158d63d7b5546730c62c30e9bdc987c6019e95a8a0ee338a97fc40bcbb",
+        "visual-review.json": "ed9efc94c645ad424a452d4c3329df93e22486c469811e7960d818945046c090"
+      },
+      "large_artifacts": "Original JSONL, NPZ, videos and screenshots remain external; existing source manifests bind their bytes."
+    }
+  },
+  "experiments": [
+    {
+      "id": "historical-confidence-sweep",
+      "coverage": "3 complete clips, 2520 frames",
+      "change": "strong association/birth threshold .1/.075/.05; cached historical detections",
+      "finding": "134/151 vs126/151 sparse matches at .05 vs .1, but IDs190→327 and fragments1097→1958; not a stable improvement"
+    },
+    {
+      "id": "fresh-window",
+      "coverage": "first clip frames430–529; tracker starts at430",
+      "change": "detector .05/.02/.01, top20 vs all",
+      "finding": "Local result did not establish whole-video identity continuity"
+    },
+    {
+      "id": "full-tracking",
+      "coverage": "first clip930frames from frame0",
+      "change": "three detector variants, same BoT-SORT/ReID configuration",
+      "finding": ".02 all:79/85 matches, min9 ID changes; .05 all:79/85,min8; .05 cap20:79/85,min7"
+    },
+    {
+      "id": "global-recovery-pilot",
+      "coverage": "same full traces and descriptors",
+      "change": "9 association configurations, full-video Hungarian, dummy no-link columns",
+      "finding": ".02 appearance primary:9→5 sparse min changes, same79/85 coverage, four main gymnast chains; conservative53 matches in one chain vs45 in best original track"
+    }
+  ],
+  "not_implemented_as_reliable_behavior": [
+    "automatic_duplicate_resolution",
+    "automatic_contaminated_fragment_splitting",
+    "validated_actor_identity",
+    "apply"
+  ],
+  "evaluation_rules": [
+    "No labels in link costs",
+    "Keep fixed inputs for algorithm comparisons",
+    "Independent reviewed identities required before claiming accuracy",
+    "Do not select a production default on this pilot"
+  ]
+}

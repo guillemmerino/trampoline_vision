@@ -22,5 +22,10 @@ Veure la [guia 27](../docs/27-configurable-box-tracking.md).
 
 `recovery/fragments.json` i `fragments-disabled.json` són perfils executables
 1.0 de la comanda independent inspect-fragments. La preparació està implementada;
-el rematching continua pendent. Els *.example.json 0.1-draft són només disseny
+el rematching fiable continua pendent. Els *.example.json 0.1-draft són només disseny
 i es rebutgen en execució. Vegeu la [guia 29](../docs/29-recovery-fragment-inspection.md).
+
+`experiments/recovery/` afegeix perfils executables explícits per `audit-recovery`
+a 0.7.0. `experiments/detectors/` només registra receptes del pilot, sense
+integrar inferència nova. Cap perfil experimental substitueix els defaults.
+Vegeu la [guia 30](../docs/30-experimental-recovery-audit.md).

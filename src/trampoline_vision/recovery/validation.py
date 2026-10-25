@@ -84,3 +84,32 @@ def validate_lifecycle(trace):
         finished.update(s.track_id for s in frame.tracks if s.state == 'finished')
         previous = {tid: s for tid, s in current.items() if s.state != 'finished'}
     return previous
+
+
+def build_validated_chains(fragments, links):
+    """Exigeix un DAG de camins exclusius; valida temporalitat, no identitat física."""
+    by_id={f.fragment_id:f for f in fragments}
+    successor, predecessor={},{}
+    for a,b in links:
+        if a not in by_id or b not in by_id or a in successor or b in predecessor:
+            raise RecoveryError('Unknown fragment or multiple predecessors/successors')
+        if by_id[a].samples[-1].context.timestamp_s >= by_id[b].samples[0].context.timestamp_s:
+            raise RecoveryError('Overlapping or backward fragment link')
+        successor[a],predecessor[b]=b,a
+    seen=set()
+    chains=[]
+    for f in fragments:
+        if f.fragment_id in predecessor:
+            continue
+        chain=[]
+        current=f.fragment_id
+        while current is not None:
+            if current in seen:
+                raise RecoveryError('Cyclic or repeated fragment')
+            seen.add(current)
+            chain.append(current)
+            current=successor.get(current)
+        chains.append(tuple(chain))
+    if seen!=set(by_id):
+        raise RecoveryError('Fragments missing from acyclic chain partition')
+    return tuple(chains)

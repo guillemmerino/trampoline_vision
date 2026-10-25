@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-25",
+  "status": "passed",
+  "purpose": "integration_validation_not_independent_identity_accuracy",
+  "installed_wheel": {
+    "status": "passed",
+    "version": "0.7.0",
+    "wheel": "trampoline_vision-0.7.0-py3-none-any.whl",
+    "wheel_sha256": "758ceb41564fd420e30132061d9d07e36c9b661ad63a3dc8e32d670e3ae0612f",
+    "tests_run": 150,
+    "tests_skipped": 0,
+    "installed_cli_help_passed": true,
+    "models_or_network_used": false,
+    "tests_log_sha256": "41c2f684c73924b11b9fa2845b8b79725a049c7bc9bd75ae02389ed984581a55"
+  },
+  "windows_tests": {
+    "run": 150,
+    "passed": 119,
+    "skipped": 31,
+    "reason": "optional FFmpeg/PyAV capabilities absent"
+  },
+  "frozen_video_regression": {
+    "status": "passed",
+    "purpose": "integration_regression_not_independent_identity_validation",
+    "frames": 930,
+    "appearance_inference": false,
+    "tracking_reexecuted": false,
+    "input_files_unchanged": true,
+    "profiles": [
+      {
+        "profile": "disabled-v1",
+        "totals": {
+          "fragments": 156,
+          "gaps": 115,
+          "link_candidates": 0,
+          "selected_link_proposals": 0,
+          "cross_track_proposals": 0,
+          "actor_hypotheses": 0,
+          "observed_samples": 35407
+        },
+        "elapsed_s": 13.933071784998901,
+        "code_sha256": "12f9cd65e555e62f2b11a47fc6dfcc4b0731d12c9d103648a954fb54587bfd35",
+        "profile_sha256": "ab7bb440fc37320f1ff5622786b359f32f14f0e03a6a0026963caeae92f7f22d",
+        "report_sha256": "4ddcdd475b8cda75f8258577e706391d4b725c272d9ac8faea060f6a1e3bec56"
+      },
+      {
+        "profile": "global-geometry-v1",
+        "totals": {
+          "fragments": 156,
+          "gaps": 115,
+          "link_candidates": 1206,
+          "selected_link_proposals": 106,
+          "cross_track_proposals": 32,
+          "actor_hypotheses": 50,
+          "observed_samples": 35407
+        },
+        "elapsed_s": 13.824545082999975,
+        "code_sha256": "12f9cd65e555e62f2b11a47fc6dfcc4b0731d12c9d103648a954fb54587bfd35",
+        "profile_sha256": "1c178bb4f11a3936ea9abd37bbe4b4aed733c25e9046b4895dfc94f5e99a40b1",
+        "report_sha256": "05fc59fc49bbbfbbab9ef986ef3676b7947564e9cfe4c6375794c013da2832a4",
+        "selected_link_set_matches_numpy_pilot": true,
+        "links_only_in_integrated": [],
+        "links_only_in_pilot": [],
+        "sparse_minimum_changes_integrated": 9,
+        "sparse_minimum_changes_pilot": 9,
+        "matched_reference_instants": 79,
+        "references_independent": false
+      },
+      {
+        "profile": "global-osnet-hungarian-v1",
+        "totals": {
+          "fragments": 156,
+          "gaps": 115,
+          "link_candidates": 1206,
+          "selected_link_proposals": 98,
+          "cross_track_proposals": 20,
+          "actor_hypotheses": 58,
+          "observed_samples": 35407
+        },
+        "elapsed_s": 23.186750496999593,
+        "code_sha256": "12f9cd65e555e62f2b11a47fc6dfcc4b0731d12c9d103648a954fb54587bfd35",
+        "profile_sha256": "2c6571aa58d142d4bb0d3bc895c6e3042a33a0c5b8b2f2032707ed6f1952c7d5",
+        "report_sha256": "8b393caad7a2dd15e1d69f27970d2f6daccf30ca7ad4e22c2c6920e40eccfd78",
+        "selected_link_set_matches_numpy_pilot": true,
+        "links_only_in_integrated": [],
+        "links_only_in_pilot": [],
+        "sparse_minimum_changes_integrated": 5,
+        "sparse_minimum_changes_pilot": 5,
+        "matched_reference_instants": 79,
+        "references_independent": false
+      },
+      {
+        "profile": "global-osnet-conservative-v1",
+        "totals": {
+          "fragments": 156,
+          "gaps": 115,
+          "link_candidates": 1206,
+          "selected_link_proposals": 94,
+          "cross_track_proposals": 18,
+          "actor_hypotheses": 62,
+          "observed_samples": 35407
+        },
+        "elapsed_s": 24.252309895000508,
+        "code_sha256": "12f9cd65e555e62f2b11a47fc6dfcc4b0731d12c9d103648a954fb54587bfd35",
+        "profile_sha256": "624e7e761164e93dcbf606ce2da5810c5a781eac4eceba4da38d4699114b0c49",
+        "report_sha256": "b91ef5e758821930125e6392a8c4ec489523caaa66c2b034123bba8fa2af32ff",
+        "selected_link_set_matches_numpy_pilot": true,
+        "links_only_in_integrated": [],
+        "links_only_in_pilot": [],
+        "sparse_minimum_changes_integrated": 6,
+        "sparse_minimum_changes_pilot": 6,
+        "matched_reference_instants": 79,
+        "references_independent": false
+      },
+      {
+        "profile": "global-osnet-permissive-v1",
+        "totals": {
+          "fragments": 156,
+          "gaps": 115,
+          "link_candidates": 1206,
+          "selected_link_proposals": 99,
+          "cross_track_proposals": 20,
+          "actor_hypotheses": 57,
+          "observed_samples": 35407
+        },
+        "elapsed_s": 23.892181708000862,
+        "code_sha256": "12f9cd65e555e62f2b11a47fc6dfcc4b0731d12c9d103648a954fb54587bfd35",
+        "profile_sha256": "a942ed0bea5cbd4bf9ca5115e5946c0ca0119e42f55d6b9cb3e0155c2a91ee1d",
+        "report_sha256": "42f4310167d9d68033929a3e86c4982cc72e29a674145ae849f8547a01569294",
+        "selected_link_set_matches_numpy_pilot": true,
+        "links_only_in_integrated": [],
+        "links_only_in_pilot": [],
+        "sparse_minimum_changes_integrated": 8,
+        "sparse_minimum_changes_pilot": 8,
+        "matched_reference_instants": 79,
+        "references_independent": false
+      },
+      {
+        "profile": "global-osnet-long-gap-v1",
+        "totals": {
+          "fragments": 156,
+          "gaps": 115,
+          "link_candidates": 6920,
+          "selected_link_proposals": 110,
+          "cross_track_proposals": 30,
+          "actor_hypotheses": 46,
+          "observed_samples": 35407
+        },
+        "elapsed_s": 30.975990986000397,
+        "code_sha256": "12f9cd65e555e62f2b11a47fc6dfcc4b0731d12c9d103648a954fb54587bfd35",
+        "profile_sha256": "701dad8701a7a48a73a36b55d2644bddcd1f7445b6fce795eafffc0a14faf91f",
+        "report_sha256": "ee67cde360bdb349b0ed4fb02423e0e191b2ed595613d981523c50eac824011a",
+        "selected_link_set_matches_numpy_pilot": true,
+        "links_only_in_integrated": [],
+        "links_only_in_pilot": [],
+        "sparse_minimum_changes_integrated": 9,
+        "sparse_minimum_changes_pilot": 9,
+        "matched_reference_instants": 79,
+        "references_independent": false
+      }
+    ]
+  },
+  "external_artifacts": "../TFM/audits/recovery-integration-20261025/validation",
+  "default_profiles_changed": false,
+  "apply_implemented": false,
+  "notes": [
+    "Six integrated profiles preserve frozen selected link sets; no new detector/tracker/appearance inference.",
+    "Source-tree hash identifies executable Python independently of Git checkout.",
+    "Full-video test used PYTHONPATH; wheel was installed and all150 tests/CLI help independently passed."
+  ]
+}

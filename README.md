@@ -51,7 +51,15 @@ incorpora dades ni pesos. La regressió compara els tres clips amb l’estudi
 anterior; el [protocol d’integració](benchmarks/studies/06-configurable-tracking/README.md)
 distingeix aquesta comprovació d’una avaluació de precisió.
 
-## Recovery: preparació de fragments (0.6.0)
+## Recovery: fragments i auditoria experimental (0.7.0)
+
+Actualització 0.7.0: `audit-recovery` afegeix propostes globals experimentals,
+amb geometria/aparença i hongarès amb opció de no unir. Conserva el tracking
+original; no aplica reconstruccions ni certifica identitats. Els perfils
+s'escullen explícitament a `configs/experiments/recovery/`.
+Vegeu la [guia d'auditoria](docs/30-experimental-recovery-audit.md) i
+el [registre d'experiments](benchmarks/studies/07-recovery-global/README.md).
+El detector i els perfils habituals del tracker no s'han modificat.
 
 `inspect-fragments` llegeix un tracking complet, valida la cobertura i prepara
 fragments observats i buits amb prediccions. Exporta informe, JSONL auditable
@@ -160,3 +168,20 @@ l'informe registra la discrepància. Les notes esportives no s'utilitzen en aque
 
 El projecte és germà de TFM i no importa els seus scripts. Dades, pesos i resultats locals queden
 fora del control de versions. La llicència de distribució del projecte encara s'ha de decidir.
+
+## Banc de calibratge al servidor Linux/NVIDIA
+
+S'ha preparat un corpus portable de 94 clips de TFM i pesos locals verificats,
+amb una suite pilot de 18 vídeos. El banc compara detector i perfils de tracking,
+registra temps/recursos i permet reprendre la mateixa bateria. No requereix API
+ni modifica els defaults. Vídeos i models es transfereixen separadament de Git.
+
+Després de traslladar les dades i actualitzar el checkout al servidor:
+
+```bash
+bash benchmarks/calibration/run-server.sh --suite pilot
+```
+
+Vegeu el [protocol de preparació, transferència i execució](benchmarks/calibration/README.md)
+per al preflight, la prova curta, els resultats i les anotacions necessàries abans
+d'escollir una configuració per precisió. La validació GPU es farà al servidor.

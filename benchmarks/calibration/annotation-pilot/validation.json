@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "raw-frame-annotation-pilot-v1-revision2",
+  "status": "model_provisional_human_review_pending",
+  "samples": 72,
+  "proposed_boxes": 61,
+  "excluded_samples": 11,
+  "reference_files_sha256": {
+    "JPN_AGE_1_000905_31.0.json": "a2ff8862c37e13004862cf883f78e8f7b6822b0b98da8a90628ccdfe6c7f522c",
+    "JPN_AGE_2_000709_37.0.json": "df57638e1ba7d8d55604fc73e1da05d7413d6bda47ca4f4f1eabeaa9be9270f9",
+    "JPN_AGE_3_001351_19.0.json": "f4104d941ce7cd1daa07306c1bb7da2079119572d15b3937df9b68028769f714"
+  },
+  "selection_sha256": "8016d42aed1707d4cc5b05eb90ef2e22bba7b423566e1b7522e5f3e58964235d",
+  "extraction_manifest_sha256": "10528b0265580e772941da4f54a32940a10aeea0b7759ce18dc1feed1a8fa1ff",
+  "review_manifest_sha256": "d8ea23f878963af770c316dea2174c51cc0aaf66444c1f312452eab74047dbc5",
+  "zip": {
+    "path": "runs/annotation-pilot-v1.zip",
+    "size_bytes": 133299736,
+    "sha256": "a3ccadea04ce200a0a5dd6a5c50ae53d03f39d3b78bc955569fc763e20f55615",
+    "crc_verified": true
+  },
+  "software_checks": {
+    "calibration_tests_passed": 22,
+    "provisional_opt_in_and_provenance_tested": true,
+    "dry_run_3_videos_3_detector_jobs_3_tracking_jobs": true,
+    "historical_traces_compared": 6
+  },
+  "model_review": {
+    "method": "raw visual inspection and overlay QA by the same OpenAI agent session",
+    "full_frame_fallbacks": [
+      {
+        "case_id": "JPN_AGE_1_000905_31.0",
+        "frames": [
+          900
+        ]
+      },
+      {
+        "case_id": "JPN_AGE_3_001351_19.0",
+        "frames": [
+          105,
+          180,
+          450
+        ]
+      }
+    ],
+    "overlay_corrections": 2,
+    "human_accuracy_validation": false,
+    "new_external_api_calls": false
+  },
+  "limitations": [
+    "Approximate model-localized bboxes; no independent human ground truth",
+    "Intentional sparse sampling, including known failure intervals",
+    "Excluded ambiguous instants must also be reviewed",
+    "No production configuration selected"
+  ]
+}

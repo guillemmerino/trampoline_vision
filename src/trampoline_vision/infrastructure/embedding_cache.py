@@ -93,3 +93,30 @@ class EmbeddingCache:
         if self.connection is not None:
             self.connection.close()
             self.connection = None
+
+
+class ReadOnlyEmbeddingCache(EmbeddingCache):
+    """Llegeix cache existent; no crea fitxers, taules, descriptors ni metadades."""
+
+    def __init__(self,path,expected_identity,model_fingerprint):
+        """Exigeix identitat d'inputs i model abans de reutilitzar get/signatures del cache."""
+        self.path=Path(path).resolve()
+        self.model_fingerprint=model_fingerprint
+        self.connection=None
+        try:
+            wal=Path(str(self.path)+'-wal')
+            if wal.exists() and wal.stat().st_size:
+                raise ValueError('Use a closed checkpointed cache, not active WAL data')
+            self.connection=sqlite3.connect(self.path.as_uri()+'?mode=ro&immutable=1',uri=True,timeout=30)
+            row=self.connection.execute('SELECT value FROM metadata WHERE id=1').fetchone()
+            if row is None:
+                raise ValueError('Missing cache metadata')
+            self.metadata=json.loads(row[0])
+            if not isinstance(self.metadata,dict) or self.metadata.get('schema_version')!='1.0':
+                raise ValueError('Unsupported cache schema')
+            expected={**expected_identity,'model_fingerprint':model_fingerprint}
+            if any(self.metadata.get(k)!=v for k,v in expected.items()):
+                raise ValueError('Cache input/model identity differs')
+        except (OSError,sqlite3.Error,ValueError,TypeError) as exc:
+            self.close()
+            raise TrackingError(f'Cannot open verified read-only appearance cache: {exc}') from exc

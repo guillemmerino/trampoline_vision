@@ -1,0 +1,39 @@
+{
+  "revision": 2,
+  "corrections": [
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 445,
+      "before": [
+        264,
+        579,
+        358,
+        755
+      ],
+      "after": [
+        264,
+        579,
+        358,
+        790
+      ],
+      "reason": "Same-model overlay QA found a clipped foot/leg; extend box to include the visible body. No tracker outputs used."
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frame_index": 448,
+      "before": [
+        250,
+        558,
+        365,
+        709
+      ],
+      "after": [
+        250,
+        558,
+        398,
+        728
+      ],
+      "reason": "Same-model overlay QA found a clipped foot/leg; extend box to include the visible body. No tracker outputs used."
+    }
+  ]
+}

@@ -34,3 +34,9 @@ L'[estudi 06](studies/06-configurable-tracking/README.md) comprova la integraci�
 Les nou traces del pilot 05 es reprodueixen exactament, amb proves del paquet
 instal·lat i d’inferència real. És una regressió d’integració; la coherència
 de l’actor i el matching d’esquelets continuen pendents.
+
+El [banc de calibratge del servidor](calibration/README.md) prepara un corpus
+portable de 94 vídeos (pilot de 18), pesos locals verificats i bateries
+detector/tracking amb represa i monitorització. Les referències independents
+i la validació GPU són passos explícits; no es declaren defaults òptims a
+partir dels recomptes operatius.

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "task": "audit_tracking_recovery",
+  "profile_id": "global-osnet-long-gap-v1",
+  "revision": 1,
+  "strategy": "geometry_appearance",
+  "parameters": {
+    "max_gap_s": 31.0,
+    "no_link_cost": 0.55,
+    "appearance_weight": 0.65,
+    "geometry_weight": 0.25,
+    "scale_weight": 0.05,
+    "time_weight": 0.05,
+    "appearance_distance_scale": 0.5,
+    "max_scale_ratio": 4.0,
+    "distance_base": 3.0,
+    "distance_growth_per_s": 5.0,
+    "geometry_growth_per_s": 3.0,
+    "ambiguity_margin": 0.05,
+    "duplicate_iou": 0.7
+  },
+  "mode": "audit",
+  "status": "experimental"
+}

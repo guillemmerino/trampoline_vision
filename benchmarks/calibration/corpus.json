@@ -1,0 +1,2050 @@
+{
+  "schema_version": "1.0",
+  "corpus_id": "tfm-trampoline-calibration-v1",
+  "selection_status": "exploratory_not_independent_holdout",
+  "selection_basis": "94 original output_clips MP4s; pilot: 6 per AGE group, historical cases plus temporal spread and short/long clips. No sports scores used. Midpoint contact sheet reviewed; no complete manual identity annotation.",
+  "limitations": [
+    "Same competition/capture family; no claim of cross-camera or cross-event generalization",
+    "Clips can share athletes or overlap in source time; no train/test split is asserted",
+    "Container metadata is provisional; runner verifies each selected video with ffprobe and decoding",
+    "Broadcast black bars and graphics retained; no automatic ROI cropping",
+    "No independent identity ground truth supplied"
+  ],
+  "suites": {
+    "smoke": [
+      "JPN_AGE_1_000905_31.0",
+      "JPN_AGE_1_001814_34.0",
+      "JPN_AGE_3_001351_19.0"
+    ],
+    "pilot": [
+      "JPN_AGE_1_000840_34.0",
+      "JPN_AGE_1_000905_31.0",
+      "JPN_AGE_1_001814_34.0",
+      "JPN_AGE_1_002139_38.0",
+      "JPN_AGE_1_002837_43.0",
+      "JPN_AGE_1_005412_48.0",
+      "JPN_AGE_2_000024_27.0",
+      "JPN_AGE_2_000709_37.0",
+      "JPN_AGE_2_001925_21.0",
+      "JPN_AGE_2_003434_33.0",
+      "JPN_AGE_2_004622_33.0",
+      "JPN_AGE_2_005459_25.0",
+      "JPN_AGE_3_001122_32.0",
+      "JPN_AGE_3_001351_19.0",
+      "JPN_AGE_3_001618_22.0",
+      "JPN_AGE_3_002412_31.0",
+      "JPN_AGE_3_002828_43.0",
+      "JPN_AGE_3_003349_25.0"
+    ],
+    "all": [
+      "JPN_AGE_1_000840_34.0",
+      "JPN_AGE_1_000905_31.0",
+      "JPN_AGE_1_001107_32.0",
+      "JPN_AGE_1_001255_30.0",
+      "JPN_AGE_1_001402_33.0",
+      "JPN_AGE_1_001533_32.0",
+      "JPN_AGE_1_001536_32.0",
+      "JPN_AGE_1_001647_30.0",
+      "JPN_AGE_1_001655_33.0",
+      "JPN_AGE_1_001800_30.0",
+      "JPN_AGE_1_001814_34.0",
+      "JPN_AGE_1_001859_30.0",
+      "JPN_AGE_1_002015_31.0",
+      "JPN_AGE_1_002028_30.0",
+      "JPN_AGE_1_002117_36.0",
+      "JPN_AGE_1_002139_38.0",
+      "JPN_AGE_1_002237_35.0",
+      "JPN_AGE_1_002407_32.0",
+      "JPN_AGE_1_002527_36.0",
+      "JPN_AGE_1_002635_33.0",
+      "JPN_AGE_1_002719_29.0",
+      "JPN_AGE_1_002756_31.0",
+      "JPN_AGE_1_002837_43.0",
+      "JPN_AGE_1_002908_33.0",
+      "JPN_AGE_1_003002_35.0",
+      "JPN_AGE_1_003026_30.0",
+      "JPN_AGE_1_003112_38.0",
+      "JPN_AGE_1_003127_31.0",
+      "JPN_AGE_1_003242_32.0",
+      "JPN_AGE_1_003348_32.0",
+      "JPN_AGE_1_003407_28.0",
+      "JPN_AGE_1_005045_31.0",
+      "JPN_AGE_1_005136_37.0",
+      "JPN_AGE_1_005154_32.0",
+      "JPN_AGE_1_005256_37.0",
+      "JPN_AGE_1_005311_32.0",
+      "JPN_AGE_1_005412_48.0",
+      "JPN_AGE_1_005423_30.0",
+      "JPN_AGE_1_005533_35.0",
+      "JPN_AGE_1_005537_32.0",
+      "JPN_AGE_1_005656_31.0",
+      "JPN_AGE_1_005806_32.0",
+      "JPN_AGE_1_005819_31.0",
+      "JPN_AGE_2_000024_27.0",
+      "JPN_AGE_2_000137_26.0",
+      "JPN_AGE_2_000247_26.0",
+      "JPN_AGE_2_000412_26.0",
+      "JPN_AGE_2_000434_27.0",
+      "JPN_AGE_2_000536_25.0",
+      "JPN_AGE_2_000555_28.0",
+      "JPN_AGE_2_000644_28.0",
+      "JPN_AGE_2_000709_37.0",
+      "JPN_AGE_2_000811_26.0",
+      "JPN_AGE_2_000839_27.0",
+      "JPN_AGE_2_000930_25.0",
+      "JPN_AGE_2_001134_23.0",
+      "JPN_AGE_2_001208_24.0",
+      "JPN_AGE_2_001355_25.0",
+      "JPN_AGE_2_001925_21.0",
+      "JPN_AGE_2_002952_23.0",
+      "JPN_AGE_2_002955_26.0",
+      "JPN_AGE_2_003102_22.0",
+      "JPN_AGE_2_003104_21.0",
+      "JPN_AGE_2_003206_24.0",
+      "JPN_AGE_2_003221_24.0",
+      "JPN_AGE_2_003246_32.0",
+      "JPN_AGE_2_003326_24.0",
+      "JPN_AGE_2_003434_33.0",
+      "JPN_AGE_2_003556_24.0",
+      "JPN_AGE_2_003714_30.0",
+      "JPN_AGE_2_003859_25.0",
+      "JPN_AGE_2_004009_24.0",
+      "JPN_AGE_2_004247_27.0",
+      "JPN_AGE_2_004348_25.0",
+      "JPN_AGE_2_004424_26.0",
+      "JPN_AGE_2_004508_25.0",
+      "JPN_AGE_2_004548_25.0",
+      "JPN_AGE_2_004622_33.0",
+      "JPN_AGE_2_004654_25.0",
+      "JPN_AGE_2_004920_26.0",
+      "JPN_AGE_2_004940_26.0",
+      "JPN_AGE_2_005031_25.0",
+      "JPN_AGE_2_005344_27.0",
+      "JPN_AGE_2_005459_25.0",
+      "JPN_AGE_3_001122_32.0",
+      "JPN_AGE_3_001351_19.0",
+      "JPN_AGE_3_001501_28.0",
+      "JPN_AGE_3_001618_22.0",
+      "JPN_AGE_3_001950_26.0",
+      "JPN_AGE_3_002412_31.0",
+      "JPN_AGE_3_002714_23.0",
+      "JPN_AGE_3_002828_43.0",
+      "JPN_AGE_3_003002_24.0",
+      "JPN_AGE_3_003349_25.0"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "JPN_AGE_1_000840_34.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_000840_34.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_000840_34.0.mp4"
+      },
+      "sha256": "a8d39a77eac93686c2f01d5e117507d601111c1b12a41a92a75bbd071479f8f8",
+      "size_bytes": 3464655,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1020,
+        "duration_s": 34.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_000905_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_000905_31.0.mp4"
+      },
+      "sha256": "4dcb631c2d42f41ebe1375c37697f14041fff11a76f5e3459ab0e3aea220a67e",
+      "size_bytes": 2462856,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": true
+    },
+    {
+      "case_id": "JPN_AGE_1_001107_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001107_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001107_32.0.mp4"
+      },
+      "sha256": "78dd2e2231f66c7e12ef8e87f3629f5ce523cec000969b3473224001e927f297",
+      "size_bytes": 2475733,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001255_30.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001255_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001255_30.0.mp4"
+      },
+      "sha256": "f1788da71b3678c4685aa634ae30292ec66eb4c400c79b3f7b97bef051b27250",
+      "size_bytes": 2679545,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001402_33.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001402_33.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001402_33.0.mp4"
+      },
+      "sha256": "c4d17c9529a597f37aff32fd49b846235bfdb42661f5f48e62d9eb4fced9c499",
+      "size_bytes": 2590333,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 990,
+        "duration_s": 33.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001533_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001533_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001533_32.0.mp4"
+      },
+      "sha256": "67b13276f8e85060f9bfd41c1aa8c9c174c18275a233fdfcaf9b637f1f07571f",
+      "size_bytes": 3138103,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001536_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001536_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001536_32.0.mp4"
+      },
+      "sha256": "d7233b8912335ab962cb6e9e470912e83cab4edf5f3857704ab3ac104d0bc7d7",
+      "size_bytes": 3149256,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001647_30.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001647_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001647_30.0.mp4"
+      },
+      "sha256": "531c10369f0957b2de08b8e4ed8da4744fb6228127cd4f8cbba2d9bd35b8340d",
+      "size_bytes": 2476026,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001655_33.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001655_33.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001655_33.0.mp4"
+      },
+      "sha256": "2406cca724c701337e9f4625cdbb556d7669ec94482ab01e1b8ec2aed0beb88b",
+      "size_bytes": 2476485,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 990,
+        "duration_s": 33.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001800_30.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001800_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001800_30.0.mp4"
+      },
+      "sha256": "905eb9dfd6cba958c631d8715f7751506c8bf32220b4035b733fecb1ddd09b0e",
+      "size_bytes": 3516669,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001814_34.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001814_34.0.mp4"
+      },
+      "sha256": "8829f533bf312bee91206fa5b7eaa3931861f3c9dccab392b34a3e5fcd6b119f",
+      "size_bytes": 3533966,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1020,
+        "duration_s": 34.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": true
+    },
+    {
+      "case_id": "JPN_AGE_1_001859_30.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_001859_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_001859_30.0.mp4"
+      },
+      "sha256": "279cfd2f8f8911c71d8d6f0f310b4c6967a0c6250bd54124aaa49a5c28133dfd",
+      "size_bytes": 2790468,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002015_31.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002015_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002015_31.0.mp4"
+      },
+      "sha256": "831fd838bd577b264ff0977a13f31353e83ce870975aa15a4ac8151d9a055161",
+      "size_bytes": 3178740,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002028_30.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002028_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002028_30.0.mp4"
+      },
+      "sha256": "8da1b692b4ee157b77844f3ec22ea9b9cf1bb912fcb948038e1ebd18cdc1a638",
+      "size_bytes": 3090417,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002117_36.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002117_36.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002117_36.0.mp4"
+      },
+      "sha256": "fe957f139b2cf7100e20cf8f8451693bf2ccc993c5f1d384b12dd937388358a6",
+      "size_bytes": 3916573,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1080,
+        "duration_s": 36.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002139_38.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002139_38.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002139_38.0.mp4"
+      },
+      "sha256": "c8903b3b35de5e0af7b70867242e48673a618742a7455a0c66a1e93c170b7339",
+      "size_bytes": 3869624,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1140,
+        "duration_s": 38.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002237_35.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002237_35.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002237_35.0.mp4"
+      },
+      "sha256": "a8c631f3c64e0896062d51bc03fb4300209e4e833280ce9094f963e835cf7bc7",
+      "size_bytes": 2974939,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1050,
+        "duration_s": 35.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002407_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002407_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002407_32.0.mp4"
+      },
+      "sha256": "dd928747efed1d60dfaea86a681d5e9c7ba9b33781dae3af49087383526d123f",
+      "size_bytes": 2647515,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002527_36.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002527_36.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002527_36.0.mp4"
+      },
+      "sha256": "f76ff7d0ac9086554cf613fc27fa79c616a9231b59590cb73051eb79d523638c",
+      "size_bytes": 3277134,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1080,
+        "duration_s": 36.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002635_33.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002635_33.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002635_33.0.mp4"
+      },
+      "sha256": "b9a2e1c96e4c574c7666f696e228909286458c3cf90c2532dc002ed8ce04aca8",
+      "size_bytes": 2775233,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 990,
+        "duration_s": 33.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002719_29.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002719_29.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002719_29.0.mp4"
+      },
+      "sha256": "ba76113f089c53bc71845286a5d66945fc46a1bed8d1d6517db921ea4208140d",
+      "size_bytes": 2344643,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 870,
+        "duration_s": 29.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002756_31.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002756_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002756_31.0.mp4"
+      },
+      "sha256": "1c87bbb6b064f1fb21b0304267ca22fd75cc45fb405a3c1a824f7d94a4ed40bc",
+      "size_bytes": 2901365,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002837_43.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002837_43.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002837_43.0.mp4"
+      },
+      "sha256": "25a4e885c9285f3087c263b6589fb70a30dc507961f2f1dd1eafd67029876ef9",
+      "size_bytes": 4636859,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1290,
+        "duration_s": 43.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_002908_33.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_002908_33.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_002908_33.0.mp4"
+      },
+      "sha256": "2b2aa79ef574b3f7d26f32c5035f90f2f10207fea929da5b52edcd5650c73877",
+      "size_bytes": 2668098,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 990,
+        "duration_s": 33.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_003002_35.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_003002_35.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_003002_35.0.mp4"
+      },
+      "sha256": "f56e97c398fdf8b779a7be2a172204c8ed4570aa89550390f3cc9f64a0ae07e3",
+      "size_bytes": 2920243,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1050,
+        "duration_s": 35.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_003026_30.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_003026_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_003026_30.0.mp4"
+      },
+      "sha256": "32b88f86bcb040b69528b0fcdf9773ea9ad09eea0c67dc73c3166c65b15d4865",
+      "size_bytes": 2915757,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_003112_38.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_003112_38.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_003112_38.0.mp4"
+      },
+      "sha256": "486b7b1c15f741fbcd5458c9b73bfa3545c634cb8bbd0372b240f68faa55d8ca",
+      "size_bytes": 3987964,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1140,
+        "duration_s": 38.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_003127_31.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_003127_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_003127_31.0.mp4"
+      },
+      "sha256": "e86484b32ae0e1751d1c3092c0524220948a35aa761e544f2b4ecd4bd05c5dda",
+      "size_bytes": 2596017,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_003242_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_003242_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_003242_32.0.mp4"
+      },
+      "sha256": "dab72b339b96587d3323239871f27f474ffd168f5793a958a109b3e1dcb931e5",
+      "size_bytes": 3304103,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_003348_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_003348_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_003348_32.0.mp4"
+      },
+      "sha256": "90d46a8a6ba67a23745207fe5a34e4d505625c1116fbe7dfa7c4c2e664ad071d",
+      "size_bytes": 3436722,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_003407_28.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_003407_28.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_003407_28.0.mp4"
+      },
+      "sha256": "ba0a0865ae9aaba0a905018829a4d4a4e416ab806fa83d68abb044165aab76cd",
+      "size_bytes": 3039105,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 840,
+        "duration_s": 28.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005045_31.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005045_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005045_31.0.mp4"
+      },
+      "sha256": "e97c7addda0e50007287c74104a7c061bfab00fcd5a63c982628bff360968b79",
+      "size_bytes": 2322360,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005136_37.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005136_37.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005136_37.0.mp4"
+      },
+      "sha256": "bf833cca7aa7c363eacfc98882cbc37cafd3b023ec1c0c7193aa6b5187e3795f",
+      "size_bytes": 3259356,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1110,
+        "duration_s": 37.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005154_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005154_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005154_32.0.mp4"
+      },
+      "sha256": "0338e4149dc23337f7c8698cf2808dcbd30cb137cedf9488c69a1ad8c2b1b832",
+      "size_bytes": 3091305,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005256_37.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005256_37.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005256_37.0.mp4"
+      },
+      "sha256": "43fc34c2f742551eab1836357f7539ad195202aad5fa57e0ddb023f4550f6a78",
+      "size_bytes": 3282803,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1110,
+        "duration_s": 37.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005311_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005311_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005311_32.0.mp4"
+      },
+      "sha256": "aac74def62e1dcc2a5151dcff18596f74174ba4abdf6afb19067dfda2a9e352e",
+      "size_bytes": 2521864,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005412_48.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005412_48.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005412_48.0.mp4"
+      },
+      "sha256": "e207b154b3145511fde21ac81801a449d37f927c27374c227e5c5f5dcbcee0e9",
+      "size_bytes": 5006165,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1440,
+        "duration_s": 48.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005423_30.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005423_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005423_30.0.mp4"
+      },
+      "sha256": "5000526e2dc4c54226972cb5a12201f7fa85e1e4deeaf67df1f0469a17181f8f",
+      "size_bytes": 2357815,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005533_35.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005533_35.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005533_35.0.mp4"
+      },
+      "sha256": "08d167563d71739daa6e3cf32b06eeca7d19de6dcd0d76dbc644cbb8186e5255",
+      "size_bytes": 2978535,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1050,
+        "duration_s": 35.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005537_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005537_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005537_32.0.mp4"
+      },
+      "sha256": "7e771447c57a7219605f19b915fc5944df73974d2633f8cc70fc685ec94fa334",
+      "size_bytes": 2882841,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005656_31.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005656_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005656_31.0.mp4"
+      },
+      "sha256": "025a7f424a6dbc7734e7947a37ab2572dd79d61c684972518ca5bd9a14f8cdf4",
+      "size_bytes": 2952930,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005806_32.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005806_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005806_32.0.mp4"
+      },
+      "sha256": "56e03b769040aae6858edcbae5b8b52a6cac44d784b6d8f85f4898f51f9ebc49",
+      "size_bytes": 3229559,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_1_005819_31.0",
+      "group": "JPN_AGE_1",
+      "path": "videos/JPN_AGE_1_005819_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_1_005819_31.0.mp4"
+      },
+      "sha256": "bbc588c12e0dec68c0d362f2c787c15b616759ec2a945e25770a6ad19e5d2b80",
+      "size_bytes": 3137508,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000024_27.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000024_27.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000024_27.0.mp4"
+      },
+      "sha256": "c8fb528dfec40b0b644972ec40599188953f750f10bdcfcef5494a15ba7a5e68",
+      "size_bytes": 2910224,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 810,
+        "duration_s": 27.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000137_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000137_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000137_26.0.mp4"
+      },
+      "sha256": "ce09f0116e3d3a3ad319dccef5ed05c651010a1b491bfdfaabd72181a4bfd340",
+      "size_bytes": 2264680,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000247_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000247_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000247_26.0.mp4"
+      },
+      "sha256": "7adf70392499b121554e682eda7c9d95d25d1d9a9f31cbf2caa9bde50763e91e",
+      "size_bytes": 2680725,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000412_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000412_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000412_26.0.mp4"
+      },
+      "sha256": "61912bf1a3e5c59a17fd0c5e2f07a2f46e64678a7f3c6e7b7d4b74388338af4e",
+      "size_bytes": 2081740,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000434_27.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000434_27.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000434_27.0.mp4"
+      },
+      "sha256": "2afa0f05e92916a2c883ea467d8051726012e5bd3b072196c09b0efb0d9ff88e",
+      "size_bytes": 2165579,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 810,
+        "duration_s": 27.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000536_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000536_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000536_25.0.mp4"
+      },
+      "sha256": "04a242973cc0d57a3cd9d795a988ce27b5abe6bf0d8b6c08f18410a5be65b43e",
+      "size_bytes": 2041234,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000555_28.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000555_28.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000555_28.0.mp4"
+      },
+      "sha256": "f20d4c5dd36a60d2658b5585d928d9aa681d1c8945a02673c30742b51f937c88",
+      "size_bytes": 2391194,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 840,
+        "duration_s": 28.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000644_28.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000644_28.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000644_28.0.mp4"
+      },
+      "sha256": "68c0dd7af8ea2dd0b795822ba233abcda12e41b843e045fe9e66e3d80c3121db",
+      "size_bytes": 2557392,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 840,
+        "duration_s": 28.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000709_37.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000709_37.0.mp4"
+      },
+      "sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+      "size_bytes": 3876166,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1110,
+        "duration_s": 37.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000811_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000811_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000811_26.0.mp4"
+      },
+      "sha256": "9d782e06af93d6fb40708f3ab6b95ec75e2fab019f4740b1fdbd4b1143cd717f",
+      "size_bytes": 2619303,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000839_27.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000839_27.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000839_27.0.mp4"
+      },
+      "sha256": "3cdcfc52e135c5e1e0ab49928647613b0b312643d18adfc65ba3ec2203ab71c1",
+      "size_bytes": 2539606,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 810,
+        "duration_s": 27.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_000930_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_000930_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_000930_25.0.mp4"
+      },
+      "sha256": "35d014f08afe3e21f98ce60f945f26052bfef6615e9965f3248126234d875ee2",
+      "size_bytes": 2552528,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_001134_23.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_001134_23.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_001134_23.0.mp4"
+      },
+      "sha256": "9f5661379cc53b6338e53cdb9e367379712e22946b8ecf9879091d80e397a4ca",
+      "size_bytes": 2407657,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 690,
+        "duration_s": 23.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_001208_24.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_001208_24.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_001208_24.0.mp4"
+      },
+      "sha256": "ade01738a6827268d7d8bf1a1d6567a72dab224f63187496bc79ec4d533af5b7",
+      "size_bytes": 2627134,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 720,
+        "duration_s": 24.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_001355_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_001355_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_001355_25.0.mp4"
+      },
+      "sha256": "f162df14b125eedf0c1b96969306be2c78151b3ecbc200e0d18f00cd4ee2d4f2",
+      "size_bytes": 2615994,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_001925_21.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_001925_21.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_001925_21.0.mp4"
+      },
+      "sha256": "f5a6ff29abfbc7accbd6e18d487fbeeece9cbda31d96a0fcef18fe489080df72",
+      "size_bytes": 1130326,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 630,
+        "duration_s": 21.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_002952_23.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_002952_23.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_002952_23.0.mp4"
+      },
+      "sha256": "c1623872f1c9a6cd6436fd32c3ce1a3e4aa3acc3e784548d0ad24b3a83ebf304",
+      "size_bytes": 2092111,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 690,
+        "duration_s": 23.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_002955_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_002955_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_002955_26.0.mp4"
+      },
+      "sha256": "015d8b6fe7aa6b87a23f90e9f80782ea4fdd87d68b76cacdfa3f1e298a455804",
+      "size_bytes": 2227440,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003102_22.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003102_22.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003102_22.0.mp4"
+      },
+      "sha256": "1863d2057532f010e32582f4ceb0729a309ff718c3456e53c99b6c3c6cb855a8",
+      "size_bytes": 1923443,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 660,
+        "duration_s": 22.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003104_21.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003104_21.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003104_21.0.mp4"
+      },
+      "sha256": "2b8411bdb44060e02eea0a0c4be5180cbee6a392df27d6a55315c305c847356d",
+      "size_bytes": 1926493,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 630,
+        "duration_s": 21.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003206_24.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003206_24.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003206_24.0.mp4"
+      },
+      "sha256": "620cf4c702bf3220b8216ce0af7ac6f9ebfb1c9ef0543354df57e9536859f481",
+      "size_bytes": 1942600,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 720,
+        "duration_s": 24.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003221_24.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003221_24.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003221_24.0.mp4"
+      },
+      "sha256": "6a67ed10e9b0bc7b2272b2bd67cb61d2383dac6ca3c7139c1dd2cbb67b836886",
+      "size_bytes": 2217652,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 720,
+        "duration_s": 24.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003246_32.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003246_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003246_32.0.mp4"
+      },
+      "sha256": "f3bedc3e490cec255ca0da06d79d3c673848ca3a54dbb9efdb7812846868fb28",
+      "size_bytes": 2265397,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003326_24.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003326_24.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003326_24.0.mp4"
+      },
+      "sha256": "67249ba207d169ec42c504a6959f3d3a048718285a342be64be09cbddb100aa9",
+      "size_bytes": 2751827,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 720,
+        "duration_s": 24.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003434_33.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003434_33.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003434_33.0.mp4"
+      },
+      "sha256": "5ce8b05e75630459a3e56eab5099a2aae2e1846ece914ae2258de0cfc97fc94f",
+      "size_bytes": 3398624,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 990,
+        "duration_s": 33.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003556_24.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003556_24.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003556_24.0.mp4"
+      },
+      "sha256": "a5e440b559cc7e70b20da59b6341c80f8d67386772798e4816f159375e01706f",
+      "size_bytes": 2452251,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 720,
+        "duration_s": 24.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003714_30.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003714_30.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003714_30.0.mp4"
+      },
+      "sha256": "17f0e8fdbc302d869b9ca5d7ec78e42fc5506680f358de3459b39e7abc9a69d3",
+      "size_bytes": 2729818,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 900,
+        "duration_s": 30.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_003859_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_003859_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_003859_25.0.mp4"
+      },
+      "sha256": "a4088498aed600f4d92137a17559bc0e626a64338a7f3bc82a2a9538aa22565e",
+      "size_bytes": 2211099,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004009_24.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004009_24.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004009_24.0.mp4"
+      },
+      "sha256": "d4c0791dd11825a7b5754bb8bf6e10e35a6b3928dbc7311b8c8097beffd91f8c",
+      "size_bytes": 2212650,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 720,
+        "duration_s": 24.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004247_27.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004247_27.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004247_27.0.mp4"
+      },
+      "sha256": "f0caa3ddbadf5e5b0771cb317c176232e3d21d98a45b43208f4be2ba6f35e5fb",
+      "size_bytes": 2248797,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 810,
+        "duration_s": 27.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004348_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004348_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004348_25.0.mp4"
+      },
+      "sha256": "fe2aa532f942b6c3c5e7c957f4c97792e8a0a4802e1351b6b7e87205a7ac3236",
+      "size_bytes": 2181354,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004424_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004424_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004424_26.0.mp4"
+      },
+      "sha256": "7b82228bae4eb1508677655a1ab15e91518c618da79a34a5ab8b84f65bd785c2",
+      "size_bytes": 2550558,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004508_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004508_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004508_25.0.mp4"
+      },
+      "sha256": "8bd903f6f5588f2055af7a9a2e9cccdc54f6605349cda812d6979c4c782beb5c",
+      "size_bytes": 2204584,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004548_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004548_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004548_25.0.mp4"
+      },
+      "sha256": "9ceae7c77b9f200f13b9fc3cd367c4b6ab9e8c0ac3563d2860d06b3527cb2daf",
+      "size_bytes": 2069177,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004622_33.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004622_33.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004622_33.0.mp4"
+      },
+      "sha256": "e905f0752839a729ac1634b0ee4a23de42db25a4a91560b3ea3326a5716dd0b5",
+      "size_bytes": 2747955,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 990,
+        "duration_s": 33.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004654_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004654_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004654_25.0.mp4"
+      },
+      "sha256": "4d4a5988bdb553d29e88d6cbbf205bb8272cb5acac7f68da10fcdf2d88f60b1c",
+      "size_bytes": 2756920,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004920_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004920_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004920_26.0.mp4"
+      },
+      "sha256": "dc318297216fb212b0c479009ddd155a0162e690e39a8f9d48e1e6a5840a9fb4",
+      "size_bytes": 2926471,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_004940_26.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_004940_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_004940_26.0.mp4"
+      },
+      "sha256": "c5e32d04db0dd6f0a393c0b5deb484b5775402ab17f9670e03cce1f9b0a8bea5",
+      "size_bytes": 2798575,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_005031_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_005031_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_005031_25.0.mp4"
+      },
+      "sha256": "a96ab2c350642ca43606c777c9e33fe2fe154804cfaed8bdb3b13d4c28de8b38",
+      "size_bytes": 2275130,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_005344_27.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_005344_27.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_005344_27.0.mp4"
+      },
+      "sha256": "fbab8fbebcf616a025ea7b72af3abc27aeb8d2a5489ff5ed7e061196b266e934",
+      "size_bytes": 2704362,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 810,
+        "duration_s": 27.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_2_005459_25.0",
+      "group": "JPN_AGE_2",
+      "path": "videos/JPN_AGE_2_005459_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_2_005459_25.0.mp4"
+      },
+      "sha256": "84f99df09e00003bc24eec40d091319fca6d4e8edbe77b06681cbe739a3ba2d2",
+      "size_bytes": 2284428,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_001122_32.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_001122_32.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_001122_32.0.mp4"
+      },
+      "sha256": "05d75a05b53e31bfadeed3f2f0ef6ad0cbe606408506f5e9cf9efc71e0d34370",
+      "size_bytes": 3459805,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 960,
+        "duration_s": 32.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_001351_19.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_001351_19.0.mp4"
+      },
+      "sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "size_bytes": 1684123,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 570,
+        "duration_s": 19.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": true
+    },
+    {
+      "case_id": "JPN_AGE_3_001501_28.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_001501_28.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_001501_28.0.mp4"
+      },
+      "sha256": "08273d1306a979ae5d2d07b9855bc69cb442238ac6c6e2a8a7c97a57ae9b05ce",
+      "size_bytes": 2234901,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 840,
+        "duration_s": 28.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_001618_22.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_001618_22.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_001618_22.0.mp4"
+      },
+      "sha256": "b3bd95ab5b35b4938a3c0f4fd1b76557a651e1ea1dbebccc378b10c521f322b6",
+      "size_bytes": 2011166,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 660,
+        "duration_s": 22.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_001950_26.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_001950_26.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_001950_26.0.mp4"
+      },
+      "sha256": "e04e6d95461925e019ff9ab216e8588667184d2aa7eda5bc7bd8776b8064f90e",
+      "size_bytes": 2891876,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 780,
+        "duration_s": 26.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_002412_31.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_002412_31.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_002412_31.0.mp4"
+      },
+      "sha256": "a2706dba5caae057a4409fd74985b578935017d8dec1aef0a827b9c05112ae17",
+      "size_bytes": 3472801,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 930,
+        "duration_s": 31.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_002714_23.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_002714_23.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_002714_23.0.mp4"
+      },
+      "sha256": "7df55c2220f52fc3ab91e8e7c89e83c683e184f1fb090302873e0a2ba49007b9",
+      "size_bytes": 2078685,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 690,
+        "duration_s": 23.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_002828_43.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_002828_43.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_002828_43.0.mp4"
+      },
+      "sha256": "5ba2fdfa98b7956024504fb6f56809c69f51fae74697d4e3072196ffdb2d5b50",
+      "size_bytes": 3301921,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 1290,
+        "duration_s": 43.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_003002_24.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_003002_24.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_003002_24.0.mp4"
+      },
+      "sha256": "116a1db221c27574ed9f60427753ef543ae94d3a5ebbbc9722c6c33b0520a5a3",
+      "size_bytes": 2152331,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 720,
+        "duration_s": 24.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    },
+    {
+      "case_id": "JPN_AGE_3_003349_25.0",
+      "group": "JPN_AGE_3",
+      "path": "videos/JPN_AGE_3_003349_25.0.mp4",
+      "source": {
+        "root": "tfm",
+        "path": "jumping_score/output_clips/JPN_AGE_3_003349_25.0.mp4"
+      },
+      "sha256": "cceb9b04bf78920ae2c6c591ca690ee6d45a256f2d6d5ae3d3bae3765b2e96ea",
+      "size_bytes": 2623729,
+      "video": {
+        "width_px": 960,
+        "height_px": 1080,
+        "fps": 30.0,
+        "frame_count": 750,
+        "duration_s": 25.0
+      },
+      "probe_status": "opencv_container_metadata_and_midpoint_sample_only",
+      "historical_tracking_case": false
+    }
+  ],
+  "models": [
+    {
+      "model_id": "yolov8n",
+      "path": "models/yolov8n.pt",
+      "source": {
+        "root": "tfm",
+        "path": "Tracking_system/scripts/yolov8n.pt"
+      },
+      "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "size_bytes": 6549796
+    },
+    {
+      "model_id": "yolov8m",
+      "path": "models/yolov8m.pt",
+      "source": {
+        "root": "tfm",
+        "path": "Tracking_system/scripts/yolov8m.pt"
+      },
+      "sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "size_bytes": 52136884
+    },
+    {
+      "model_id": "osnet",
+      "path": "models/osnet_x0_25_msmt17.pt",
+      "source": {
+        "root": "project",
+        "path": "runs/reid-models/osnet_x0_25_msmt17.pt"
+      },
+      "sha256": "6f57607fed9f502b9efed546108132ee715df5a5b6e6932c6269bacb47f59f99",
+      "size_bytes": 3057863
+    }
+  ]
+}

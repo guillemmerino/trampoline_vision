@@ -36,6 +36,8 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [27. Tracking configurable](27-configurable-box-tracking.md) | Identitat de caixes, quatre perfils, ReID extern, cache i Docker. |
 | [28. Estructura de recovery](28-recovery-package-design.md) | Reconstrucció posterior al tracking: fitxers reservats, perfils de disseny i pla de construcció. |
 | [29. Diagnòstic de fragments](29-recovery-fragment-inspection.md) | Contractes, lectura completa, fragmentació, CLI i continuació 4–6. |
+| [30. Auditoria experimental de recovery](30-experimental-recovery-audit.md) | Propostes globals, perfils explícits, cache verificat i registre d'experiments; sense apply. |
+| [31. Calibratge al servidor](31-server-calibration-benchmark.md) | Corpus portable, bateries de detector/tracking, Linux/NVIDIA, represa i referències independents. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions
@@ -69,6 +71,9 @@ poses i la coherència de l’actor continuen pendents; veure document 27.
 A 0.6.0 el primer increment de recovery prepara fragments del tracking complet,
 amb contractes, validació, informe/JSONL i visualització. Encara no uneix tracks
 ni assigna actors; passos futurs 4–6 al document 29.
+A 0.7.0 `audit-recovery` implementa propostes globals i hipòtesis provisionals,
+amb perfils experimentals i registre a benchmark 07. No aplica identitats ni
+resol encara duplicats/contaminació automàticament; veure document 30.
 La selecció del gimnasta, la segmentació i l'API continuen pendents.
 Els altres contractes avançats i les rutes API són propostes.
 Els canvis de comportament hauran d'actualitzar el document afectat i, si canvien una frontera

@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "raw-frame-annotation-pilot-v1",
+  "status": "exploratory_selection_not_random_or_independent_holdout",
+  "selection_basis": "One AGE1 historical failure case, one AGE2 case without a prior tracking study, one AGE3 historical case. Broad anchors and denser flight/contact windows; no sports scores. Prior studies inform selection of AGE1 frames 430-495; their labels and tracker outputs are not loaded for this annotation pass. AGE2/AGE3 windows chosen from raw-video overview.",
+  "annotation_policy": "Visible extent of target gymnast only; exclude assistants even when overlapping. Use original-pixel xyxy; no amodal reconstruction. Mark ambiguous/occluded when extent or identity cannot be resolved. Model-generated proposals require human review.",
+  "cases": [
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frames": [
+        0,
+        90,
+        180,
+        270,
+        360,
+        430,
+        433,
+        436,
+        439,
+        442,
+        445,
+        448,
+        451,
+        474,
+        477,
+        480,
+        483,
+        486,
+        489,
+        492,
+        495,
+        540,
+        720,
+        900
+      ],
+      "review_crop_xyxy": [
+        160,
+        320,
+        560,
+        920
+      ],
+      "purpose": "historical_contact_and_inversion"
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "frames": [
+        0,
+        180,
+        270,
+        360,
+        450,
+        528,
+        531,
+        534,
+        537,
+        540,
+        543,
+        546,
+        549,
+        630,
+        714,
+        717,
+        720,
+        723,
+        726,
+        729,
+        732,
+        735,
+        900,
+        1109
+      ],
+      "review_crop_xyxy": [
+        480,
+        260,
+        880,
+        1000
+      ],
+      "purpose": "new_case_flight_and_landing"
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frames": [
+        0,
+        81,
+        84,
+        87,
+        90,
+        93,
+        96,
+        99,
+        102,
+        105,
+        180,
+        252,
+        255,
+        258,
+        261,
+        264,
+        267,
+        270,
+        273,
+        276,
+        360,
+        450,
+        540,
+        569
+      ],
+      "review_crop_xyxy": [
+        480,
+        250,
+        840,
+        920
+      ],
+      "purpose": "inversion_and_overlap_with_red_shirt_assistant"
+    }
+  ]
+}

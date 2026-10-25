@@ -2,8 +2,8 @@
 
 pipeline i tracklets construeixen fragments observats i buits amb evidència
 predita, amb configuració activable/desactivable i invariants verificades.
-No s'uneixen tracks ni s'assigna actor_id en aquest primer increment.
-motion, appearance, coherence i association són etapes futures per passar
-de fragments auditables a una reconstrucció d'actors validada.
+L'auditoria experimental0.7 proposa unions i hipòtesis sense canviar la traça.
+La identitat física, la resolució de duplicats/contaminació i apply encara
+no estan validats. inspect-fragments conserva el diagnòstic anterior.
 Importar el paquet no carrega models, trackers ni dependències numèriques.
 """

@@ -1,0 +1,2 @@
+# Els scripts que es traslladen des de Windows s'executen amb Bash a Linux.
+*.sh text eol=lf
