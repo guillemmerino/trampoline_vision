@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "iteration_id": "localization-candidates-v1",
+  "title": "Localització: candidat 0,001 i control 0,002",
+  "objective": "Maximitzar la disponibilitat d'una caixa útil del gimnasta, sense estudiar encara IDs ni duplicació temporal.",
+  "hypothesis": "Fixem YOLOv8m 0,001 com a candidat principal i 0,002 com a control. Prioritzem localització; distingim suficient, parcial aprofitable i absent/incorrecta, preservant IoU i deteccions originals. Les bboxes d’IA s’accepten com a referència de l’estudi per instrucció de l’usuari; no es declara revisió humana independent de totes les mostres. Pla acotat als tres vídeos actuals, pendent de preparar noves anotacions abans d’ampliar la mostra.",
+  "experiment": "../experiments/localization-candidates.json",
+  "suite": "pilot",
+  "cases": [
+    "JPN_AGE_1_000905_31.0",
+    "JPN_AGE_2_000709_37.0",
+    "JPN_AGE_3_001351_19.0"
+  ],
+  "detectors": [
+    "yolov8m-conf0001-nms070",
+    "yolov8m-conf0002-nms070"
+  ],
+  "trackers": [],
+  "detector_only": true,
+  "annotations": "../../annotations/pilot-v1/references",
+  "allow_provisional_references": true,
+  "overlay": false,
+  "expected": {
+    "videos": 3,
+    "detector_jobs": 6,
+    "tracking_jobs": 0
+  },
+  "review_decisions": "../../annotations/pilot-v1/localization-decisions-v1.json"
+}

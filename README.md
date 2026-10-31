@@ -176,12 +176,12 @@ amb una suite pilot de 18 vídeos. El banc compara detector i perfils de trackin
 registra temps/recursos i permet reprendre la mateixa bateria. No requereix API
 ni modifica els defaults. Vídeos i models es transfereixen separadament de Git.
 
-Després de traslladar les dades i actualitzar el checkout al servidor:
+La revisió actual de les anotacions i deteccions s’obre amb:
 
 ```bash
-bash benchmarks/calibration/run-server.sh --suite pilot
+python3 -m benchmarks.calibration review serve
 ```
 
-Vegeu el [protocol de preparació, transferència i execució](benchmarks/calibration/README.md)
-per al preflight, la prova curta, els resultats i les anotacions necessàries abans
-d'escollir una configuració per precisió. La validació GPU es farà al servidor.
+Vegeu l’[entrada del banc de calibratge](benchmarks/calibration/README.md) per a
+l’estat de l’estudi, les comandes i la ubicació dels resultats. El protocol de
+servidor, la transferència i les proves històriques es documenten separadament.

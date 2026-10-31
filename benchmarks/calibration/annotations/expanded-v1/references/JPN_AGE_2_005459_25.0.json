@@ -1,0 +1,1673 @@
+{
+  "schema_version": "1.0",
+  "case_id": "JPN_AGE_2_005459_25.0",
+  "video_sha256": "84f99df09e00003bc24eec40d091319fca6d4e8edbe77b06681cbe739a3ba2d2",
+  "status": "provisional",
+  "reviewer": "OpenAI agent; independent motion proposals and native visual review, no human validation",
+  "reviewer_type": "model",
+  "human_reviewed": false,
+  "provenance": {
+    "method": "median-background motion proposal + same-agent native visual inspection/correction; no interpolation",
+    "exact_model_identifier": "not_recorded",
+    "separate_api_calls": false,
+    "detector_outputs_used_for_new_boxes": false,
+    "tracker_outputs_shown_during_annotation": false,
+    "reference_boundary_precision": "approximate_unvalidated",
+    "proposal_overlays_inspected": 80,
+    "final_corrected_overlays": "rendered_for_review; spot checks recorded separately",
+    "selection_sha256": "7a00835ac26aaa7f6c5fc6c1b89c68e3c9c2498975b848446774585ed01c80db",
+    "foreground_proposals_sha256": "fd7e5b99294b400e6c2c73d2699dbb17b1392c65568d97cd3417397956dfca19",
+    "visual_review_sha256": "134ad99a31cac298df6b2f973b3894347ecd8f97d22ba9829ac7ea62eac20ac4",
+    "recipe_sha256": "98a970beccb940661f359b8069387d8650017a574abcc057192dc86a4c0e6057",
+    "extraction_sha256": "ec20188fe1ef0ef1b22af1f939737646d0ac9ff27e058f36961cb54c7cce2e1e",
+    "inherited_samples": 0,
+    "parent_reference_sha256": null
+  },
+  "notes": "AI boxes accepted for study by user; provisional and pending human validation. Sparse same-capture exploratory reference, not independent human ground truth. Original pixels xyxy; excluded frames remain in gallery and counts. Legacy sample geometry/state unchanged.",
+  "samples": [
+    {
+      "frame_index": 0,
+      "timestamp_s": 0.0,
+      "state": "visible",
+      "bbox_xyxy": [
+        594,
+        340,
+        688,
+        558
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "8f4a96b3e63eadfea01c6619be41803e2333c346abf9098fec497ad6c494fc4d",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 16,
+      "timestamp_s": 0.5333333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        608,
+        548,
+        674,
+        724
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "4966ec36603eef691468c31a24f7eb645e0fd7b01f7dda01c895c93a94a49ea2",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 32,
+      "timestamp_s": 1.0666666666666667,
+      "state": "visible",
+      "bbox_xyxy": [
+        610,
+        630,
+        665,
+        805
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "8605d6ac7703c198dcef848d873a941816adf44e02de7ac3112371ca785bb2ff",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 48,
+      "timestamp_s": 1.6,
+      "state": "visible",
+      "bbox_xyxy": [
+        605,
+        342,
+        667,
+        580
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "f34494fa100aab61614d9f6c8eb4d1aac6e9829e8a8b91263baf9ebc0a408b83",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 64,
+      "timestamp_s": 2.1333333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        616,
+        453,
+        673,
+        652
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "4aff0fd3380e315aef26fefba27ff76089954f4f805979937017bb7b5c13a05c",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 80,
+      "timestamp_s": 2.6666666666666665,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "2907c39766986da6e14dd0830751667cb4f3ac3826f62de425cbab0570e6eea5",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 96,
+      "timestamp_s": 3.2,
+      "state": "visible",
+      "bbox_xyxy": [
+        608,
+        396,
+        667,
+        654
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "853d53c50b297812feba1592025ecd66d2704d077a1c6b0d0101008371124ca9",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 112,
+      "timestamp_s": 3.7333333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        576,
+        388,
+        659,
+        603
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "b7883c5d85a5e52cb9083957a639d2c53db51877509421346d96c080e58fb9c3",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 127,
+      "timestamp_s": 4.233333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        570,
+        640,
+        640,
+        805
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "9007637e0574ac03142cefc369eaf1d6aee124c3a4958ce2310145251206b0f0",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 143,
+      "timestamp_s": 4.766666666666667,
+      "state": "visible",
+      "bbox_xyxy": [
+        582,
+        486,
+        643,
+        713
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "44434fb100efe2086be5c1d33d414e5c250eb6eaaa5f68012ac9a0360daf95ec",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 159,
+      "timestamp_s": 5.3,
+      "state": "visible",
+      "bbox_xyxy": [
+        568,
+        380,
+        625,
+        567
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "a42f1dfa6cbf3c5116648c29f97ddbe323be81251308efea89bddcfe1121806a",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 175,
+      "timestamp_s": 5.833333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        527,
+        568,
+        604,
+        747
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "5770cecb7b95518dcc3ddc97bb17aa6fc926c92ba473ac3b8443eb2cf9f96ad0",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 191,
+      "timestamp_s": 6.366666666666666,
+      "state": "visible",
+      "bbox_xyxy": [
+        527,
+        624,
+        710,
+        798
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "ed2b641fca1d9455addf18a34c276435aaa37dd92f697aa7570740bb31b69c8c",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 207,
+      "timestamp_s": 6.9,
+      "state": "visible",
+      "bbox_xyxy": [
+        525,
+        366,
+        605,
+        554
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "11742cbfbc0955f9a2796c2b90ec7e273ee788347bff05a1713143d937245fb8",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 223,
+      "timestamp_s": 7.433333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        496,
+        545,
+        676,
+        638
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "ef6787ce6cd6d35a5ea688d90cc02bf03df784d1ce05a9f9ec3e1d46eef8663a",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 239,
+      "timestamp_s": 7.966666666666667,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "0db7cf4d6ca43bec168c2353295576dc9ccca93a4ebfde00b6acc8c207745fc0",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 255,
+      "timestamp_s": 8.5,
+      "state": "visible",
+      "bbox_xyxy": [
+        611,
+        471,
+        734,
+        550
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "b0f0caf80d1488dadf4ef56f44e5b070fff515f5dfe0044042a509ab3a5a9f46",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 271,
+      "timestamp_s": 9.033333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        696,
+        500,
+        814,
+        623
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "4308d1ecaf0dbe883a7f2b16ca97943e70cd82dd30d8d924f5c265e332df9c08",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 287,
+      "timestamp_s": 9.566666666666666,
+      "state": "visible",
+      "bbox_xyxy": [
+        700,
+        675,
+        810,
+        845
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "7f1f78269c49616ac1a318e0637bbbd51dd2f2ff091af2befffdd4a97b85ebb3",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 303,
+      "timestamp_s": 10.1,
+      "state": "visible",
+      "bbox_xyxy": [
+        730,
+        446,
+        878,
+        598
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "e43cecb3a3708a7b27930d1953c412f56331e2a2c5892be0ba7a0d59eaabf293",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 319,
+      "timestamp_s": 10.633333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        641,
+        554,
+        830,
+        608
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "795e564cce78bdcbd0245a5412d264b191e76d04ec804dddb14dd781d4534393",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 335,
+      "timestamp_s": 11.166666666666666,
+      "state": "visible",
+      "bbox_xyxy": [
+        690,
+        680,
+        755,
+        840
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "251acf068bbbc6c3bd86a28f126b2867c2a546549f6746b7e36f38a40fb4ad56",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 351,
+      "timestamp_s": 11.7,
+      "state": "visible",
+      "bbox_xyxy": [
+        635,
+        447,
+        802,
+        569
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "6d15078c388dabaed76dd09dfbfd04fb896e845bffbccf8a60da49c7f8dafe43",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 367,
+      "timestamp_s": 12.233333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        571,
+        524,
+        773,
+        633
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "7469a57b52c86998ec2098e6ec17e32a0670fe55b45d0a414d02ce162098862a",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 382,
+      "timestamp_s": 12.733333333333333,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "38474d57d6c926ba6ddfc812ac403ccd4a15f8a2c57f26d4b3c4dc7028741060",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 385,
+      "timestamp_s": 12.833333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        615,
+        675,
+        725,
+        820
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "e4576023422d9495d5828bc5ddeff6597bd1085d1632dc8b6a2c3421ee164297",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 388,
+      "timestamp_s": 12.933333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        614,
+        660,
+        754,
+        824
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "13981550d99ca6c1e58f83023166357a7aa131bebba2873a51fe99efff6ecc91",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 391,
+      "timestamp_s": 13.033333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        608,
+        609,
+        718,
+        750
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "a46dd1a677d11009a35fa266144809cf80113dc2d7d325a427fe5e7bcea53e13",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 394,
+      "timestamp_s": 13.133333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        576,
+        559,
+        705,
+        654
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "7ff53a75239a906c3e9ebf0fa94f14542e0bfb54560fd5eab2973a9d973a7145",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 397,
+      "timestamp_s": 13.233333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        560,
+        513,
+        714,
+        614
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "a2081faf6ea7187e43c0749c70ce1b14bca49ddf831c8536c1cdbeefddf7ef31",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 398,
+      "timestamp_s": 13.266666666666667,
+      "state": "visible",
+      "bbox_xyxy": [
+        586,
+        485,
+        714,
+        608
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "5eb931aa017ef28d0896217afd8324bef653a1413625462c744e953c3b194dec",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 400,
+      "timestamp_s": 13.333333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        590,
+        428,
+        705,
+        600
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "bc41014d66327bd6bb57112ab318c1be074f57f545d2afe5c3f90f1db62e474c",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 403,
+      "timestamp_s": 13.433333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        638,
+        401,
+        688,
+        603
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "8cb40bc067ff9f5a14927ec9dee3c429f460cd8e83f09633103d28612ce95596",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 406,
+      "timestamp_s": 13.533333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        620,
+        412,
+        715,
+        595
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "d6ab268619bad18cf9b9439e6b8ec98f7e1dcf1d6cdc96c93394d37879476e9e",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 409,
+      "timestamp_s": 13.633333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        590,
+        434,
+        729,
+        587
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "c316f80ad236b907d2e98b10bad3f2601761218fc6a205689aaeda0f988116ec",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 412,
+      "timestamp_s": 13.733333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        560,
+        469,
+        748,
+        590
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "4c77d11739e1827fd9533d4a5e61b3205c9aff4842b0f5393545953f5b819dcb",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 414,
+      "timestamp_s": 13.8,
+      "state": "visible",
+      "bbox_xyxy": [
+        547,
+        513,
+        760,
+        592
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "8e40de7dad66cbf004e3d824131d364f06dca7fb13c9a6acf795b3b136fd0bcf",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 415,
+      "timestamp_s": 13.833333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        558,
+        538,
+        759,
+        610
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "90bdf2258efde1ce62cb7d338e4dc3ba391a75719ca162318e562f3a3ea93fe1",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 418,
+      "timestamp_s": 13.933333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        574,
+        574,
+        744,
+        670
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "cec1a093533bc6a587442cdb752ea8b4e1f7228f902fe596b4293ea6aa7dc997",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 421,
+      "timestamp_s": 14.033333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        582,
+        609,
+        710,
+        747
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "57a09baea717cb91a8b3ccecb5602c590863cbc83d94fa9c92936df4cc8a9282",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 424,
+      "timestamp_s": 14.133333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        575,
+        660,
+        719,
+        822
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "60445ce13d6508efd6fe5f1f153f2495fc2fe53fd9f6271b7784060632184107",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 427,
+      "timestamp_s": 14.233333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        600,
+        725,
+        675,
+        795
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "3a6468111990902f1d66e986a98b1a4dff485616b4560d94ff946a9d04716fe4",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 430,
+      "timestamp_s": 14.333333333333334,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "40221bc8826335ca14ce546b5ea5cc1b82a11e390b12ec2222468fcca076af40",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 433,
+      "timestamp_s": 14.433333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        640,
+        675,
+        705,
+        795
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "753772e64ad6b912384301ef36a6a49a3d00c4f394907772c22169c1ed3288aa",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 446,
+      "timestamp_s": 14.866666666666667,
+      "state": "visible",
+      "bbox_xyxy": [
+        600,
+        495,
+        720,
+        575
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "f391ba9ec421ad339fefb7ce78e1352720ddc4607e77bcf977cb45681f263a5e",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 453,
+      "timestamp_s": 15.1,
+      "state": "visible",
+      "bbox_xyxy": [
+        608,
+        413,
+        736,
+        570
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "8a0bddd0e2ce01ae3b1e223100b7c8682e09a2ed8629f1d5bf8f75e557ce1dc5",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 456,
+      "timestamp_s": 15.2,
+      "state": "visible",
+      "bbox_xyxy": [
+        589,
+        441,
+        762,
+        551
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "ebcfdd28d451a061adb38fdad61576b4ec9261960414506c76ec1d5a55cccc86",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 459,
+      "timestamp_s": 15.3,
+      "state": "visible",
+      "bbox_xyxy": [
+        590,
+        500,
+        790,
+        560
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "27d529efa91624382525d199a8184ca19e54caba5fb9c9a548ff85a3d1a882c6",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 462,
+      "timestamp_s": 15.4,
+      "state": "visible",
+      "bbox_xyxy": [
+        580,
+        520,
+        785,
+        570
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "c9d7ac390fa064ecc13f698803d66f2381905bb9bcf5357ca1457d8d49ce6c78",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 465,
+      "timestamp_s": 15.5,
+      "state": "visible",
+      "bbox_xyxy": [
+        595,
+        540,
+        765,
+        655
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "8ea9885254fcd16485091cbc9c2aca69ef83b27a43b5a5190757c576ed5acf1b",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 468,
+      "timestamp_s": 15.6,
+      "state": "visible",
+      "bbox_xyxy": [
+        610,
+        570,
+        775,
+        730
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "fcb708e67cb32641e50e86545aebd582b0dbf1d31d6d40662457c42055c95bf1",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 471,
+      "timestamp_s": 15.7,
+      "state": "visible",
+      "bbox_xyxy": [
+        600,
+        620,
+        720,
+        795
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "c67c833842f1153de61569e063bd73326034fe27f9de50156f74ec95c71156ec",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 474,
+      "timestamp_s": 15.8,
+      "state": "visible",
+      "bbox_xyxy": [
+        595,
+        670,
+        705,
+        815
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "8829b13a38e82dfc82f3dc3c13e410349a779b8c01ab843582ef57220732429d",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 477,
+      "timestamp_s": 15.9,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "5c94d33b467799fff21ac1edb2eeaaa9592fcdde6347817ce36e5c04c687ffd0",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 478,
+      "timestamp_s": 15.933333333333334,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "da12fdc888367481ba8892681421a86e1e7cdb74ab825f507c88c75f2dd5a2fa",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 480,
+      "timestamp_s": 16.0,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "d2a2a98c444703f10565db6cf9ed289cb550616ffb3a0880d4f1408e267c44cb",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 483,
+      "timestamp_s": 16.1,
+      "state": "visible",
+      "bbox_xyxy": [
+        570,
+        670,
+        705,
+        810
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "4b858c2646095f4fdaaae491e9ae3e43360067ed6a094e8c9ee06dcda6984b9b",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 486,
+      "timestamp_s": 16.2,
+      "state": "visible",
+      "bbox_xyxy": [
+        580,
+        630,
+        690,
+        775
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "70e8ed58b168562bac22764ca30019ec3fe7f849b94de60412cf263c159eed68",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 489,
+      "timestamp_s": 16.3,
+      "state": "visible",
+      "bbox_xyxy": [
+        595,
+        575,
+        705,
+        670
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "a9a519d6a7a0b9b63bba90d542bc092e451ebcd09b79624727e1efdc7e9d1a1f",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 492,
+      "timestamp_s": 16.4,
+      "state": "visible",
+      "bbox_xyxy": [
+        600,
+        525,
+        685,
+        635
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "c76bcc52641d2ad588a066e28f3d097d684ce3390657399fc31c21c4874b614f",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 494,
+      "timestamp_s": 16.466666666666665,
+      "state": "visible",
+      "bbox_xyxy": [
+        607,
+        464,
+        683,
+        625
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "af90b4513ab90c4279edc74c08f5032cc8efc24666b6b25b96667f6e79245857",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 495,
+      "timestamp_s": 16.5,
+      "state": "visible",
+      "bbox_xyxy": [
+        608,
+        443,
+        674,
+        620
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "41cc5082708d003315c0dc260de80fb41ff45e6e2cb31c5c94ca0bed9c56bd25",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 498,
+      "timestamp_s": 16.6,
+      "state": "visible",
+      "bbox_xyxy": [
+        593,
+        408,
+        656,
+        598
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "d8b14723c0115337176394e3cbec2b1361b771e6dc2c517c55d040fdf1f205f3",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 501,
+      "timestamp_s": 16.7,
+      "state": "visible",
+      "bbox_xyxy": [
+        560,
+        405,
+        667,
+        585
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "2451ec5e865f6bf6d7411156e4063fcbee1773f79b956c9906a2c45cf04be8c7",
+      "sampling_strata": [
+        "dense"
+      ]
+    },
+    {
+      "frame_index": 510,
+      "timestamp_s": 17.0,
+      "state": "visible",
+      "bbox_xyxy": [
+        481,
+        521,
+        678,
+        591
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "b0d60069df1648923cc91bfc678e904eaaa2af8ffae229d184d14c826a7c770f",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 526,
+      "timestamp_s": 17.533333333333335,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "be7c061fba5ce6229089580114abcd87aefb5ae8ac71fabd4f91ec597fcf3403",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 542,
+      "timestamp_s": 18.066666666666666,
+      "state": "visible",
+      "bbox_xyxy": [
+        476,
+        468,
+        604,
+        588
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "e696ab957a0a164971d9284c91d12a78a3d337472d4052bed28f405ff89d8c77",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 558,
+      "timestamp_s": 18.6,
+      "state": "visible",
+      "bbox_xyxy": [
+        415,
+        480,
+        605,
+        570
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "8c00b9eb6af1356bc59aa4ffe4e7e3771c46da0b89d191778e603814d09989c0",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 574,
+      "timestamp_s": 19.133333333333333,
+      "state": "visible",
+      "bbox_xyxy": [
+        450,
+        705,
+        570,
+        850
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "f626b071a5cd6a8900a1f91500391a4cf54613d6f25aa338775bde5c22995cae",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 590,
+      "timestamp_s": 19.666666666666668,
+      "state": "visible",
+      "bbox_xyxy": [
+        490,
+        510,
+        595,
+        625
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "90e827be255bbe8c8d4fce1f4ec19298f4ff01731b5c14bb776e7ea53387df6e",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 606,
+      "timestamp_s": 20.2,
+      "state": "visible",
+      "bbox_xyxy": [
+        544,
+        479,
+        728,
+        577
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "129f1c6a867a6c75d78fa1a7212e129f510a81e36c4741c47703473eaa7ae524",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 622,
+      "timestamp_s": 20.733333333333334,
+      "state": "ambiguous",
+      "bbox_xyxy": null,
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated",
+        "occluded_or_extent_unresolved"
+      ],
+      "notes": "Visual inspection could not resolve the target visible-body extent reliably (occlusion/apparatus/identity ambiguity); no inferred missing limbs and no negative detection label.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "d7c84162f4fd2ac7d38886ad53d7ea439c0d56525fe3c7f5142ae27fa261601f",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 637,
+      "timestamp_s": 21.233333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        680,
+        525,
+        780,
+        650
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "8bb98ae4eabe88018a63122bcbaf9d8fe92cb780a78949b20bc5cc275d109782",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 653,
+      "timestamp_s": 21.766666666666666,
+      "state": "visible",
+      "bbox_xyxy": [
+        639,
+        509,
+        820,
+        575
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "visually_accepted_motion_proposal",
+      "source_frame_png_sha256": "68f8e4f541046a579bdc67253f17fa67c9379ff733cbcb06866df73823f15778",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 669,
+      "timestamp_s": 22.3,
+      "state": "visible",
+      "bbox_xyxy": [
+        750,
+        680,
+        805,
+        860
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "017eb0b33f82898adca925630dd717b6a65f86cd48e3eb05f4f83341def4f9e4",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 685,
+      "timestamp_s": 22.833333333333332,
+      "state": "visible",
+      "bbox_xyxy": [
+        730,
+        650,
+        800,
+        860
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "e65824ac89edfaf6eb6d50ebbf89dd809a22a10c17c4b5d6465dba2485e99b2b",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 701,
+      "timestamp_s": 23.366666666666667,
+      "state": "visible",
+      "bbox_xyxy": [
+        680,
+        625,
+        755,
+        840
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "daa74a40e6591db66e2ca801a0337cca99dbc8e59e6ed43ca3097be6bd0a18b2",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 717,
+      "timestamp_s": 23.9,
+      "state": "visible",
+      "bbox_xyxy": [
+        655,
+        620,
+        745,
+        840
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "1cc7df89bf249e6086a369a53c632bc9cfd4937418796c69c04f7c768153f871",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 733,
+      "timestamp_s": 24.433333333333334,
+      "state": "visible",
+      "bbox_xyxy": [
+        660,
+        625,
+        750,
+        840
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "1eb68770e2e5d62b59bab2a79409092e6a18bc30eaf90ba8264b14b58e7a1d58",
+      "sampling_strata": [
+        "uniform"
+      ]
+    },
+    {
+      "frame_index": 749,
+      "timestamp_s": 24.966666666666665,
+      "state": "visible",
+      "bbox_xyxy": [
+        660,
+        625,
+        750,
+        840
+      ],
+      "issues": [
+        "model_generated",
+        "boundary_precision_unvalidated"
+      ],
+      "notes": "Approximate visible-body extent: independent median-background proposal and native visual inspection/correction by the same model. No YOLO outputs used.",
+      "annotation_method": "native_visual_correction",
+      "source_frame_png_sha256": "9c6e7d987f00bfb66403bc0c07d0e60724274702b6dbfc752cc8bd276579635b",
+      "sampling_strata": [
+        "uniform"
+      ]
+    }
+  ]
+}

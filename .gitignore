@@ -33,6 +33,7 @@ Thumbs.db
 /runs/
 /weights/
 /cache/
+/transfer/*.tar
 *.log
 
 # Pesos i artefactes grans; les petites fixtures de prova requereixen revisió explícita.

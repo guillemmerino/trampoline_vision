@@ -38,6 +38,7 @@ i el pla d'implementació; no implica que les funcionalitats ja estiguin disponi
 | [29. Diagnòstic de fragments](29-recovery-fragment-inspection.md) | Contractes, lectura completa, fragmentació, CLI i continuació 4–6. |
 | [30. Auditoria experimental de recovery](30-experimental-recovery-audit.md) | Propostes globals, perfils explícits, cache verificat i registre d'experiments; sense apply. |
 | [31. Calibratge al servidor](31-server-calibration-benchmark.md) | Corpus portable, bateries de detector/tracking, Linux/NVIDIA, represa i referències independents. |
+| [32. Avaluació del calibratge](32-tracker-calibration-assessment.md) | Aportació de la prova GPU, límits de les mètriques i pla per calibrar el tracker sense recovery offline. |
 | [Decisions](decisions/README.md) | Registre de decisions arquitectòniques. |
 
 ## Estat de les decisions

@@ -160,11 +160,11 @@ class CalibrationReferenceTests(unittest.TestCase):
 class CalibrationCorpusTests(unittest.TestCase):
     def test_annotation_sample_stays_provisional_and_matches_frozen_video_hashes(self):
         root = Path(__file__).resolve().parents[1]
-        corpus = {case["case_id"]: case for case in read_json(root / "corpus.json")["cases"]}
-        selection = read_json(root / "annotation-pilot/selection.json")
+        corpus = {case["case_id"]: case for case in read_json(root / "config/corpus.json")["cases"]}
+        selection = read_json(root / "annotations/pilot-v1/selection.json")
         total = boxes = 0
         for entry in selection["cases"]:
-            path = root / "annotation-pilot/references" / (entry["case_id"] + ".json")
+            path = root / "annotations/pilot-v1/references" / (entry["case_id"] + ".json")
             value = read_json(path)
             self.assertEqual(value["status"], "provisional")
             self.assertFalse(value["human_reviewed"])
@@ -176,7 +176,7 @@ class CalibrationCorpusTests(unittest.TestCase):
         self.assertEqual((total, boxes), (72, 61))
 
     def test_frozen_corpus_has_explicit_pilot_and_no_claimed_holdout(self):
-        path = Path(__file__).resolve().parents[1] / "corpus.json"
+        path = Path(__file__).resolve().parents[1] / "config/corpus.json"
         corpus = read_json(path)
         self.assertEqual(len(corpus["cases"]), 94)
         self.assertEqual(len(corpus["suites"]["pilot"]), 18)

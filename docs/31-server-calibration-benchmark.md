@@ -7,7 +7,7 @@ L'objectiu és poder actualitzar el codi amb Git, traslladar un paquet de
 vídeos/pesos identificat i executar una bateria amb una comanda al servidor
 Linux/NVIDIA. L'API no és una dependència d'aquest experiment.
 
-El [protocol i les comandes](../benchmarks/calibration/README.md) descriuen
+El [protocol i les comandes](../benchmarks/calibration/docs/SERVER.md) descriuen
 preparació, transferència, construcció GPU, smoke/pilot/all, represa,
 recursos, artefactes i referències manuals. `corpus.json` fixa els 94 vídeos;
 la suite pilot en selecciona 18, sis per grup de font, amb 9 min 36 s.
@@ -35,7 +35,7 @@ finalistes amb fonts reservades abans d'escollir defaults. Els 94 clips són
 un corpus exploratori del mateix entorn; no constitueixen un holdout independent.
 La GPU concreta del servidor encara requereix preflight i validació reals.
 
-La [mostra d'anotació provisional](../benchmarks/calibration/annotation-pilot/README.md)
+La [mostra d'anotació provisional](../benchmarks/calibration/annotations/pilot-v1/README.md)
 prepara 72 frames de tres vídeos: 61 caixes visuals del model i 11 exclusions.
 Conserva originals, hashes, correccions d'overlay i galeria. Les referències
 provisional requereixen `--allow-provisional-references` i no es publiquen

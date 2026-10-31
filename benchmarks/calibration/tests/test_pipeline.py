@@ -127,6 +127,22 @@ class CalibrationPipelineTests(unittest.TestCase):
         self.assertFalse(complete["evaluation"]["reference"]["human_reviewed"])
         self.assertEqual(complete["evaluation"]["observed_matches"], 2)
 
+    def test_yolo_person_filter_handles_mixed_classes_before_nms(self):
+        """Reprodueix la màscara de classe incompatible d'Ultralytics 8.3.114."""
+        import torch
+        from ultralytics.utils.ops import non_max_suppression
+        # xywh, confiança persona i confiança altra classe; quatre propostes.
+        prediction = torch.tensor([[[10., 50., 90., 130.], [10., 50., 90., 130.],
+                                    [8., 8., 8., 8.], [8., 8., 8., 8.],
+                                    [.9, .1, .8, .01], [.2, .95, .1, .02]]])
+        result = non_max_suppression(prediction, conf_thres=.05, iou_thres=.7,
+                                     classes=[0], max_det=300, nc=2)[0]
+        self.assertEqual(tuple(result.shape), (2, 6))
+        self.assertEqual(result[:, 5].tolist(), [0., 0.])
+        torch.testing.assert_close(result[:, 4], torch.tensor([.9, .8]))
+        torch.testing.assert_close(result[:, :4], torch.tensor([[6., 6., 14., 14.],
+                                                               [86., 86., 94., 94.]]))
+
     @unittest.skipUnless(os.environ.get("CALIBRATION_TEST_WEIGHTS"), "Set CALIBRATION_TEST_WEIGHTS for real offline YOLO inference")
     def test_real_yolo_decodes_every_synthetic_frame_with_local_weights(self):
         from trampoline_vision.ingestion.video import probe_video

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "iteration_id": "expanded-localization-v1",
+  "title": "Localització ampliada: 18 vídeos, 0,001 principal i 0,002 control",
+  "objective": "Valorar disponibilitat de bboxes del gimnasta a 18 vídeos complets amb llindars fixos, mantenint separat el resum uniforme i els diagnòstics densos.",
+  "hypothesis": "0,001 és el candidat fixat i 0,002 el control; no es busquen més llindars ni es canvien NMS, max_det o altres paràmetres. 12 vídeos de desenvolupament i 6 de reserva temporal de la mateixa captura; identitats desconegudes. Resum principal sobre 48 àncores uniformes per vídeo, diagnòstic separat sobre finestres denses (incloent final de rutina) i les 72 mostres antigues. Les 1440 referències són d’IA acceptades per a l’estudi, provisionals i sense validació humana independent. Les proporcions disperses no acrediten cobertura de tots els frames ni continuïtat temporal.",
+  "experiment": "../experiments/localization-candidates.json",
+  "suite": "all",
+  "cases": [
+    "JPN_AGE_1_000840_34.0",
+    "JPN_AGE_1_000905_31.0",
+    "JPN_AGE_1_001814_34.0",
+    "JPN_AGE_1_002139_38.0",
+    "JPN_AGE_1_002837_43.0",
+    "JPN_AGE_1_005412_48.0",
+    "JPN_AGE_2_000024_27.0",
+    "JPN_AGE_2_000709_37.0",
+    "JPN_AGE_2_002952_23.0",
+    "JPN_AGE_2_003434_33.0",
+    "JPN_AGE_2_004622_33.0",
+    "JPN_AGE_2_005459_25.0",
+    "JPN_AGE_3_001122_32.0",
+    "JPN_AGE_3_001351_19.0",
+    "JPN_AGE_3_001618_22.0",
+    "JPN_AGE_3_002412_31.0",
+    "JPN_AGE_3_002828_43.0",
+    "JPN_AGE_3_003349_25.0"
+  ],
+  "detectors": [
+    "yolov8m-conf0001-nms070",
+    "yolov8m-conf0002-nms070"
+  ],
+  "trackers": [],
+  "detector_only": true,
+  "annotations": "../../annotations/expanded-v1/references",
+  "allow_provisional_references": true,
+  "overlay": false,
+  "expected": {
+    "videos": 18,
+    "detector_jobs": 36,
+    "tracking_jobs": 0
+  },
+  "review_decisions": "../../annotations/expanded-v1/localization-decisions-v1.json",
+  "sampling_plan": "../../annotations/expanded-v1/selection.json"
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "detector-tracking-screen-v1",
+  "status": "experimental",
+  "detectors": [
+    {
+      "id": "yolov8n-conf002-nms070",
+      "model": "yolov8n",
+      "confidence": 0.02,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    {
+      "id": "yolov8n-conf005-nms070",
+      "model": "yolov8n",
+      "confidence": 0.05,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    {
+      "id": "yolov8m-conf002-nms070",
+      "model": "yolov8m",
+      "confidence": 0.02,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    {
+      "id": "yolov8m-conf005-nms070",
+      "model": "yolov8m",
+      "confidence": 0.05,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    {
+      "id": "yolov8m-conf005-nms050",
+      "model": "yolov8m",
+      "confidence": 0.05,
+      "nms_iou": 0.5,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    {
+      "id": "yolov8m-conf005-nms070-area20",
+      "model": "yolov8m",
+      "confidence": 0.05,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": 20
+    }
+  ],
+  "trackers": [
+    {
+      "id": "ocsort",
+      "profile": "../../../../configs/trackers/ocsort.json",
+      "lifecycle": {},
+      "parameters": {}
+    },
+    {
+      "id": "bytetrack",
+      "profile": "../../../../configs/trackers/bytetrack.json",
+      "lifecycle": {},
+      "parameters": {}
+    },
+    {
+      "id": "botsort",
+      "profile": "../../../../configs/trackers/botsort.json",
+      "lifecycle": {},
+      "parameters": {}
+    },
+    {
+      "id": "botsort-reid",
+      "profile": "../../../../configs/trackers/botsort-reid.json",
+      "lifecycle": {},
+      "parameters": {}
+    }
+  ]
+}

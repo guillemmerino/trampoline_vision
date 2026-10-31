@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "review_id": "localization-user-acceptance-v1",
+  "reference_acceptance": [
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "video_sha256": "4dcb631c2d42f41ebe1375c37697f14041fff11a76f5e3459ab0e3aea220a67e",
+      "reference_sha256": "fb9d4f783575689b8b0c614dfa642c240900524a99cf05ad027639db7fc7e2d1",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instruction: dona les bboxes de ia per bones. Accepted as study reference; AI provenance preserved. This is not a claim of independent manual inspection of every sample."
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "video_sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+      "reference_sha256": "f418396f8c12dce25bd21ad8d39b5f7068092a6d7a42d97a9d50de2dc93cd914",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instruction: dona les bboxes de ia per bones. Accepted as study reference; AI provenance preserved. This is not a claim of independent manual inspection of every sample."
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "reference_sha256": "5e962654255adc15e0ccc68742f69e47084093b63794d6f43e40cd9e3ce3bdf0",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instruction: dona les bboxes de ia per bones. Accepted as study reference; AI provenance preserved. This is not a claim of independent manual inspection of every sample."
+    }
+  ],
+  "detector_roles": {
+    "yolov8m-conf0001-nms070": "primary",
+    "yolov8m-conf0002-nms070": "control"
+  },
+  "decisions": [
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "video_sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+      "reference_sha256": "f418396f8c12dce25bd21ad8d39b5f7068092a6d7a42d97a9d50de2dc93cd914",
+      "detector": "yolov8m-conf0001-nms070",
+      "detector_settings_sha256": "87b48ef34de98d6eb77efa4d0151fd7d47d6dbd1e719d9bc3c9236a9edc9811d",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 0,
+      "candidate": {
+        "bbox_xyxy": [
+          658.1451009114584,
+          473.9001871744792,
+          705.74462890625,
+          731.2693684895834
+        ],
+        "confidence": 0.002364597050473094
+      },
+      "classification": "sufficient",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User accepted localization at 0.002 and 0.001 despite IoU 0.483; yellow reference confirmed correct."
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "video_sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+      "reference_sha256": "f418396f8c12dce25bd21ad8d39b5f7068092a6d7a42d97a9d50de2dc93cd914",
+      "detector": "yolov8m-conf0002-nms070",
+      "detector_settings_sha256": "7f2f4615e5613b27208db6619a6ae03d493cc893f7414878145a059734135881",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 0,
+      "candidate": {
+        "bbox_xyxy": [
+          658.1451009114584,
+          473.9001871744792,
+          705.74462890625,
+          731.2693684895834
+        ],
+        "confidence": 0.002364597050473094
+      },
+      "classification": "sufficient",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User accepted localization at 0.002 and 0.001 despite IoU 0.483; yellow reference confirmed correct."
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "reference_sha256": "5e962654255adc15e0ccc68742f69e47084093b63794d6f43e40cd9e3ce3bdf0",
+      "detector": "yolov8m-conf0001-nms070",
+      "detector_settings_sha256": "87b48ef34de98d6eb77efa4d0151fd7d47d6dbd1e719d9bc3c9236a9edc9811d",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 180,
+      "candidate": {
+        "bbox_xyxy": [
+          570.4181722005209,
+          509.0944010416667,
+          619.3049723307291,
+          548.4499104817709
+        ],
+        "confidence": 0.0012518656440079212
+      },
+      "classification": "partial",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User identified a head-only detection, retained as a partial candidate for later association. Yellow full-body reference confirmed correct. Not a full-body observation or validated identity association."
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "reference_sha256": "5e962654255adc15e0ccc68742f69e47084093b63794d6f43e40cd9e3ce3bdf0",
+      "detector": "yolov8m-conf0002-nms070",
+      "detector_settings_sha256": "7f2f4615e5613b27208db6619a6ae03d493cc893f7414878145a059734135881",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 180,
+      "candidate": {
+        "bbox_xyxy": [
+          588.2613118489584,
+          503.8673095703125,
+          620.903076171875,
+          545.695068359375
+        ],
+        "confidence": 0.005254303105175495
+      },
+      "classification": "partial",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User identified a head-only detection, retained as a partial candidate for later association. Yellow full-body reference confirmed correct. Not a full-body observation or validated identity association."
+    }
+  ]
+}

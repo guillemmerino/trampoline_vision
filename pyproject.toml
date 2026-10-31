@@ -21,6 +21,8 @@ visualization = ["av>=16,<17", "Pillow>=11,<14"]
 tracking = ["trackers==2.6.1"]
 # BoT-SORT i extracció OSNet opcionals. Docker fixa també les wheels CPU de PyTorch.
 tracking-reid = ["boxmot==16.0.9", "torch==2.5.1", "torchvision==0.20.1", "av>=16,<17"]
+# Runtime CUDA 12.8 per a GPUs Blackwell; mateixa versió de BoxMOT i models.
+tracking-reid-cuda128 = ["boxmot==16.0.9", "torch==2.7.1", "torchvision==0.22.1", "av>=16,<17"]
 
 # Relaciona la comanda de terminal amb la funció main de la CLI.
 [project.scripts]

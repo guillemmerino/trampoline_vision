@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ca">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revisió del gimnasta · anotació i YOLO</title>
+<link rel="stylesheet" href="human_review.css"></head>
+<body>
+<header><div><p class="eyebrow">CALIBRATGE · REVISIÓ HUMANA</p><h1>Una caixa bona per al gimnasta</h1><p>Compara l’original, l’anotació i les deteccions. Cada decisió queda vinculada a aquest fotograma.</p></div>
+<div class="save-panel"><strong id="saveStatus" role="status">Carregant decisions…</strong><label>Revisor/a <input id="reviewer" value="usuari" maxlength="200"></label><div><button id="export">Exporta decisions</button><button id="import">Importa decisions</button><input id="importFile" type="file" accept="application/json,.json" hidden></div></div></header>
+<div id="notice" role="alert" hidden></div>
+<section class="filters" aria-label="Filtres de fotogrames">
+<label>Vídeo<select id="video"><option value="all">Tots els vídeos</option></select></label>
+<label>Mostra<select id="scope"><option value="priority">Discrepàncies i exclusions</option><option value="all">Tots els fotogrames</option><option value="excluded">Sense caixa anotada</option><option value="gains">Guanys de 0,001</option><option value="reviewed">Amb decisions meves</option><option value="unreviewed">Sense decisions meves</option></select></label>
+<label>Fotograma<input id="frameSearch" placeholder="Número, p. ex. 182" inputmode="numeric"></label>
+<span id="progress"></span>
+</section>
+<main>
+<section class="viewer"><div class="navigation"><button id="previous" aria-label="Fotograma anterior">← Anterior</button><div><h2 id="frameTitle"></h2><p id="frameInfo"></p></div><button id="next">Següent →</button></div>
+<div class="variant-tabs" id="variants" role="group" aria-label="Detector"></div>
+<div class="toolbar"><label><input type="checkbox" id="showReference" checked> Anotació</label><label><input type="checkbox" id="showOthers"> Altres deteccions</label><label><input type="checkbox" id="originalOnly"> Només original</label><label>Zoom<select id="zoom"><option value="1">Encaixa</option><option value="1.5">150%</option><option value="2">200%</option><option value="3">300%</option></select></label></div>
+<div id="canvasViewport"><canvas id="canvas" aria-label="Fotograma amb les caixes d’anotació i de YOLO"></canvas><span id="imageStatus"></span></div>
+<p class="legend"><span class="yellow">— Anotació original</span><span class="cyan">— YOLO seleccionada</span><span class="pink">— Correcció teva</span></p>
+<p class="hint">Clica el gimnasta per escollir una caixa. Si n’hi ha diverses, usa el selector de candidata. El zoom permet revisar-ne els marges.</p>
+</section>
+<aside>
+<section class="card"><h3>1. Hi ha gimnasta visible?</h3><p>Valora aquest instant, encara que no hi hagi anotació.</p><select id="presence"><option value="pending">Encara no valorat</option><option value="visible">Sí, visible</option><option value="absent">No hi ha gimnasta visible</option><option value="uncertain">No ho puc determinar / ocult</option></select></section>
+<section class="card"><h3>2. La caixa anotada és bona?</h3><p id="referenceInfo"></p><div class="buttons" id="referenceActions"><button data-reference="approved">Bona</button><button data-reference="rejected">Incorrecta</button><button data-reference="missing">Falta caixa</button><button data-reference="uncertain">No ho sé</button><button data-reference="pending">Deixa pendent</button></div>
+<p id="referenceVerdict" class="verdict"></p><div class="buttons"><button id="draw">Dibuixa / corregeix caixa</button><button id="adopt">Usa la YOLO seleccionada</button></div><p id="drawHelp" class="hint">Per dibuixar, activa el botó i arrossega del cantó superior esquerre a l’inferior dret. Pots repetir-ho per ajustar-la.</p></section>
+<section class="card"><h3>3. La detecció de YOLO és útil?</h3><p id="detectorInfo"></p><label>Caixa candidata<select id="candidate"></select></label><p id="candidateInfo" class="hint"></p>
+<div class="buttons" id="detectorActions"><button data-detector="sufficient">Bona, cos suficient</button><button data-detector="partial">Parcial però útil</button><button data-detector="incorrect">Aquesta caixa no és bona</button><button data-detector="absent">Cap caixa útil</button><button data-detector="pending">Deixa pendent</button></div>
+<p id="detectorVerdict" class="verdict"></p><p class="hint">«Parcial» pot ser un cap o un fragment que serviria per associar després. «Cap caixa útil» valora el conjunt; rebutjar una candidata només rebutja aquella caixa.</p></section>
+<section class="card"><label for="notes"><h3>Comentari del fotograma</h3></label><textarea id="notes" rows="3" maxlength="10000" placeholder="Ex.: la groga talla els peus; YOLO només detecta el cap…"></textarea><button id="saveNext" class="primary">Desa i següent →</button></section>
+</aside>
+</main>
+<footer><p>Les anotacions originals són d’IA, acceptades per a l’estudi i pendents de validar. Les teves aprovacions són decisions humanes per fotograma. Si adoptes una caixa de YOLO, se’n conservarà aquesta procedència. No s’alteren els resultats originals.</p><p id="storageHelp"></p></footer>
+<script id="bundle" type="application/json">__BUNDLE__</script>
+<script id="initialState" type="application/json">__STATE__</script>
+<script src="human_review.js"></script>
+</body></html>

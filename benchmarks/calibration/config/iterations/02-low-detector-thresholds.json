@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "iteration_id": "low-detector-thresholds-v1",
+  "title": "Segona prova: detecció amb llindars baixos",
+  "objective": "Maximitzar la disponibilitat d'una caixa útil del gimnasta, sense estudiar encara IDs ni duplicació temporal.",
+  "hypothesis": "Compararem YOLOv8m amb confiança 0,01/0,005/0,002/0,001, mantenint NMS 0,7 i max_det=300. La prova anterior obtenia caixa compatible en 56/61 fotogrames visibles anotats amb 0,01. Comprovarem si els talls més baixos recuperen els cinc restants, quin volum de caixes generen i si s'arriba al cap. Es processen els tres vídeos complets, sense trackers, ReID ni recovery. Les referències d'IA són provisionals i pendents de validació humana.",
+  "experiment": "../experiments/low-detector-thresholds.json",
+  "suite": "pilot",
+  "cases": [
+    "JPN_AGE_1_000905_31.0",
+    "JPN_AGE_2_000709_37.0",
+    "JPN_AGE_3_001351_19.0"
+  ],
+  "detectors": [
+    "yolov8m-conf001-nms070",
+    "yolov8m-conf0005-nms070",
+    "yolov8m-conf0002-nms070",
+    "yolov8m-conf0001-nms070"
+  ],
+  "trackers": [],
+  "detector_only": true,
+  "annotations": "../../annotations/pilot-v1/references",
+  "allow_provisional_references": true,
+  "overlay": false,
+  "expected": {
+    "videos": 3,
+    "detector_jobs": 12,
+    "tracking_jobs": 0
+  }
+}

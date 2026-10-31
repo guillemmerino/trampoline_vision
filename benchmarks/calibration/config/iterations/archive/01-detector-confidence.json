@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "iteration_id": "01-detector-confidence",
+  "objective": "Mesurar si abaixar el tall del detector de 0,05 a 0,02 recupera observacions del gimnasta i com afecta la continuïtat dels quatre trackers, sense recovery offline.",
+  "hypothesis": "En la prova anterior faltava una caixa compatible en 13 de 61 fotogrames visibles anotats. Compararem 0,05 amb 0,02, mantenint YOLOv8m, NMS 0,7 i els mateixos perfils de tracking. No s'assumeix que 0,02 sigui millor.",
+  "experiment": "../../experiments/baseline.json",
+  "suite": "pilot",
+  "cases": [
+    "JPN_AGE_1_000905_31.0",
+    "JPN_AGE_2_000709_37.0",
+    "JPN_AGE_3_001351_19.0"
+  ],
+  "detectors": [
+    "yolov8m-conf005-nms070",
+    "yolov8m-conf002-nms070"
+  ],
+  "trackers": [
+    "ocsort",
+    "bytetrack",
+    "botsort",
+    "botsort-reid"
+  ],
+  "annotations": "../../../annotations/pilot-v1/references",
+  "allow_provisional_references": true,
+  "overlay": true,
+  "expected": {
+    "videos": 3,
+    "detector_jobs": 6,
+    "tracking_jobs": 24
+  }
+}

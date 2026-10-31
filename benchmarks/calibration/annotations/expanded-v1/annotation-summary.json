@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "samples": 1440,
+  "inherited_samples": 72,
+  "new_samples": 1368,
+  "visible": 1267,
+  "excluded": 173,
+  "cases": [
+    {
+      "case_id": "JPN_AGE_1_000840_34.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 72,
+      "excluded": 8,
+      "corrections_or_exclusions": 28,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 67,
+      "excluded": 13,
+      "corrections_or_exclusions": 18,
+      "inherited": 24
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 72,
+      "excluded": 8,
+      "corrections_or_exclusions": 23,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_1_002139_38.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 72,
+      "excluded": 8,
+      "corrections_or_exclusions": 20,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_1_002837_43.0",
+      "partition": "reserved",
+      "samples": 80,
+      "visible": 73,
+      "excluded": 7,
+      "corrections_or_exclusions": 32,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_1_005412_48.0",
+      "partition": "reserved",
+      "samples": 80,
+      "visible": 70,
+      "excluded": 10,
+      "corrections_or_exclusions": 35,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_2_000024_27.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 69,
+      "excluded": 11,
+      "corrections_or_exclusions": 17,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 71,
+      "excluded": 9,
+      "corrections_or_exclusions": 16,
+      "inherited": 24
+    },
+    {
+      "case_id": "JPN_AGE_2_002952_23.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 71,
+      "excluded": 9,
+      "corrections_or_exclusions": 18,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_2_003434_33.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 68,
+      "excluded": 12,
+      "corrections_or_exclusions": 27,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_2_004622_33.0",
+      "partition": "reserved",
+      "samples": 80,
+      "visible": 75,
+      "excluded": 5,
+      "corrections_or_exclusions": 16,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_2_005459_25.0",
+      "partition": "reserved",
+      "samples": 80,
+      "visible": 71,
+      "excluded": 9,
+      "corrections_or_exclusions": 37,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_3_001122_32.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 69,
+      "excluded": 11,
+      "corrections_or_exclusions": 39,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 67,
+      "excluded": 13,
+      "corrections_or_exclusions": 13,
+      "inherited": 24
+    },
+    {
+      "case_id": "JPN_AGE_3_001618_22.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 71,
+      "excluded": 9,
+      "corrections_or_exclusions": 31,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_3_002412_31.0",
+      "partition": "development",
+      "samples": 80,
+      "visible": 70,
+      "excluded": 10,
+      "corrections_or_exclusions": 28,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_3_002828_43.0",
+      "partition": "reserved",
+      "samples": 80,
+      "visible": 71,
+      "excluded": 9,
+      "corrections_or_exclusions": 17,
+      "inherited": 0
+    },
+    {
+      "case_id": "JPN_AGE_3_003349_25.0",
+      "partition": "reserved",
+      "samples": 80,
+      "visible": 68,
+      "excluded": 12,
+      "corrections_or_exclusions": 24,
+      "inherited": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "iteration_id": "threshold-robustness-v1",
+  "title": "Prova robusta de llindar",
+  "objective": "Comparar les confiances 0,01/0,02/0,05/0,10 del detector YOLOv8m sobre els tres vídeos complets i els quatre trackers, mesurant caixes útils i continuïtat del gimnasta sense recovery offline.",
+  "hypothesis": "Un tall més baix pot recuperar caixes útils però també afegir confusions. El tall 0,10 és el control restrictiu. NMS 0,7 i resta d'opcions del detector es mantenen fixos. La confiança forta dels trackers és 0,10; l'admissió feble és 0,01 en ByteTrack i BoT-SORT amb/sense ReID, igual per a totes les variants, per poder consumir les caixes noves. OC-SORT conserva la seva política sense passada feble. El nom identifica una exploració de llindars, no una validació definitiva: les referències d'IA continuen pendents de revisió humana.",
+  "experiment": "../experiments/threshold-robustness.json",
+  "suite": "pilot",
+  "cases": [
+    "JPN_AGE_1_000905_31.0",
+    "JPN_AGE_2_000709_37.0",
+    "JPN_AGE_3_001351_19.0"
+  ],
+  "detectors": [
+    "yolov8m-conf001-nms070",
+    "yolov8m-conf002-nms070",
+    "yolov8m-conf005-nms070",
+    "yolov8m-conf010-nms070"
+  ],
+  "trackers": [
+    "ocsort",
+    "bytetrack",
+    "botsort",
+    "botsort-reid"
+  ],
+  "annotations": "../../annotations/pilot-v1/references",
+  "allow_provisional_references": true,
+  "overlay": true,
+  "expected": {
+    "videos": 3,
+    "detector_jobs": 12,
+    "tracking_jobs": 48
+  }
+}

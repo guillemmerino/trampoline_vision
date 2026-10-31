@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "review_id": "expanded-localization-ai-accepted-v1",
+  "reference_acceptance": [
+    {
+      "case_id": "JPN_AGE_1_000840_34.0",
+      "video_sha256": "a8d39a77eac93686c2f01d5e117507d601111c1b12a41a92a75bbd071479f8f8",
+      "reference_sha256": "970199b4a0ad31bf2678e5af47c8e296bf62e3d94ca79a302f087fea34586d3a",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "video_sha256": "4dcb631c2d42f41ebe1375c37697f14041fff11a76f5e3459ab0e3aea220a67e",
+      "reference_sha256": "becb8f101a3cec1627451fd4890fe3c6e14bcad1581f05fdeeaa1fdf7e8e9409",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_1_001814_34.0",
+      "video_sha256": "8829f533bf312bee91206fa5b7eaa3931861f3c9dccab392b34a3e5fcd6b119f",
+      "reference_sha256": "79a30bba329eb00361788d83e868f5051ac1663c8d0fe0b3e85287c752b9914a",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_1_002139_38.0",
+      "video_sha256": "c8903b3b35de5e0af7b70867242e48673a618742a7455a0c66a1e93c170b7339",
+      "reference_sha256": "aebd0a1464838182e09a653e4afb33fd585cb4ebc92cdfb2dc4971a6ecb38f60",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_1_002837_43.0",
+      "video_sha256": "25a4e885c9285f3087c263b6589fb70a30dc507961f2f1dd1eafd67029876ef9",
+      "reference_sha256": "fb8a523b1429cb76cb47166664756848a0277184ac452d3fd05136299f059795",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_1_005412_48.0",
+      "video_sha256": "e207b154b3145511fde21ac81801a449d37f927c27374c227e5c5f5dcbcee0e9",
+      "reference_sha256": "dd488c4a01b514377a3cfbd080b7d3a656602bbfbaecda7d2cceca7ec2599e1c",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_2_000024_27.0",
+      "video_sha256": "c8fb528dfec40b0b644972ec40599188953f750f10bdcfcef5494a15ba7a5e68",
+      "reference_sha256": "95928cc616a014379732f21d2189e219a26b31562f63ab339d66a0e6b382723c",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "video_sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+      "reference_sha256": "3be2cef8d28853dd557b76dc5252708f3430481e057888927916f19f6edfc7ad",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_2_002952_23.0",
+      "video_sha256": "c1623872f1c9a6cd6436fd32c3ce1a3e4aa3acc3e784548d0ad24b3a83ebf304",
+      "reference_sha256": "0eabf19b233433b4287783a72549e83b7c3e8252d114d3166e071214538e6e0b",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_2_003434_33.0",
+      "video_sha256": "5ce8b05e75630459a3e56eab5099a2aae2e1846ece914ae2258de0cfc97fc94f",
+      "reference_sha256": "abb1c42535f55aa25e1d83c487f06a69fb2cf2e1478628bc036d0788e98ce5ed",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_2_004622_33.0",
+      "video_sha256": "e905f0752839a729ac1634b0ee4a23de42db25a4a91560b3ea3326a5716dd0b5",
+      "reference_sha256": "484e6787eefd9100ad94431279d8dd5243242156cc8dfd824c2667bdba191421",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_2_005459_25.0",
+      "video_sha256": "84f99df09e00003bc24eec40d091319fca6d4e8edbe77b06681cbe739a3ba2d2",
+      "reference_sha256": "4dd63e678edf46bc6a079699381dbc41b2644c492d8be62ca318515e0f48f542",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_3_001122_32.0",
+      "video_sha256": "05d75a05b53e31bfadeed3f2f0ef6ad0cbe606408506f5e9cf9efc71e0d34370",
+      "reference_sha256": "a17e31d7aa1414ac25240ceabd0cc729a5a01892bf415868e38e17efec3a6516",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "reference_sha256": "81270d79e86c7ee214f33a7ee7b8076d16019ddac1faa8614ab12c04132b6bb4",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_3_001618_22.0",
+      "video_sha256": "b3bd95ab5b35b4938a3c0f4fd1b76557a651e1ea1dbebccc378b10c521f322b6",
+      "reference_sha256": "a8178516fcc26ffd37ecf75632cbaf066722fa6c3f3c4eff4d6593c019b84625",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_3_002412_31.0",
+      "video_sha256": "a2706dba5caae057a4409fd74985b578935017d8dec1aef0a827b9c05112ae17",
+      "reference_sha256": "86471c9146670b8e5cdaf5386067f24bd1d398dc17293727ab94cb6fa02fd0a5",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_3_002828_43.0",
+      "video_sha256": "5ba2fdfa98b7956024504fb6f56809c69f51fae74697d4e3072196ffdb2d5b50",
+      "reference_sha256": "0a02e68077835185e31b2062c7a71616e9e4b6428b3af37e707ec264013437ee",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    },
+    {
+      "case_id": "JPN_AGE_3_003349_25.0",
+      "video_sha256": "cceb9b04bf78920ae2c6c591ca690ee6d45a256f2d6d5ae3d3bae3765b2e96ea",
+      "reference_sha256": "d72c9afda177854775e0323651b45aea3fe502c72c2120605ad871cf7d8939e0",
+      "accepted_for_study": true,
+      "reviewer": "user",
+      "notes": "User instructed use AI bboxes as valid study references and proceed with expansion. Acceptance of AI references, not a claim of human inspection of these 80 individual boxes. human_reviewed remains false."
+    }
+  ],
+  "detector_roles": {
+    "yolov8m-conf0001-nms070": "primary",
+    "yolov8m-conf0002-nms070": "control"
+  },
+  "decisions": [
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "video_sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+      "reference_sha256": "3be2cef8d28853dd557b76dc5252708f3430481e057888927916f19f6edfc7ad",
+      "detector": "yolov8m-conf0001-nms070",
+      "detector_settings_sha256": "87b48ef34de98d6eb77efa4d0151fd7d47d6dbd1e719d9bc3c9236a9edc9811d",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 0,
+      "candidate": {
+        "bbox_xyxy": [
+          658.1451009114584,
+          473.9001871744792,
+          705.74462890625,
+          731.2693684895834
+        ],
+        "confidence": 0.002364597050473094
+      },
+      "classification": "sufficient",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User accepted localization at 0.002 and 0.001 despite IoU 0.483; yellow reference confirmed correct. Inherited explicit user decision; reference SHA rebound to expanded manifest with this legacy frame geometry/state unchanged. Parent decision manifest SHA256=63815d5d6d851eeaff5b5de569d238e24b09e2d92d8cc9a814e894cf70d7aa8b."
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "video_sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+      "reference_sha256": "3be2cef8d28853dd557b76dc5252708f3430481e057888927916f19f6edfc7ad",
+      "detector": "yolov8m-conf0002-nms070",
+      "detector_settings_sha256": "7f2f4615e5613b27208db6619a6ae03d493cc893f7414878145a059734135881",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 0,
+      "candidate": {
+        "bbox_xyxy": [
+          658.1451009114584,
+          473.9001871744792,
+          705.74462890625,
+          731.2693684895834
+        ],
+        "confidence": 0.002364597050473094
+      },
+      "classification": "sufficient",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User accepted localization at 0.002 and 0.001 despite IoU 0.483; yellow reference confirmed correct. Inherited explicit user decision; reference SHA rebound to expanded manifest with this legacy frame geometry/state unchanged. Parent decision manifest SHA256=63815d5d6d851eeaff5b5de569d238e24b09e2d92d8cc9a814e894cf70d7aa8b."
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "reference_sha256": "81270d79e86c7ee214f33a7ee7b8076d16019ddac1faa8614ab12c04132b6bb4",
+      "detector": "yolov8m-conf0001-nms070",
+      "detector_settings_sha256": "87b48ef34de98d6eb77efa4d0151fd7d47d6dbd1e719d9bc3c9236a9edc9811d",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 180,
+      "candidate": {
+        "bbox_xyxy": [
+          570.4181722005209,
+          509.0944010416667,
+          619.3049723307291,
+          548.4499104817709
+        ],
+        "confidence": 0.0012518656440079212
+      },
+      "classification": "partial",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User identified a head-only detection, retained as a partial candidate for later association. Yellow full-body reference confirmed correct. Not a full-body observation or validated identity association. Inherited explicit user decision; reference SHA rebound to expanded manifest with this legacy frame geometry/state unchanged. Parent decision manifest SHA256=63815d5d6d851eeaff5b5de569d238e24b09e2d92d8cc9a814e894cf70d7aa8b."
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+      "reference_sha256": "81270d79e86c7ee214f33a7ee7b8076d16019ddac1faa8614ab12c04132b6bb4",
+      "detector": "yolov8m-conf0002-nms070",
+      "detector_settings_sha256": "7f2f4615e5613b27208db6619a6ae03d493cc893f7414878145a059734135881",
+      "weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "frame_index": 180,
+      "candidate": {
+        "bbox_xyxy": [
+          588.2613118489584,
+          503.8673095703125,
+          620.903076171875,
+          545.695068359375
+        ],
+        "confidence": 0.005254303105175495
+      },
+      "classification": "partial",
+      "reviewer": "user",
+      "reviewer_type": "human",
+      "notes": "User identified a head-only detection, retained as a partial candidate for later association. Yellow full-body reference confirmed correct. Not a full-body observation or validated identity association. Inherited explicit user decision; reference SHA rebound to expanded manifest with this legacy frame geometry/state unchanged. Parent decision manifest SHA256=63815d5d6d851eeaff5b5de569d238e24b09e2d92d8cc9a814e894cf70d7aa8b."
+    }
+  ]
+}
