@@ -334,5 +334,5 @@ que era candidata 12 queda fora, però encara entren caixes del gimnasta, amb
 menys cobertura dels braços alçats. L’agent ha inspeccionat aquest cas i 12
 altres discrepàncies; no ha validat visualment totes les mostres.
 La recomanació és mantenir la zona comuna soft, amb aquests límits explícits.
-No s’han canviat paràmetres. L’[informe detallat](../../../runs/calibration/zone-comparison-v1/REVIEW.md)
+No s’han canviat paràmetres. L’[informe detallat](../../../../../runs/calibration/zone-comparison-v1/REVIEW.md)
 separa mètriques geomètriques, observacions visuals i límits del detector.

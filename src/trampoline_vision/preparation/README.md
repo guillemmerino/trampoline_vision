@@ -126,7 +126,7 @@ candidates. No hi ha detecció automàtica del trampolí ni adaptació per clip.
 Aquests marges són una hipòtesi comuna de configuració, no un òptim calibrat.
 Les proves històriques usaven zones segons el panell de càmera; els seus
 resultats no validen automàticament aquesta variant centrada. Una
-[comparació aparellada posterior](../../../benchmarks/calibration/docs/ZONE_COMPARISON.md)
+[comparació aparellada posterior](../../../benchmarks/calibration/archive/detection-preparation-v1/docs/ZONE_COMPARISON.md)
 en 18 clips conserva 56/56 caixes útils validades i introdueix un únic canvi
 negatiu al diagnòstic IA90 (1078 → 1077/1267), amb el gimnasta encara localitzat
 en la inspecció d’aquell cas. És evidència de treball, no detecció universal. El fons medià
@@ -244,7 +244,7 @@ fora d’aquella traça.
 El criteri d’entrada és localitzar el gimnasta, admetent una caixa parcial
 útil. La continuïtat d’ID, el comportament amb moviments de càmera i la
 qualitat dels retalls per a esquelets es mesuren separadament.
-[Llindars, comparadors i evidència reproduïble](../../../benchmarks/calibration/docs/BOX_PREPARATION_STUDIES.md).
+[Llindars, comparadors i evidència reproduïble](../../../benchmarks/calibration/archive/detection-preparation-v1/docs/BOX_PREPARATION_STUDIES.md).
 
 ## Auditoria independent de selecció
 

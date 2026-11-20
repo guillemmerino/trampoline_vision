@@ -11,7 +11,7 @@ executa OpenPose, no activa recovery i no declara una configuració guanyadora
 sense referències revisades. No necessita l'API.
 
 Per executar una comparació acotada amb **una comanda** i deixar un `REVIEW.md`
-per a un agent en una conversa nova, veure [el recorregut d’iteracions](HISTORY.md).
+per a un agent en una conversa nova, veure [el recorregut d’iteracions](../archive/detection-preparation-v1/docs/HISTORY.md).
 La comanda per defecte executa la **Prova robusta de llindar**: detector
 0,01/0,02/0,05/0,10 als tres vídeos anotats, quatre trackers i 48 MP4.
 L’admissió feble dels trackers compatibles és 0,01 només dins d’aquesta matriu.
@@ -32,13 +32,13 @@ revisat el 30-10-2026: 36/36 passades correctes, amb més disponibilitat de
 caixes a 0,001 (1.204/1.267 instants visibles davant de 1.185/1.267 a 0,002).
 L’informe és a `runs/calibration/expanded-localization-v1/assessment/ASSESSMENT.md`.
 Vegeu [les anotacions i la selecció](../annotations/expanded-v1/README.md) i
-[l’estat i les decisions](HISTORY.md).
+[l’estat i les decisions](../archive/detection-preparation-v1/docs/HISTORY.md).
 
 La **segona prova**, centrada només a detectar el gimnasta, s’executa amb
 `bash benchmarks/calibration/commands/run-low-thresholds.sh`: confiances
 0,01/0,005/0,002/0,001, 12 passades de YOLO i cap tracker. Genera CSV,
 mètriques de disponibilitat/saturació i làmines dels fotogrames anotats, amb
-un `REVIEW.md` independent. Detalls i comandes a [ITERATIONS.md](HISTORY.md).
+un `REVIEW.md` independent. Detalls i comandes a [ITERATIONS.md](../archive/detection-preparation-v1/docs/HISTORY.md).
 
 ## Corpus trobat i selecció
 
@@ -328,7 +328,7 @@ Des de l’arrel del repositori, amb la imatge NVIDIA del banc:
 python3 -m benchmarks.calibration study representative-tracking
 ```
 
-El [pla 05](../config/iterations/05-representative-tracking.json) fixa 12 clips
+El [pla 05](../archive/detection-preparation-v1/config/iterations/05-representative-tracking.json) fixa 12 clips
 complets, sis de l’estudi anterior i sis de nous per a aquesta preparació.
 Compara el preparador conservador amb el tall a 12 i a 8 amb zona obligatòria,
 i amb el tall a 12 on la zona només influeix en l’ordre. Totes quatre passades

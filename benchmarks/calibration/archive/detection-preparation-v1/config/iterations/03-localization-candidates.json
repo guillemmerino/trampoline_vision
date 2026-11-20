@@ -17,7 +17,7 @@
   ],
   "trackers": [],
   "detector_only": true,
-  "annotations": "../../annotations/pilot-v1/references",
+  "annotations": "../../../../annotations/pilot-v1/references",
   "allow_provisional_references": true,
   "overlay": false,
   "expected": {
@@ -25,5 +25,5 @@
     "detector_jobs": 6,
     "tracking_jobs": 0
   },
-  "review_decisions": "../../annotations/pilot-v1/localization-decisions-v1.json"
+  "review_decisions": "../../../../annotations/pilot-v1/localization-decisions-v1.json"
 }

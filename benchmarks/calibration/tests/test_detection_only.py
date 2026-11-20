@@ -107,14 +107,14 @@ class LowThresholdPresetTests(unittest.TestCase):
             data.mkdir()
             shutil.copyfile(here / "config/corpus.json", data / "corpus.json")
             with patch("benchmarks.calibration.run.verify_file"), redirect_stdout(io.StringIO()) as stream:
-                self.assertEqual(main(["--plan", str(here / "config/iterations/02-low-detector-thresholds.json"),
+                self.assertEqual(main(["--plan", str(here / "archive/detection-preparation-v1/config/iterations/02-low-detector-thresholds.json"),
                                        "--dataset", str(data), "--output", str(output), "--dry-run"]), 0)
             result = json.loads(stream.getvalue())
             self.assertEqual((result["videos"], result["detector_jobs"], result["tracking_jobs"]), (3, 12, 0))
             self.assertTrue(result["detector_only"])
             self.assertFalse(result["overlay"])
             self.assertFalse(output.exists())
-            experiment = read_json(here / "config/experiments/low-detector-thresholds.json")
+            experiment = read_json(here / "archive/detection-preparation-v1/config/experiments/low-detector-thresholds.json")
             self.assertEqual(experiment["trackers"], [])
             self.assertEqual([d["confidence"] for d in experiment["detectors"]], [.01, .005, .002, .001])
             common = [{k: v for k, v in d.items() if k not in {"id", "confidence"}} for d in experiment["detectors"]]
@@ -139,5 +139,5 @@ class LowThresholdPresetTests(unittest.TestCase):
             call = next(json.loads(line) for line in log.read_text().splitlines() if json.loads(line)[0] == "run")
             self.assertIn("benchmarks.calibration", call)
             self.assertIn("iterate", call)
-            self.assertEqual(call[call.index("--plan")+1], "benchmarks/calibration/config/iterations/02-low-detector-thresholds.json")
+            self.assertEqual(call[call.index("--plan")+1], "benchmarks/calibration/archive/detection-preparation-v1/config/iterations/02-low-detector-thresholds.json")
             self.assertEqual([call[i+1] for i, key in enumerate(call) if key == "--output"][-1], "/results/low-detector-thresholds-v1")

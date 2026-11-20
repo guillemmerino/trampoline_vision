@@ -50,7 +50,7 @@ class RobustThresholdPlanTests(unittest.TestCase):
             data = root / "data"
             data.mkdir()
             shutil.copyfile(here / "config/corpus.json", data / "corpus.json")
-            args = SimpleNamespace(plan=here / "config/iterations/01-threshold-robustness.json", corpus=here / "config/corpus.json",
+            args = SimpleNamespace(plan=here / "archive/detection-preparation-v1/config/iterations/01-threshold-robustness.json", corpus=here / "config/corpus.json",
                                    dataset=data, output=root / "results", annotations=None, device="cpu", threads=1, resume=False)
             # This test resolves the real preset/configurations, without video/model inference.
             with patch("benchmarks.calibration.run.verify_file"):

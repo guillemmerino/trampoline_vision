@@ -118,7 +118,7 @@ class ExpandedPresetTests(unittest.TestCase):
             data.mkdir()
             shutil.copyfile(here / "config/corpus.json", data / "corpus.json")
             with patch("benchmarks.calibration.run.verify_file"), redirect_stdout(io.StringIO()) as stream:
-                self.assertEqual(main(["--plan", str(here / "config/iterations/04-expanded-localization.json"),
+                self.assertEqual(main(["--plan", str(here / "archive/detection-preparation-v1/config/iterations/04-expanded-localization.json"),
                                        "--dataset", str(data), "--output", str(Path(temporary) / "out"), "--dry-run"]), 0)
             result = json.loads(stream.getvalue())
             self.assertEqual((result["videos"], result["detector_jobs"], result["tracking_jobs"]), (18, 36, 0))

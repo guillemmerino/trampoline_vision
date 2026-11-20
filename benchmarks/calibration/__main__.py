@@ -1,4 +1,4 @@
-"""Single command entry point for calibration; no command starts implicitly."""
+"""Entrada única del banc de calibratge; cap comanda s’inicia implícitament."""
 
 import argparse
 from importlib import import_module
@@ -29,6 +29,7 @@ STUDIES = {
 
 
 def main(argv=None):
+    """Deriva una petició explícita a les eines compartides o a un estudi històric."""
     parser = argparse.ArgumentParser(prog="python3 -m benchmarks.calibration", description="Banc de calibratge. Comença pel README.md; cap prova s’executa per defecte.")
     sub = parser.add_subparsers(dest="command")
     for name, (_, help_text) in COMMANDS.items():
@@ -37,7 +38,7 @@ def main(argv=None):
     operations = annotations.add_subparsers(dest="operation", required=True)
     for name in ANNOTATION_TOOLS:
         operations.add_parser(name, add_help=False)
-    study = sub.add_parser("study", help="Executar una prova acotada al servidor Docker/NVIDIA")
+    study = sub.add_parser("study", help="Reproduir un estudi tancat; consulta archive/ i commands/README.md")
     study.add_argument("name", choices=STUDIES)
     args, remaining = parser.parse_known_args(argv)
     if args.command is None:

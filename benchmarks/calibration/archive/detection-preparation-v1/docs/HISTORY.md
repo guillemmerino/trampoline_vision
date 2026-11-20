@@ -1,7 +1,7 @@
 # Una comanda, una iteració i una revisió independent
 
-Historial del disseny de les proves. [Estat actual](STATE.md) ·
-[Comandes habituals i estructura](../README.md).
+Historial del disseny de les proves. [Estat actual](../../../docs/STATE.md) ·
+[Comandes habituals i estructura](../../../README.md).
 
 ## Preparació espacial posterior al calibratge del detector
 
@@ -14,7 +14,7 @@ fora del paquet; no s’han convertit en defaults ni en una prova de tracking.
 
 ## Revisió humana interactiva de les caixes
 
-La [pàgina de revisió humana](HUMAN_REVIEW.md) permet aprovar o rebutjar
+La [pàgina de revisió humana](../../../docs/HUMAN_REVIEW.md) permet aprovar o rebutjar
 anotacions i candidates de YOLO, corregir caixes i incorporar casos visibles
 sense anotació. Inclou els 1.440 frames i les dues confiances.
 
@@ -25,7 +25,7 @@ python3 -B -m benchmarks.calibration review serve
 Obre `http://localhost:8766/` (reenvia el port si uses SSH). Les decisions
 es desen a `runs/calibration/expanded-localization-v1/human-review/review-state.json`.
 La mateixa eina permet recalcular després amb `assess`, sense repetir inferència
-ni sobreescriure els resultats anteriors. [Ús, exportació i revaloració](HUMAN_REVIEW.md).
+ni sobreescriure els resultats anteriors. [Ús, exportació i revaloració](../../../docs/HUMAN_REVIEW.md).
 
 ## Ampliació revisada: 18 vídeos, candidat 0,001 i control 0,002
 
@@ -45,8 +45,8 @@ Es manté com a candidat principal. Els 61 casos `needs_review` no equivalen
 automàticament a absència del gimnasta: inclouen fragments i discrepàncies
 geomètriques. No s’han canviat paràmetres ni iniciat més proves.
 
-[Informe de revisió, resultats per vídeo i pas següent](../../../runs/calibration/expanded-localization-v1/assessment/ASSESSMENT.md)
-· [Galeria filtrada](../../../runs/calibration/expanded-localization-v1/assessment/index.html).
+[Informe de revisió, resultats per vídeo i pas següent](../../../../../runs/calibration/expanded-localization-v1/assessment/ASSESSMENT.md)
+· [Galeria filtrada](../../../../../runs/calibration/expanded-localization-v1/assessment/index.html).
 Les referències d’IA continuen provisionals i acceptades per a l’estudi;
 els resultats reservats ja han estat consultats i la reserva no és intacta.
 
@@ -62,7 +62,7 @@ No és un holdout independent ni una anotació exhaustiva de tots els frames.
 
 La selecció substitueix AGE2 `001925_21.0` per `002952_23.0`, perquè en les
 12 imatges de resum del primer no es veia cap exercici. El corpus històric
-no es modifica. [Selecció, procedència i comandes detallades](../annotations/expanded-v1/README.md).
+no es modifica. [Selecció, procedència i comandes detallades](../../../annotations/expanded-v1/README.md).
 
 Per revisar els resultats en una conversa independent, cal començar per
 `runs/calibration/expanded-localization-v1/REVIEW.md`. El paquet inclou inputs

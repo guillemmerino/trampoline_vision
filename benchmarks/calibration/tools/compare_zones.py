@@ -27,7 +27,7 @@ from trampoline_vision.results.preparation import preparation_record
 
 
 ROOT = Path(__file__).resolve().parents[3]
-PLAN = ROOT / 'benchmarks/calibration/config/iterations/06-zone-comparison.json'
+PLAN = ROOT / 'benchmarks/calibration/archive/detection-preparation-v1/config/iterations/06-zone-comparison.json'
 VARIANTS = ('previous_hard', 'previous_soft', 'centered_soft')
 
 

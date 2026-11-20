@@ -19,7 +19,7 @@
   ],
   "trackers": [],
   "detector_only": true,
-  "annotations": "../../annotations/pilot-v1/references",
+  "annotations": "../../../../annotations/pilot-v1/references",
   "allow_provisional_references": true,
   "overlay": false,
   "expected": {

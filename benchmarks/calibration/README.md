@@ -1,58 +1,46 @@
 # Banc de calibratge
 
-El detector de treball és **YOLOv8m a 0,001**, amb 0,002 com a control.
-La preparació de fins a 12 caixes és un perfil explícit del projecte.
-El criteri és que almenys una candidata localitzi el gimnasta,
-encara que sigui parcial. El seguiment d’un ID estable s’avalua per separat.
+**Comença per [l’estat actual](docs/STATE.md).** La fase de detecció i preparació
+s’ha contrastat; el pas següent és estudiar la continuïtat d’ID del gimnasta.
+Encara no hi ha una configuració de tracking òptima validada amb l’entrada actual.
 
-| Si vols… | Obre… |
+## Què necessites obrir
+
+| Necessitat | Punt d’entrada |
 | --- | --- |
-| Entendre què s’ha provat i evitar repetir experiments | [Decisions de detecció i preparació](docs/DETECTION_DECISIONS.md), [taules detallades](docs/BOX_PREPARATION_STUDIES.md) i [evidències d’exemple](evidence/box-preparation-v1/index.json) |
-| Saber què s’activa per defecte i com provar el perfil nou | [Configuracions de pipeline](../../configs/pipelines/README.md) i [API de preparació](../../src/trampoline_vision/preparation/README.md) |
-| Llegir l’estat del detector i de l’avaluació temporal | [Estat de l’estudi](docs/STATE.md) |
-| Revisar, corregir o exportar les anotacions | [Guia de revisió humana](docs/HUMAN_REVIEW.md) |
-| Executar una bateria, comprovar recursos o reprendre-la | [Guia del servidor](docs/SERVER.md) |
-| Consultar iteracions anteriors | [Historial](docs/HISTORY.md) |
-| Localitzar els artefactes i decidir què es pot arxivar | [Estructura i conservació de resultats](docs/REORGANIZATION.md) |
+| Saber amb què treballem ara i què falta | [Estat actual](docs/STATE.md) |
+| Revisar o corregir les anotacions | [Guia de revisió](docs/HUMAN_REVIEW.md) i [anotacions](annotations/README.md) |
+| Executar una comanda | [Catàleg de comandes](commands/README.md) |
+| Configurar el pipeline de producció | [Perfils del projecte](../../configs/pipelines/README.md) i [preparació](../../src/trampoline_vision/preparation/README.md) |
+| Entendre decisions, experiments anteriors i imatges | [Estudis tancats](archive/README.md) |
+| Afegir eines o preparar un estudi nou | [Estructura i convencions](docs/REORGANIZATION.md), [configuració](config/README.md) i [normes del repositori](../../AGENTS.md) |
 
-Des de l’arrel del repositori:
+## Mapa del directori
+
+```text
+calibration/
+├── docs/          Estat i guies d’ús actuals.
+├── annotations/   Referències i procedència; decisions humanes locals a runs/.
+├── config/        Corpus compartit i plans nous en curs.
+├── commands/      Comandes del servidor, amb catàleg d’actives i històriques.
+├── engine/        Infraestructura compartida d’execució i avaluació.
+├── tools/         Adaptadors i utilitats del banc.
+├── reviews/       Revisió humana i generació d’informes.
+├── tests/         Comprovacions del banc.
+├── docker/        Entorn reproduïble.
+└── archive/       Estudis tancats: informes, plans i evidències seleccionades.
+```
+
+Els JSON, CSV, `.gz` i imatges d’experiments tancats són dins d’`archive/`.
+Les referències que encara usem continuen a `annotations/`; els resultats
+complets, MP4, pesos i caches són locals a `runs/` i `data/`, fora de Git.
+El codi de producció viu a `src/trampoline_vision/`.
 
 ```bash
 python3 -m benchmarks.calibration --help
 python3 -m benchmarks.calibration review serve
-python3 -m benchmarks.calibration study representative-tracking --dry-run
-python3 -m benchmarks.calibration study zones --dry-run
 ```
 
-La revisió humana escolta a localhost:8766. Si treballes per SSH,
-reenvia el port. Els resultats locals més rellevants són:
-
-- [Revisió humana de YOLO](../../runs/calibration/expanded-localization-v1/human-review/index.html).
-- [Informe de localització en 18 clips](../../runs/calibration/expanded-localization-v1/assessment/ASSESSMENT.md).
-- [Informe de la prova contínua en 12 clips](../../runs/calibration/representative-tracking-v1/ASSESSMENT.md)
-  i [galeria de discrepàncies](../../runs/calibration/representative-tracking-v1/review.html).
-
-Els fitxers anteriors viuen a runs i són artefactes locals. El codi, les
-referències i la selecció d’evidències s’organitzen així:
-
-| Directori | Contingut |
-| --- | --- |
-| [config](config/) | Corpus, matrius d’experiment i plans. |
-| [annotations](annotations/README.md) | Referències provisionals i procedència. |
-| [evidence](evidence/box-preparation-v1/index.json) | Resums, discrepàncies i imatges amb SHA-256. |
-| [engine](engine/) i [tools](tools/) | Executor i adaptadors del banc. |
-| [reviews](reviews/) | Informes i pàgina de revisió humana. |
-| [commands](commands/) i [docker](docker/) | Comandes i entorn del servidor. |
-| [tests](tests/) | Comprovacions del banc. |
-
-## Preparació actual i comparador històric
-
-La lògica executable de producció és a [src/preparation](../../src/trampoline_vision/preparation/README.md).
-`engine/representative.py` és un **comparador històric congelat**; els seus
-plans mantenen les zones particulars de cada clip i no governen el pipeline.
-El perfil actual és centrat i soft, encara pendent de validar específicament.
-`review-boxes` usa directament el codi de producció i genera una galeria amb
-originals, regions, seleccionades i decisions auditables, sense executar tracker.
-
-Per comparar zona antiga hard, antiga soft i comuna centrada soft sobre
-18 vídeos i 1.440 fotogrames: [comanda, mètriques i artefactes](docs/ZONE_COMPARISON.md).
+La revisió humana escolta a `http://localhost:8766/`; si treballes per SSH,
+reenvia el port. Els estudis antics continuen disponibles al catàleg, però
+cap prova s’executa només per consultar el banc.

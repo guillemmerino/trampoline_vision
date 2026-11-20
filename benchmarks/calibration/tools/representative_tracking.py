@@ -1,4 +1,4 @@
-"""Compare four preparation profiles on 12 complete clips before integration."""
+"""Reprodueix el contrast històric de quatre preparacions sobre 12 clips complets."""
 
 import argparse
 from collections import Counter
@@ -18,12 +18,13 @@ from benchmarks.calibration.engine.common import (
 )
 from benchmarks.calibration.engine.evaluation import box_values, load_reference
 from benchmarks.calibration.engine.run import monitored, runtime
+from benchmarks.calibration.engine.paths import EXPERIMENT_ROOT, ITERATION_ROOT
 
 ROOT = Path(__file__).resolve().parents[3]
 CONFIG = ROOT / 'benchmarks/calibration/config'
-PLAN = CONFIG / 'iterations/05-representative-tracking.json'
+PLAN = ITERATION_ROOT / '05-representative-tracking.json'
 ANNOTATIONS = ROOT / 'benchmarks/calibration/annotations/expanded-v1/references'
-DETECTOR = read_json(CONFIG / 'experiments/localization-candidates.json')['detectors'][0]
+DETECTOR = read_json(EXPERIMENT_ROOT / 'localization-candidates.json')['detectors'][0]
 VARIANTS = ('baseline', 'hard12', 'hard8', 'soft12')
 
 

@@ -12,8 +12,8 @@ històrics. El perfil actual inclou les regles del model R, el rànquing per
 silueta i la contenció protegida. Les mètriques històriques es mantenen
 separades pels criteris i les mostres amb què es van calcular.
 
-[Entrada del banc](../README.md) · [Estat de l’estudi](STATE.md) ·
-[API de preparació implementada](../../../src/trampoline_vision/preparation/README.md).
+[Entrada del banc](../../../README.md) · [Estat de l’estudi](../../../docs/STATE.md) ·
+[API de preparació implementada](../../../../../src/trampoline_vision/preparation/README.md).
 
 ## Continuació: llista curta a la zona del trampolí
 
@@ -26,8 +26,8 @@ cobertures IA i 56/56 rectangles revisats. La prova amb vuit deixa 1.065
 cobertures IA. Aquestes llistes encara inclouen distractors i regions massa
 àmplies. El càlcul del fons usa mostres de tot el clip.
 
-[Resultats, propostes i inspecció dels fotogrames](../../../runs/calibration/representative-box-study-v1/ASSESSMENT.md) ·
-[Galeria comparativa](../../../runs/calibration/representative-box-study-v1/review.html).
+[Resultats, propostes i inspecció dels fotogrames](../../../../../runs/calibration/representative-box-study-v1/ASSESSMENT.md) ·
+[Galeria comparativa](../../../../../runs/calibration/representative-box-study-v1/review.html).
 
 ## 1. Objectiu i límits comuns
 
@@ -445,13 +445,13 @@ simulat** ni tenen resultats propis en aquest estudi.
 
 | Estudi local a `runs/calibration/` | Evidència principal |
 | --- | --- |
-| [`box-preparation-feasibility-v1`](../../../runs/calibration/box-preparation-feasibility-v1/ASSESSMENT.md) | Controls inicials NMS/contenció; criteri històric IoU, no comparable directament a cobertura 90/95% |
-| [`box-preparation-v3`](../../../runs/calibration/box-preparation-v3/INTERPRETATION.md) | Implementació S0, `frames.jsonl`, config, temps i fonts completes |
-| [`human-approved-redundancy-v1`](../../../runs/calibration/human-approved-redundancy-v1/ASSESSMENT.md) | Conjunt local fix i auditoria de les 56 seleccions |
-| [`containment-grouping-simulation-v1`](../../../runs/calibration/containment-grouping-simulation-v1/ASSESSMENT.md) | C: `simulate.py`, `result.json`, `assignments.json`, [galeria](../../../runs/calibration/containment-grouping-simulation-v1/review.html) |
-| [`confidence-anchor-analysis-v1`](../../../runs/calibration/confidence-anchor-analysis-v1/ASSESSMENT.md) | Scores seleccionats, continguts, contenidors i solapaments |
-| [`density-anchor-simulation-v1`](../../../runs/calibration/density-anchor-simulation-v1/ASSESSMENT.md) | A/H: `study.py`, `result.json`, `assignments.json`, `anchor-ranking.json`, [galeria](../../../runs/calibration/density-anchor-simulation-v1/review.html) |
-| [`tiered-anchor-regions-v1`](../../../runs/calibration/tiered-anchor-regions-v1/ASSESSMENT.md) | R: `study.py`, `result.json`, `assignments.jsonl.gz`, `human-views.json`, [galeria](../../../runs/calibration/tiered-anchor-regions-v1/review.html) |
+| [`box-preparation-feasibility-v1`](../../../../../runs/calibration/box-preparation-feasibility-v1/ASSESSMENT.md) | Controls inicials NMS/contenció; criteri històric IoU, no comparable directament a cobertura 90/95% |
+| [`box-preparation-v3`](../../../../../runs/calibration/box-preparation-v3/INTERPRETATION.md) | Implementació S0, `frames.jsonl`, config, temps i fonts completes |
+| [`human-approved-redundancy-v1`](../../../../../runs/calibration/human-approved-redundancy-v1/ASSESSMENT.md) | Conjunt local fix i auditoria de les 56 seleccions |
+| [`containment-grouping-simulation-v1`](../../../../../runs/calibration/containment-grouping-simulation-v1/ASSESSMENT.md) | C: `simulate.py`, `result.json`, `assignments.json`, [galeria](../../../../../runs/calibration/containment-grouping-simulation-v1/review.html) |
+| [`confidence-anchor-analysis-v1`](../../../../../runs/calibration/confidence-anchor-analysis-v1/ASSESSMENT.md) | Scores seleccionats, continguts, contenidors i solapaments |
+| [`density-anchor-simulation-v1`](../../../../../runs/calibration/density-anchor-simulation-v1/ASSESSMENT.md) | A/H: `study.py`, `result.json`, `assignments.json`, `anchor-ranking.json`, [galeria](../../../../../runs/calibration/density-anchor-simulation-v1/review.html) |
+| [`tiered-anchor-regions-v1`](../../../../../runs/calibration/tiered-anchor-regions-v1/ASSESSMENT.md) | R: `study.py`, `result.json`, `assignments.jsonl.gz`, `human-views.json`, [galeria](../../../../../runs/calibration/tiered-anchor-regions-v1/review.html) |
 
 Els estudis C/A/H/R tenen instantànies, hashes d’entrada, `validation.json`
 i `checksums.json`; es van comprovar totes les particions de 233.299 fonts

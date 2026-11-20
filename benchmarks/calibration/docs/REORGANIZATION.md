@@ -1,83 +1,79 @@
-# Estructura i canvi de rutes
+# Estructura, arxiu i conservació
 
-El directori arrel passa de molts scripts, JSON i documents barrejats a un
-README d’entrada i carpetes per funció. La comanda estable és
-`python3 -m benchmarks.calibration`; els fitxers interns es poden reordenar
-sense obligar a memoritzar-los.
+## Regla estable
 
-| Abans, sota `benchmarks/calibration/` | Ara |
+El banc separa **treball actual**, **eines compartides**, **referències** i
+**estudis tancats**. El [README d’entrada](../README.md) dona accés a cada grup.
+Les [normes del repositori](../../../AGENTS.md) fixen la mateixa disciplina
+per als canvis futurs: responsabilitats clares, docstrings i comentaris en
+català, procedència i comprovació de rutes després de moure fitxers.
+
+| Ubicació | Responsabilitat |
 | --- | --- |
-| `corpus.json`, `corpus-validation.json` | `config/` |
-| `experiment.json`, `tracker-sensitivity.json` | `config/experiments/` |
-| `iterations/*-experiment.json` | `config/experiments/` |
-| `iterations/0*.json` | `config/iterations/` |
-| `annotation-pilot/`, `annotation-expanded-v1/` | `annotations/pilot-v1/`, `annotations/expanded-v1/` |
-| `run*.sh` | `commands/`; comanda recomanada `study …` |
-| `run.py`, `iterate.py`, detector i avaluació | `engine/` |
-| Informes, decisions i revisió humana | `reviews/` |
-| HTML, CSS i JS de revisió | `reviews/static/` |
-| Scripts d’extracció, preparació i dibuix | `tools/` |
-| `Dockerfile` | `docker/Dockerfile` |
-| `ITERATIONS.md`, `HUMAN_REVIEW.md`, protocol llarg | `docs/` |
-| Validació inicial | `docs/history/initial-validation.json` |
+| `src/trampoline_vision/` | Implementació reutilitzable de producció. |
+| `configs/` del projecte | Perfils executables de l’aplicació. |
+| `calibration/docs/` | Estat i guies d’ús actuals. |
+| `calibration/config/` | Corpus compartit i plans nous en curs a `studies/`. |
+| `calibration/annotations/` | Referències reutilitzades i procedència. |
+| `calibration/commands/`, `engine/`, `tools/`, `reviews/` | Eines compartides i executors, amb catàlegs de responsabilitats. |
+| `calibration/archive/<estudi>/` | Plans, informes i selecció d’evidències d’estudis tancats. |
+| `runs/`, `data/`, caches i pesos | Artefactes locals; es regeixen per `.gitignore`. |
 
-Exemples de comandes actualitzades:
+## Moviments d’aquesta reorganització
 
-```bash
-# Abans: python3 benchmarks/calibration/human_review.py serve
-python3 -m benchmarks.calibration review serve
-
-# Abans: bash benchmarks/calibration/run-expanded-localization.sh --dry-run
-python3 -m benchmarks.calibration study expanded --dry-run
-
-# Executor d’iteració per a opcions avançades:
-python3 -m benchmarks.calibration iterate --help
-
-# Eines d’anotació:
-python3 -m benchmarks.calibration annotations extract --help
-```
-
-Els imports Python històrics, com `benchmarks.calibration.evaluation` o
-`benchmarks.calibration.human_review`, continuen apuntant als mateixos mòduls
-actuals. Això conserva els scripts de valoració offline guardats amb els runs.
-Les antigues rutes físiques dels scripts es consulten a la taula anterior.
-L’únic enllaç físic de compatibilitat, `common.py → engine/common.py`, permet
-que els informes antics continuïn localitzant l’arrel del repositori. No duplica
-la implementació.
-
-Els paràmetres numèrics no canvien. Només s’ajusten els paths dels plans i perfils.
-El corpus i els JSON de referències, selecció, decisions i procedència conserven
-els seus bytes. La documentació s’actualitza per reflectir les comandes noves.
-
-`data/calibration-v1/` i tots els resultats de `runs/calibration/` continuen al seu
-lloc, incloent el paquet HTML en ús, les decisions humanes i l’historial.
-Els informes congelats mantenen els noms/rutes del codi que els va produir;
-no s’han reescrit per fer-los semblar execucions noves.
-
-La còpia del codi anterior i el manifest de moviments són a
-`runs/calibration/reorganization-v1/`. Permeten reconstruir el checkout anterior
-per reproducció estricta. Reprendre una inferència comprova també els hashes del
-codi: aquesta comprovació continua activa després de la reorganització.
-
-## Què es manté actiu i què es pot arxivar
-
-El codi que s’usa en una aplicació és a src/trampoline_vision. Els plans i
-adaptadors de reproducció pertanyen a benchmarks/calibration. El motor
-del benchmark representatiu es conserva com a comparador de la versió
-estudiada. El paquet d’evidències conserva els resums i dotze imatges
-sense requerir el material d’inferència. Els runs complets, vídeos,
-pesos i caches són artefactes locals exclosos de Git.
-
-| Artefacte local sota runs/calibration | Retenció |
+| Ruta anterior sota calibration | Ruta actual |
 | --- | --- |
-| expanded-localization-v1 | Actiu. Conté la revisió humana, el seu historial i el cache de deteccions que reutilitza el benchmark representatiu. |
-| sample-expansion-preparation-v1/raw | Actiu per reconstruir el paquet de revisió humana. La còpia navegable de les imatges a human-review té una funció diferent. |
-| representative-tracking-v1 | Actiu per revisar els clips nous i poder consultar discrepàncies i traces a resolució de fotograma. |
-| box-preparation-v3 i les simulacions de contenció, densitat i regions | Conservar plegats en un arxiu si es vol reproduir el calibratge exacte. Les referències creuades entre scripts necessiten les rutes originals en restaurar-los. |
-| box-preparation-v1 i box-preparation-v2 | Intents de desenvolupament substituïts per v3, uns 464 MiB en aquest servidor. Són els primers candidats a arxivar fora del directori de treball. |
-| threshold-robustness-v1 | Històric. La síntesi conserva la matriu i exemples. L’execució completa, uns 3 GiB, conserva els 48 MP4, traces i verificacions. És candidata a arxivar si la revisió d’aquells vídeos ja s’ha tancat. |
+| `evidence/` | `archive/detection-preparation-v1/evidence/` |
+| `config/experiments/` | `archive/detection-preparation-v1/config/experiments/` |
+| `config/iterations/` | `archive/detection-preparation-v1/config/iterations/` |
+| `config/corpus-validation.json` | `archive/detection-preparation-v1/config/corpus-validation.json` |
+| `docs/DETECTION_DECISIONS.md`, `BOX_PREPARATION_STUDIES.md`, `ZONE_COMPARISON.md`, `HISTORY.md` | `archive/detection-preparation-v1/docs/` |
+| `docs/history/` | `archive/detection-preparation-v1/docs/history/` |
+| Estat extens anterior a `docs/STATE.md` | `archive/detection-preparation-v1/docs/STATE_HISTORY.md`; STATE actual es manté breu. |
 
-Arxivar significa copiar i verificar abans de retirar la còpia de treball.
-Els hashes de l’[índex d’evidències](../evidence/box-preparation-v1/index.json)
-serveixen per identificar les còpies representatives. Els manifests de cada
-run identifiquen els artefactes complets.
+S’han actualitzat els enllaços, les constants de rutes, els defaults dels
+executors i les referències relatives dels plans i perfils d’experiment.
+Els paràmetres científics no canvien. Les evidències i les anotacions conserven
+els seus bytes, incloent els JSON/CSV comprimits i les dotze imatges seleccionades.
+No s’han mogut ni eliminat resultats de `runs/`, dades o decisions humanes.
+
+Els scripts de servidor mantenen els noms. `python3 -m benchmarks.calibration`
+continua sent l’entrada estable; consulta el [catàleg](../commands/README.md).
+Els imports de compatibilitat i `common.py → engine/common.py` es mantenen
+per als scripts de revisió offline. No es creen còpies alternatives del motor.
+
+Canviar rutes de plans o codi canvia la seva identitat. Els runs congelats
+continuen descrivint el checkout original; els seus hashes no es reescriuen.
+Per reproduir un estudi amb les rutes noves, usa una destinació nova.
+No reprenguis una execució antiga sobre un pla modificat.
+
+## Quan es tanca una prova nova
+
+1. Desa l’informe i una selecció petita d’evidències contrastables.
+2. Agrupa pla, configuració i resultats seleccionats a `archive/<estudi>/`.
+3. Afegeix un README amb decisió, limitacions i com reproduir-lo.
+4. Actualitza estat, catàlegs i enllaços; verifica les rutes i els tests afectats.
+5. Conserva les dades completes a `runs/` o en un arxiu extern verificat.
+
+## Resultats locals i retenció
+
+`expanded-localization-v1` continua actiu: revisió humana i deteccions reutilitzades.
+`sample-expansion-preparation-v1/raw` permet reconstruir la galeria.
+`representative-tracking-v1` conserva el replay i les discrepàncies temporals.
+`zone-comparison-v1` conserva la comparació aparellada i la revisió visual.
+
+Les simulacions antigues i `box-preparation-v1/v2` es poden arxivar fora de
+l’espai de treball després de copiar-les i verificar-les. Aquesta reorganització
+no les elimina. Els resums versionats són una selecció científica, no un
+substitut de totes les traces si es vol reproducció estricta.
+
+## Verificació de la reorganització
+
+Passen els 76 tests del banc, incloent resolució dels plans i perfils,
+compatibilitat d’imports, enllaços dels punts d’entrada i hashes d’evidències.
+La comprovació de tots els enllaços Markdown del banc no ha trobat destinacions
+absents. S’han contrastat els 34 fitxers d’evidència contra el commit anterior:
+conserven exactament els bytes, igual que les dades i captures d’anotació.
+El preflight CPU de zones continua resolent 18 vídeos i 1.440 mostres sense
+crear resultats ni repetir inferència. Només s’han retirat caches Python
+regenerables; no s’han eliminat dades de l’estudi.

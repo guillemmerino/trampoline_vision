@@ -1,12 +1,22 @@
 {
   "schema_version": "1.0",
-  "experiment_id": "detector-threshold-robustness-v1",
+  "experiment_id": "detector-tracking-screen-v1",
   "status": "experimental",
   "detectors": [
     {
-      "id": "yolov8m-conf001-nms070",
-      "model": "yolov8m",
-      "confidence": 0.01,
+      "id": "yolov8n-conf002-nms070",
+      "model": "yolov8n",
+      "confidence": 0.02,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    {
+      "id": "yolov8n-conf005-nms070",
+      "model": "yolov8n",
+      "confidence": 0.05,
       "nms_iou": 0.7,
       "imgsz": 1280,
       "resize_factor": 1.5,
@@ -34,46 +44,50 @@
       "post_area_cap": null
     },
     {
-      "id": "yolov8m-conf010-nms070",
+      "id": "yolov8m-conf005-nms050",
       "model": "yolov8m",
-      "confidence": 0.1,
-      "nms_iou": 0.7,
+      "confidence": 0.05,
+      "nms_iou": 0.5,
       "imgsz": 1280,
       "resize_factor": 1.5,
       "max_det": 300,
       "post_area_cap": null
+    },
+    {
+      "id": "yolov8m-conf005-nms070-area20",
+      "model": "yolov8m",
+      "confidence": 0.05,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": 20
     }
   ],
   "trackers": [
     {
       "id": "ocsort",
-      "profile": "../../../../configs/trackers/ocsort.json",
+      "profile": "../../../../../../configs/trackers/ocsort.json",
       "lifecycle": {},
       "parameters": {}
     },
     {
       "id": "bytetrack",
-      "profile": "../../../../configs/trackers/bytetrack.json",
+      "profile": "../../../../../../configs/trackers/bytetrack.json",
       "lifecycle": {},
-      "parameters": {
-        "low_confidence": 0.01
-      }
+      "parameters": {}
     },
     {
       "id": "botsort",
-      "profile": "../../../../configs/trackers/botsort.json",
+      "profile": "../../../../../../configs/trackers/botsort.json",
       "lifecycle": {},
-      "parameters": {
-        "low_confidence": 0.01
-      }
+      "parameters": {}
     },
     {
       "id": "botsort-reid",
-      "profile": "../../../../configs/trackers/botsort-reid.json",
+      "profile": "../../../../../../configs/trackers/botsort-reid.json",
       "lifecycle": {},
-      "parameters": {
-        "low_confidence": 0.01
-      }
+      "parameters": {}
     }
   ]
 }

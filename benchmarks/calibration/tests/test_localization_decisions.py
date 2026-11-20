@@ -127,10 +127,10 @@ class LocalizationPresetTests(unittest.TestCase):
             data.mkdir()
             shutil.copyfile(here / "config/corpus.json", data / "corpus.json")
             with patch("benchmarks.calibration.run.verify_file"), redirect_stdout(io.StringIO()) as stream:
-                self.assertEqual(main(["--plan", str(here / "config/iterations/03-localization-candidates.json"),
+                self.assertEqual(main(["--plan", str(here / "archive/detection-preparation-v1/config/iterations/03-localization-candidates.json"),
                                        "--dataset", str(data), "--output", str(Path(temporary) / "out"), "--dry-run"]), 0)
             result = json.loads(stream.getvalue())
             self.assertEqual((result["videos"], result["detector_jobs"], result["tracking_jobs"]), (3, 6, 0))
             self.assertEqual(result["detector_roles"], {"yolov8m-conf0001-nms070": "primary", "yolov8m-conf0002-nms070": "control"})
-            experiment = read_json(here / "config/experiments/localization-candidates.json")
+            experiment = read_json(here / "archive/detection-preparation-v1/config/experiments/localization-candidates.json")
             self.assertEqual([d["confidence"] for d in experiment["detectors"]], [.001, .002])

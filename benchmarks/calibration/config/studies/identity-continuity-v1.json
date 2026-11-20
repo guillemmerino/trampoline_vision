@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "study_id": "identity-continuity-v1",
+  "status": "protocol_only_battery_not_executed",
+  "cases": [
+    {
+      "id": "JPN_AGE_1_000905_31.0",
+      "csv_sha256": "6c7f2af2275e0c73fc4226301bcd4fd4dafc87d644575682b50ae4ce0df1643a",
+      "review_windows_half_open": [
+        [
+          0,
+          150
+        ],
+        [
+          270,
+          540
+        ],
+        [
+          780,
+          930
+        ]
+      ]
+    },
+    {
+      "id": "JPN_AGE_2_000709_37.0",
+      "csv_sha256": "6479a6632e24d04279de8f301956b599d255c264d728847d6bddc3f5e7f26ecc",
+      "review_windows_half_open": [
+        [
+          0,
+          180
+        ],
+        [
+          450,
+          660
+        ],
+        [
+          930,
+          1110
+        ]
+      ]
+    },
+    {
+      "id": "JPN_AGE_3_001351_19.0",
+      "csv_sha256": "a70e8959c1d212eae566cec8ed1ec4b3af06028ece47416b6df2de177964abe2",
+      "review_windows_half_open": [
+        [
+          0,
+          210
+        ],
+        [
+          270,
+          420
+        ],
+        [
+          450,
+          570
+        ]
+      ]
+    }
+  ],
+  "profiles": {
+    "ocsort": {
+      "path": "configs/trackers/ocsort.json",
+      "sha256": "ebc7e4f3a227323828b35c21c012a1d381954518c287ac2099b572bcecd8723e"
+    },
+    "bytetrack": {
+      "path": "configs/trackers/bytetrack.json",
+      "sha256": "6515247e9b06d5e7d8d813d49de18ccbe9e6a16bda5538f93047305415c7e8be"
+    },
+    "botsort": {
+      "path": "configs/trackers/botsort.json",
+      "sha256": "13d9aff6289f34bbf39326204cae9091b76814be9f32e85d64f3ca8622561f6c"
+    },
+    "botsort-reid": {
+      "path": "configs/trackers/botsort-reid.json",
+      "sha256": "eafd2b9f17f5dd0bf592613b6459c6a9c33acefb73898a3a089ee62588d38bf2"
+    }
+  },
+  "preparation": {
+    "path": "configs/preparation/representative-boxes.json",
+    "sha256": "593f676a4040fa618e65509e756d43cd0f60062d9127164e4b293688a2389f9a"
+  },
+  "detector": {
+    "id": "yolov8m-conf0001-nms070",
+    "model": "yolov8m",
+    "confidence": 0.001,
+    "nms_iou": 0.7,
+    "imgsz": 1280,
+    "resize_factor": 1.5,
+    "max_det": 300,
+    "post_area_cap": null
+  },
+  "detector_weights_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+  "recovery": "not_invoked",
+  "native_tracker_recovery": true,
+  "resources": {
+    "device": "cpu",
+    "threads": 4,
+    "cpu_limit": 4,
+    "memory_limit_gib": 8,
+    "network": "none",
+    "sequential": true
+  },
+  "review": {
+    "status": "unreviewed",
+    "candidate_labels": [
+      "gymnast_useful",
+      "gymnast_partial",
+      "mixed_useful",
+      "assistant",
+      "audience",
+      "other",
+      "ambiguous"
+    ],
+    "presence_labels": [
+      "visible",
+      "occluded",
+      "out_of_frame",
+      "ambiguous"
+    ],
+    "provenance_required": true
+  }
+}

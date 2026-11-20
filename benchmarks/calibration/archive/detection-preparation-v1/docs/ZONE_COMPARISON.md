@@ -105,7 +105,7 @@ no instal·la dependències ni descarrega dades.
 
 La prova ha finalitzat amb els 18 clips i 1.440 mostres. S’han verificat els
 hashes de finalització i del codi i s’han recalculat les mètriques dels registres.
-L’[informe de revisió](../../../runs/calibration/zone-comparison-v1/REVIEW.md)
+L’[informe de revisió](../../../../../runs/calibration/zone-comparison-v1/REVIEW.md)
 conté la taula per vídeo i 13 imatges reals inspeccionades per l’agent.
 
 | Diagnòstic | Antiga hard | Antiga soft | Central soft |

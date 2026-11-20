@@ -22,7 +22,7 @@ amb zona comuna centrada `[0.06, 0.25, 0.94, 0.93]`, mode `soft` i límit de 12.
 El seu manifest calibrat consumeix YOLOv8m a 0,001 amb NMS 0,7, preservant
 l’exemple legacy en un manifest separat. La zona és la mateixa per a tots els
 clips; pressuposa el trampolí centrat i s’ha contrastat en una
-[comparació aparellada de 18 clips](../../benchmarks/calibration/docs/ZONE_COMPARISON.md).
+[comparació aparellada de 18 clips](../../benchmarks/calibration/archive/detection-preparation-v1/docs/ZONE_COMPARISON.md).
 Aquesta prova no acredita generalització a altres escenaris.
 Les passes del banc seleccionen les variants via el seu pla experimental.
 [Configuració i exemples](../../src/trampoline_vision/preparation/README.md).

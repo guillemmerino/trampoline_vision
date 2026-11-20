@@ -4,6 +4,10 @@ Sistema modular d'anàlisi de gimnàstica de trampolí a partir de vídeo 2D amb
 L'objectiu final és obtenir un diagnòstic esportiu; la primera etapa construeix el seguiment
 del gimnasta i la detecció dels salts en escenes amb múltiples persones.
 
+Les convencions d’estructura, documentació i comentaris en català són a
+[AGENTS.md](AGENTS.md). El [banc de calibratge](benchmarks/calibration/README.md)
+separa el treball actual dels estudis tancats.
+
 ## Estat actual: seguiment executable de deteccions enregistrades
 
 - Docker CPU amb FFmpeg/ffprobe, paquet instal·lat i servei Compose per executar proves.

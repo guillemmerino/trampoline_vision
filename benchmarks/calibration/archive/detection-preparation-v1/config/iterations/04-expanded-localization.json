@@ -32,7 +32,7 @@
   ],
   "trackers": [],
   "detector_only": true,
-  "annotations": "../../annotations/expanded-v1/references",
+  "annotations": "../../../../annotations/expanded-v1/references",
   "allow_provisional_references": true,
   "overlay": false,
   "expected": {
@@ -40,6 +40,6 @@
     "detector_jobs": 36,
     "tracking_jobs": 0
   },
-  "review_decisions": "../../annotations/expanded-v1/localization-decisions-v1.json",
-  "sampling_plan": "../../annotations/expanded-v1/selection.json"
+  "review_decisions": "../../../../annotations/expanded-v1/localization-decisions-v1.json",
+  "sampling_plan": "../../../../annotations/expanded-v1/selection.json"
 }

@@ -4,16 +4,41 @@ from contextlib import redirect_stdout
 from importlib import import_module
 import io
 from pathlib import Path
+import re
 import unittest
 from unittest.mock import patch
 
 from benchmarks.calibration.__main__ import main
-from benchmarks.calibration.engine.paths import ANNOTATIONS_ROOT, CONFIG_ROOT, EXPERIMENT_ROOT, PROJECT_ROOT, STATIC_ROOT, source_file
+from benchmarks.calibration.engine.paths import ANNOTATIONS_ROOT, ARCHIVE_ROOT, CALIBRATION_ROOT, CONFIG_ROOT, EXPERIMENT_ROOT, ITERATION_ROOT, PROJECT_ROOT, STATIC_ROOT, source_file
+from benchmarks.calibration.engine.common import read_json, verify_artifacts
 from benchmarks.calibration.engine.run import parser
 from benchmarks.calibration.reviews.human import DEFAULT_RUN, DEFAULT_RAW
 
 
 class CalibrationLayoutTests(unittest.TestCase):
+    def test_archived_plans_profiles_and_evidence_are_still_resolvable(self):
+        """Arxivar no pot perdre evidència ni desconnectar els plans dels seus inputs."""
+        evidence = ARCHIVE_ROOT / "evidence/box-preparation-v1"
+        verify_artifacts(evidence, {name: item["sha256"] for name, item in read_json(evidence / "index.json")["files"].items()})
+        for path in ITERATION_ROOT.rglob("*.json"):
+            plan = read_json(path)
+            for key in ("experiment", "annotations", "sampling_plan", "review_decisions"):
+                if key in plan:
+                    self.assertTrue((path.parent / plan[key]).exists(), (path, key))
+        for path in EXPERIMENT_ROOT.glob("*.json"):
+            for tracker in read_json(path).get("trackers", []):
+                self.assertTrue((path.parent / tracker["profile"]).is_file(), (path, tracker["id"]))
+
+    def test_navigation_readmes_and_current_guides_have_existing_link_targets(self):
+        """Els punts d’entrada han de portar a documents i fitxers que existeixen."""
+        paths = [*CALIBRATION_ROOT.rglob("README.md"), CALIBRATION_ROOT / "docs/STATE.md",
+                 CALIBRATION_ROOT / "docs/REORGANIZATION.md"]
+        for path in paths:
+            for target in re.findall(r"!?\[[^\]]*\]\(([^\s)]+)\)", path.read_text()):
+                if ":" in target or target.startswith("#"):
+                    continue
+                self.assertTrue((path.parent / target.split("#", 1)[0]).exists(), (path, target))
+
     def test_no_command_prints_navigation_without_starting_an_experiment(self):
         with patch("benchmarks.calibration.engine.run.run") as run, \
                 patch("benchmarks.calibration.engine.iterate.main") as iterate, \
