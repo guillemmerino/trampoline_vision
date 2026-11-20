@@ -1,5 +1,9 @@
 # Variants de preparació de caixes: models, resultats i pas a tracking
 
+La [síntesi de decisions de detecció i preparació](DETECTION_DECISIONS.md)
+relaciona els problemes observats amb cada intent i la seva evidència.
+Les taules d’aquest document amplien el detall de les variants històriques.
+
 Aquest document consolida les simulacions espacials fetes sobre les mateixes
 deteccions. Permet comparar models sense dependre de l’historial del xat.
 El paquet implementa la preparació conservadora S0 i el perfil opcional de

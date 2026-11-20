@@ -231,6 +231,17 @@
       ],
       "sha256": "aa378e2f7bfd2361c18095fc0c5b45d0fe3daf8fd9874cbb002633177d10b9a8",
       "source_sha256": "27aa560153ccc0ca49c7188672c6c2c7a088ed2a87a4cb831a9873705e1a550b"
+    },
+    "detector-execution-inventory.json": {
+      "source": "multiple_detector_checkpoints",
+      "sources": [
+        "runs/calibration/server-rtx5070-v1/summary.json",
+        "runs/calibration/threshold-robustness-v1/run/summary.json",
+        "runs/calibration/low-detector-thresholds-v1/run/summary.json",
+        "runs/calibration/expanded-localization-v1/run/summary.json"
+      ],
+      "sha256": "f4ed0146c48f8078d4eb14fee4f69115af623681af2c357dc768bdb715c0d456",
+      "description": "Detector settings, weights, video hashes and checkpoint identities for 63 verified detector jobs."
     }
   }
 }

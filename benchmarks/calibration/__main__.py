@@ -12,6 +12,7 @@ COMMANDS = {
     "report": ("reviews.tracking_report", "Reconstruir un informe de tracking"),
     "prepare": ("tools.prepare_data", "Preparar el paquet portable de dades"),
     "prepare-boxes": ("tools.prepare_boxes", "Preparar i mesurar deteccions desades sense executar tracking"),
+    "review-boxes": ("tools.review_representative", "Revisar caixes representatives, rànquing i exclusions sense tracker"),
     "verify": ("tools.verify_corpus", "Verificar els inputs del paquet"),
 }
 ANNOTATION_TOOLS = {
@@ -20,6 +21,7 @@ ANNOTATION_TOOLS = {
     "templates": "tools.reference_templates",
 }
 STUDIES = {
+    "zones": "run-zone-comparison.sh",
     "representative-tracking": "run-representative-tracking.sh",
     "expanded": "run-expanded-localization.sh", "low-thresholds": "run-low-thresholds.sh",
     "thresholds": "run-iteration.sh", "localization": "run-localization.sh",

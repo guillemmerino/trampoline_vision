@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "path_base": "manifest_directory",
+  "case_id": "JPN_AGE_1_000905_31.0",
+  "video": {
+    "path": "../calibration-v1/videos/JPN_AGE_1_000905_31.0.mp4",
+    "expected": {
+      "width_px": 960,
+      "height_px": 1080,
+      "fps": 30.0,
+      "frame_count": 930,
+      "duration_s": 31.0
+    }
+  },
+  "detections": {
+    "primary": {
+      "path": "../../runs/calibration/expanded-localization-v1/run/detections/JPN_AGE_1_000905_31.0/yolov8m-conf0001-nms070/attempt-0001/boxes.csv",
+      "format": "person_boxes_csv",
+      "frame_index_base": 0,
+      "coordinate_space": "original_frame_pixels",
+      "frame_coverage": "complete_video",
+      "variant": "yolov8m-conf0001-nms070"
+    }
+  },
+  "known_issues": [
+    "Recorded YOLOv8m confidence=0.001, NMS IoU=0.7, imgsz=1280, resize_factor=1.5, max_det=300.",
+    "Detector settings and resource measurements are in detector.json next to boxes.csv.",
+    "No automatic gymnast selection; detection IDs are local to each frame.",
+    "Centered soft preparation zone is a new common assumption, not the per-clip zone used in historical studies."
+  ]
+}

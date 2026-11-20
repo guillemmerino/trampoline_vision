@@ -7,7 +7,7 @@ encara que sigui parcial. El seguiment d’un ID estable s’avalua per separat.
 
 | Si vols… | Obre… |
 | --- | --- |
-| Entendre què s’ha provat i evitar repetir experiments | [Estudi consolidat](docs/BOX_PREPARATION_STUDIES.md) i [evidències d’exemple](evidence/box-preparation-v1/index.json) |
+| Entendre què s’ha provat i evitar repetir experiments | [Decisions de detecció i preparació](docs/DETECTION_DECISIONS.md), [taules detallades](docs/BOX_PREPARATION_STUDIES.md) i [evidències d’exemple](evidence/box-preparation-v1/index.json) |
 | Saber què s’activa per defecte i com provar el perfil nou | [Configuracions de pipeline](../../configs/pipelines/README.md) i [API de preparació](../../src/trampoline_vision/preparation/README.md) |
 | Llegir l’estat del detector i de l’avaluació temporal | [Estat de l’estudi](docs/STATE.md) |
 | Revisar, corregir o exportar les anotacions | [Guia de revisió humana](docs/HUMAN_REVIEW.md) |
@@ -21,6 +21,7 @@ Des de l’arrel del repositori:
 python3 -m benchmarks.calibration --help
 python3 -m benchmarks.calibration review serve
 python3 -m benchmarks.calibration study representative-tracking --dry-run
+python3 -m benchmarks.calibration study zones --dry-run
 ```
 
 La revisió humana escolta a localhost:8766. Si treballes per SSH,
@@ -43,3 +44,15 @@ referències i la selecció d’evidències s’organitzen així:
 | [reviews](reviews/) | Informes i pàgina de revisió humana. |
 | [commands](commands/) i [docker](docker/) | Comandes i entorn del servidor. |
 | [tests](tests/) | Comprovacions del banc. |
+
+## Preparació actual i comparador històric
+
+La lògica executable de producció és a [src/preparation](../../src/trampoline_vision/preparation/README.md).
+`engine/representative.py` és un **comparador històric congelat**; els seus
+plans mantenen les zones particulars de cada clip i no governen el pipeline.
+El perfil actual és centrat i soft, encara pendent de validar específicament.
+`review-boxes` usa directament el codi de producció i genera una galeria amb
+originals, regions, seleccionades i decisions auditables, sense executar tracker.
+
+Per comparar zona antiga hard, antiga soft i comuna centrada soft sobre
+18 vídeos i 1.440 fotogrames: [comanda, mètriques i artefactes](docs/ZONE_COMPARISON.md).

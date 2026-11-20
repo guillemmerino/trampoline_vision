@@ -89,7 +89,7 @@ class RepresentativeBoxPolicy:
 
     zone: tuple[float, float, float, float]  # Coordenades xyxy normalitzades respecte del fotograma original.
     max_candidates: int = 12
-    zone_mode: str = "hard"  # "soft" usa la zona com a preferència en el rànquing.
+    zone_mode: str = "soft"  # Preferència espacial; "hard" activa un filtre explícit.
 
     def __post_init__(self) -> None:
         """Valida la zona, el límit de candidates i el tractament de les deteccions exteriors."""

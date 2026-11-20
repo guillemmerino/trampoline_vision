@@ -1,7 +1,10 @@
-"""Experimental preparation for the full-clip calibration replay.
+"""Comparador històric congelat de la prova contínua de calibratge.
 
-Port of the frozen tiered_safe_regional and guard12 prototypes. Shared with
-the benchmark only. The dataclass adapter never changes the source detections.
+Reprodueix tiered_safe_regional i guard12 per contrastar resultats antics.
+El mètode de producció viu a src/trampoline_vision/preparation; no s’ha de
+modificar aquest comparador per afegir-hi variants noves. Les zones dels
+plans històrics es mantenen per reproduïbilitat. Canviar aquest fitxer altera
+la identitat del codi i requereix una destinació nova per a futures execucions.
 """
 
 from dataclasses import asdict

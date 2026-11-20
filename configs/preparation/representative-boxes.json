@@ -4,8 +4,13 @@
     "enabled": true
   },
   "representative_boxes": {
-    "zone": [0.342, 0.25, 0.958, 0.93],
-    "zone_mode": "hard",
+    "zone": [
+      0.06,
+      0.25,
+      0.94,
+      0.93
+    ],
+    "zone_mode": "soft",
     "max_candidates": 12
   }
 }

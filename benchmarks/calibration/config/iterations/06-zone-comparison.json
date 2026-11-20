@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "study": "centered-soft-zone-comparison-v1",
+  "detector": "yolov8m-conf0001-nms070",
+  "variants": [
+    "previous_hard",
+    "previous_soft",
+    "centered_soft"
+  ],
+  "expected_samples_per_case": 80,
+  "cases": [
+    {
+      "id": "JPN_AGE_1_000840_34.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_1_000905_31.0",
+      "panel": "left"
+    },
+    {
+      "id": "JPN_AGE_1_001814_34.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_1_002139_38.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_1_002837_43.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_1_005412_48.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_2_000024_27.0",
+      "panel": "left"
+    },
+    {
+      "id": "JPN_AGE_2_000709_37.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_2_002952_23.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_2_003434_33.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_2_004622_33.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_2_005459_25.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_3_001122_32.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_3_001351_19.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_3_001618_22.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_3_002412_31.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_3_002828_43.0",
+      "panel": "right"
+    },
+    {
+      "id": "JPN_AGE_3_003349_25.0",
+      "panel": "right"
+    }
+  ],
+  "historical_zone_source": "runs/calibration/representative-box-study-v1/study.py: zone_for; left pane [0,0.69], right pane [0.30,1], then margins [0.06,0.25,0.94,0.93]",
+  "reference_policy": "provisional_ai_accepted_for_study_not_exhaustive_human_ground_truth"
+}

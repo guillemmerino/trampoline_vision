@@ -115,20 +115,35 @@ articulacions completes. La qualitat dels IDs requereix una fase posterior.
 
 El [perfil representatiu](../../../configs/preparation/representative-boxes.json)
 activa S0, agrupament regional, evidència de primer pla, contenció protegida i
-un màxim de 12 candidates. El rectangle d’exemple correspon al pla amb
-panell de càmera a la dreta. Per reproduir el pla de càmera a l’esquerra,
-usa la zona normalitzada [0.0414, 0.25, 0.6486, 0.93]. La zona es declara
-en coordenades xyxy de tot el fotograma, abans d’extreure cap retall.
-Cada càmera nova necessita una zona explícita. Amb zone_mode igual a soft,
-les caixes exteriors poden competir per les mateixes places. Els perfils
-existents continuen triant la seva preparació per la configuració.
+un màxim de 12 candidates. El perfil compartit usa `zone_mode: "soft"` i
+`zone: [0.06, 0.25, 0.94, 0.93]`, en coordenades xyxy normalitzades de **tot**
+el fotograma. S’assumeix un trampolí centrat: marge lateral del 6% a cada
+costat, límit superior al 25% i inferior al 93%. És una preferència de
+rànquing, sense retallar els píxels ni excloure directament salts alts,
+caigudes laterals o caixes fora de zona. El tall de 12 sí que pot excloure
+candidates. No hi ha detecció automàtica del trampolí ni adaptació per clip.
+
+Aquests marges són una hipòtesi comuna de configuració, no un òptim calibrat.
+Les proves històriques usaven zones segons el panell de càmera; els seus
+resultats no validen automàticament aquesta variant centrada. Una
+[comparació aparellada posterior](../../../benchmarks/calibration/docs/ZONE_COMPARISON.md)
+en 18 clips conserva 56/56 caixes útils validades i introdueix un únic canvi
+negatiu al diagnòstic IA90 (1078 → 1077/1267), amb el gimnasta encara localitzat
+en la inspecció d’aquell cas. És evidència de treball, no detecció universal. El fons medià
+sí que s’estima per vídeo a partir dels píxels, sense anotacions ni zona manual.
+
+`configs/pipelines/track-boxes.json` activa explícitament aquest perfil i
+consumeix el nou manifest `calibrated-boxes.example.json`, amb les deteccions
+verificades de YOLOv8m a 0,001. El manifest antic `.boxes.example.json` es
+conserva per reproduir el CSV legacy. Sense `preparation_config`, el motor
+continua produint una candidata per detecció; no hi ha cap perfil global ocult.
 
 ### Zona obligatòria a la configuració
 
 Quan el perfil representative_boxes està actiu, zone és un camp requerit.
 Si falta, la càrrega del JSON dona l’error representative_boxes.zone is
 required. També es rebutgen valors null, rectangles d’àrea zero i
-coordenades fora de l’interval [0, 1]. La zona es declara en tots dos modes.
+coordenades fora de l’interval [0, 1]. La zona es declara en tots dos modes. Si s’omet `zone_mode`, s’usa `soft`.
 Amb hard filtra les caixes abans d’ordenar-les. Amb soft les caixes de fora
 poden competir i la zona aporta una preferència en la puntuació.
 
@@ -215,8 +230,9 @@ config = PreparationConfig.from_dict(
     json.loads(Path("configs/preparation/representative-boxes.json").read_text())
 )
 preparer = RepresentativeBoxPreparer(video_id, config, background_frames)
-prepared = prepare_frame(detections, config, representative=preparer, image=bgr)
-record = preparation_record(prepared, config)
+result = preparer.prepare_with_audit(detections, bgr)
+prepared = result.frame
+record = preparation_record(prepared, config, audit=result)
 ```
 
 El tracker rep les candidates actives. Les deteccions completes són a
@@ -229,3 +245,33 @@ El criteri d’entrada és localitzar el gimnasta, admetent una caixa parcial
 útil. La continuïtat d’ID, el comportament amb moviments de càmera i la
 qualitat dels retalls per a esquelets es mesuren separadament.
 [Llindars, comparadors i evidència reproduïble](../../../benchmarks/calibration/docs/BOX_PREPARATION_STUDIES.md).
+
+## Auditoria independent de selecció
+
+[audit.py](audit.py) defineix `CandidateSelection`, el destí de cada regió amb
+fonts originals, geometria i puntuació d’ordre, i `RepresentativePreparationResult`,
+que afegeix el `TrackingFrame` i els recomptes originals → grups S0 → regions.
+`RepresentativeBoxPreparer.prepare_with_audit` retorna aquest resultat;
+`prepare` continua retornant només `TrackingFrame` amb les mateixes caixes.
+`foreground.rank_regions_with_audit` calcula un únic rànquing i registra
+`selected`, `absorbed_containment`, `candidate_limit` o `outside_hard_zone`.
+En mode soft no apareix l’últim motiu. La fusió referencia l’àncora destinatària.
+`results.preparation.preparation_record(..., audit=result)` exporta les decisions
+com `selection_audit`, separades de la confiança YOLO i de les fonts íntegres.
+
+La comanda següent mostra 12 fotogrames uniformes del clip, amb originals,
+regions abans del tall i caixes seleccionades. No executa tracking ni YOLO.
+Requereix les dependències de `box-preparation`, ffprobe i les dades locals.
+
+```bash
+PYTHONPATH=src python3 -m benchmarks.calibration review-boxes \
+  --manifest data/manifests/JPN_AGE_1_000905_31.0.calibrated-boxes.example.json \
+  --config configs/preparation/representative-boxes.json \
+  --output runs/calibration/centered-soft-review-v1
+```
+
+Obre `index.html` de la destinació. `frames.jsonl` conté originals i decisions;
+`summary.json`, configuració, hashes, mostres de fons i temps. Amb `--frames 97 180`
+es poden demanar instants concrets (base zero). La sortida ha de ser nova.
+Aquesta mostra visual no és una mesura exhaustiva de cobertura del gimnasta.
+El temps total inclou lectura, fons, exportació JSONL i JPG; no genera MP4.

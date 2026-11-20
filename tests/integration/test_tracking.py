@@ -132,7 +132,7 @@ class TrackingPipelineIntegrationTests(unittest.TestCase):
                 "path": boxes.name, "format": "person_boxes_csv", "frame_index_base": 0,
                 "coordinate_space": "original_frame_pixels", "frame_coverage": "complete_video"}}}))
         self.prep.write_text(json.dumps({"schema_version": "1.0", "box_preparation": {"enabled": True},
-            "representative_boxes": {"zone": [.24, .15, .85, .9], "max_candidates": 12}}))
+            "representative_boxes": {"zone": [.24, .15, .85, .9], "zone_mode": "hard", "max_candidates": 12}}))
         pipeline = json.loads(self.config.read_text())
         pipeline["case_manifest"] = manifest.name
         self.config.write_text(json.dumps(pipeline))

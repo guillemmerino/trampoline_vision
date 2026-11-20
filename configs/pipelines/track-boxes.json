@@ -1,7 +1,8 @@
 {
   "schema_version": "2.0",
   "task": "track_recorded_detections",
-  "case_manifest": "../../data/manifests/JPN_AGE_1_000905_31.0.boxes.example.json",
+  "case_manifest": "../../data/manifests/JPN_AGE_1_000905_31.0.calibrated-boxes.example.json",
   "tracker_config": "../trackers/botsort-reid.json",
-  "missing_frames_policy": "error"
+  "missing_frames_policy": "error",
+  "preparation_config": "../preparation/representative-boxes.json"
 }
