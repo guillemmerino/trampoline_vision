@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "task": "prepare_saved_boxes",
+  "identity": {
+    "bundle_sha256": "0e10a5f67bc68e7c6cfa15d3507317ff8c8cf3e47d770fc75e2449a49a394410",
+    "run_signature": "8e65e753cf61bed5569b72a4c715951095625616ca49512ff0d039d4dcff91b7",
+    "config_sha256": "de074ecbe8df0c7eac2cf7c2ef3ce1f62aae59f7e9bf29fc4fd2648a43af3a3a",
+    "corpus_sha256": "4004508d9bbeb6f9576297996dbf7f0f5cdea427ac837ea901b95a795681023e",
+    "decisions_sha256": "753186920aecde24467ba5149cfe919f56ec76ec03db00d4fd90eaa6c3ad98c6",
+    "detector": {
+      "id": "yolov8m-conf0001-nms070",
+      "model": "yolov8m",
+      "confidence": 0.001,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    "code_sha256": {
+      "src/trampoline_vision/preparation/boxes.py": "e30f44b342eeaf3d272298fe8bfb57e9965f5f7457bad797a68b3834498cebb8",
+      "src/trampoline_vision/preparation/config.py": "af527e5baf549091b475521143c217b4beac1be242aa096daccb6cfafebb2e22",
+      "src/trampoline_vision/preparation/pipeline.py": "cf299df5b63921ba2ad5535bee7e5b718be9c54535c9a792b919c5840e38ba14",
+      "src/trampoline_vision/contracts/tracking.py": "3dc556c8c7f8def98ff0694de2457e21d5c6acee796b393d007e55dfc0c25c96",
+      "src/trampoline_vision/results/preparation.py": "8a3a4fde9ec5e754354af8f9076b0bba501c0138ca4895e6fbe241003d135e72",
+      "benchmarks/calibration/tools/prepare_boxes.py": "69eaba0c7c0987ff5186eb3d7bd6ea52c722dcc0244c08ef300536e71779f40c"
+    }
+  },
+  "counts": {
+    "frames": 1440,
+    "source_boxes": 233299,
+    "candidates": 232209,
+    "grouped_alternatives": 1090,
+    "relations": 152985,
+    "visible_ai_samples": 1267,
+    "original_covered_at_090": 1054,
+    "prepared_covered_at_090": 1054,
+    "lost_covered_at_090": 0,
+    "original_covered_at_090_area4": 887,
+    "prepared_covered_at_090_area4": 887,
+    "lost_covered_at_090_area4": 0,
+    "human_useful_samples": 56,
+    "human_exact_representative": 56,
+    "human_selected_box_covered090": 56
+  },
+  "effective_config": {
+    "schema_version": "1.0",
+    "box": {
+      "min_keypoint_confidence": 0.0,
+      "min_points": 4,
+      "min_anatomical_groups": 2,
+      "require_core": true,
+      "min_span_px": 1.0,
+      "min_span_image_ratio": 0.002,
+      "padding_ratio": 0.05
+    },
+    "deduplication": {
+      "enabled": false,
+      "min_box_iou": 0.7,
+      "min_shared_points": 4,
+      "max_point_distance_ratio": 0.08
+    },
+    "box_preparation": {
+      "enabled": true,
+      "min_duplicate_iou": 0.65,
+      "min_size_similarity": 0.8,
+      "max_center_distance_ratio": 0.15,
+      "max_alternative_score_ratio": 0.25,
+      "min_representative_coverage": 0.95,
+      "min_containment_ios": 0.95,
+      "min_contained_area_ratio": 0.1,
+      "max_contained_area_ratio": 0.7
+    }
+  },
+  "resources": {
+    "preparation_s": 14.349684773000002,
+    "mean_ms_per_frame": 9.96505887013889,
+    "p50_ms_per_frame": 9.9459005,
+    "p95_ms_per_frame": 13.24470355,
+    "max_ms_per_frame": 113.772808,
+    "total_elapsed_s": 19.195477925997693,
+    "peak_process_rss_bytes": 441778176,
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "gpu_used": false,
+    "inference_executed": false,
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "timing_note": "Preparation only excludes bundle loading, adaptation, metrics and JSONL export. Total includes these; no video generation.",
+    "memory_note": "Process RSS includes full review bundle loading; not incremental preparation memory.",
+    "cache_note": "Saved detector outputs reused; no model, GPU or embedding cache accessed."
+  },
+  "limitations": [
+    "Sparse AI references accepted for study, not exhaustive human ground truth.",
+    "90% reference coverage and area4 are exploratory diagnostics, not validated acceptance thresholds.",
+    "Human selected bbox coverage is not an independent full-body reference.",
+    "No tracking, identity accuracy, actor selection or skeleton reconstruction evaluated."
+  ]
+}

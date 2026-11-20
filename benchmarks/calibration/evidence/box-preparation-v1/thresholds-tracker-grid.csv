@@ -1,0 +1,17 @@
+confidence,tracker,visible_samples,detector_available_samples,observed_matches,best_fixed_id_observed_matches,seed_fixed_id_observed_matches,id_changes_between_matches,prediction_only_samples,tracking_with_export_s,appearance_cache_hit_frames,appearance_cache_miss_frames,duplicate_samples
+0.01,ocsort,61,56,46,21,4,16,6,82.66038555399882,0,0,1
+0.01,bytetrack,61,56,54,28,15,18,0,112.58407566800088,0,0,9
+0.01,botsort,61,56,47,27,6,15,2,84.85938424799951,0,0,1
+0.01,botsort-reid,61,56,51,33,6,13,2,178.1251004880005,0,2610,1
+0.02,ocsort,61,54,46,21,4,16,6,82.03847519299961,0,0,1
+0.02,bytetrack,61,54,49,22,4,20,4,109.29639636200045,0,0,6
+0.02,botsort,61,54,46,26,6,15,4,83.15259940499982,0,0,2
+0.02,botsort-reid,61,54,48,30,6,13,4,162.52120971099976,0,2610,2
+0.05,ocsort,61,48,46,21,4,16,6,79.83250097600012,0,0,1
+0.05,bytetrack,61,48,44,17,6,19,7,99.79148419099965,0,0,2
+0.05,botsort,61,48,44,25,6,14,6,77.68417634399975,0,0,1
+0.05,botsort-reid,61,48,46,29,6,12,6,136.43778854099946,0,2610,1
+0.1,ocsort,61,48,46,21,4,16,6,78.7185102350004,0,0,1
+0.1,bytetrack,61,48,44,16,6,17,5,86.2066854980003,0,0,1
+0.1,botsort,61,48,46,27,6,13,4,70.9375114530003,0,0,1
+0.1,botsort-reid,61,48,46,29,6,12,6,120.10336583300068,0,2610,1

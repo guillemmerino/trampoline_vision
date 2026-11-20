@@ -33,6 +33,13 @@ silenciosament els canvis d’una altra pestanya.
    el conjunt de candidates del detector; rebutjar una candidata sola no implica
    que les altres també siguin dolentes.
 
+Per a la fase de tracking de caixes, «suficient» prioritza mantenir el gimnasta
+localitzat: una caixa amb marge o temporalment més gran pot ser útil encara
+que els seus límits no coincideixin amb l’anotació. Si inclou un assistent,
+registra-ho a les notes; això no autoritza a transferir-li l’ID. La reconstrucció
+i l’associació dels esquelets són posteriors. Els veredictes anteriors es
+conserven tal com es van registrar, sense reinterpretar-los automàticament.
+
 El **cian** és la candidata seleccionada; el **groc** és l’anotació original;
 el **rosa** és la correcció nova. Les dues pestanyes permeten valorar 0,001 i
 0,002 separadament. La selecció inicial per IoU és només una ajuda visual:

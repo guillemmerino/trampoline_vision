@@ -1,5 +1,11 @@
 # 20. Preparació de candidats de tracking
 
+**Extensió actual de caixes:** `preparation/boxes.py` prepara deteccions YOLO
+amb representants, fonts completes i relacions de contenció ambigües, mitjançant
+una política específica i explícita. Classes, funcions, ús i límits al
+[README del paquet](../src/trampoline_vision/preparation/README.md).
+Les seccions següents documenten el recorregut original de poses.
+
 ## Abast d'aquest pas
 
 El pas 3 de l'increment 2 implementa la conversió de `FrameDetections` a

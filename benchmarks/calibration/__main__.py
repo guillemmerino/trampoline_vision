@@ -11,6 +11,7 @@ COMMANDS = {
     "run": ("engine.run", "Executor avançat de detector i trackers"),
     "report": ("reviews.tracking_report", "Reconstruir un informe de tracking"),
     "prepare": ("tools.prepare_data", "Preparar el paquet portable de dades"),
+    "prepare-boxes": ("tools.prepare_boxes", "Preparar i mesurar deteccions desades sense executar tracking"),
     "verify": ("tools.verify_corpus", "Verificar els inputs del paquet"),
 }
 ANNOTATION_TOOLS = {
@@ -19,6 +20,7 @@ ANNOTATION_TOOLS = {
     "templates": "tools.reference_templates",
 }
 STUDIES = {
+    "representative-tracking": "run-representative-tracking.sh",
     "expanded": "run-expanded-localization.sh", "low-thresholds": "run-low-thresholds.sh",
     "thresholds": "run-iteration.sh", "localization": "run-localization.sh",
 }

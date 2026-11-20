@@ -12,18 +12,26 @@ from trampoline_vision.perception.appearance.osnet import OSNetExtractor, file_s
 class AppearanceService:
     """Servei per vídeo, mandrós i compartit amb el descodificador de visualització."""
 
-    def __init__(self, config, video, manifest, preparation):
+    def __init__(self, config, video, manifest, preparation, *, background_indices=()):
         """Valida model i cache abans de començar; encara no executa la xarxa ni descodifica."""
         self.extractor = OSNetExtractor(config)
         self.video, self.reader, self.cache = video, VideoFrameReader(video), None
         self.supplied, self.supplied_index = None, -1
         self.hits = self.misses = self.extracted_candidates = 0
         if config.cache_dir:
+            preparation_identity = asdict(preparation)
+            silhouette = preparation_identity.pop("representative_boxes", None)
+            if silhouette is not None:
+                preparation_identity["representative_boxes"] = silhouette
+                preparation_identity["background_indices"] = background_indices
+                preparation_identity["method"] = "fixed_median_half_resolution_v1"
+            elif manifest.detections_format == "person_boxes_csv":
+                preparation_identity = None
             identity = {"video_id": video.video_id, "video_sha256": file_sha256(video.path),
                         "detections_sha256": file_sha256(manifest.detections_path),
                         "source_format": manifest.detections_format, "frame_coverage": manifest.frame_coverage,
                         "frame_index_base": manifest.frame_index_base,
-                        "preparation": asdict(preparation) if manifest.detections_format != "person_boxes_csv" else None,
+                        "preparation": preparation_identity,
                         "model_fingerprint": self.extractor.fingerprint,
                         "timeline_sha256": hashlib.sha256(json.dumps([video.timestamps_s, video.frame_durations_s]).encode()).hexdigest()}
             self.cache = EmbeddingCache(config.cache_dir, identity, self.extractor.fingerprint)

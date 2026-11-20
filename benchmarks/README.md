@@ -40,3 +40,8 @@ portable de 94 vídeos (pilot de 18), pesos locals verificats i bateries
 detector/tracking amb represa i monitorització. Les referències independents
 i la validació GPU són passos explícits; no es declaren defaults òptims a
 partir dels recomptes operatius.
+
+La fase actual prioritza seguir el gimnasta amb un ID estable i caixes de
+suport que poden ampliar-se per mantenir-lo localitzat. La reconstrucció i
+l’associació d’esquelets són posteriors; la precisió articular es revisarà en
+aquella fase. [Objectiu i criteris actuals](calibration/docs/STATE.md).

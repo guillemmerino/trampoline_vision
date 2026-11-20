@@ -24,6 +24,7 @@ from trampoline_vision.infrastructure.artifacts import publish_exclusive
 from trampoline_vision.ingestion.manifest import CaseManifest
 from trampoline_vision.ingestion.detections import iter_recorded_frames
 from trampoline_vision.ingestion.video import probe_video
+from trampoline_vision.ingestion.video_frames import VideoFrameReader
 from trampoline_vision.preparation.config import PreparationConfig
 from trampoline_vision.preparation.pipeline import prepare_frame
 from trampoline_vision.results.overlay import RenderStyle
@@ -67,6 +68,8 @@ def track_case(manifest: CaseManifest, video: VideoAsset, output: Path, frames_o
         if (path in protected or path.exists()
                 or (manifest.detections_path.is_dir() and path.is_relative_to(manifest.detections_path.resolve()))):
             raise TrackingError(f"Refusing to overwrite input or existing output: {path}")
+    if preparation.representative_boxes is not None and manifest.detections_format != "person_boxes_csv":
+        raise TrackingError("Representative box preparation requires a person_boxes_csv manifest")
     if tracker.appearance is not None:
         if manifest.detections_format != "person_boxes_csv":
             raise TrackingError("ReID profiles require independent person_boxes_csv input; pose matching is a later stage")
@@ -86,7 +89,23 @@ def track_case(manifest: CaseManifest, video: VideoAsset, output: Path, frames_o
     summaries = {}
     style = RenderStyle(view="all", min_confidence=0, min_visible_points=1)
     with ExitStack() as resources:
-        appearance = AppearanceService(tracker.appearance, video, manifest, preparation) if tracker.appearance else None
+        representative, reader, background_indices = None, None, ()
+        if preparation.representative_boxes is not None:
+            try:
+                from trampoline_vision.preparation.foreground import sample_indices
+                from trampoline_vision.preparation.representative import RepresentativeBoxPreparer
+            except ImportError as exc:
+                raise TrackingError("Install trampoline-vision[box-preparation] for silhouette ranking") from exc
+            background_indices = sample_indices(stop)
+            with closing(VideoFrameReader(video)) as background_reader:
+                representative = RepresentativeBoxPreparer(
+                    video.video_id, preparation,
+                    (background_reader.get(i).to_ndarray(format="bgr24") for i in background_indices),
+                )
+            if not video_output:
+                reader = resources.enter_context(closing(VideoFrameReader(video)))
+        appearance = (AppearanceService(tracker.appearance, video, manifest, preparation,
+                                        background_indices=background_indices) if tracker.appearance else None)
         if appearance:
             resources.callback(appearance.close)
         for path in destinations:
@@ -94,6 +113,16 @@ def track_case(manifest: CaseManifest, video: VideoAsset, output: Path, frames_o
         temporary = resources.enter_context(tempfile.TemporaryDirectory(prefix="trampoline-track-"))
         temp = Path(temporary)
         staged_frames, staged_video, staged_report = temp / "tracks.jsonl", temp / "tracks.mp4", temp / "report.json"
+        # El descodificador de visualització comparteix el fotograma amb preparació i aparença.
+        decoded_frame = None
+
+        def supply_decoded(index, decoded):
+            """Comparteix el fotograma validat de visualització amb preparació i aparença."""
+            nonlocal decoded_frame
+            decoded_frame = (index, decoded)
+            if appearance:
+                appearance.supply_decoded(index, decoded)
+
         with staged_frames.open("w", encoding="utf-8", newline="\n") as stream:
 
             def tracked_frames():
@@ -101,7 +130,19 @@ def track_case(manifest: CaseManifest, video: VideoAsset, output: Path, frames_o
                 with closing(iter_recorded_frames(manifest, video, missing_frames_policy=missing_frames_policy)) as raw_frames:
                     for index in range(stop):
                         source = next(raw_frames)
-                        prepared = prepare_frame(source, preparation)
+                        if representative is None:
+                            prepared = prepare_frame(source, preparation)
+                        else:
+                            if reader is not None:
+                                decoded = reader.get(index)
+                                if appearance:
+                                    appearance.supply_decoded(index, decoded)
+                            else:
+                                if decoded_frame is None or decoded_frame[0] != index:
+                                    raise TrackingError("Silhouette preparation needs aligned decoded video frames")
+                                decoded = decoded_frame[1]
+                            prepared = prepare_frame(source, preparation, representative=representative,
+                                                     image=decoded.to_ndarray(format="bgr24"))
                         descriptors = appearance.for_frame(prepared) if appearance else None
                         result = session.update(prepared, descriptors)
                         record = tracking_record(result, session.events, tracker)
@@ -138,7 +179,7 @@ def track_case(manifest: CaseManifest, video: VideoAsset, output: Path, frames_o
             with closing(tracked_frames()) as annotated:
                 if video_output:
                     encode_visualization(video, annotated, staged_video, style, first, stop, progress,
-                                         renderer=render_tracking_frame, decoded_callback=appearance.supply_decoded if appearance else None)
+                                         renderer=render_tracking_frame, decoded_callback=supply_decoded if appearance or representative else None)
                 else:
                     for _ in annotated:
                         pass
@@ -177,7 +218,12 @@ def track_case(manifest: CaseManifest, video: VideoAsset, output: Path, frames_o
             "capabilities_not_executed": ["inference", "subject_selection", "segmentation", "scoring"],
             "elapsed_s": time.perf_counter() - started,
         }
+        if representative:
+            result["preparation_background"] = {"method": "fixed_median_half_resolution_v1",
+                                                "sample_frame_indices": list(background_indices)}
         result["capabilities_executed"] = ["recorded_boxes_reading" if manifest.detections_format == "person_boxes_csv" else "legacy_pose_extent_reading", "tracking"]
+        if representative:
+            result["capabilities_executed"].append("silhouette_box_preparation")
         if appearance:
             result["capabilities_executed"].append("appearance_inference" if appearance.extracted_candidates else "appearance_cache")
             result["capabilities_not_executed"] = ["person_detector_inference", "pose_inference", "pose_matching", "actor_coherence", "subject_selection", "segmentation", "scoring"]

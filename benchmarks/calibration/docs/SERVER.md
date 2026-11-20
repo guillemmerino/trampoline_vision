@@ -317,6 +317,57 @@ muntades a `/data` i sortides a `/results`):
 python -m benchmarks.calibration verify --dataset /data --full-decode --output /results/corpus-validation.json
 ```
 
-La compatibilitat i el rendiment reals de CUDA queden pendents de la primera
-execució al servidor. La qualitat física de les identitats queda pendent de
-les anotacions i revisió independents; els tests de programari no la substitueixen.
+La GPU s’ha comprovat amb les execucions de calibratge del servidor.
+La validació d’identitats continua requerint anotacions i revisió independents.
+
+## Prova de tracking amb llista curta
+
+Des de l’arrel del repositori, amb la imatge NVIDIA del banc:
+
+```bash
+python3 -m benchmarks.calibration study representative-tracking
+```
+
+El [pla 05](../config/iterations/05-representative-tracking.json) fixa 12 clips
+complets, sis de l’estudi anterior i sis de nous per a aquesta preparació.
+Compara el preparador conservador amb el tall a 12 i a 8 amb zona obligatòria,
+i amb el tall a 12 on la zona només influeix en l’ordre. Totes quatre passades
+fan servir les mateixes deteccions YOLOv8m a 0,001 i ByteTrack amb configuració
+experimental fixa i sense recuperació externa d’identitats. El runner verifica
+els CSV existents abans de reutilitzar-los i genera els que falten una sola
+vegada per clip. Els perfils pertanyen al banc de calibratge.
+
+El fons de cada clip es calcula una vegada amb la mediana de 21 fotogrames
+espaiats. La variant de zona flexible pot mantenir candidates de fora
+del rectangle si puntuen prou alt. L’extensió espacial derivada queda marcada
+a la traça i el tracker rep el score original de la seva llavor.
+
+Afegeix `--dry-run` per validar corpus, deteccions reutilitzables, pes YOLO i
+CUDA sense fer inferència ni tracking. Afegeix `--resume` per continuar amb
+els mateixos inputs i la mateixa configuració. Per a un run nou pots usar
+`--output /results/representative-tracking-v2`. La imatge i l’arrel de resultats
+es poden fixar amb `CALIBRATION_IMAGE` i `CALIBRATION_RESULTS`.
+
+El resultat per defecte és `runs/calibration/representative-tracking-v1/`:
+
+- `summary.csv` compara nombre de candidates, cobertura, matches d’ID
+  observats, prediccions, temps per etapa i ús del cache. El temps compartit
+  de replay inclou gràfics i exportació; els JPG es generen als fotogrames a
+  revisar. RAM i VRAM són pics del procés, amb recursos d’inferència al
+  `detector.json` quan aquesta s’ha executat.
+- `discrepancies.csv` registra vídeo, fotograma, timestamp, variant,
+  diagnòstic, referència, geometria i, quan escau, posició abans del tall.
+  El motiu distingeix detector, agrupament, zona, contenció, rànquing i
+  absència o canvi d’ID observat. Una caixa ampla o parcial pot generar una
+  discrepància geomètrica i continuar essent útil.
+- `review.html` mostra el fotograma i les quatre variants amb observacions
+  i prediccions diferenciades. Els clips complets tenen una traça comprimida
+  a `clips/<id>/attempt-*/frames.jsonl.gz`. L’avaluació detallada, les fotos
+  i les referències congelades són a la mateixa carpeta.
+- Les referències actuals cobreixen 80 instants per cadascun dels sis clips
+  anteriors, amb exclusions explícites i procedència d’IA provisional.
+  Els sis nous tenen 24 fotogrames originals desats per anotar. Aquests
+  darrers participen en el tracking i els recomptes de recursos. La seva
+  cobertura queda sense valor fins que aportin referències.
+  `CALIBRATION_EXTRA_REFERENCES=/ruta/absoluta` permet afegir JSON del mateix
+  esquema, identificats amb el SHA-256 del vídeo, en una execució nova.

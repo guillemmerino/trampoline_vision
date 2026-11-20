@@ -118,6 +118,34 @@ class TrackingPipelineIntegrationTests(unittest.TestCase):
         self.assertEqual(len(summary["right_censored_track_ids"]), 1)
         self.assertEqual(self.run_cli("--output", str(report)), 2)
 
+    @unittest.skipUnless(importlib.util.find_spec("cv2"), "Silhouette preparation requires OpenCV")
+    def test_representative_profile_in_video_and_trace_only_modes(self):
+        """Both decoding paths select the same candidate boxes from an explicit profile."""
+        boxes = self.root / "boxes.csv"
+        rows = ["frame,det_id,x1,y1,x2,y2,conf,class_id"]
+        for i in range(8):
+            rows += [f"{i},0,22,10,40,38,0.8,0", f"{i},1,1,1,10,10,0.9,0"]
+        boxes.write_text("\n".join(rows) + "\n")
+        manifest = self.root / "box-case.json"
+        manifest.write_text(json.dumps({"schema_version": "1.0", "path_base": "manifest_directory",
+            "case_id": "representative", "video": {"path": "video.mp4"}, "detections": {"primary": {
+                "path": boxes.name, "format": "person_boxes_csv", "frame_index_base": 0,
+                "coordinate_space": "original_frame_pixels", "frame_coverage": "complete_video"}}}))
+        self.prep.write_text(json.dumps({"schema_version": "1.0", "box_preparation": {"enabled": True},
+            "representative_boxes": {"zone": [.24, .15, .85, .9], "max_candidates": 12}}))
+        pipeline = json.loads(self.config.read_text())
+        pipeline["case_manifest"] = manifest.name
+        self.config.write_text(json.dumps(pipeline))
+        for suffix, args in (("plain", ()), ("overlay", ("--video-output", str(self.root / "prepared.mp4")))):
+            report = self.root / (suffix + ".json")
+            self.assertEqual(self.run_cli("--output", str(report), *args), 0)
+            info = json.loads(report.read_text())
+            self.assertEqual(info["preparation_background"]["sample_frame_indices"], list(range(8)))
+            self.assertEqual(info["totals"]["candidates"], 8)
+            self.assertEqual(info["totals"]["source_detections"], 16)
+            frames = [json.loads(line) for line in report.with_suffix(".frames.jsonl").read_text().splitlines()]
+            self.assertTrue(all(f["candidates"][0]["measurement"]["bbox"]["x_min"] == 22 for f in frames))
+
     def test_partial_run_uses_warmup_and_preserves_original_timestamps(self):
         """El tall no reinicia el tracker a mig vídeo ni canvia el temps original del JSONL."""
         output = self.root / "part.json"

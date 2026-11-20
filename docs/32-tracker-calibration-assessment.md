@@ -3,6 +3,14 @@
 26/10/2026. Revisió documental i reanàlisi de les traces de la prova curta.
 No s’ha executat una nova bateria, ni canviat perfils o llindars.
 
+**Lectura actual:** aquest document conserva els criteris i resultats de la
+reanàlisi inicial. L’[objectiu vigent](../benchmarks/calibration/docs/STATE.md)
+és mantenir l’ID del gimnasta amb caixes de suport que poden ampliar-se, i
+reconstruir/associar els esquelets després. L’IoU≥0,5 dels recomptes històrics
+no és un criteri suficient per acceptar o rebutjar aquestes ampliacions.
+La primera preparació conservadora i els diagnòstics de cobertura ja són
+executables; el calibratge i les mètriques temporals continuen pendents.
+
 ## Objectiu i frontera
 
 L’objectiu és escollir una configuració fonamentada de detecció i tracking que

@@ -16,6 +16,8 @@ dependencies = []
 # PyAV 16 manté compatibilitat amb Python 3.10/3.11 del projecte i del contenidor.
 [project.optional-dependencies]
 visualization = ["av>=16,<17", "Pillow>=11,<14"]
+# Foreground ranking is opt-in; the core preparation paths remain standard-library only.
+box-preparation = ["numpy>=1.24,<3", "opencv-python>=4.8,<5", "av>=16,<17"]
 # Backend OC-SORT opcional; la versió fixa l'API comprovada, sense detectors ni pesos.
 # Les dependències transitives encara no constitueixen un lock de desplegament.
 tracking = ["trackers==2.6.1"]

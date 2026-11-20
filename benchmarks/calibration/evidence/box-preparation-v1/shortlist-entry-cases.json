@@ -1,0 +1,1303 @@
+{
+  "JPN_AGE_1_002837_43.0:1179": {
+    "best_coverage": 0.8373279790768676,
+    "best_inside": 0.9861434393572875,
+    "list": [
+      {
+        "id": "1179:box_candidate:17",
+        "source_detection_ids": [
+          "1179:box:17"
+        ],
+        "score": 0.16731883585453033,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          742.0675455729166,
+          283.9309895833333,
+          772.74365234375,
+          377.0044759114583
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.08950257693213988,
+        "rank": 1
+      },
+      {
+        "id": "1179:box_candidate:23",
+        "source_detection_ids": [
+          "1179:box:23",
+          "1179:box:134",
+          "1179:box:89"
+        ],
+        "score": 0.1332455575466156,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          831.38720703125,
+          590.2023111979166,
+          870.12451171875,
+          818.15869140625
+        ],
+        "overlap": 8708.05656417211,
+        "coverage": 0.27297982959787176,
+        "inside": 0.9861434393572875,
+        "area_ratio": 0.27681554092758004,
+        "rank": 2
+      },
+      {
+        "id": "1179:box_candidate:116",
+        "source_detection_ids": [
+          "1179:box:116"
+        ],
+        "score": 0.0020142404828220606,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          731.7369791666666,
+          286.0994873046875,
+          782.3887532552084,
+          377.994140625
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.14591307899452446,
+        "rank": 3
+      },
+      {
+        "id": "1179:box_candidate:24",
+        "source_detection_ids": [
+          "1179:box:56",
+          "1179:box:24",
+          "1179:box:104",
+          "1179:box:126"
+        ],
+        "score": 0.027347568422555923,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          814.40380859375,
+          476.188232421875,
+          871.27392578125,
+          823.5138346354166
+        ],
+        "overlap": 16492.333984375,
+        "coverage": 0.5170010653409091,
+        "inside": 0.8349514062649004,
+        "area_ratio": 0.6191989874640478,
+        "rank": 4
+      },
+      {
+        "id": "1179:box_candidate:48",
+        "source_detection_ids": [
+          "1179:box:48"
+        ],
+        "score": 0.03606029227375984,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          461.2233072916667,
+          360.9393310546875,
+          490.739501953125,
+          405.7810872395833
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.04149084653652155,
+        "rank": 5
+      },
+      {
+        "id": "1179:box_candidate:66",
+        "source_detection_ids": [
+          "1179:box:66",
+          "1179:box:145"
+        ],
+        "score": 0.014460540376603603,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          583.7765299479166,
+          325.3247477213542,
+          616.2325846354166,
+          383.7930908203125
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.059487515395213304,
+        "rank": 6
+      },
+      {
+        "id": "1179:box_candidate:25",
+        "source_detection_ids": [
+          "1179:box:25"
+        ],
+        "score": 0.11401160061359406,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          689.0087076822916,
+          481.8144124348958,
+          725.3330078125,
+          541.4246419270834
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.06787773877444575,
+        "rank": 7
+      },
+      {
+        "id": "1179:box_candidate:85",
+        "source_detection_ids": [
+          "1179:box:85"
+        ],
+        "score": 0.007703009992837906,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          831.0493977864584,
+          581.8828531901041,
+          956.0863444010416,
+          893.0220540364584
+        ],
+        "overlap": 18404.739126943874,
+        "coverage": 0.5769510698101528,
+        "inside": 0.47308216365909006,
+        "area_ratio": 1.2195578572391754,
+        "rank": 8
+      },
+      {
+        "id": "1179:box_candidate:94",
+        "source_detection_ids": [
+          "1179:box:94",
+          "1179:box:132",
+          "1179:box:112",
+          "1179:box:97"
+        ],
+        "score": 0.004383314400911331,
+        "score_method": "calibration_support_extent_seed_score",
+        "geometry_origin": "support_extent",
+        "bbox": [
+          669.8492431640625,
+          351.392822265625,
+          873.9989420572916,
+          825.6847330729166
+        ],
+        "overlap": 21459.69319661457,
+        "coverage": 0.6727176550662874,
+        "inside": 0.22163025558597607,
+        "area_ratio": 3.035315071435827,
+        "rank": 9
+      },
+      {
+        "id": "1179:box_candidate:70",
+        "source_detection_ids": [
+          "1179:box:70"
+        ],
+        "score": 0.012980474159121513,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          460.2443033854167,
+          360.2469889322917,
+          492.8492024739583,
+          439.1155192057292
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.0806113000259254,
+        "rank": 10
+      },
+      {
+        "id": "1179:box_candidate:128",
+        "source_detection_ids": [
+          "1179:box:128",
+          "1179:box:86",
+          "1179:box:105",
+          "1179:box:131",
+          "1179:box:129",
+          "1179:box:140",
+          "1179:box:74"
+        ],
+        "score": 0.0013789396034553647,
+        "score_method": "calibration_support_extent_seed_score",
+        "geometry_origin": "support_extent",
+        "bbox": [
+          552.1480712890625,
+          313.5099690755208,
+          605.1776123046875,
+          385.9405517578125
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.12040628699486534,
+        "rank": 11
+      },
+      {
+        "id": "1179:box_candidate:121",
+        "source_detection_ids": [
+          "1179:box:121"
+        ],
+        "score": 0.0016545846592634916,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          740.9025065104166,
+          572.1748860677084,
+          951.12890625,
+          928.767578125
+        ],
+        "overlap": 26710.76253255208,
+        "coverage": 0.8373279790768676,
+        "inside": 0.3563088380695094,
+        "area_ratio": 2.3500062013996974,
+        "rank": 12
+      }
+    ],
+    "reference": [
+      800,
+      525,
+      910,
+      815
+    ]
+  },
+  "JPN_AGE_3_001351_19.0:97": {
+    "best_coverage": 0.09029486600980918,
+    "best_inside": 1.0,
+    "list": [
+      {
+        "id": "97:box_candidate:41",
+        "source_detection_ids": [
+          "97:box:41"
+        ],
+        "score": 0.043396659195423126,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          585.1437581380209,
+          303.3800862630208,
+          612.3942464192709,
+          337.4980875651042
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.04464500334511862,
+        "rank": 1
+      },
+      {
+        "id": "97:box_candidate:17",
+        "source_detection_ids": [
+          "97:box:17"
+        ],
+        "score": 0.14959177374839783,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          695.3041178385416,
+          482.5687662760417,
+          724.6438802083334,
+          525.1991373697916
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.06006074226298498,
+        "rank": 2
+      },
+      {
+        "id": "97:box_candidate:11",
+        "source_detection_ids": [
+          "97:box:11",
+          "97:box:89"
+        ],
+        "score": 0.3000803589820862,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          527.0835774739584,
+          641.78564453125,
+          567.3280436197916,
+          688.5098470052084
+        ],
+        "overlap": 1880.3905846542762,
+        "coverage": 0.09029486600980918,
+        "inside": 1.0,
+        "area_ratio": 0.09029486600980918,
+        "rank": 3
+      },
+      {
+        "id": "97:box_candidate:113",
+        "source_detection_ids": [
+          "97:box:113"
+        ],
+        "score": 0.004944157786667347,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          503.6708577473958,
+          666.7078857421875,
+          529.1195068359375,
+          708.169189453125
+        ],
+        "overlap": 986.9985326975584,
+        "coverage": 0.0473948875244926,
+        "inside": 0.9354246709051044,
+        "area_ratio": 0.05066670678958461,
+        "rank": 4
+      },
+      {
+        "id": "97:box_candidate:88",
+        "source_detection_ids": [
+          "97:box:88",
+          "97:box:58",
+          "97:box:68",
+          "97:box:161"
+        ],
+        "score": 0.012775805778801441,
+        "score_method": "calibration_support_extent_seed_score",
+        "geometry_origin": "support_extent",
+        "bbox": [
+          358.5743001302083,
+          249.5587361653646,
+          393.8835856119792,
+          314.7594401041667
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.1105493526524651,
+        "rank": 5
+      },
+      {
+        "id": "97:box_candidate:0",
+        "source_detection_ids": [
+          "97:box:0"
+        ],
+        "score": 0.658244252204895,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          475.9297281901042,
+          638.0216064453125,
+          517.5086263020834,
+          688.13818359375
+        ],
+        "overlap": 677.0061122377732,
+        "coverage": 0.032509297106255615,
+        "inside": 0.3248913972107269,
+        "area_ratio": 0.10006204345623179,
+        "rank": 6
+      },
+      {
+        "id": "97:box_candidate:21",
+        "source_detection_ids": [
+          "97:box:21",
+          "97:box:112",
+          "97:box:119",
+          "97:box:71"
+        ],
+        "score": 0.11084192246198654,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          648.1449788411459,
+          433.8815511067708,
+          703.5711263020834,
+          508.529541015625
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.19867709466269992,
+        "rank": 7
+      },
+      {
+        "id": "97:box_candidate:1",
+        "source_detection_ids": [
+          "97:box:1"
+        ],
+        "score": 0.6023674011230469,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          566.0729166666666,
+          797.95556640625,
+          659.3192545572916,
+          888.424072265625
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.4050831628246468,
+        "rank": 8
+      },
+      {
+        "id": "97:box_candidate:2",
+        "source_detection_ids": [
+          "97:box:2"
+        ],
+        "score": 0.5897209644317627,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          621.7078043619791,
+          638.5692952473959,
+          664.2032470703125,
+          688.4527180989584
+        ],
+        "overlap": 64.45914141833971,
+        "coverage": 0.003095276898839842,
+        "inside": 0.03040786389471997,
+        "area_ratio": 0.10179198741340417,
+        "rank": 9
+      },
+      {
+        "id": "97:box_candidate:4",
+        "source_detection_ids": [
+          "97:box:4"
+        ],
+        "score": 0.4654035270214081,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          589.3824869791666,
+          745.6513671875,
+          638.2465413411459,
+          785.71923828125
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.09401578061434701,
+        "rank": 10
+      },
+      {
+        "id": "97:box_candidate:19",
+        "source_detection_ids": [
+          "97:box:19"
+        ],
+        "score": 0.11976306885480881,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          550.1412353515625,
+          629.9216715494791,
+          576.6451009114584,
+          674.5052897135416
+        ],
+        "overlap": 1181.638221994044,
+        "coverage": 0.05674133118818939,
+        "inside": 1.0,
+        "area_ratio": 0.05674133118818939,
+        "rank": 11
+      },
+      {
+        "id": "97:box_candidate:6",
+        "source_detection_ids": [
+          "97:box:6"
+        ],
+        "score": 0.44392478466033936,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          574.6244303385416,
+          438.9035237630208,
+          610.4118245442709,
+          476.2252604166667
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.06413674439694786,
+        "rank": 12
+      }
+    ],
+    "reference": [
+      504,
+      531,
+      623,
+      706
+    ]
+  },
+  "JPN_AGE_3_001351_19.0:180": {
+    "best_coverage": 0.24176357058904221,
+    "best_inside": 0.8211152093338259,
+    "list": [
+      {
+        "id": "180:box_candidate:106",
+        "source_detection_ids": [
+          "180:box:106",
+          "180:box:165",
+          "180:box:156",
+          "180:box:171"
+        ],
+        "score": 0.005254303105175495,
+        "score_method": "calibration_support_extent_seed_score",
+        "geometry_origin": "support_extent",
+        "bbox": [
+          570.4181722005209,
+          494.3163248697917,
+          620.903076171875,
+          548.4499104817709
+        ],
+        "overlap": 2244.04946220749,
+        "coverage": 0.24176357058904221,
+        "inside": 0.8211152093338259,
+        "area_ratio": 0.2944331901794706,
+        "rank": 1
+      },
+      {
+        "id": "180:box_candidate:17",
+        "source_detection_ids": [
+          "180:box:17"
+        ],
+        "score": 0.12153975665569305,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          694.952880859375,
+          483.1185709635417,
+          722.6140950520834,
+          526.0678304036459
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.12799274561419133,
+        "rank": 2
+      },
+      {
+        "id": "180:box_candidate:21",
+        "source_detection_ids": [
+          "180:box:21"
+        ],
+        "score": 0.09786070883274078,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          577.14794921875,
+          303.66693115234375,
+          610.7204182942709,
+          335.4173583984375
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.11483949976880604,
+        "rank": 3
+      },
+      {
+        "id": "180:box_candidate:26",
+        "source_detection_ids": [
+          "180:box:26",
+          "180:box:113",
+          "180:box:107",
+          "180:box:132",
+          "180:box:142"
+        ],
+        "score": 0.08145604282617569,
+        "score_method": "calibration_support_extent_seed_score",
+        "geometry_origin": "support_extent",
+        "bbox": [
+          648.6814371744791,
+          433.8564046223958,
+          703.340087890625,
+          508.9143880208333
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.44199182267113457,
+        "rank": 4
+      },
+      {
+        "id": "180:box_candidate:29",
+        "source_detection_ids": [
+          "180:box:29"
+        ],
+        "score": 0.06061502918601036,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          566.804931640625,
+          250.25716145833334,
+          605.3261311848959,
+          309.2616780598958
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.24487446218724748,
+        "rank": 5
+      },
+      {
+        "id": "180:box_candidate:1",
+        "source_detection_ids": [
+          "180:box:1"
+        ],
+        "score": 0.5847729444503784,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          621.4285888671875,
+          639.159423828125,
+          663.9042561848959,
+          688.2267252604166
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.22453850159617914,
+        "rank": 6
+      },
+      {
+        "id": "180:box_candidate:2",
+        "source_detection_ids": [
+          "180:box:2"
+        ],
+        "score": 0.5595616698265076,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          565.644775390625,
+          798.1057942708334,
+          658.8064371744791,
+          888.349365234375
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.9057574915182831,
+        "rank": 7
+      },
+      {
+        "id": "180:box_candidate:5",
+        "source_detection_ids": [
+          "180:box:5"
+        ],
+        "score": 0.4106772243976593,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          591.5296223958334,
+          745.0433756510416,
+          640.0838623046875,
+          785.3362630208334
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.21077251885081952,
+        "rank": 8
+      },
+      {
+        "id": "180:box_candidate:0",
+        "source_detection_ids": [
+          "180:box:0"
+        ],
+        "score": 0.6731353402137756,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          475.7475992838542,
+          638.2067464192709,
+          517.9281005859375,
+          688.4208170572916
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.22818947122709957,
+        "rank": 9
+      },
+      {
+        "id": "180:box_candidate:8",
+        "source_detection_ids": [
+          "180:box:8"
+        ],
+        "score": 0.36857691407203674,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          574.3152669270834,
+          439.0028483072917,
+          610.5503743489584,
+          476.3619791666667
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.14584271922832778,
+        "rank": 10
+      },
+      {
+        "id": "180:box_candidate:4",
+        "source_detection_ids": [
+          "180:box:4"
+        ],
+        "score": 0.4213509261608124,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          671.6991373697916,
+          637.2656656901041,
+          716.0390625,
+          688.7408040364584
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.2458956884663289,
+        "rank": 11
+      },
+      {
+        "id": "180:box_candidate:6",
+        "source_detection_ids": [
+          "180:box:6"
+        ],
+        "score": 0.3972269892692566,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          524.329345703125,
+          637.3206787109375,
+          567.8269449869791,
+          688.456298828125
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.23963334550622836,
+        "rank": 12
+      }
+    ],
+    "reference": [
+      441,
+      504,
+      623,
+      555
+    ]
+  },
+  "JPN_AGE_3_001351_19.0:182": {
+    "best_coverage": 0.18992092041742234,
+    "best_inside": 1.0,
+    "list": [
+      {
+        "id": "182:box_candidate:73",
+        "source_detection_ids": [
+          "182:box:73"
+        ],
+        "score": 0.016993679106235504,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          543.4663492838541,
+          537.5818277994791,
+          613.1601969401041,
+          577.0681559244791
+        ],
+        "overlap": 2751.9541368484497,
+        "coverage": 0.18992092041742234,
+        "inside": 1.0,
+        "area_ratio": 0.18992092041742234,
+        "rank": 1
+      },
+      {
+        "id": "182:box_candidate:17",
+        "source_detection_ids": [
+          "182:box:17"
+        ],
+        "score": 0.1370534598827362,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          694.8361002604166,
+          482.9970296223958,
+          722.4468587239584,
+          527.2289225260416
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.08428406565547347,
+        "rank": 2
+      },
+      {
+        "id": "182:box_candidate:23",
+        "source_detection_ids": [
+          "182:box:23"
+        ],
+        "score": 0.09002555161714554,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          577.5971272786459,
+          303.66982014973956,
+          609.9715169270834,
+          335.3428955078125
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.07076580282999152,
+        "rank": 3
+      },
+      {
+        "id": "182:box_candidate:21",
+        "source_detection_ids": [
+          "182:box:21",
+          "182:box:106",
+          "182:box:107",
+          "182:box:124",
+          "182:box:130",
+          "182:box:173"
+        ],
+        "score": 0.10608165711164474,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          648.8734130859375,
+          433.8271484375,
+          703.1123860677084,
+          508.4862467447917
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.27946396245221317,
+        "rank": 4
+      },
+      {
+        "id": "182:box_candidate:32",
+        "source_detection_ids": [
+          "182:box:32"
+        ],
+        "score": 0.05830259993672371,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          566.8302408854166,
+          250.24629720052084,
+          605.8444417317709,
+          308.83953857421875
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.15776180035834114,
+        "rank": 5
+      },
+      {
+        "id": "182:box_candidate:1",
+        "source_detection_ids": [
+          "182:box:1"
+        ],
+        "score": 0.5783306360244751,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          621.4445393880209,
+          639.07568359375,
+          663.8946940104166,
+          688.2184244791666
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.14396942368214394,
+        "rank": 6
+      },
+      {
+        "id": "182:box_candidate:2",
+        "source_detection_ids": [
+          "182:box:2"
+        ],
+        "score": 0.5561719536781311,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          565.6426188151041,
+          798.1066080729166,
+          658.802001953125,
+          888.3279622395834
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.5800528433432425,
+        "rank": 7
+      },
+      {
+        "id": "182:box_candidate:5",
+        "source_detection_ids": [
+          "182:box:5"
+        ],
+        "score": 0.42719683051109314,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          591.5465087890625,
+          745.5699869791666,
+          640.027099609375,
+          785.330322265625
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.13302998936516364,
+        "rank": 8
+      },
+      {
+        "id": "182:box_candidate:0",
+        "source_detection_ids": [
+          "182:box:0"
+        ],
+        "score": 0.6678441166877747,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          475.767822265625,
+          638.1719563802084,
+          517.9237060546875,
+          688.4248860677084
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.14620128805839744,
+        "rank": 9
+      },
+      {
+        "id": "182:box_candidate:8",
+        "source_detection_ids": [
+          "182:box:8"
+        ],
+        "score": 0.4024297297000885,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          574.3166910807291,
+          439.0430908203125,
+          610.5421142578125,
+          476.3352457682292
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.09323147647851246,
+        "rank": 10
+      },
+      {
+        "id": "182:box_candidate:7",
+        "source_detection_ids": [
+          "182:box:7"
+        ],
+        "score": 0.4041076898574829,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          671.6992594401041,
+          637.2815348307291,
+          716.067626953125,
+          688.7699381510416
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.1576574465958778,
+        "rank": 11
+      },
+      {
+        "id": "182:box_candidate:6",
+        "source_detection_ids": [
+          "182:box:6"
+        ],
+        "score": 0.41454851627349854,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          524.3374837239584,
+          637.3074544270834,
+          567.7959798177084,
+          688.453369140625
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.15339713835677846,
+        "rank": 12
+      }
+    ],
+    "reference": [
+      455,
+      530,
+      616,
+      620
+    ]
+  },
+  "JPN_AGE_3_002412_31.0:510": {
+    "best_coverage": 0.10054661089996474,
+    "best_inside": 1.0,
+    "list": [
+      {
+        "id": "510:box_candidate:6",
+        "source_detection_ids": [
+          "510:box:6"
+        ],
+        "score": 0.5205546617507935,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          438.8719482421875,
+          618.5709228515625,
+          495.9618326822917,
+          673.3761393229166
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.15574034221326538,
+        "rank": 1
+      },
+      {
+        "id": "510:box_candidate:158",
+        "source_detection_ids": [
+          "510:box:158"
+        ],
+        "score": 0.0013866322115063667,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          621.45751953125,
+          516.293212890625,
+          664.1700846354166,
+          563.5856526692709
+        ],
+        "overlap": 2019.9814129802915,
+        "coverage": 0.10054661089996474,
+        "inside": 1.0,
+        "area_ratio": 0.10054661089996474,
+        "rank": 2
+      },
+      {
+        "id": "510:box_candidate:146",
+        "source_detection_ids": [
+          "510:box:146",
+          "510:box:166"
+        ],
+        "score": 0.0018284128746017814,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          593.5710042317709,
+          542.7960611979166,
+          648.7355143229166,
+          581.4839274088541
+        ],
+        "overlap": 1942.0080372956058,
+        "coverage": 0.09666540753089128,
+        "inside": 0.9099478014667767,
+        "area_ratio": 0.10623181612733493,
+        "rank": 3
+      },
+      {
+        "id": "510:box_candidate:0",
+        "source_detection_ids": [
+          "510:box:0"
+        ],
+        "score": 0.9077147841453552,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          533.3685302734375,
+          909.2625325520834,
+          699.6962890625,
+          1079.716552734375
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 1.4112113067947334,
+        "rank": 4
+      },
+      {
+        "id": "510:box_candidate:1",
+        "source_detection_ids": [
+          "510:box:1"
+        ],
+        "score": 0.7265288829803467,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          596.8986002604166,
+          811.1795247395834,
+          659.69482421875,
+          868.2017415364584
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.17823692864993534,
+        "rank": 5
+      },
+      {
+        "id": "510:box_candidate:2",
+        "source_detection_ids": [
+          "510:box:2"
+        ],
+        "score": 0.6217286586761475,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          478.8417154947917,
+          639.1633707682291,
+          521.05126953125,
+          688.64501953125
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.10396208697241316,
+        "rank": 6
+      },
+      {
+        "id": "510:box_candidate:110",
+        "source_detection_ids": [
+          "510:box:110"
+        ],
+        "score": 0.005189080256968737,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          592.851318359375,
+          810.8515625,
+          663.2507731119791,
+          906.8163248697916
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.3362800869236712,
+        "rank": 7
+      },
+      {
+        "id": "510:box_candidate:21",
+        "source_detection_ids": [
+          "510:box:21",
+          "510:box:156"
+        ],
+        "score": 0.14101476967334747,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          809.9386393229166,
+          439.1417643229167,
+          842.0079752604166,
+          509.8871663411458
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.11292971943036738,
+        "rank": 8
+      },
+      {
+        "id": "510:box_candidate:155",
+        "source_detection_ids": [
+          "510:box:155",
+          "510:box:11",
+          "510:box:94"
+        ],
+        "score": 0.0014467437285929918,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          378.9859212239583,
+          633.7731526692709,
+          473.4600016276042,
+          689.05419921875
+        ],
+        "overlap": 0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.25996147518731616,
+        "rank": 9
+      },
+      {
+        "id": "510:box_candidate:62",
+        "source_detection_ids": [
+          "510:box:62",
+          "510:box:36",
+          "510:box:141",
+          "510:box:154"
+        ],
+        "score": 0.02620956115424633,
+        "score_method": "calibration_support_extent_seed_score",
+        "geometry_origin": "support_extent",
+        "bbox": [
+          791.69482421875,
+          408.5356852213542,
+          828.2587890625,
+          511.5407307942708
+        ],
+        "overlap": 198.8698519269624,
+        "coverage": 0.009898947333348054,
+        "inside": 0.05280282630928101,
+        "area_ratio": 0.18747002812628125,
+        "rank": 10
+      },
+      {
+        "id": "510:box_candidate:3",
+        "source_detection_ids": [
+          "510:box:3"
+        ],
+        "score": 0.6067837476730347,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          627.1590983072916,
+          639.152587890625,
+          664.3924560546875,
+          688.5481770833334
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.09154622416901503,
+        "rank": 11
+      },
+      {
+        "id": "510:box_candidate:4",
+        "source_detection_ids": [
+          "510:box:4"
+        ],
+        "score": 0.5701480507850647,
+        "score_method": "detector_confidence",
+        "geometry_origin": "observed_box",
+        "bbox": [
+          674.379150390625,
+          637.4049072265625,
+          718.19873046875,
+          688.7703450520834
+        ],
+        "overlap": 0.0,
+        "coverage": 0.0,
+        "inside": 0.0,
+        "area_ratio": 0.1120364318588035,
+        "rank": 12
+      }
+    ],
+    "reference": [
+      593,
+      480,
+      798,
+      578
+    ]
+  }
+}

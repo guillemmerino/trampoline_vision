@@ -1,0 +1,43 @@
+{
+  "historical_run": "representative-tracking-v1",
+  "frames_per_clip": {
+    "JPN_AGE_1_000905_31.0": 24,
+    "JPN_AGE_1_001107_32.0": 12,
+    "JPN_AGE_1_002837_43.0": 22,
+    "JPN_AGE_1_005423_30.0": 12,
+    "JPN_AGE_2_000137_26.0": 12,
+    "JPN_AGE_2_000709_37.0": 12,
+    "JPN_AGE_2_002952_23.0": 12,
+    "JPN_AGE_2_004009_24.0": 12,
+    "JPN_AGE_3_001351_19.0": 15,
+    "JPN_AGE_3_001501_28.0": 12,
+    "JPN_AGE_3_002412_31.0": 14,
+    "JPN_AGE_3_003002_24.0": 12
+  },
+  "sampling": "12 evenly spaced per clip, plus overlapping r214 selections and six diagnostic frames, deduplicated",
+  "variants": [
+    "hard12",
+    "hard8",
+    "soft12"
+  ],
+  "checked": [
+    "candidate count",
+    "order",
+    "xyxy geometry",
+    "score",
+    "candidate ID",
+    "source detection ID list",
+    "observed/derived origin"
+  ],
+  "equal_in_all_checks": true,
+  "project_tests_passed": 166,
+  "calibration_tests_passed": 70,
+  "implementation_sha256": {
+    "src/trampoline_vision/preparation/config.py": "4aa2b6b56a0d2b3eebc0233c234010a04761dfcbb524331099ac5d93ac253c45",
+    "src/trampoline_vision/preparation/boxes.py": "aba0481bb3150f82435884fcaa024931a62e11c8a4dae33c640b36e805373bf2",
+    "src/trampoline_vision/preparation/regions.py": "a613512387d662decc14a40912ac3cc305cd33346850d2a598f002af1db4174e",
+    "src/trampoline_vision/preparation/foreground.py": "61080524fadf32e62ead074af6ceeaf70b39291dda0b1f3bc41a735985730860",
+    "src/trampoline_vision/preparation/representative.py": "a443d6e8cf881838f6e4b7382eb19c5c1f1bcbcf4e835b778942c281423c7629",
+    "src/trampoline_vision/preparation/pipeline.py": "bb643b860e6f487231cfadfc7f55df72ebca480fa07c9fcba04ca30a782e957c"
+  }
+}

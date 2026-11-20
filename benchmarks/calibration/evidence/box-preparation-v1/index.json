@@ -1,0 +1,236 @@
+{
+  "source_root": "runs/calibration",
+  "files": {
+    "feasibility.json": {
+      "source": "box-preparation-feasibility-v1/result.json",
+      "selection": [
+        "schema_version",
+        "purpose",
+        "methods",
+        "statistics",
+        "elapsed_s",
+        "review_revision",
+        "review_entries",
+        "detector",
+        "source_run_signature",
+        "source_bundle_sha256"
+      ],
+      "sha256": "69794c15271cc741a3542725e6518f6d8becb59f8b5c8e7c92d466d81d873aff",
+      "source_sha256": "c55cc64ee0b0194ebce2c2b8029a319ab56f34863765ed2b4e932498f75c2600"
+    },
+    "conservative.json": {
+      "source": "box-preparation-v3/result.json",
+      "selection": [
+        "schema_version",
+        "task",
+        "identity",
+        "counts",
+        "effective_config",
+        "resources",
+        "limitations"
+      ],
+      "sha256": "ba6ba9546843c10ad48d9b6183af125c3f8409c88bd1f52a59c18f5fc0df6d82",
+      "source_sha256": "c6cace31d7ec7e01de7b079bdfbac457e0a5fd85aa7913f5c5871edc43a93116"
+    },
+    "containment.json": {
+      "source": "containment-grouping-simulation-v1/result.json",
+      "selection": [
+        "purpose",
+        "methods",
+        "statistics",
+        "grouping_elapsed_s",
+        "total_elapsed_s",
+        "review_revision",
+        "synthetic_checks",
+        "metrics_note",
+        "input_sha256"
+      ],
+      "sha256": "7eb7b62a59ca81ded4f25fb81a086acd16913ceb961d9bc06b335a67a7137783",
+      "source_sha256": "02413cdaabaa73710ac7c1665a2550ad4d19b26a09feb1a44816395fc61b9bab"
+    },
+    "density.json": {
+      "source": "density-anchor-simulation-v1/result.json",
+      "selection": [
+        "methods",
+        "common",
+        "statistics",
+        "algorithm_elapsed_s",
+        "total_elapsed_s",
+        "review_revision",
+        "input_sha256"
+      ],
+      "sha256": "cf90b28c7b3514c0aadd33c08e190b9f8b775b54032565b1a5c0491b3caf717d",
+      "source_sha256": "640a3538df3f20580eb7dd0a3b4132b150155688f1c2249dce352a65713c2023"
+    },
+    "regional.json": {
+      "source": "tiered-anchor-regions-v1/result.json",
+      "selection": [
+        "methods",
+        "common",
+        "statistics",
+        "elapsed_s",
+        "algorithm_elapsed_s",
+        "review_revision",
+        "input_sha256"
+      ],
+      "sha256": "2d21878c2e153fb33694ef7c7b2fbaf2bcf8a5edc9a448e077b1ae2ce5fcae4f",
+      "source_sha256": "b22e3ecdab6546073d234e391e3f3470915fd481389de84930782e5979b3cedb"
+    },
+    "confidence.json": {
+      "source": "confidence-anchor-analysis-v1/result.json",
+      "selection": [
+        "review_revision",
+        "detector",
+        "selected_all",
+        "selected_sufficient",
+        "selected_partial",
+        "groups",
+        "criteria",
+        "limitations",
+        "input_sha256"
+      ],
+      "sha256": "ba158559d9f698b1e99ba578c0124d3e81f53e38eb1e48026127e16126ffea2b",
+      "source_sha256": "219afe587e7a9f4ac1ce89f3ad87eae08fb26d7dc3689c3bc59becf430ad49af"
+    },
+    "human-redundancy.json": {
+      "source": "human-approved-redundancy-v1/result.json",
+      "selection": [
+        "scope",
+        "review_revision",
+        "detector",
+        "criteria",
+        "input_sha256",
+        "totals"
+      ],
+      "sha256": "2472b7b2c06586fd5bfec46a10fcb834b53cbaaa4b66d991d8be258c3955fcb3",
+      "source_sha256": "558ec7204cfad41bc0a719452dde05791bf4e733032a0706f77bcbc5fe729e1e"
+    },
+    "thresholds-tracker-grid.csv": {
+      "source": "threshold-robustness-v1/assessment/aggregates.csv",
+      "sha256": "471d4bd8fb8692eb8a928f7f561adb0e76fb3c2ad969e92f631b63be8e44de4c",
+      "source_sha256": "471d4bd8fb8692eb8a928f7f561adb0e76fb3c2ad969e92f631b63be8e44de4c"
+    },
+    "thresholds-analysis.json.gz": {
+      "source": "threshold-robustness-v1/assessment/analysis.json",
+      "sha256": "b5ed2184f5ff3abb4de184b279006b2ab2c556827b9fae0192bff3b38e513e89",
+      "source_sha256": "f05e1058411d69f6e9115471d9f00887d8353764d95ed8380a3941065a553938"
+    },
+    "low-thresholds-analysis.json.gz": {
+      "source": "low-detector-thresholds-v1/assessment/analysis.json",
+      "sha256": "e50b8a260dc2c3ba21ee76a6e59fc7058f8d86a781a0812e0bc8cc5f1ac0a2f8",
+      "source_sha256": "516722663910189770f5fcbe3d4ffaa51c9f846c049c8d246171be5956acf523"
+    },
+    "expanded-localization-per-video.csv": {
+      "source": "expanded-localization-v1/assessment/per-video.csv",
+      "sha256": "7328a1f0f88b1e822387be2c972c54a94526ce4ea7eee601ebd854be7381f6c5",
+      "source_sha256": "7328a1f0f88b1e822387be2c972c54a94526ce4ea7eee601ebd854be7381f6c5"
+    },
+    "expanded-localization-analysis.json.gz": {
+      "source": "expanded-localization-v1/assessment/analysis.json",
+      "sha256": "a8acfcc754928cf0d9f9f488e3622994fba9aca8260864ba82121b2cd88385c0",
+      "source_sha256": "ebdaea6fab4735220614cf3f1c98033dc5d2507a78e3d2e7a4deb09586d169ed"
+    },
+    "shortlist-spatial-summary.json": {
+      "source": "representative-box-study-v1/summary.json",
+      "sha256": "0b35390d90a517dc015a9771cf0d15625ca2baefed996ae60e58278d25e824a7",
+      "source_sha256": "0b35390d90a517dc015a9771cf0d15625ca2baefed996ae60e58278d25e824a7"
+    },
+    "shortlist-spatial-per-video.csv": {
+      "source": "representative-box-study-v1/per-video.csv",
+      "sha256": "8c7ba534339503419f3418c6f471c22190204b39b04b61a9e38ed70b59b47250",
+      "source_sha256": "8c7ba534339503419f3418c6f471c22190204b39b04b61a9e38ed70b59b47250"
+    },
+    "shortlist-tracking-per-video.csv": {
+      "source": "representative-tracking-v1/summary.csv",
+      "sha256": "28ab950c9a4da6f5a7f1f3fd6bbb7c3ecb9dded0f19c02fa677d23ca7525a8b5",
+      "source_sha256": "28ab950c9a4da6f5a7f1f3fd6bbb7c3ecb9dded0f19c02fa677d23ca7525a8b5"
+    },
+    "shortlist-tracking-discrepancies.csv.gz": {
+      "source": "representative-tracking-v1/discrepancies.csv",
+      "sha256": "b610b4768a772b79268d44b60ab359b7f70bef2776785e771fe2f5a767af0c86",
+      "source_sha256": "5ae887dc315286b138dd5603c75fe175b95d8d368dfbeb5ecdc6e15f2bffcec4"
+    },
+    "shortlist-tracking-paired.json.gz": {
+      "source": "representative-tracking-v1/paired-analysis.json",
+      "sha256": "3204d004818afa75ef45159be7b9219a4166b4cc6c5ee80771e32f188b767160",
+      "source_sha256": "ba1a58b3a1061c8bd521dedc0fbb07f97fcbec1fdc59cb5d887ed34222ca6165"
+    },
+    "shortlist-tracking-run.json": {
+      "source": "representative-tracking-v1/run.json",
+      "sha256": "553fd5aea2a92adcacc87cab4df776fad51f22714cf55b11757fb216eaea85b1",
+      "source_sha256": "553fd5aea2a92adcacc87cab4df776fad51f22714cf55b11757fb216eaea85b1"
+    },
+    "images/threshold-000709.jpg": {
+      "source": "threshold-robustness-v1/assessment/JPN_AGE_2_000709_37.0-threshold-review.jpg",
+      "sha256": "b1550d7b08f7c9af53a5273523f9c50daa57043a04ef87b419da2f015ca2f11a",
+      "source_sha256": "b1550d7b08f7c9af53a5273523f9c50daa57043a04ef87b419da2f015ca2f11a"
+    },
+    "images/low-threshold-partial-180.jpg": {
+      "source": "low-detector-thresholds-v1/review/images/JPN_AGE_3_001351_19.0/frame-000180.jpg",
+      "sha256": "884c7eb83240000145dd5817bed6e09db38f9ee05c5da949f9470fd078c6dbca",
+      "source_sha256": "884c7eb83240000145dd5817bed6e09db38f9ee05c5da949f9470fd078c6dbca"
+    },
+    "images/containment-assistant-679.jpg": {
+      "source": "box-preparation-feasibility-v1/images/JPN_AGE_1_002139_38.0-f000679.jpg",
+      "sha256": "ce24ba7083cec3554d19a02ec0f025402de6fc8c097758f122f5aa40ef4980ec",
+      "source_sha256": "ce24ba7083cec3554d19a02ec0f025402de6fc8c097758f122f5aa40ef4980ec"
+    },
+    "images/density-partial-889.jpg": {
+      "source": "density-anchor-simulation-v1/images/JPN_AGE_1_000840_34.0-f000889.jpg",
+      "sha256": "fdc9a959028efe083efc6c0f9a64f9326cdf9057fd5fcd9984be286bf57b4006",
+      "source_sha256": "fdc9a959028efe083efc6c0f9a64f9326cdf9057fd5fcd9984be286bf57b4006"
+    },
+    "images/foreground-comparison.jpg": {
+      "source": "representative-box-study-v1/foreground-comparison.jpg",
+      "sha256": "fa7ec3a629129076dbb13e78070a0cb767c1eaeb1816918da69b75b2cbb4b84f",
+      "source_sha256": "fa7ec3a629129076dbb13e78070a0cb767c1eaeb1816918da69b75b2cbb4b84f"
+    },
+    "images/shortlist-recoveries.jpg": {
+      "source": "representative-box-study-v1/final-recoveries.jpg",
+      "sha256": "32cb851719616ae60f4fbb79e67c1cc439af2751ac08c42dbc693f4e269ea502",
+      "source_sha256": "32cb851719616ae60f4fbb79e67c1cc439af2751ac08c42dbc693f4e269ea502"
+    },
+    "images/shortlist-regions.jpg": {
+      "source": "representative-box-study-v1/checked-guard-cases.jpg",
+      "sha256": "9a622fe5792f5f66a7c08b89f2d0b08cfafad8983e88eafa59b93e62eafed27a",
+      "source_sha256": "9a622fe5792f5f66a7c08b89f2d0b08cfafad8983e88eafa59b93e62eafed27a"
+    },
+    "images/entry-97.jpg": {
+      "source": "representative-tracking-v1/entry-audit/JPN_AGE_3_001351_19.0-97.jpg",
+      "sha256": "6baa62fe2189e6f7f5933f8b1db9a3493c947859b8ed079605ae2419e3d1d459",
+      "source_sha256": "6baa62fe2189e6f7f5933f8b1db9a3493c947859b8ed079605ae2419e3d1d459"
+    },
+    "images/entry-180.jpg": {
+      "source": "representative-tracking-v1/entry-audit/JPN_AGE_3_001351_19.0-180.jpg",
+      "sha256": "0d4b79d171e110ecb8d0998610cdc0109aa8cfbe7ef5f98f1e93e102727a1a54",
+      "source_sha256": "0d4b79d171e110ecb8d0998610cdc0109aa8cfbe7ef5f98f1e93e102727a1a54"
+    },
+    "images/entry-510.jpg": {
+      "source": "representative-tracking-v1/entry-audit/JPN_AGE_3_002412_31.0-510.jpg",
+      "sha256": "6f2653e74c94d81fb74e26d558e7161aa469a47a30dc21c0e3b17bf307c63097",
+      "source_sha256": "6f2653e74c94d81fb74e26d558e7161aa469a47a30dc21c0e3b17bf307c63097"
+    },
+    "images/entry-budget-1179.jpg": {
+      "source": "representative-tracking-v1/entry-audit/cases-2.jpg",
+      "sha256": "136339665edd4e4e37cb024813e85440dfa283cbb7ceced9bc7f1e4096da2c6b",
+      "source_sha256": "136339665edd4e4e37cb024813e85440dfa283cbb7ceced9bc7f1e4096da2c6b"
+    },
+    "images/tracking-geometry-356.jpg": {
+      "source": "representative-tracking-v1/clips/JPN_AGE_3_002412_31.0/attempt-0001/review/000356.jpg",
+      "sha256": "483a0a9b40b76f9fd8fc83b987543f72db0882451919dff25a789fa0b2a47686",
+      "source_sha256": "483a0a9b40b76f9fd8fc83b987543f72db0882451919dff25a789fa0b2a47686"
+    },
+    "shortlist-entry-cases.json": {
+      "source": "representative-tracking-v1/entry-audit/metrics.json",
+      "selection": [
+        "JPN_AGE_1_002837_43.0:1179",
+        "JPN_AGE_3_001351_19.0:97",
+        "JPN_AGE_3_001351_19.0:180",
+        "JPN_AGE_3_001351_19.0:182",
+        "JPN_AGE_3_002412_31.0:510"
+      ],
+      "sha256": "aa378e2f7bfd2361c18095fc0c5b45d0fe3daf8fd9874cbb002633177d10b9a8",
+      "source_sha256": "27aa560153ccc0ca49c7188672c6c2c7a088ed2a87a4cb831a9873705e1a550b"
+    }
+  }
+}

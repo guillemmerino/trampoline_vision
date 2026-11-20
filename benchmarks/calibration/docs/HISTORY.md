@@ -3,6 +3,15 @@
 Historial del disseny de les proves. [Estat actual](STATE.md) ·
 [Comandes habituals i estructura](../README.md).
 
+## Preparació espacial posterior al calibratge del detector
+
+L’[estudi consolidat de preparació](BOX_PREPARATION_STUDIES.md) recull els
+controls inicials de supressió, la implementació conservadora, la contenció,
+els ancoratges amb densitat/residuals i les regions febles derivades. Inclou
+els resultats congelats, les diferències de criteri i el protocol pendent
+per comparar identitats temporals. Les simulacions posteriors continuen
+fora del paquet; no s’han convertit en defaults ni en una prova de tracking.
+
 ## Revisió humana interactiva de les caixes
 
 La [pàgina de revisió humana](HUMAN_REVIEW.md) permet aprovar o rebutjar

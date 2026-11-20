@@ -1,78 +1,45 @@
-# Calibratge del detector i del tracking
-
-**Comença aquí.** Aquest directori conté el banc experimental; els vídeos,
-pesos, execucions i decisions humanes són fora del codi, a `data/` i `runs/`.
+# Banc de calibratge
 
 El detector de treball és **YOLOv8m a 0,001**, amb 0,002 com a control.
-Ja s’han comparat 18 vídeos i hi ha una revisió humana de les anotacions en curs.
-El següent estudi serà l’associació de deteccions amb **IDs estables**, tractant
-les caixes parcials i solapades. Aquesta reorganització prepara el banc;
-no incorpora encara un nou algorisme de tracking.
+La preparació de fins a 12 caixes és un perfil explícit del projecte.
+El criteri és que almenys una candidata localitzi el gimnasta,
+encara que sigui parcial. El seguiment d’un ID estable s’avalua per separat.
 
-## On és cada cosa
-
-| Directori | Què hi trobaràs |
+| Si vols… | Obre… |
 | --- | --- |
-| [config/](config/) | Corpus, matrius d’experiment i plans de les proves. |
-| [annotations/](annotations/README.md) | Mostres i referències d’IA originals, amb la seva procedència. |
-| [docs/](docs/STATE.md) | Estat de l’estudi, ús de la revisió, protocol de servidor i historial. |
-| [engine/](engine/) | Executor, detector, mètriques i control de les iteracions. |
-| [reviews/](reviews/) | Generació d’informes i pàgina de revisió humana. |
-| [tools/](tools/) | Preparació de dades i extracció/dibuix de les anotacions. |
-| [commands/](commands/) | Scripts de Docker usats per les comandes de prova. |
-| [docker/](docker/) | Imatge i runtime del servidor NVIDIA. |
-| [tests/](tests/) | Comprovacions del banc. |
+| Entendre què s’ha provat i evitar repetir experiments | [Estudi consolidat](docs/BOX_PREPARATION_STUDIES.md) i [evidències d’exemple](evidence/box-preparation-v1/index.json) |
+| Saber què s’activa per defecte i com provar el perfil nou | [Configuracions de pipeline](../../configs/pipelines/README.md) i [API de preparació](../../src/trampoline_vision/preparation/README.md) |
+| Llegir l’estat del detector i de l’avaluació temporal | [Estat de l’estudi](docs/STATE.md) |
+| Revisar, corregir o exportar les anotacions | [Guia de revisió humana](docs/HUMAN_REVIEW.md) |
+| Executar una bateria, comprovar recursos o reprendre-la | [Guia del servidor](docs/SERVER.md) |
+| Consultar iteracions anteriors | [Historial](docs/HISTORY.md) |
+| Localitzar els artefactes i decidir què es pot arxivar | [Estructura i conservació de resultats](docs/REORGANIZATION.md) |
 
-## Les comandes habituals
-
-Des de l’arrel del repositori, la porta d’entrada és sempre:
+Des de l’arrel del repositori:
 
 ```bash
 python3 -m benchmarks.calibration --help
-```
-
-**Continuar revisant anotacions i YOLO** — el servidor actual és
-[localhost:8766](http://localhost:8766/). Per tornar-lo a iniciar si cal:
-
-```bash
 python3 -m benchmarks.calibration review serve
+python3 -m benchmarks.calibration study representative-tracking --dry-run
 ```
 
-Si uses VS Code per SSH, reenvia el port 8766. Cada canvi es desa a
-`runs/calibration/expanded-localization-v1/human-review/review-state.json`.
-[Funcionament de la pàgina, correccions i còpies de seguretat](docs/HUMAN_REVIEW.md).
+La revisió humana escolta a localhost:8766. Si treballes per SSH,
+reenvia el port. Els resultats locals més rellevants són:
 
-**Recalcular amb les decisions humanes**, escollint una carpeta de resultat nova:
+- [Revisió humana de YOLO](../../runs/calibration/expanded-localization-v1/human-review/index.html).
+- [Informe de localització en 18 clips](../../runs/calibration/expanded-localization-v1/assessment/ASSESSMENT.md).
+- [Informe de la prova contínua en 12 clips](../../runs/calibration/representative-tracking-v1/ASSESSMENT.md)
+  i [galeria de discrepàncies](../../runs/calibration/representative-tracking-v1/review.html).
 
-```bash
-python3 -m benchmarks.calibration review assess \
-  --output runs/calibration/expanded-localization-v1/human-assessment-v1
-```
+Els fitxers anteriors viuen a runs i són artefactes locals. El codi, les
+referències i la selecció d’evidències s’organitzen així:
 
-**Comprovar la prova de 18 vídeos sense inferència**:
-
-```bash
-python3 -m benchmarks.calibration study expanded --dry-run
-```
-
-Les altres proves es conserven amb noms explícits:
-`study thresholds`, `study low-thresholds` i `study localization`.
-La construcció de Docker forma part d’aquestes comandes de servidor.
-Cap prova s’inicia només per obrir el paquet o demanar l’ajuda.
-
-## Quins resultats llegir
-
-Els resultats complets són a `runs/calibration/expanded-localization-v1/`:
-
-- `assessment/ASSESSMENT.md`: revisió de les dues confiances i resum per vídeo.
-- `human-review/`: HTML, imatges i decisions de la revisió humana en curs.
-- `human-assessment-r212/`: interpretació d’una primera revisió humana parcial.
-- `inputs/`, `run/` i `review/`: inputs congelats, CSV, mètriques i galeria original.
-
-La cobertura es calcula sobre fotogrames anotats; no acredita detecció en tots
-els frames ni estabilitat d’identitat. Les anotacions sense revisar continuen
-provisionals. [Estat actual i propera fase](docs/STATE.md).
-
-Per als detalls menys habituals:
-[servidor i transferència](docs/SERVER.md) · [historial de proves](docs/HISTORY.md) ·
-[canvis de rutes i compatibilitat](docs/REORGANIZATION.md).
+| Directori | Contingut |
+| --- | --- |
+| [config](config/) | Corpus, matrius d’experiment i plans. |
+| [annotations](annotations/README.md) | Referències provisionals i procedència. |
+| [evidence](evidence/box-preparation-v1/index.json) | Resums, discrepàncies i imatges amb SHA-256. |
+| [engine](engine/) i [tools](tools/) | Executor i adaptadors del banc. |
+| [reviews](reviews/) | Informes i pàgina de revisió humana. |
+| [commands](commands/) i [docker](docker/) | Comandes i entorn del servidor. |
+| [tests](tests/) | Comprovacions del banc. |

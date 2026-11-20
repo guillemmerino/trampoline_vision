@@ -1,0 +1,390 @@
+{
+  "signature": "a8e7a1ad9d688cb7e999efcb4ae021f3c4bf8e7eb3acb6a05742e74b3cd5c21c",
+  "identity": {
+    "plan": {
+      "study": "representative-tracking-v1",
+      "variants": [
+        "baseline",
+        "hard12",
+        "hard8",
+        "soft12"
+      ],
+      "tracker": {
+        "profile": "configs/trackers/bytetrack.json",
+        "lifecycle": {
+          "confidence_threshold": 0.05
+        },
+        "parameters": {
+          "low_confidence": 0.001
+        }
+      },
+      "cases": [
+        {
+          "id": "JPN_AGE_1_000905_31.0",
+          "partition": "previous",
+          "panel": "left"
+        },
+        {
+          "id": "JPN_AGE_1_002837_43.0",
+          "partition": "previous",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_2_000709_37.0",
+          "partition": "previous",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_2_002952_23.0",
+          "partition": "previous",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_3_001351_19.0",
+          "partition": "previous",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_3_002412_31.0",
+          "partition": "previous",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_1_001107_32.0",
+          "partition": "new_to_preparation",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_1_005423_30.0",
+          "partition": "new_to_preparation",
+          "panel": "left"
+        },
+        {
+          "id": "JPN_AGE_2_000137_26.0",
+          "partition": "new_to_preparation",
+          "panel": "left"
+        },
+        {
+          "id": "JPN_AGE_2_004009_24.0",
+          "partition": "new_to_preparation",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_3_001501_28.0",
+          "partition": "new_to_preparation",
+          "panel": "right"
+        },
+        {
+          "id": "JPN_AGE_3_003002_24.0",
+          "partition": "new_to_preparation",
+          "panel": "right"
+        }
+      ]
+    },
+    "detector": {
+      "id": "yolov8m-conf0001-nms070",
+      "model": "yolov8m",
+      "confidence": 0.001,
+      "nms_iou": 0.7,
+      "imgsz": 1280,
+      "resize_factor": 1.5,
+      "max_det": 300,
+      "post_area_cap": null
+    },
+    "weights": {
+      "model_id": "yolov8m",
+      "path": "models/yolov8m.pt",
+      "source": {
+        "root": "tfm",
+        "path": "Tracking_system/scripts/yolov8m.pt"
+      },
+      "sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "size_bytes": 52136884
+    },
+    "tracker": {
+      "backend": "bytetrack",
+      "confirmation_policy": "birth_streak_v1",
+      "confidence_threshold": 0.05,
+      "confirmation_frames": 3,
+      "max_lost_s": 0.5,
+      "parameters": {
+        "min_iou": 0.1,
+        "low_confidence": 0.001
+      },
+      "appearance": null
+    },
+    "device": "cuda:0",
+    "threads": 8,
+    "environment": {
+      "python": "3.11.18 (main, Oct 28 2026, 02:05:49) [GCC 12.2.0]",
+      "platform": "linux",
+      "platform_release": "Linux-6.8.0-147-generic-x86_64-with-glibc2.36",
+      "cpu_logical_count": 16,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "packages": {
+        "Jinja2": "3.1.6",
+        "MarkupSafe": "3.0.3",
+        "PySocks": "1.7.1",
+        "PyYAML": "6.0.3",
+        "Pygments": "2.21.0",
+        "av": "16.1.0",
+        "beautifulsoup4": "4.15.0",
+        "boxmot": "16.0.9",
+        "certifi": "2026.10.23",
+        "charset-normalizer": "3.5.2",
+        "click": "8.5.0",
+        "cloudpickle": "3.1.2",
+        "contourpy": "1.3.3",
+        "cycler": "0.12.1",
+        "defusedxml": "0.7.1",
+        "filelock": "4.2.4",
+        "filterpy": "1.4.5",
+        "fonttools": "4.68.0",
+        "fsspec": "2026.9.0",
+        "ftfy": "6.3.1",
+        "gdown": "5.2.2",
+        "idna": "3.20",
+        "joblib": "1.6.0",
+        "kiwisolver": "1.5.1",
+        "lapx": "0.13.0",
+        "loguru": "0.7.3",
+        "markdown-it-py": "4.2.0",
+        "matplotlib": "3.11.2",
+        "mdurl": "0.1.2",
+        "mpmath": "1.3.0",
+        "narwhals": "2.28.0",
+        "networkx": "3.6.1",
+        "numpy": "2.1.1",
+        "nvidia-cublas-cu12": "12.8.3.14",
+        "nvidia-cuda-cupti-cu12": "12.8.57",
+        "nvidia-cuda-nvrtc-cu12": "12.8.61",
+        "nvidia-cuda-runtime-cu12": "12.8.57",
+        "nvidia-cudnn-cu12": "9.7.1.26",
+        "nvidia-cufft-cu12": "11.3.3.41",
+        "nvidia-cufile-cu12": "1.13.0.11",
+        "nvidia-curand-cu12": "10.3.9.55",
+        "nvidia-cusolver-cu12": "11.7.2.55",
+        "nvidia-cusparse-cu12": "12.5.7.53",
+        "nvidia-cusparselt-cu12": "0.6.3",
+        "nvidia-nccl-cu12": "2.26.2",
+        "nvidia-nvjitlink-cu12": "12.8.61",
+        "nvidia-nvtx-cu12": "12.8.55",
+        "opencv-python": "4.14.0.94",
+        "packaging": "26.3",
+        "pandas": "2.3.3",
+        "pillow": "13.0.0",
+        "pip": "24.0",
+        "psutil": "7.0.0",
+        "py-cpuinfo": "9.0.0",
+        "pyDeprecate": "0.13.0",
+        "pyparsing": "3.3.3",
+        "python-dateutil": "3.0.0",
+        "pytz": "2026.6",
+        "regex": "2024.11.6",
+        "requests": "2.34.2",
+        "rich": "15.0.0",
+        "scikit-learn": "1.9.1",
+        "scipy": "1.17.1",
+        "seaborn": "0.13.2",
+        "setuptools": "79.0.1",
+        "six": "1.17.0",
+        "soupsieve": "3.0.4",
+        "supervision": "0.31.3",
+        "sympy": "1.14.0",
+        "threadpoolctl": "3.7.0",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "tqdm": "4.70.1",
+        "trackers": "2.6.1",
+        "trampoline-vision": "0.7.0",
+        "triton": "3.3.1",
+        "typing_extensions": "4.16.0",
+        "tzdata": "2026.6",
+        "ultralytics": "8.3.116",
+        "ultralytics-thop": "2.0.18",
+        "urllib3": "2.8.0",
+        "wcwidth": "0.9.4",
+        "wheel": "0.46.3",
+        "yacs": "0.1.8"
+      },
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 5070",
+        "memory_bytes": 12346195968,
+        "compute_capability": [
+          12,
+          0
+        ]
+      },
+      "nvidia_smi": "NVIDIA GeForce RTX 5070, 595.99.02, 12227 MiB",
+      "torch_cuda": "12.8",
+      "ffmpeg": "ffmpeg version 5.1.9-0+deb12u1 Copyright (c) 2000-2026 the FFmpeg developers"
+    },
+    "sources": {
+      "JPN_AGE_1_000905_31.0": {
+        "video": "4dcb631c2d42f41ebe1375c37697f14041fff11a76f5e3459ab0e3aea220a67e",
+        "detector_csv": "6c7f2af2275e0c73fc4226301bcd4fd4dafc87d644575682b50ae4ce0df1643a",
+        "annotations": "becb8f101a3cec1627451fd4890fe3c6e14bcad1581f05fdeeaa1fdf7e8e9409"
+      },
+      "JPN_AGE_1_002837_43.0": {
+        "video": "25a4e885c9285f3087c263b6589fb70a30dc507961f2f1dd1eafd67029876ef9",
+        "detector_csv": "b4d8e7e3a1c4b31db5eee4f0b70ae0dc9d14cd0c4336ecd26357fa03dcbac7b7",
+        "annotations": "fb8a523b1429cb76cb47166664756848a0277184ac452d3fd05136299f059795"
+      },
+      "JPN_AGE_2_000709_37.0": {
+        "video": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+        "detector_csv": "6479a6632e24d04279de8f301956b599d255c264d728847d6bddc3f5e7f26ecc",
+        "annotations": "3be2cef8d28853dd557b76dc5252708f3430481e057888927916f19f6edfc7ad"
+      },
+      "JPN_AGE_2_002952_23.0": {
+        "video": "c1623872f1c9a6cd6436fd32c3ce1a3e4aa3acc3e784548d0ad24b3a83ebf304",
+        "detector_csv": "01f03a9ac3cc4a5cd0d5a400b93ae388b8b983c3f9eaec2bb7c23fc336489087",
+        "annotations": "0eabf19b233433b4287783a72549e83b7c3e8252d114d3166e071214538e6e0b"
+      },
+      "JPN_AGE_3_001351_19.0": {
+        "video": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+        "detector_csv": "a70e8959c1d212eae566cec8ed1ec4b3af06028ece47416b6df2de177964abe2",
+        "annotations": "81270d79e86c7ee214f33a7ee7b8076d16019ddac1faa8614ab12c04132b6bb4"
+      },
+      "JPN_AGE_3_002412_31.0": {
+        "video": "a2706dba5caae057a4409fd74985b578935017d8dec1aef0a827b9c05112ae17",
+        "detector_csv": "c980ce523b63a1138353cec67b5577fd0f2d3280dc0cf31211273e09fefd170f",
+        "annotations": "86471c9146670b8e5cdaf5386067f24bd1d398dc17293727ab94cb6fa02fd0a5"
+      },
+      "JPN_AGE_1_001107_32.0": {
+        "video": "78dd2e2231f66c7e12ef8e87f3629f5ce523cec000969b3473224001e927f297",
+        "detector_csv": null,
+        "annotations": null
+      },
+      "JPN_AGE_1_005423_30.0": {
+        "video": "5000526e2dc4c54226972cb5a12201f7fa85e1e4deeaf67df1f0469a17181f8f",
+        "detector_csv": null,
+        "annotations": null
+      },
+      "JPN_AGE_2_000137_26.0": {
+        "video": "ce09f0116e3d3a3ad319dccef5ed05c651010a1b491bfdfaabd72181a4bfd340",
+        "detector_csv": null,
+        "annotations": null
+      },
+      "JPN_AGE_2_004009_24.0": {
+        "video": "d4c0791dd11825a7b5754bb8bf6e10e35a6b3928dbc7311b8c8097beffd91f8c",
+        "detector_csv": null,
+        "annotations": null
+      },
+      "JPN_AGE_3_001501_28.0": {
+        "video": "08273d1306a979ae5d2d07b9855bc69cb442238ac6c6e2a8a7c97a57ae9b05ce",
+        "detector_csv": null,
+        "annotations": null
+      },
+      "JPN_AGE_3_003002_24.0": {
+        "video": "116a1db221c27574ed9f60427753ef543ae94d3a5ebbbc9722c6c33b0520a5a3",
+        "detector_csv": null,
+        "annotations": null
+      }
+    },
+    "code": {
+      "benchmarks/calibration/tools/representative_tracking.py": "28fdd8e23c3546b6126f929b7b2e51250407d42c7503c24beb267c1c02ed65c5",
+      "benchmarks/calibration/engine/representative.py": "a3fc84ecf3508978de8b21b5e67be3a605b3762e60f6e18bca7f399f15935495",
+      "configs/preparation/box-candidates.json": "de074ecbe8df0c7eac2cf7c2ef3ce1f62aae59f7e9bf29fc4fd2648a43af3a3a",
+      "src/trampoline_vision/__init__.py": "847033a15cf96b713540efafcf125d143499f64b830453b1bd5f73195cb3cf54",
+      "src/trampoline_vision/__main__.py": "60551c34267c8e4ec1d55b8f11e654c79a3b02c4fb66e61583b9d366f1847c9c",
+      "src/trampoline_vision/application/__init__.py": "96e82e7e54ece849d4bce089d7eb4613ec60f911d36f757881ef1f1fba4e1b9d",
+      "src/trampoline_vision/application/appearance.py": "e918d23ad399eba8472dd995437694119d4d8206ce25a16069aa82ab4a17ba0c",
+      "src/trampoline_vision/application/inspection.py": "7d582505a8b7254da02d9742da237d0639fb48ba9de3e6e8473a3df0b89740e5",
+      "src/trampoline_vision/application/recovery.py": "ee3c3fe368d68cc329ec93bea654b47cfca9da66beff5331027c02b728baedba",
+      "src/trampoline_vision/application/recovery_audit.py": "c93cc3c0287eead3916449af7a8eb83b63bffbe010125bbae2b64237c9fed149",
+      "src/trampoline_vision/application/tracking.py": "70c482979f7cfc290dacd99a4db2ffd13fef081e9e8083a6d6c0c351338ad232",
+      "src/trampoline_vision/application/tracking_evaluation.py": "24752c78685ffe57a634d5f682f674bdebbaf8e591b76fc76d523232b0aa4aa0",
+      "src/trampoline_vision/application/visualization.py": "7cdb27be13fa616f5e4f8207c04a3ebc17d8a99c0b9d68bd8e4b9d413d21d12f",
+      "src/trampoline_vision/contracts/__init__.py": "f1fff703d03a3249cf626b12819519977768cf6301f208b5162fb761a61c799c",
+      "src/trampoline_vision/contracts/appearance.py": "1fa436a12a338f7a952d0ac4206668aea49e2ea1e4c968ceb3360458bc5e6168",
+      "src/trampoline_vision/contracts/geometry.py": "2beb188cc0af892c55c2c13f39708fad4de6741de7bc0067f5e787046665e73e",
+      "src/trampoline_vision/contracts/observations.py": "e72f4147dd3d7ba84f4383e1ba55390823bd4e5d3f4d281ec96f2fc027562389",
+      "src/trampoline_vision/contracts/recovery.py": "0a359776265e19eaa94cbe6eb26630dc6dc7eb15f88595871d5513f90854b30f",
+      "src/trampoline_vision/contracts/tracking.py": "3dc556c8c7f8def98ff0694de2457e21d5c6acee796b393d007e55dfc0c25c96",
+      "src/trampoline_vision/contracts/validation.py": "6142ed04c210195eb774a758995db1f2704d8c203aaf755392313cb6179d24c8",
+      "src/trampoline_vision/infrastructure/__init__.py": "655c85632e23863bcbb7e8414f22c2744600ee99011837928c733f88f137d05f",
+      "src/trampoline_vision/infrastructure/artifacts.py": "62f00beed3ca6792b502aee32446ce7224d468185523ad9dd9747477dced2201",
+      "src/trampoline_vision/infrastructure/embedding_cache.py": "c86dc648c1b66e75b4573db5edb8a46f998a722ede1f2fb1604d143ad2b3c360",
+      "src/trampoline_vision/ingestion/__init__.py": "b5f5a911913934ea33b15dfcb2e330eeaca842adf5e3281c2715143b22bbd26c",
+      "src/trampoline_vision/ingestion/detections.py": "0bf137a53a37dec9d7624d84bccc562ae44883e7162882e8438ef2bf98174799",
+      "src/trampoline_vision/ingestion/errors.py": "4e262bf27733395f7cfdfab6704e95c750dade96e58665711771de6f76a1660c",
+      "src/trampoline_vision/ingestion/json_io.py": "05e179670787ac3da08a9b6fabd08f0e113184ea0fb6f72c2c39dbec7e379e13",
+      "src/trampoline_vision/ingestion/manifest.py": "97c2fb1d6fffbbec1d254f21a03167950dce49cad556e3bf389d43316dd5f98d",
+      "src/trampoline_vision/ingestion/openpose.py": "27dfdefc714d9d07523aa907ae287fa2024823d40502d91dff69b2cbd4b406f7",
+      "src/trampoline_vision/ingestion/recorded_boxes.py": "52378a98d44ecd3e83b158bc17c971979f4d0cbf704812894916de27b4152df6",
+      "src/trampoline_vision/ingestion/recovery.py": "1adab12cd8269cbe0bc9e1e5ed7b05decfcab71b5694dc26508105d82d413671",
+      "src/trampoline_vision/ingestion/recovery_config.py": "4f58746d47e830e37c4e1492e98f68a644549791591b4da9d690e48b86482d1d",
+      "src/trampoline_vision/ingestion/tracking_config.py": "4931af970aff7ac4d4e90e46b309c4b70e26dabc3959f8ff07f8c816b3b2705f",
+      "src/trampoline_vision/ingestion/video.py": "a24f2f085ff834d6a558f09c99fee413752bd9e65b5891e1e9d5c3bc43806860",
+      "src/trampoline_vision/ingestion/video_frames.py": "2966d6ccb66e154851f6cced2bf6d51dc236cea3b5aaf52e18a04498f05d4bdf",
+      "src/trampoline_vision/interfaces/__init__.py": "5e9cba293e44677823e8f239e2ed6ca7d23b34ab8ff1cc955ed3a8caa7877913",
+      "src/trampoline_vision/interfaces/api/__init__.py": "ab5a7382032cef23ad4836bf5fe96317514fa3eada84ffe56b621e36cdd49a53",
+      "src/trampoline_vision/interfaces/cli/__init__.py": "2f537841dba21a07cdf02617678060adf587ad322743fa457d34bc5d5cdcb1f4",
+      "src/trampoline_vision/interfaces/cli/main.py": "f054ec66d674724f5cb456c7e76d0a6d7408d636fa0ba598d3c4d4ce7875fe22",
+      "src/trampoline_vision/interfaces/worker/__init__.py": "0a278bb749e1d8c6814de83b8c792ca4c5d8e486dbe7be2f5537ba878f43ee65",
+      "src/trampoline_vision/perception/__init__.py": "37cfb67336be27aebff62367f448e3ba9a8081126421482008043a7353b5e668",
+      "src/trampoline_vision/perception/adapters/__init__.py": "46a297f1d69dae6323936ed33fc23fd69a5c1da7aaf327aaa1b3b5a507ed21ad",
+      "src/trampoline_vision/perception/appearance/__init__.py": "7ac3a088c5518f563d14ffd6b89f027fa260b4f8926dcf9016f0d4dbc3a9cd04",
+      "src/trampoline_vision/perception/appearance/backend.py": "347f8c7c7c9cfd40ccfe5d134fe9e2a1706c6d918fb4d304bf17c41e87747994",
+      "src/trampoline_vision/perception/appearance/config.py": "cbc4c37e76f49267f3caaf648ea5a5c835dd81ad0c5a3f61ecfea94dd64ffe87",
+      "src/trampoline_vision/perception/appearance/osnet.py": "3f6bf741940a324175a31012ec66358c98d8b72a3f56caf6c365941571e95343",
+      "src/trampoline_vision/preparation/__init__.py": "22e0de4b26110599081e8a5e052232913edd4ff78ff4fbd2660f782f7ee099f2",
+      "src/trampoline_vision/preparation/boxes.py": "e30f44b342eeaf3d272298fe8bfb57e9965f5f7457bad797a68b3834498cebb8",
+      "src/trampoline_vision/preparation/config.py": "af527e5baf549091b475521143c217b4beac1be242aa096daccb6cfafebb2e22",
+      "src/trampoline_vision/preparation/deduplication.py": "8831f1d2553ce5758001cddc4d549f3d62bc9719bf30d3639b87f0f2c416feb9",
+      "src/trampoline_vision/preparation/pipeline.py": "cf299df5b63921ba2ad5535bee7e5b718be9c54535c9a792b919c5840e38ba14",
+      "src/trampoline_vision/preparation/pose.py": "3b25a03f8841a7cf6c2889ce249f906ade58eed7430cf039e4d37b9bd50d9562",
+      "src/trampoline_vision/quality/__init__.py": "d2c48bb99d11a67744121e1badc29c19b9c6bc2c1d75a5f91dddd021c52ef53e",
+      "src/trampoline_vision/recovery/__init__.py": "57607c05350c779df7a39399a020122ad8ce9218063ad28e97d161809e38fded",
+      "src/trampoline_vision/recovery/appearance.py": "f4575b2d443496f3efd9b227905e4ea4ddb5079936c2d8d22e06137ce938c057",
+      "src/trampoline_vision/recovery/association.py": "dead88d0a132e88bc29795058f9dc42d0937b5038245ebc215c6fd1bf68abf07",
+      "src/trampoline_vision/recovery/coherence.py": "9ee0829e037102248762684041ca9badeb6f3c0b333064eb89714c151b6b0f8b",
+      "src/trampoline_vision/recovery/config.py": "80f9ca8063559fca948b93132002444a046b0d3468fdfc5fe447f5dc5ca8dcb6",
+      "src/trampoline_vision/recovery/errors.py": "55e3158c003963305c0601162f34e6af65964e4fa6ba7619e02f3db64095cced",
+      "src/trampoline_vision/recovery/features.py": "513a55d59b7e65809f8a2149dcd12557f122e008ae75127bf09b4f6b6d5c2488",
+      "src/trampoline_vision/recovery/hungarian.py": "26030d04bf170cfefa7b99ef4f6d4aa442fa08ca686406e1b173bb2e141f4627",
+      "src/trampoline_vision/recovery/motion.py": "a268eaa3067b1cb77ea0282dafeab0506e057826144ba235731c6e80df6a7998",
+      "src/trampoline_vision/recovery/pipeline.py": "03fff0e64d08e60099aac7787c92b640b4fbfc98125c5db0ad6d14dfefbda299",
+      "src/trampoline_vision/recovery/tracklets.py": "0e7d3bb378872edcc1be7ae98ee86c7f56662b55a9c93c89e2ed1c52111d03a3",
+      "src/trampoline_vision/recovery/validation.py": "13aad1612971e265e7a9623f44b7fe5f6b43753de047da58fa1da989f6c3d9d9",
+      "src/trampoline_vision/results/__init__.py": "f76d3be4c815ed314a37b248c003e9d95332f617674bb2a8eaa3ff7423ddb3dc",
+      "src/trampoline_vision/results/errors.py": "65bee9fb392d92d962577ea46fe41bd5855cd956df3a904b3c8057d1aa32c909",
+      "src/trampoline_vision/results/overlay.py": "ad47a004242a23f3c20c39da1d741eb488cec33f445cb7e13d57c268416957a0",
+      "src/trampoline_vision/results/preparation.py": "8a3a4fde9ec5e754354af8f9076b0bba501c0138ca4895e6fbe241003d135e72",
+      "src/trampoline_vision/results/recovery.py": "b461d6475e61ea597f8587077bd12ca78d8b4f20957e99c238e652488e187ea8",
+      "src/trampoline_vision/results/tracking.py": "a73611d0cca66477cf59a61b87967caba76e35612ef5835e82e85878ef7bbd1c",
+      "src/trampoline_vision/results/video.py": "4862ebd477e930bd7a0e0f59e5e2ef3404babd99d916aa55c4c5bb98f228df79",
+      "src/trampoline_vision/scoring/__init__.py": "677ba1c11f9568a09e0b300c9049b2aebe7bab31d8db7fe6355a5b3023fc799c",
+      "src/trampoline_vision/segmentation/__init__.py": "cb2a75e34f0c962c95a6cc2461998ce53f0ca1ef0c2657e19d4c74055e87387e",
+      "src/trampoline_vision/subjects/__init__.py": "eba4c117392c5910699533c59a4326fbf8ebb83ea74ab465dac62e645c56ae11",
+      "src/trampoline_vision/tracking/__init__.py": "0e5b546c246d0421a443e6c5d8a55da9e3ee7fcc6ff98f76bf7dd8bab729cc57",
+      "src/trampoline_vision/tracking/backend.py": "ad32af4fdda7dc8a25d0f5e82594544745482b5be4457304bd76126fb6211af9",
+      "src/trampoline_vision/tracking/backends/__init__.py": "0b77c10d702a83349df3f11fcb923a6a95c03cf181ecedd200db31b8601e1da6",
+      "src/trampoline_vision/tracking/backends/_arrays.py": "87710b4590bf8f74c63db0a93919f365e6e5df2410cdb2f689dfb84219147b98",
+      "src/trampoline_vision/tracking/backends/botsort.py": "f667b08842bb9a4acc097de081484dd5340c9b784b776d5539a175b1b16b1795",
+      "src/trampoline_vision/tracking/backends/bytetrack.py": "31f8f9a85b5e36682dd73f05f80f91a0380eec578f7ea56b1ebb6d3d233571f2",
+      "src/trampoline_vision/tracking/backends/ocsort.py": "0609326af978e94560ca4d06146a3dae6deead340d075fe9f54ba125c376d238",
+      "src/trampoline_vision/tracking/config.py": "fe90b2ef5402df760ee1671600cbf34646cc5760489754735c5a539b3a98f594",
+      "src/trampoline_vision/tracking/errors.py": "4f4c487fd409293d2882034977d946d5de19c8455521b20c0440d46191da0ee5",
+      "src/trampoline_vision/tracking/factory.py": "c6ef6ae6f9a43e863fdf5355db88ecd0b07d629738bccdde27ead6499197faa5",
+      "src/trampoline_vision/tracking/session.py": "6730a004f0e7a5cc2f60dc60ff179028bfe1f2a848fc30ff30a54b33b5950b01"
+    }
+  }
+}

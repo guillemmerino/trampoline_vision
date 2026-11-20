@@ -1,0 +1,44 @@
+{
+  "scope": "56 explicitly useful human-selected boxes, sparse biased selection, revision 214",
+  "review_revision": 214,
+  "detector": "yolov8m-conf0001-nms070",
+  "criteria": {
+    "similar_iou_min": 0.5,
+    "containment_ios_min": 0.95,
+    "smaller_area_ratio": [
+      0.1,
+      0.7
+    ],
+    "possible_redundancy": "IoU>=0.5 OR smaller contained; larger containers reported separately",
+    "semantic_note": "Overlap and containment do not prove the same person. Visual confirmation is separate."
+  },
+  "input_sha256": {
+    "review": "753186920aecde24467ba5149cfe919f56ec76ec03db00d4fd90eaa6c3ad98c6",
+    "preparation_frames": "c07f947a1c6142d461d33f8b0035c713dd4d758b891e16c4757989678c02e245"
+  },
+  "totals": {
+    "raw_frames_iou_ge_050": 34,
+    "raw_boxes_iou_ge_050": 61,
+    "raw_frames_smaller_contained": 41,
+    "raw_boxes_smaller_contained": 98,
+    "raw_frames_larger_container": 38,
+    "raw_boxes_larger_container": 107,
+    "raw_frames_possible_redundancy": 47,
+    "raw_possible_redundancies": 138,
+    "prepared_frames_iou_ge_050": 34,
+    "prepared_boxes_iou_ge_050": 61,
+    "prepared_frames_smaller_contained": 41,
+    "prepared_boxes_smaller_contained": 97,
+    "prepared_frames_larger_container": 38,
+    "prepared_boxes_larger_container": 107,
+    "prepared_frames_possible_redundancy": 47,
+    "prepared_possible_redundancies": 137,
+    "reviewed_frames": 56,
+    "sufficient": 54,
+    "selected_groups_with_alternatives": 0,
+    "alternatives_grouped_with_human_selected": 0,
+    "whole_frame_boxes_removed": 29,
+    "frames_local_possible_redundancies_reduced": 1,
+    "partial": 2
+  }
+}

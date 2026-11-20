@@ -45,11 +45,12 @@ class BoxMeasurement:
 
     score és un indicador entre 0 i 1, amb mètode explícit, no una probabilitat
     calibrada ni una nota esportiva. pose_extent només descriu l'extensió dels
-    punts seleccionats. Aquest tipus no calcula ni la caixa ni l'indicador.
+    punts seleccionats. support_extent descriu una regió derivada de diverses
+    deteccions. Aquest tipus no calcula ni la caixa ni l'indicador.
     """
 
     bbox: BoundingBox  # Geometria observada o derivada de la pose, mai una predicció temporal.
-    source: Literal["detector", "pose_extent"]  # Distingeix caixa del detector i extensió de punts.
+    source: Literal["detector", "pose_extent", "support_extent"]
     score: float  # Indicador explícit; zero és vàlid i no s'elimina aquí.
     score_method: str  # Nom i, si escau, versió del càlcul per poder interpretar el valor.
 
@@ -57,7 +58,7 @@ class BoxMeasurement:
         """Valida origen i indicador sense decidir llindars ni calibrar confiança."""
         if not isinstance(self.bbox, BoundingBox):
             raise ValueError("Measurement requires a BoundingBox")
-        if self.source not in ("detector", "pose_extent"):
+        if self.source not in ("detector", "pose_extent", "support_extent"):
             raise ValueError("Unknown box measurement source")
         _finite(self.score, "score")
         if not 0 <= self.score <= 1:
@@ -76,7 +77,7 @@ class TrackingCandidate:
     """
 
     candidate_id: str  # ID únic dins del fotograma, encara sense identitat temporal.
-    source_detection_ids: tuple[str, ...]  # Una o més observacions del FrameDetections associat.
+    source_detection_ids: tuple[str, ...]  # Fonts originals; el preparador situa primer la que aporta la mesura.
     measurement: BoxMeasurement | None  # None conserva evidència no convertible en caixa utilitzable.
     issues: tuple[str, ...] = ()  # Motius o limitacions, per exemple insufficient_spatial_support.
 
@@ -94,6 +95,36 @@ class TrackingCandidate:
 
 
 @dataclass(frozen=True)
+class BoxRelation:
+    """Contenció geomètrica entre candidats, sense afirmar que siguin la mateixa persona.
+
+    Els extrems són IDs locals al fotograma. Poden existir diversos contenidors
+    per candidat; la relació no consumeix deteccions ni assigna una identitat.
+    Els nombres permeten revisar la decisió amb la política efectiva desada.
+    """
+
+    smaller_candidate_id: str  # Candidat de menor àrea, potencialment parcial o una altra persona.
+    larger_candidate_id: str  # Contenidor possible; no certifica cos complet ni actor correcte.
+    iou: float  # Intersecció / unió de les dues mesures representatives.
+    ios: float  # Intersecció / àrea de la caixa més petita.
+    area_ratio: float  # Àrea petita / gran; estrictament inferior a 1.
+    kind: Literal["ambiguous_containment"] = "ambiguous_containment"  # Hipòtesi espacial revisable.
+
+    def __post_init__(self) -> None:
+        """Impedeix autorelacions, mètriques impossibles i etiquetes que afirmin identitat."""
+        _identifier(self.smaller_candidate_id, "smaller candidate ID")
+        _identifier(self.larger_candidate_id, "larger candidate ID")
+        if self.smaller_candidate_id == self.larger_candidate_id or self.kind != "ambiguous_containment":
+            raise ValueError("Box relation requires distinct candidates and ambiguous_containment")
+        for name in ("iou", "ios", "area_ratio"):
+            _finite(getattr(self, name), name)
+            if not 0 <= getattr(self, name) <= 1:
+                raise ValueError(f"{name} must be within [0, 1]")
+        if not 0 < self.area_ratio < 1 or self.iou > self.ios + 1e-12:
+            raise ValueError("Invalid containment geometry")
+
+
+@dataclass(frozen=True)
 class TrackingFrame:
     """Entrada de tracking: font intacta i candidats preparats del mateix instant.
 
@@ -104,6 +135,7 @@ class TrackingFrame:
 
     source: FrameDetections  # Observacions canòniques amb temps, punts i procedència originals.
     candidates: tuple[TrackingCandidate, ...]  # Resultat immutable de la preparació d'aquest instant.
+    relations: tuple[BoxRelation, ...] = ()  # Avisos espacials; no eliminen candidats ni creen IDs temporals.
 
     def __post_init__(self) -> None:
         """Rebutja referències inexistents i l'ús de la mateixa detecció en dos candidats."""
@@ -121,6 +153,15 @@ class TrackingFrame:
             if refs & used:
                 raise ValueError("Source detection used by multiple candidates")
             used.update(refs)
+        if not isinstance(self.relations, tuple) or any(not isinstance(r, BoxRelation) for r in self.relations):
+            raise ValueError("Tracking frame requires a tuple of BoxRelation")
+        candidates = {c.candidate_id: c for c in self.candidates}
+        pairs = set()
+        for relation in self.relations:
+            pair = (relation.smaller_candidate_id, relation.larger_candidate_id)
+            if pair in pairs or any(ref not in candidates or candidates[ref].measurement is None for ref in pair):
+                raise ValueError("Box relations require unique measured candidates from this frame")
+            pairs.add(pair)
 
 
 @dataclass(frozen=True)

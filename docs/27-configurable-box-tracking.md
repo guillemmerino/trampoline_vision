@@ -6,6 +6,16 @@ El tracker de caixes és el responsable de la identitat temporal. No necessita
 OpenPose per seguir persones. L'aparença és una evidència addicional que pot
 consumir BoT-SORT; no és un segon tracker ni el selector del gimnasta.
 
+L’objectiu actual de calibratge prioritza que l’ID del gimnasta es mantingui
+associat a la mateixa persona. La caixa pot créixer o canviar de forma si
+ajuda a mantenir-la localitzada; el marge i la inclusió temporal d’un assistent
+són costos acceptables, mentre que transferir-li l’ID és un error.
+La precisió de les articulacions i la seva coherència es revisaran després
+de reconstruir els esquelets i associar-los a aquestes identitats.
+Aquesta és una prioritat d’estudi: no acredita que els backends actuals ja
+la satisfacin ni canvia les mesures originals exportades.
+[Criteris i estat de la fase](../benchmarks/calibration/docs/STATE.md).
+
 ```text
 Vídeo original + caixes de persona enregistrades
     ingestion → FrameDetections[PersonBoxDetection]
@@ -25,6 +35,11 @@ caixes/identitats. No haurà de crear la identitat temporal a partir de
 l'ordre de les persones d'OpenPose. Aquest matching i el mòdul de coherència
 de l'actor encara no s'executen.
 
+Si la reconstrucció utilitza retalls de les caixes o reescalat, cal conservar
+les transformacions per retornar les articulacions a coordenades del fotograma
+original. Les trajectòries articulars no s’han de confondre amb el moviment
+del centre ni dels límits variables de la caixa.
+
 La lectura OpenPose existent continua disponible com a baseline històric
 amb caixes derivades de pose. El nou recorregut de caixes no crea 25
 articulacions absents per simular una pose i no aplica la deduplicació
@@ -41,6 +56,8 @@ geomètrica dissenyada per a hipòtesis de pose multirotació.
 | `ingestion/detections.py` | Selecció del lector segons el manifest. |
 | `ingestion/tracking_config.py` | Resol pipeline → perfil → model; cada ruta és relativa al fitxer que la declara. |
 | `perception/appearance/` | Configuració i extractor OSNet; no assigna identitats. |
+| `preparation/boxes.py` | Preparació de caixes configurable, amb fonts intactes; la contenció no assigna identitat. |
+| `results/preparation.py` | Auditoria completa de preparació, independent del JSONL compacte de tracking. |
 | `infrastructure/embedding_cache.py` | Persistència SQLite de descriptors verificables, independent del tracker. |
 | `tracking/backend.py` | Port d'associació; sense dependències visuals en importar-lo. |
 | `tracking/factory.py`, `tracking/backends/` | Registre explícit i adaptadors de biblioteques fixades. |
