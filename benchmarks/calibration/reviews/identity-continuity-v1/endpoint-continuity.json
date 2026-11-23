@@ -1,0 +1,593 @@
+{
+  "source": "runs/calibration/identity-endpoint-review-v1/diagnostics.json",
+  "human_validated": false,
+  "reference_subject_policy": "one_stable_gymnast_subject_per_video_visible_annotations_only",
+  "both_endpoints_matching": "provisional_geometry_observed_only",
+  "cases": [
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "subject_id": "JPN_AGE_1_000905_31.0:gymnast",
+      "reference_sha256": "becb8f101a3cec1627451fd4890fe3c6e14bcad1581f05fdeeaa1fdf7e8e9409",
+      "modes": {
+        "iou50": {
+          "ocsort": {
+            "pairs": 66,
+            "same_id": 33,
+            "changed_id": 9,
+            "missing_left": 10,
+            "missing_right": 9,
+            "missing_both": 5,
+            "both_endpoints_observed": 42,
+            "same_id_fraction_when_both_observed": 0.7857142857142857,
+            "same_id_fraction_all_visible_pairs": 0.5,
+            "visible_annotations": 67,
+            "matched_annotations": 52,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 20,
+            "best_fixed_ids": [
+              "ocsort:74"
+            ]
+          },
+          "bytetrack": {
+            "pairs": 66,
+            "same_id": 36,
+            "changed_id": 9,
+            "missing_left": 9,
+            "missing_right": 8,
+            "missing_both": 4,
+            "both_endpoints_observed": 45,
+            "same_id_fraction_when_both_observed": 0.8,
+            "same_id_fraction_all_visible_pairs": 0.5454545454545454,
+            "visible_annotations": 67,
+            "matched_annotations": 54,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 11,
+            "best_fixed_ids": [
+              "bytetrack:57"
+            ]
+          },
+          "botsort": {
+            "pairs": 66,
+            "same_id": 43,
+            "changed_id": 6,
+            "missing_left": 7,
+            "missing_right": 6,
+            "missing_both": 4,
+            "both_endpoints_observed": 49,
+            "same_id_fraction_when_both_observed": 0.8775510204081632,
+            "same_id_fraction_all_visible_pairs": 0.6515151515151515,
+            "visible_annotations": 67,
+            "matched_annotations": 56,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 14,
+            "best_fixed_ids": [
+              "botsort:137",
+              "botsort:185"
+            ]
+          },
+          "botsort-reid": {
+            "pairs": 66,
+            "same_id": 43,
+            "changed_id": 6,
+            "missing_left": 7,
+            "missing_right": 6,
+            "missing_both": 4,
+            "both_endpoints_observed": 49,
+            "same_id_fraction_when_both_observed": 0.8775510204081632,
+            "same_id_fraction_all_visible_pairs": 0.6515151515151515,
+            "visible_annotations": 67,
+            "matched_annotations": 56,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 17,
+            "best_fixed_ids": [
+              "botsort:144"
+            ]
+          }
+        },
+        "coverage25_purity50": {
+          "ocsort": {
+            "pairs": 66,
+            "same_id": 33,
+            "changed_id": 9,
+            "missing_left": 11,
+            "missing_right": 10,
+            "missing_both": 3,
+            "both_endpoints_observed": 42,
+            "same_id_fraction_when_both_observed": 0.7857142857142857,
+            "same_id_fraction_all_visible_pairs": 0.5,
+            "visible_annotations": 67,
+            "matched_annotations": 53,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 20,
+            "best_fixed_ids": [
+              "ocsort:74"
+            ]
+          },
+          "bytetrack": {
+            "pairs": 66,
+            "same_id": 37,
+            "changed_id": 10,
+            "missing_left": 9,
+            "missing_right": 8,
+            "missing_both": 2,
+            "both_endpoints_observed": 47,
+            "same_id_fraction_when_both_observed": 0.7872340425531915,
+            "same_id_fraction_all_visible_pairs": 0.5606060606060606,
+            "visible_annotations": 67,
+            "matched_annotations": 56,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 11,
+            "best_fixed_ids": [
+              "bytetrack:57"
+            ]
+          },
+          "botsort": {
+            "pairs": 66,
+            "same_id": 43,
+            "changed_id": 6,
+            "missing_left": 8,
+            "missing_right": 7,
+            "missing_both": 2,
+            "both_endpoints_observed": 49,
+            "same_id_fraction_when_both_observed": 0.8775510204081632,
+            "same_id_fraction_all_visible_pairs": 0.6515151515151515,
+            "visible_annotations": 67,
+            "matched_annotations": 57,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 14,
+            "best_fixed_ids": [
+              "botsort:137",
+              "botsort:185"
+            ]
+          },
+          "botsort-reid": {
+            "pairs": 66,
+            "same_id": 43,
+            "changed_id": 6,
+            "missing_left": 8,
+            "missing_right": 7,
+            "missing_both": 2,
+            "both_endpoints_observed": 49,
+            "same_id_fraction_when_both_observed": 0.8775510204081632,
+            "same_id_fraction_all_visible_pairs": 0.6515151515151515,
+            "visible_annotations": 67,
+            "matched_annotations": 57,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 17,
+            "best_fixed_ids": [
+              "botsort:144"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "subject_id": "JPN_AGE_2_000709_37.0:gymnast",
+      "reference_sha256": "3be2cef8d28853dd557b76dc5252708f3430481e057888927916f19f6edfc7ad",
+      "modes": {
+        "iou50": {
+          "ocsort": {
+            "pairs": 70,
+            "same_id": 27,
+            "changed_id": 4,
+            "missing_left": 14,
+            "missing_right": 13,
+            "missing_both": 12,
+            "both_endpoints_observed": 31,
+            "same_id_fraction_when_both_observed": 0.8709677419354839,
+            "same_id_fraction_all_visible_pairs": 0.38571428571428573,
+            "visible_annotations": 71,
+            "matched_annotations": 45,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 11,
+            "best_fixed_ids": [
+              "ocsort:21"
+            ]
+          },
+          "bytetrack": {
+            "pairs": 70,
+            "same_id": 32,
+            "changed_id": 3,
+            "missing_left": 13,
+            "missing_right": 12,
+            "missing_both": 10,
+            "both_endpoints_observed": 35,
+            "same_id_fraction_when_both_observed": 0.9142857142857143,
+            "same_id_fraction_all_visible_pairs": 0.45714285714285713,
+            "visible_annotations": 71,
+            "matched_annotations": 48,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 11,
+            "best_fixed_ids": [
+              "bytetrack:75"
+            ]
+          },
+          "botsort": {
+            "pairs": 70,
+            "same_id": 33,
+            "changed_id": 2,
+            "missing_left": 13,
+            "missing_right": 12,
+            "missing_both": 10,
+            "both_endpoints_observed": 35,
+            "same_id_fraction_when_both_observed": 0.9428571428571428,
+            "same_id_fraction_all_visible_pairs": 0.4714285714285714,
+            "visible_annotations": 71,
+            "matched_annotations": 48,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 14,
+            "best_fixed_ids": [
+              "botsort:158"
+            ]
+          },
+          "botsort-reid": {
+            "pairs": 70,
+            "same_id": 33,
+            "changed_id": 2,
+            "missing_left": 13,
+            "missing_right": 12,
+            "missing_both": 10,
+            "both_endpoints_observed": 35,
+            "same_id_fraction_when_both_observed": 0.9428571428571428,
+            "same_id_fraction_all_visible_pairs": 0.4714285714285714,
+            "visible_annotations": 71,
+            "matched_annotations": 48,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 14,
+            "best_fixed_ids": [
+              "botsort:49"
+            ]
+          }
+        },
+        "coverage25_purity50": {
+          "ocsort": {
+            "pairs": 70,
+            "same_id": 30,
+            "changed_id": 5,
+            "missing_left": 14,
+            "missing_right": 13,
+            "missing_both": 8,
+            "both_endpoints_observed": 35,
+            "same_id_fraction_when_both_observed": 0.8571428571428571,
+            "same_id_fraction_all_visible_pairs": 0.42857142857142855,
+            "visible_annotations": 71,
+            "matched_annotations": 49,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 12,
+            "best_fixed_ids": [
+              "ocsort:21"
+            ]
+          },
+          "bytetrack": {
+            "pairs": 70,
+            "same_id": 33,
+            "changed_id": 6,
+            "missing_left": 13,
+            "missing_right": 12,
+            "missing_both": 6,
+            "both_endpoints_observed": 39,
+            "same_id_fraction_when_both_observed": 0.8461538461538461,
+            "same_id_fraction_all_visible_pairs": 0.4714285714285714,
+            "visible_annotations": 71,
+            "matched_annotations": 52,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 11,
+            "best_fixed_ids": [
+              "bytetrack:75"
+            ]
+          },
+          "botsort": {
+            "pairs": 70,
+            "same_id": 35,
+            "changed_id": 2,
+            "missing_left": 15,
+            "missing_right": 14,
+            "missing_both": 4,
+            "both_endpoints_observed": 37,
+            "same_id_fraction_when_both_observed": 0.9459459459459459,
+            "same_id_fraction_all_visible_pairs": 0.5,
+            "visible_annotations": 71,
+            "matched_annotations": 52,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 15,
+            "best_fixed_ids": [
+              "botsort:158"
+            ]
+          },
+          "botsort-reid": {
+            "pairs": 70,
+            "same_id": 36,
+            "changed_id": 3,
+            "missing_left": 14,
+            "missing_right": 13,
+            "missing_both": 4,
+            "both_endpoints_observed": 39,
+            "same_id_fraction_when_both_observed": 0.9230769230769231,
+            "same_id_fraction_all_visible_pairs": 0.5142857142857142,
+            "visible_annotations": 71,
+            "matched_annotations": 53,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 16,
+            "best_fixed_ids": [
+              "botsort:49"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "subject_id": "JPN_AGE_3_001351_19.0:gymnast",
+      "reference_sha256": "81270d79e86c7ee214f33a7ee7b8076d16019ddac1faa8614ab12c04132b6bb4",
+      "modes": {
+        "iou50": {
+          "ocsort": {
+            "pairs": 66,
+            "same_id": 28,
+            "changed_id": 2,
+            "missing_left": 12,
+            "missing_right": 11,
+            "missing_both": 13,
+            "both_endpoints_observed": 30,
+            "same_id_fraction_when_both_observed": 0.9333333333333333,
+            "same_id_fraction_all_visible_pairs": 0.42424242424242425,
+            "visible_annotations": 67,
+            "matched_annotations": 42,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 13,
+            "best_fixed_ids": [
+              "ocsort:37"
+            ]
+          },
+          "bytetrack": {
+            "pairs": 66,
+            "same_id": 32,
+            "changed_id": 4,
+            "missing_left": 11,
+            "missing_right": 10,
+            "missing_both": 9,
+            "both_endpoints_observed": 36,
+            "same_id_fraction_when_both_observed": 0.8888888888888888,
+            "same_id_fraction_all_visible_pairs": 0.48484848484848486,
+            "visible_annotations": 67,
+            "matched_annotations": 47,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 18,
+            "best_fixed_ids": [
+              "bytetrack:36"
+            ]
+          },
+          "botsort": {
+            "pairs": 66,
+            "same_id": 33,
+            "changed_id": 2,
+            "missing_left": 10,
+            "missing_right": 9,
+            "missing_both": 12,
+            "both_endpoints_observed": 35,
+            "same_id_fraction_when_both_observed": 0.9428571428571428,
+            "same_id_fraction_all_visible_pairs": 0.5,
+            "visible_annotations": 67,
+            "matched_annotations": 45,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 18,
+            "best_fixed_ids": [
+              "botsort:194"
+            ]
+          },
+          "botsort-reid": {
+            "pairs": 66,
+            "same_id": 31,
+            "changed_id": 2,
+            "missing_left": 12,
+            "missing_right": 11,
+            "missing_both": 10,
+            "both_endpoints_observed": 33,
+            "same_id_fraction_when_both_observed": 0.9393939393939394,
+            "same_id_fraction_all_visible_pairs": 0.4696969696969697,
+            "visible_annotations": 67,
+            "matched_annotations": 45,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 19,
+            "best_fixed_ids": [
+              "botsort:89"
+            ]
+          }
+        },
+        "coverage25_purity50": {
+          "ocsort": {
+            "pairs": 66,
+            "same_id": 29,
+            "changed_id": 2,
+            "missing_left": 12,
+            "missing_right": 11,
+            "missing_both": 12,
+            "both_endpoints_observed": 31,
+            "same_id_fraction_when_both_observed": 0.9354838709677419,
+            "same_id_fraction_all_visible_pairs": 0.4393939393939394,
+            "visible_annotations": 67,
+            "matched_annotations": 43,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 13,
+            "best_fixed_ids": [
+              "ocsort:37"
+            ]
+          },
+          "bytetrack": {
+            "pairs": 66,
+            "same_id": 35,
+            "changed_id": 4,
+            "missing_left": 11,
+            "missing_right": 10,
+            "missing_both": 6,
+            "both_endpoints_observed": 39,
+            "same_id_fraction_when_both_observed": 0.8974358974358975,
+            "same_id_fraction_all_visible_pairs": 0.5303030303030303,
+            "visible_annotations": 67,
+            "matched_annotations": 50,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 18,
+            "best_fixed_ids": [
+              "bytetrack:36"
+            ]
+          },
+          "botsort": {
+            "pairs": 66,
+            "same_id": 35,
+            "changed_id": 2,
+            "missing_left": 10,
+            "missing_right": 9,
+            "missing_both": 10,
+            "both_endpoints_observed": 37,
+            "same_id_fraction_when_both_observed": 0.9459459459459459,
+            "same_id_fraction_all_visible_pairs": 0.5303030303030303,
+            "visible_annotations": 67,
+            "matched_annotations": 47,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 18,
+            "best_fixed_ids": [
+              "botsort:194"
+            ]
+          },
+          "botsort-reid": {
+            "pairs": 66,
+            "same_id": 33,
+            "changed_id": 2,
+            "missing_left": 12,
+            "missing_right": 11,
+            "missing_both": 8,
+            "both_endpoints_observed": 35,
+            "same_id_fraction_when_both_observed": 0.9428571428571428,
+            "same_id_fraction_all_visible_pairs": 0.5,
+            "visible_annotations": 67,
+            "matched_annotations": 47,
+            "single_id_covers_all_matched_annotations": false,
+            "single_id_covers_all_visible_annotations": false,
+            "best_fixed_id_annotation_count": 20,
+            "best_fixed_ids": [
+              "botsort:89"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "totals": {
+    "iou50": {
+      "ocsort": {
+        "pairs": 202,
+        "same_id": 88,
+        "changed_id": 15,
+        "missing_left": 36,
+        "missing_right": 33,
+        "missing_both": 30,
+        "both_endpoints_observed": 103,
+        "same_id_fraction_when_both_observed": 0.8543689320388349,
+        "same_id_fraction_all_visible_pairs": 0.43564356435643564
+      },
+      "bytetrack": {
+        "pairs": 202,
+        "same_id": 100,
+        "changed_id": 16,
+        "missing_left": 33,
+        "missing_right": 30,
+        "missing_both": 23,
+        "both_endpoints_observed": 116,
+        "same_id_fraction_when_both_observed": 0.8620689655172413,
+        "same_id_fraction_all_visible_pairs": 0.49504950495049505
+      },
+      "botsort": {
+        "pairs": 202,
+        "same_id": 109,
+        "changed_id": 10,
+        "missing_left": 30,
+        "missing_right": 27,
+        "missing_both": 26,
+        "both_endpoints_observed": 119,
+        "same_id_fraction_when_both_observed": 0.9159663865546218,
+        "same_id_fraction_all_visible_pairs": 0.5396039603960396
+      },
+      "botsort-reid": {
+        "pairs": 202,
+        "same_id": 107,
+        "changed_id": 10,
+        "missing_left": 32,
+        "missing_right": 29,
+        "missing_both": 24,
+        "both_endpoints_observed": 117,
+        "same_id_fraction_when_both_observed": 0.9145299145299145,
+        "same_id_fraction_all_visible_pairs": 0.5297029702970297
+      }
+    },
+    "coverage25_purity50": {
+      "ocsort": {
+        "pairs": 202,
+        "same_id": 92,
+        "changed_id": 16,
+        "missing_left": 37,
+        "missing_right": 34,
+        "missing_both": 23,
+        "both_endpoints_observed": 108,
+        "same_id_fraction_when_both_observed": 0.8518518518518519,
+        "same_id_fraction_all_visible_pairs": 0.45544554455445546
+      },
+      "bytetrack": {
+        "pairs": 202,
+        "same_id": 105,
+        "changed_id": 20,
+        "missing_left": 33,
+        "missing_right": 30,
+        "missing_both": 14,
+        "both_endpoints_observed": 125,
+        "same_id_fraction_when_both_observed": 0.84,
+        "same_id_fraction_all_visible_pairs": 0.5198019801980198
+      },
+      "botsort": {
+        "pairs": 202,
+        "same_id": 113,
+        "changed_id": 10,
+        "missing_left": 33,
+        "missing_right": 30,
+        "missing_both": 16,
+        "both_endpoints_observed": 123,
+        "same_id_fraction_when_both_observed": 0.9186991869918699,
+        "same_id_fraction_all_visible_pairs": 0.5594059405940595
+      },
+      "botsort-reid": {
+        "pairs": 202,
+        "same_id": 112,
+        "changed_id": 11,
+        "missing_left": 34,
+        "missing_right": 31,
+        "missing_both": 14,
+        "both_endpoints_observed": 123,
+        "same_id_fraction_when_both_observed": 0.9105691056910569,
+        "same_id_fraction_all_visible_pairs": 0.5544554455445545
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "cases": ["JPN_AGE_1_000905_31.0", "JPN_AGE_2_000709_37.0", "JPN_AGE_3_001351_19.0"],
+  "simulation": {
+    "seeds": 12,
+    "frames": 180,
+    "fps": 30,
+    "scenarios": ["clean", "box_changes", "weak_and_missing", "near_contact", "combined", "camera_shift"]
+  },
+  "confirmation_frames": 3,
+  "high_score": 0.1,
+  "max_lost_s": 0.5,
+  "variants": {
+    "buffered": {"motion": "last"},
+    "kalman_cv": {"motion": "kalman"},
+    "kalman_guard": {"motion": "kalman", "guard": true},
+    "velocity": {"motion": "velocity"},
+    "flight": {"motion": "flight"},
+    "flight_guard": {"motion": "flight", "guard": true},
+    "flight_weak": {"motion": "flight", "weak_score": 0.001},
+    "flight_guard_weak": {"motion": "flight", "guard": true, "weak_score": 0.001},
+    "flight_guard_reid": {"motion": "flight", "guard": true, "appearance": true},
+    "flight_lookahead": {"motion": "flight", "guard": true, "lookahead_frames": 3},
+    "buffered_guard": {"motion": "last", "guard": true},
+    "buffered_guard_weak": {"motion": "last", "guard": true, "weak_score": 0.001},
+    "buffered_guard_reid": {"motion": "last", "guard": true, "appearance": true},
+    "buffered_weak": {"motion": "last", "weak_score": 0.001},
+    "kalman_weak": {"motion": "kalman", "weak_score": 0.001},
+    "velocity_weak": {"motion": "velocity", "weak_score": 0.001},
+    "buffered_selective_weak": {"motion": "last", "weak_score": 0.001, "weak_guard": true},
+    "kalman_selective_weak": {"motion": "kalman", "weak_score": 0.001, "weak_guard": true},
+    "flight_selective_weak": {"motion": "flight", "weak_score": 0.001, "weak_guard": true},
+    "buffered_selective_weak_reid": {"motion": "last", "weak_score": 0.001, "weak_guard": true, "appearance": true}
+  }
+}

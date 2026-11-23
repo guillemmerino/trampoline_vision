@@ -1,0 +1,14 @@
+{
+  "catalog": "benchmarks/calibration/config/studies/recovery-case-catalog-v1.json",
+  "catalog_sha256": "6a3bfdef187501a5a095ee4d5101f4413957c3c87a5aa910560f8c63471b15d8",
+  "simulation": "benchmarks/calibration/config/studies/recovery-subject-path-simulation-v1.json",
+  "simulation_sha256": "7048aee2593e447048456feb214d3fedbb2abded1af914d3d5304a75d664ab4c",
+  "visual_review": "benchmarks/calibration/reviews/recovery-case-catalog-v1/subject-path-v1-visual.json",
+  "visual_review_sha256": "71b1093fea3a3c737012c5c82e57106091daba793e6da8856211785d0bc16618",
+  "audit_manifest_sha256": "cc48fe8ecf538f77c320c23e3f6d5da1800272595ac935344a92acadacd16cc7",
+  "seeds": {
+    "JPN_AGE_1_000905_31.0": {"frame": 8, "track_id": "1", "candidate_id": "8:box_candidate:6"},
+    "JPN_AGE_2_000709_37.0": {"frame": 10, "track_id": "4", "candidate_id": "10:box_candidate:2"},
+    "JPN_AGE_3_001351_19.0": {"frame": 3, "track_id": "0", "candidate_id": "3:box_candidate:5"}
+  }
+}

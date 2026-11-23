@@ -49,10 +49,41 @@ candidates actuals, començant pels tres vídeos inicials. Revisar finestres
 contínues per separar absència de candidata, fallada d’associació, canvi d’ID
 i transferència a altres persones. El [protocol nou](../config/studies/identity-continuity-v1.md)
 fixa tres vídeos complets, quatre perfils i revisió contínua; la bateria
-encara no s’ha executat. La comanda fa només preflight per defecte.
+ja s’ha executat i s’han verificat els 47 artefactes i la paritat de candidates.
+La [revisió provisional](../reviews/identity-continuity-v1/README.md) troba
+menys fragmentació dispersa amb BoT-SORT, una aportació modesta de ReID i
+transferències a assistents també amb ReID. No hi ha guanyador validat.
+S’han inspeccionat 109 frames únics, amb 46 frames de finestres curtes
+contínues; falta completar les 1.620 frames de revisió del protocol.
+La comanda de bateria continua fent només preflight per defecte.
 
 El registre temporal, els quatre perfils, els descriptors i les exportacions
 JSONL/MP4 ja existeixen. Els estudis previs de tracking aporten antecedents,
 però no substitueixen el contrast amb la preparació actual. `recovery` disposa
 d’auditoria experimental de fragments; no aplica unions definitives.
 [Perfils i flux executable](../../../docs/27-configurable-box-tracking.md).
+
+Per al tracker propi, s’ha adoptat que **totes les caixes seleccionades
+(fins a 12) siguin elegibles per mantenir un ID confirmat, sense un segon
+tall de confiança YOLO**. La confiança es pot usar com a cost suau i la
+confirmació d’IDs nous té una política separada. [Decisió de disseny](../../../docs/decisions/0012-tracking-candidates-without-confidence-cutoff.md) · [Simulació de confiança i silueta](../config/studies/trampoline-silhouette-v1.md).
+
+La **velocitat simple amb penalització suau de YOLO** és la base
+experimental per provar el reconciliador. Es compararan les propostes
+d’unió amb les traces congelades de la variant `velocity_soft_yolo`.
+[Decisió sobre la base experimental](../../../docs/decisions/0013-simple-velocity-baseline-for-reconciliation.md).
+
+El [catàleg provisional per a recovery](../config/studies/recovery-case-catalog-v1.md)
+ja conté 18 finestres amb traces i clips revisables i fixa tres vídeos
+de reserva. Les àncores d’actor i els límits dels trams queden pendents
+de revisió humana independent.
+
+La [prova de recovery geomètric](../config/studies/recovery-geometry-v1.md)
+obté 33/45 parells d’àncores en la mateixa cadena, amb quatre guanys i
+quatre pèrdues respecte dels IDs originals. En quatre cadenes coincideixen
+àncores del gimnasta i d’altres actors.
+
+La [prova del graf geomètric amb caixa inicial comuna](../config/studies/recovery-subject-path-v1.md)
+ha reproduït el risc detectat en la simulació. A les àncores revisades,
+el graf afavoreix espectadors, jutges i caixes mixtes, tot i que té
+disponibles les candidates útils del gimnasta.

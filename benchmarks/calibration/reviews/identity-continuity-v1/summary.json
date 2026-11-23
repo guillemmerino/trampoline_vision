@@ -1,0 +1,362 @@
+{
+  "status": "provisional_partial_review",
+  "human_validated": false,
+  "source_run": "runs/calibration/identity-continuity-v1",
+  "source_completed_sha256": "0f78bf3e76eb2f8c7116da890c45e81cd35e552e5fb73c70d105126c51d3a852",
+  "integrity": {
+    "verified_artifacts": 47,
+    "candidate_parity": true,
+    "changed_source_files": []
+  },
+  "sparse_annotated_frames": 240,
+  "sparse_visible_frames": 205,
+  "continuous_selected_frames": 46,
+  "continuous_planned_frames": 1620,
+  "manual_track_records": 63,
+  "confirmed_transfer_examples_not_exhaustive": 6,
+  "cases": [
+    {
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "frames": 930,
+      "reference_states": {
+        "visible": 67,
+        "ambiguous": 13
+      },
+      "diagnostics": {
+        "iou50": {
+          "visible_references": 67,
+          "available_candidates": 64,
+          "profiles": {
+            "ocsort": {
+              "observed_matches": 52,
+              "prediction_matches": 6,
+              "prediction_only": 6,
+              "available_no_observation": 12,
+              "distinct_matched_ids": 13,
+              "minimum_changes_across_sparse_matches": 14
+            },
+            "bytetrack": {
+              "observed_matches": 54,
+              "prediction_matches": 5,
+              "prediction_only": 4,
+              "available_no_observation": 10,
+              "distinct_matched_ids": 17,
+              "minimum_changes_across_sparse_matches": 16
+            },
+            "botsort": {
+              "observed_matches": 56,
+              "prediction_matches": 8,
+              "prediction_only": 7,
+              "available_no_observation": 8,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 9
+            },
+            "botsort-reid": {
+              "observed_matches": 56,
+              "prediction_matches": 9,
+              "prediction_only": 7,
+              "available_no_observation": 8,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 8
+            }
+          }
+        },
+        "coverage25_purity50": {
+          "visible_references": 67,
+          "available_candidates": 65,
+          "profiles": {
+            "ocsort": {
+              "observed_matches": 53,
+              "prediction_matches": 14,
+              "prediction_only": 10,
+              "available_no_observation": 12,
+              "distinct_matched_ids": 13,
+              "minimum_changes_across_sparse_matches": 14
+            },
+            "bytetrack": {
+              "observed_matches": 56,
+              "prediction_matches": 9,
+              "prediction_only": 6,
+              "available_no_observation": 9,
+              "distinct_matched_ids": 18,
+              "minimum_changes_across_sparse_matches": 17
+            },
+            "botsort": {
+              "observed_matches": 57,
+              "prediction_matches": 9,
+              "prediction_only": 8,
+              "available_no_observation": 8,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 9
+            },
+            "botsort-reid": {
+              "observed_matches": 57,
+              "prediction_matches": 10,
+              "prediction_only": 8,
+              "available_no_observation": 8,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 8
+            }
+          }
+        }
+      }
+    },
+    {
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "frames": 1110,
+      "reference_states": {
+        "visible": 71,
+        "ambiguous": 9
+      },
+      "diagnostics": {
+        "iou50": {
+          "visible_references": 71,
+          "available_candidates": 58,
+          "profiles": {
+            "ocsort": {
+              "observed_matches": 45,
+              "prediction_matches": 9,
+              "prediction_only": 9,
+              "available_no_observation": 13,
+              "distinct_matched_ids": 15,
+              "minimum_changes_across_sparse_matches": 14
+            },
+            "bytetrack": {
+              "observed_matches": 48,
+              "prediction_matches": 6,
+              "prediction_only": 6,
+              "available_no_observation": 10,
+              "distinct_matched_ids": 14,
+              "minimum_changes_across_sparse_matches": 13
+            },
+            "botsort": {
+              "observed_matches": 48,
+              "prediction_matches": 4,
+              "prediction_only": 4,
+              "available_no_observation": 10,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 8
+            },
+            "botsort-reid": {
+              "observed_matches": 48,
+              "prediction_matches": 5,
+              "prediction_only": 5,
+              "available_no_observation": 10,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 8
+            }
+          }
+        },
+        "coverage25_purity50": {
+          "visible_references": 71,
+          "available_candidates": 64,
+          "profiles": {
+            "ocsort": {
+              "observed_matches": 49,
+              "prediction_matches": 14,
+              "prediction_only": 14,
+              "available_no_observation": 15,
+              "distinct_matched_ids": 16,
+              "minimum_changes_across_sparse_matches": 15
+            },
+            "bytetrack": {
+              "observed_matches": 52,
+              "prediction_matches": 11,
+              "prediction_only": 11,
+              "available_no_observation": 12,
+              "distinct_matched_ids": 17,
+              "minimum_changes_across_sparse_matches": 16
+            },
+            "botsort": {
+              "observed_matches": 52,
+              "prediction_matches": 11,
+              "prediction_only": 11,
+              "available_no_observation": 12,
+              "distinct_matched_ids": 10,
+              "minimum_changes_across_sparse_matches": 9
+            },
+            "botsort-reid": {
+              "observed_matches": 53,
+              "prediction_matches": 11,
+              "prediction_only": 11,
+              "available_no_observation": 11,
+              "distinct_matched_ids": 10,
+              "minimum_changes_across_sparse_matches": 9
+            }
+          }
+        }
+      }
+    },
+    {
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "frames": 570,
+      "reference_states": {
+        "visible": 67,
+        "ambiguous": 12,
+        "occluded": 1
+      },
+      "diagnostics": {
+        "iou50": {
+          "visible_references": 67,
+          "available_candidates": 57,
+          "profiles": {
+            "ocsort": {
+              "observed_matches": 42,
+              "prediction_matches": 11,
+              "prediction_only": 11,
+              "available_no_observation": 15,
+              "distinct_matched_ids": 10,
+              "minimum_changes_across_sparse_matches": 8
+            },
+            "bytetrack": {
+              "observed_matches": 47,
+              "prediction_matches": 5,
+              "prediction_only": 5,
+              "available_no_observation": 10,
+              "distinct_matched_ids": 12,
+              "minimum_changes_across_sparse_matches": 9
+            },
+            "botsort": {
+              "observed_matches": 45,
+              "prediction_matches": 7,
+              "prediction_only": 7,
+              "available_no_observation": 12,
+              "distinct_matched_ids": 10,
+              "minimum_changes_across_sparse_matches": 9
+            },
+            "botsort-reid": {
+              "observed_matches": 45,
+              "prediction_matches": 10,
+              "prediction_only": 10,
+              "available_no_observation": 12,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 8
+            }
+          }
+        },
+        "coverage25_purity50": {
+          "visible_references": 67,
+          "available_candidates": 60,
+          "profiles": {
+            "ocsort": {
+              "observed_matches": 43,
+              "prediction_matches": 14,
+              "prediction_only": 14,
+              "available_no_observation": 17,
+              "distinct_matched_ids": 10,
+              "minimum_changes_across_sparse_matches": 8
+            },
+            "bytetrack": {
+              "observed_matches": 50,
+              "prediction_matches": 6,
+              "prediction_only": 6,
+              "available_no_observation": 10,
+              "distinct_matched_ids": 12,
+              "minimum_changes_across_sparse_matches": 9
+            },
+            "botsort": {
+              "observed_matches": 47,
+              "prediction_matches": 7,
+              "prediction_only": 7,
+              "available_no_observation": 13,
+              "distinct_matched_ids": 10,
+              "minimum_changes_across_sparse_matches": 9
+            },
+            "botsort-reid": {
+              "observed_matches": 47,
+              "prediction_matches": 11,
+              "prediction_only": 11,
+              "available_no_observation": 13,
+              "distinct_matched_ids": 9,
+              "minimum_changes_across_sparse_matches": 8
+            }
+          }
+        }
+      }
+    }
+  ],
+  "aggregates": {
+    "iou50": {
+      "visible_references": 205,
+      "available_candidates": 179,
+      "profiles": {
+        "ocsort": {
+          "observed_matches": 139,
+          "prediction_matches": 26,
+          "prediction_only": 26,
+          "available_no_observation": 40,
+          "distinct_matched_ids": 38,
+          "minimum_changes_across_sparse_matches": 36
+        },
+        "bytetrack": {
+          "observed_matches": 149,
+          "prediction_matches": 16,
+          "prediction_only": 15,
+          "available_no_observation": 30,
+          "distinct_matched_ids": 43,
+          "minimum_changes_across_sparse_matches": 38
+        },
+        "botsort": {
+          "observed_matches": 149,
+          "prediction_matches": 19,
+          "prediction_only": 18,
+          "available_no_observation": 30,
+          "distinct_matched_ids": 28,
+          "minimum_changes_across_sparse_matches": 26
+        },
+        "botsort-reid": {
+          "observed_matches": 149,
+          "prediction_matches": 24,
+          "prediction_only": 22,
+          "available_no_observation": 30,
+          "distinct_matched_ids": 27,
+          "minimum_changes_across_sparse_matches": 24
+        }
+      }
+    },
+    "coverage25_purity50": {
+      "visible_references": 205,
+      "available_candidates": 189,
+      "profiles": {
+        "ocsort": {
+          "observed_matches": 145,
+          "prediction_matches": 42,
+          "prediction_only": 38,
+          "available_no_observation": 44,
+          "distinct_matched_ids": 39,
+          "minimum_changes_across_sparse_matches": 37
+        },
+        "bytetrack": {
+          "observed_matches": 158,
+          "prediction_matches": 26,
+          "prediction_only": 23,
+          "available_no_observation": 31,
+          "distinct_matched_ids": 47,
+          "minimum_changes_across_sparse_matches": 42
+        },
+        "botsort": {
+          "observed_matches": 156,
+          "prediction_matches": 27,
+          "prediction_only": 26,
+          "available_no_observation": 33,
+          "distinct_matched_ids": 29,
+          "minimum_changes_across_sparse_matches": 27
+        },
+        "botsort-reid": {
+          "observed_matches": 157,
+          "prediction_matches": 32,
+          "prediction_only": 30,
+          "available_no_observation": 32,
+          "distinct_matched_ids": 28,
+          "minimum_changes_across_sparse_matches": 25
+        }
+      }
+    }
+  },
+  "elapsed_s_by_profile": {
+    "ocsort": 106.23556784586981,
+    "bytetrack": 106.57558841863647,
+    "botsort": 106.45674242265522,
+    "botsort-reid": 197.44731602445245
+  }
+}

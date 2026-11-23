@@ -12,3 +12,11 @@ i la validació independent continuen obertes; apply no existeix.
 [Disseny](../../../docs/28-recovery-package-design.md) · [Guia executable](../../../docs/29-recovery-fragment-inspection.md).
 
 [Auditoria experimental](../../../docs/30-experimental-recovery-audit.md).
+
+El [catàleg de casos per a recovery](../../../benchmarks/calibration/config/studies/recovery-case-catalog-v1.md)
+recull les finestres de treball per avaluar l’auditoria de fragments
+sobre la base experimental de velocitat simple.
+
+`subject_path.py` conté el graf temporal experimental d’un sol subjecte.
+El banc l’executa amb NumPy i una caixa inicial explícita per vídeo.
+[Prova geomètrica i resultats](../../../benchmarks/calibration/config/studies/recovery-subject-path-v1.md).

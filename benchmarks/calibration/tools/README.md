@@ -22,3 +22,23 @@ no entrades alternatives d’aquestes eines.
 tracking per defecte i orquestra quatre perfils amb `--execute`.
 [Protocol i revisió independent](../config/studies/identity-continuity-v1.md).
 
+`analyze_identity.py` verifica les sortides congelades i compara dos
+diagnòstics geomètrics sobre referències disperses. També genera làmines de
+frames explícits. No executa models ni etiqueta automàticament la identitat.
+
+`review_recovery_cases.py` verifica els orígens del catàleg de recovery
+i exporta les finestres amb vídeo original, candidates i IDs de la
+traça congelada. [Catàleg i revisió independent](../config/studies/recovery-case-catalog-v1.md).
+
+`run_recovery_geometry.py` adapta la traça congelada al format canònic,
+executa l’auditoria existent i contrasta les seves propostes amb el catàleg.
+[Prova i procedència](../config/studies/recovery-geometry-v1.md).
+
+`simulate_recovery_subject_path.py` compara decisions locals i un camí
+de cost mínim pel gimnasta, amb escenes sintètiques i casos d’ambigüitat.
+[Pla i simulació](../config/studies/recovery-subject-path-simulation-v1.md).
+
+`run_recovery_subject_path.py` avalua les tres estratègies des de la
+mateixa caixa inicial i genera traces i clips dels resultats.
+[Pla i resultats](../config/studies/recovery-subject-path-v1.md).
+

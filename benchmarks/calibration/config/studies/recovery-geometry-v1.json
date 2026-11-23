@@ -1,0 +1,22 @@
+{
+  "catalog": "benchmarks/calibration/config/studies/recovery-case-catalog-v1.json",
+  "catalog_sha256": "6a3bfdef187501a5a095ee4d5101f4413957c3c87a5aa910560f8c63471b15d8",
+  "profile": "configs/experiments/recovery/global-geometry-v1.json",
+  "profile_sha256": "c3c8368bde6d58f124f04b74f911d5986ed14340480a1188d938c88549817eb4",
+  "gap_pairs": {
+    "age1-gap-flight": [[495, 174], [510, 191]],
+    "age1-gap-bed": [[765, 253], [778, 259]],
+    "age2-gap-same-id": [[525, 92], [531, 92]],
+    "age2-gap-late-flight": [[967, 198], [980, 222]],
+    "age3-gap-inverted": [[99, 26], [121, 60]],
+    "age3-gap-occlusion": [[440, 117], [458, 145]]
+  },
+  "transfer_pairs": {
+    "age1-transfer-judge": [[275, 29], [280, 29]],
+    "age1-transfer-spotter": [[713, 189], [722, 189]],
+    "age2-transfer-front-spotter": [[703, 125], [740, 125]],
+    "age2-transfer-rear-spotter": [[856, 195], [867, 195]],
+    "age3-transfer-audience": [[60, 0], [65, 0]],
+    "age3-transfer-rear-spotter": [[135, 60], [155, 60]]
+  }
+}

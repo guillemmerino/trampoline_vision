@@ -1,0 +1,1248 @@
+{
+  "study_id": "recovery-case-catalog-v1",
+  "status": "provisional_agent_review",
+  "source": {
+    "variant": "velocity_soft_yolo",
+    "assignments_sha256": "1daff1a6b6f370ef49b46f500f0a95bcaf5fcf6a9a5683ab5900c7cf5a3efe35",
+    "cases": {
+      "JPN_AGE_1_000905_31.0": {
+        "video_sha256": "4dcb631c2d42f41ebe1375c37697f14041fff11a76f5e3459ab0e3aea220a67e",
+        "candidates_sha256": "2e906d87715da3d89e0e6ddd5f90d168c824e28f01040d275f8d6a8f3d51ebb7"
+      },
+      "JPN_AGE_2_000709_37.0": {
+        "video_sha256": "ebfeb49c1e6162e6068fec4d80dced32d656874b9693ae94d1b8b790923a1d48",
+        "candidates_sha256": "2d5e75537f4963eff3c5aeac18ca056e4067fd4970977f92a74954e1873d39ab"
+      },
+      "JPN_AGE_3_001351_19.0": {
+        "video_sha256": "c0ececf6be92ebde27b59a8db33c35740847f43743af1f402727327b86fab608",
+        "candidates_sha256": "45890995d850b10304ce4da2c00b7a572a440bfe45ef08442fab008772008670"
+      }
+    }
+  },
+  "reserve": [
+    {
+      "case_id": "JPN_AGE_1_001107_32.0",
+      "video_sha256": "78dd2e2231f66c7e12ef8e87f3629f5ce523cec000969b3473224001e927f297"
+    },
+    {
+      "case_id": "JPN_AGE_2_000137_26.0",
+      "video_sha256": "ce09f0116e3d3a3ad319dccef5ed05c651010a1b491bfdfaabd72181a4bfd340"
+    },
+    {
+      "case_id": "JPN_AGE_3_001501_28.0",
+      "video_sha256": "08273d1306a979ae5d2d07b9855bc69cb442238ac6c6e2a8a7c97a57ae9b05ce"
+    }
+  ],
+  "windows": [
+    {
+      "id": "age1-preserve-rebound",
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "start": 95,
+      "stop": 155,
+      "crop": [
+        50,
+        310,
+        520,
+        965
+      ],
+      "type": "preserve_id",
+      "expected": "preserve_identity",
+      "focus_ids": [
+        29
+      ],
+      "samples": [
+        105,
+        114,
+        120,
+        125,
+        130,
+        136,
+        145
+      ],
+      "anchors": [
+        {
+          "frame": 105,
+          "track_id": 29,
+          "candidate_id": "105:box_candidate:6",
+          "role": "gymnast"
+        },
+        {
+          "frame": 125,
+          "track_id": 29,
+          "candidate_id": "125:box_candidate:5",
+          "role": "gymnast"
+        },
+        {
+          "frame": 145,
+          "track_id": 29,
+          "candidate_id": "145:box_candidate:0",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [],
+      "notes": "L’ID 29 segueix el gimnasta en la baixada i la pujada del rebot, prop dels assistents."
+    },
+    {
+      "id": "age1-transfer-judge",
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "start": 246,
+      "stop": 306,
+      "crop": [
+        50,
+        310,
+        520,
+        965
+      ],
+      "type": "transfer",
+      "expected": "review_cut_and_reject_cross_actor_link",
+      "focus_ids": [
+        29,
+        114
+      ],
+      "samples": [
+        255,
+        264,
+        270,
+        275,
+        280,
+        286,
+        295
+      ],
+      "anchors": [
+        {
+          "frame": 255,
+          "track_id": 29,
+          "candidate_id": "255:box_candidate:9",
+          "role": "gymnast"
+        },
+        {
+          "frame": 275,
+          "track_id": 29,
+          "candidate_id": "275:box_candidate:30",
+          "role": "gymnast"
+        },
+        {
+          "frame": 280,
+          "track_id": 29,
+          "candidate_id": "280:box_candidate:2",
+          "role": "judge"
+        },
+        {
+          "frame": 280,
+          "track_id": 114,
+          "candidate_id": "280:box_candidate:0",
+          "role": "gymnast"
+        },
+        {
+          "frame": 286,
+          "track_id": 114,
+          "candidate_id": "286:box_candidate:20",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            276,
+            280
+          ],
+          "reason": "Transició entre les dues àncores. Límit exacte pendent."
+        }
+      ],
+      "notes": "Separa el tram del gimnasta del tram del jutge dins de l’ID 29. Contrasta l’ID 114 com a continuació del tram del gimnasta després del tall."
+    },
+    {
+      "id": "age1-gap-flight",
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "start": 469,
+      "stop": 529,
+      "crop": [
+        50,
+        310,
+        520,
+        965
+      ],
+      "type": "gap",
+      "expected": "review_link_between_clean_segments",
+      "focus_ids": [
+        174,
+        191
+      ],
+      "samples": [
+        479,
+        490,
+        495,
+        498,
+        501,
+        510,
+        516
+      ],
+      "anchors": [
+        {
+          "frame": 479,
+          "track_id": 174,
+          "candidate_id": "479:box_candidate:7",
+          "role": "gymnast"
+        },
+        {
+          "frame": 495,
+          "track_id": 174,
+          "candidate_id": "495:box_candidate:15",
+          "role": "gymnast"
+        },
+        {
+          "frame": 498,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 501,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 510,
+          "track_id": 191,
+          "candidate_id": "510:box_candidate:22",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            498,
+            501
+          ],
+          "reason": "La utilitat de les candidates amples continua pendent de revisió."
+        }
+      ],
+      "notes": "El gimnasta continua visible en posició horitzontal. Als frames 498 i 501 hi ha caixes grans que barregen fons i altres actors. Contrasta l’enllaç del tram net de 174 amb el de 191 i manté el buit observacional."
+    },
+    {
+      "id": "age1-preserve-inversion",
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "start": 623,
+      "stop": 683,
+      "crop": [
+        50,
+        310,
+        520,
+        965
+      ],
+      "type": "preserve_id",
+      "expected": "preserve_identity",
+      "focus_ids": [
+        189
+      ],
+      "samples": [
+        633,
+        642,
+        648,
+        653,
+        658,
+        664,
+        673
+      ],
+      "anchors": [
+        {
+          "frame": 633,
+          "track_id": 189,
+          "candidate_id": "633:box_candidate:0",
+          "role": "gymnast"
+        },
+        {
+          "frame": 648,
+          "track_id": 189,
+          "candidate_id": "648:box_candidate:7",
+          "role": "gymnast"
+        },
+        {
+          "frame": 658,
+          "track_id": 189,
+          "candidate_id": "658:box_candidate:11",
+          "role": "gymnast"
+        },
+        {
+          "frame": 673,
+          "track_id": 189,
+          "candidate_id": "673:box_candidate:26",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [],
+      "notes": "L’ID 189 segueix el gimnasta mentre passa per postures de mida i orientació molt diferents. Al 658 s’accepta suport parcial. Aquest tram precedeix la transferència posterior del mateix ID."
+    },
+    {
+      "id": "age1-transfer-spotter",
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "start": 694,
+      "stop": 754,
+      "crop": [
+        50,
+        310,
+        520,
+        965
+      ],
+      "type": "transfer",
+      "expected": "review_cut_and_reject_cross_actor_link",
+      "focus_ids": [
+        189,
+        253
+      ],
+      "samples": [
+        713,
+        722,
+        728,
+        733,
+        738,
+        744,
+        753
+      ],
+      "anchors": [
+        {
+          "frame": 713,
+          "track_id": 189,
+          "candidate_id": "713:box_candidate:14",
+          "role": "gymnast"
+        },
+        {
+          "frame": 722,
+          "track_id": 189,
+          "candidate_id": "722:box_candidate:35",
+          "role": "assistant"
+        },
+        {
+          "frame": 733,
+          "track_id": 189,
+          "candidate_id": "733:box_candidate:6",
+          "role": "assistant"
+        },
+        {
+          "frame": 733,
+          "track_id": 253,
+          "candidate_id": "733:box_candidate:0",
+          "role": "gymnast"
+        },
+        {
+          "frame": 753,
+          "track_id": 253,
+          "candidate_id": "753:box_candidate:23",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            714,
+            722
+          ],
+          "reason": "Transició entre les àncores. Límit exacte pendent."
+        },
+        {
+          "frames": [
+            728,
+            729
+          ],
+          "reason": "Hi ha una caixa ampla que barreja el gimnasta i la zona de l’assistent."
+        }
+      ],
+      "notes": "Separa l’assistent del tram del gimnasta dins del 189. El fragment 253 es pot contrastar amb el tram net del gimnasta."
+    },
+    {
+      "id": "age1-gap-bed",
+      "case_id": "JPN_AGE_1_000905_31.0",
+      "start": 754,
+      "stop": 814,
+      "crop": [
+        50,
+        310,
+        520,
+        965
+      ],
+      "type": "gap",
+      "expected": "review_link_between_clean_segments",
+      "focus_ids": [
+        253,
+        259
+      ],
+      "samples": [
+        765,
+        773,
+        778,
+        784,
+        789,
+        794
+      ],
+      "anchors": [
+        {
+          "frame": 765,
+          "track_id": 253,
+          "candidate_id": "765:box_candidate:0",
+          "role": "gymnast"
+        },
+        {
+          "frame": 773,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 773,
+          "track_id": 253,
+          "candidate_id": "773:box_candidate:6",
+          "role": "assistant"
+        },
+        {
+          "frame": 778,
+          "track_id": 253,
+          "candidate_id": "778:box_candidate:7",
+          "role": "assistant"
+        },
+        {
+          "frame": 778,
+          "track_id": 259,
+          "candidate_id": "778:box_candidate:3",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            773,
+            774
+          ],
+          "reason": "Visibilitat insuficient del gimnasta per decidir una caixa parcial fiable."
+        },
+        {
+          "frames": [
+            766,
+            773
+          ],
+          "reason": "Límit del canvi d’actor pendent."
+        }
+      ],
+      "notes": "Al punt més baix el llit tapa bona part del cos i el 253 passa a l’assistent. Contrasta el 259 amb el tram net de 253 anterior al buit, després d’aïllar el canvi d’actor."
+    },
+    {
+      "id": "age2-preserve-flight",
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "start": 390,
+      "stop": 450,
+      "crop": [
+        390,
+        285,
+        850,
+        1060
+      ],
+      "type": "preserve_id",
+      "expected": "preserve_identity",
+      "focus_ids": [
+        36
+      ],
+      "samples": [
+        398,
+        407,
+        413,
+        418,
+        423,
+        429,
+        438
+      ],
+      "anchors": [
+        {
+          "frame": 398,
+          "track_id": 36,
+          "candidate_id": "398:box_candidate:11",
+          "role": "gymnast"
+        },
+        {
+          "frame": 418,
+          "track_id": 36,
+          "candidate_id": "418:box_candidate:7",
+          "role": "gymnast"
+        },
+        {
+          "frame": 438,
+          "track_id": 36,
+          "candidate_id": "438:box_candidate:2",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [],
+      "notes": "L’ID 36 segueix el gimnasta en diferents fases del mateix salt."
+    },
+    {
+      "id": "age2-gap-same-id",
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "start": 500,
+      "stop": 560,
+      "crop": [
+        390,
+        285,
+        850,
+        1060
+      ],
+      "type": "gap",
+      "expected": "preserve_with_gap",
+      "focus_ids": [
+        89,
+        92
+      ],
+      "samples": [
+        524,
+        525,
+        529,
+        531,
+        534,
+        540
+      ],
+      "anchors": [
+        {
+          "frame": 524,
+          "track_id": 92,
+          "candidate_id": "524:box_candidate:8",
+          "role": "gymnast"
+        },
+        {
+          "frame": 525,
+          "track_id": 92,
+          "candidate_id": "525:box_candidate:146",
+          "role": "gymnast"
+        },
+        {
+          "frame": 529,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 531,
+          "track_id": 92,
+          "candidate_id": "531:box_candidate:112",
+          "role": "gymnast"
+        },
+        {
+          "frame": 534,
+          "track_id": 92,
+          "candidate_id": "534:box_candidate:16",
+          "role": "gymnast"
+        },
+        {
+          "frame": 534,
+          "track_id": 89,
+          "candidate_id": "534:box_candidate:131",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            529,
+            530
+          ],
+          "reason": "Les candidates que toquen el gimnasta barregen públic i fons."
+        }
+      ],
+      "notes": "L’ID 92 torna després del buit del 529. Al 534 hi ha dues candidates útils amb suport sobre el mateix gimnasta. Conserva l’ID 92 als seus extrems i mantén el buit; revisa el 89 per separat perquè també apareix en caixes amples."
+    },
+    {
+      "id": "age2-preserve-inversion",
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "start": 607,
+      "stop": 667,
+      "crop": [
+        390,
+        285,
+        850,
+        1060
+      ],
+      "type": "preserve_id",
+      "expected": "preserve_identity",
+      "focus_ids": [
+        125
+      ],
+      "samples": [
+        627,
+        633,
+        638,
+        643,
+        649
+      ],
+      "anchors": [
+        {
+          "frame": 627,
+          "track_id": 125,
+          "candidate_id": "627:box_candidate:15",
+          "role": "gymnast"
+        },
+        {
+          "frame": 633,
+          "track_id": 125,
+          "candidate_id": "633:box_candidate:9",
+          "role": "gymnast"
+        },
+        {
+          "frame": 638,
+          "track_id": 125,
+          "candidate_id": "638:box_candidate:15",
+          "role": "gymnast"
+        },
+        {
+          "frame": 643,
+          "track_id": 125,
+          "candidate_id": "643:box_candidate:13",
+          "role": "gymnast"
+        },
+        {
+          "frame": 649,
+          "track_id": 125,
+          "candidate_id": "649:box_candidate:85",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [],
+      "notes": "L’ID 125 acompanya el gimnasta durant la inversió. El seu tram vàlid és anterior a la transferència a l’assistent."
+    },
+    {
+      "id": "age2-transfer-front-spotter",
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "start": 690,
+      "stop": 750,
+      "crop": [
+        390,
+        285,
+        850,
+        1060
+      ],
+      "type": "transfer",
+      "expected": "review_cut_and_reject_cross_actor_link",
+      "focus_ids": [
+        125,
+        147
+      ],
+      "samples": [
+        703,
+        709,
+        714,
+        740,
+        749
+      ],
+      "anchors": [
+        {
+          "frame": 703,
+          "track_id": 125,
+          "candidate_id": "703:box_candidate:158",
+          "role": "gymnast"
+        },
+        {
+          "frame": 709,
+          "track_id": 147,
+          "candidate_id": "709:box_candidate:1",
+          "role": "gymnast"
+        },
+        {
+          "frame": 714,
+          "track_id": 125,
+          "candidate_id": "714:box_candidate:33",
+          "role": "mixed"
+        },
+        {
+          "frame": 740,
+          "track_id": 125,
+          "candidate_id": "740:box_candidate:0",
+          "role": "assistant"
+        },
+        {
+          "frame": 740,
+          "track_id": 147,
+          "candidate_id": "740:box_candidate:17",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            704,
+            740
+          ],
+          "reason": "Tram de transició delimitat per les àncores. El 714 barreja actors."
+        }
+      ],
+      "notes": "L’ID 125 es desplaça cap a l’assistent de negre del primer pla i l’ID 147 segueix el gimnasta. Cal aïllar el tram mixt i distingir els dos actors abans d’enllaçar fragments."
+    },
+    {
+      "id": "age2-transfer-rear-spotter",
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "start": 838,
+      "stop": 898,
+      "crop": [
+        390,
+        285,
+        850,
+        1060
+      ],
+      "type": "transfer",
+      "expected": "review_cut_and_reject_cross_actor_link",
+      "focus_ids": [
+        195,
+        198
+      ],
+      "samples": [
+        856,
+        862,
+        867,
+        872,
+        878,
+        887
+      ],
+      "anchors": [
+        {
+          "frame": 856,
+          "track_id": 195,
+          "candidate_id": "856:box_candidate:11",
+          "role": "gymnast"
+        },
+        {
+          "frame": 862,
+          "track_id": 195,
+          "candidate_id": "862:box_candidate:158",
+          "role": "mixed"
+        },
+        {
+          "frame": 867,
+          "track_id": 195,
+          "candidate_id": "867:box_candidate:57",
+          "role": "assistant"
+        },
+        {
+          "frame": 867,
+          "track_id": 198,
+          "candidate_id": "867:box_candidate:1",
+          "role": "gymnast"
+        },
+        {
+          "frame": 887,
+          "track_id": 198,
+          "candidate_id": "887:box_candidate:2",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            857,
+            867
+          ],
+          "reason": "Límit exacte pendent. Al 862 el 195 inclou més d’un actor."
+        }
+      ],
+      "notes": "L’ID 195 passa a l’assistent de darrere del llit i el 198 segueix el gimnasta. Revisa el tall del tram mixt abans de considerar cap enllaç."
+    },
+    {
+      "id": "age2-gap-late-flight",
+      "case_id": "JPN_AGE_2_000709_37.0",
+      "start": 945,
+      "stop": 1005,
+      "crop": [
+        390,
+        285,
+        850,
+        1060
+      ],
+      "type": "gap",
+      "expected": "review_link_between_clean_segments",
+      "focus_ids": [
+        198,
+        222
+      ],
+      "samples": [
+        956,
+        967,
+        971,
+        975,
+        980,
+        991
+      ],
+      "anchors": [
+        {
+          "frame": 967,
+          "track_id": 198,
+          "candidate_id": "967:box_candidate:13",
+          "role": "gymnast"
+        },
+        {
+          "frame": 971,
+          "track_id": 198,
+          "candidate_id": "971:box_candidate:41",
+          "role": "audience"
+        },
+        {
+          "frame": 971,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 980,
+          "track_id": 222,
+          "candidate_id": "980:box_candidate:6",
+          "role": "gymnast"
+        },
+        {
+          "frame": 991,
+          "track_id": 222,
+          "candidate_id": "991:box_candidate:172",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            971,
+            976
+          ],
+          "reason": "Caixes amples o parcials a la zona del gimnasta. Disponibilitat útil pendent de revisió."
+        }
+      ],
+      "notes": "A partir d’un tram net de 198, contrasta la continuïtat amb 222. L’observació 198 al 971 és a la graderia. Mantén separades les observacions de públic i les candidates amples del gimnasta."
+    },
+    {
+      "id": "age3-transfer-audience",
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "start": 29,
+      "stop": 89,
+      "crop": [
+        430,
+        165,
+        850,
+        935
+      ],
+      "type": "transfer",
+      "expected": "review_cut_and_reject_cross_actor_link",
+      "focus_ids": [
+        0,
+        26
+      ],
+      "samples": [
+        60,
+        65,
+        70,
+        76,
+        85
+      ],
+      "anchors": [
+        {
+          "frame": 60,
+          "track_id": 0,
+          "candidate_id": "60:box_candidate:4",
+          "role": "gymnast"
+        },
+        {
+          "frame": 65,
+          "track_id": 0,
+          "candidate_id": "65:box_candidate:44",
+          "role": "audience"
+        },
+        {
+          "frame": 70,
+          "track_id": 0,
+          "candidate_id": "70:box_candidate:45",
+          "role": "audience"
+        },
+        {
+          "frame": 70,
+          "track_id": 26,
+          "candidate_id": "70:box_candidate:9",
+          "role": "gymnast"
+        },
+        {
+          "frame": 85,
+          "track_id": 26,
+          "candidate_id": "85:box_candidate:18",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            61,
+            65
+          ],
+          "reason": "Transició entre les àncores. Límit exacte pendent."
+        }
+      ],
+      "notes": "El 0 salta a un espectador de la graderia. Revisa el canvi d’actor i contrasta el fragment 26 amb el tram net inicial del gimnasta."
+    },
+    {
+      "id": "age3-gap-inverted",
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "start": 89,
+      "stop": 133,
+      "crop": [
+        430,
+        165,
+        850,
+        935
+      ],
+      "type": "gap",
+      "expected": "review_link_between_clean_segments",
+      "focus_ids": [
+        26,
+        60
+      ],
+      "samples": [
+        96,
+        97,
+        99,
+        106,
+        111,
+        116,
+        121,
+        122,
+        131
+      ],
+      "anchors": [
+        {
+          "frame": 96,
+          "track_id": 26,
+          "candidate_id": "96:box_candidate:5",
+          "role": "gymnast"
+        },
+        {
+          "frame": 97,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 99,
+          "track_id": 26,
+          "candidate_id": "99:box_candidate:57",
+          "role": "gymnast"
+        },
+        {
+          "frame": 106,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 111,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 121,
+          "track_id": 60,
+          "candidate_id": "121:box_candidate:7",
+          "role": "gymnast"
+        },
+        {
+          "frame": 131,
+          "track_id": 60,
+          "candidate_id": "131:box_candidate:9",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            106,
+            117
+          ],
+          "reason": "Algunes candidates grans inclouen part del cos i la graderia. Pendent de discriminar els fragments útils."
+        }
+      ],
+      "notes": "Al 97 el 26 és una caixa petita sobre la zona dels jutges i es veu el gimnasta fora de la caixa. El 26 segueix el gimnasta de nou al 99. Més endavant contrasta els trams nets de 26 i 60 a banda i banda de la manca d’observacions útils."
+    },
+    {
+      "id": "age3-transfer-rear-spotter",
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "start": 133,
+      "stop": 193,
+      "crop": [
+        430,
+        165,
+        850,
+        935
+      ],
+      "type": "transfer",
+      "expected": "review_cut_and_reject_cross_actor_link",
+      "focus_ids": [
+        60,
+        64,
+        82
+      ],
+      "samples": [
+        135,
+        150,
+        155,
+        160,
+        166,
+        175
+      ],
+      "anchors": [
+        {
+          "frame": 135,
+          "track_id": 60,
+          "candidate_id": "135:box_candidate:9",
+          "role": "gymnast"
+        },
+        {
+          "frame": 150,
+          "track_id": 60,
+          "candidate_id": "150:box_candidate:167",
+          "role": "mixed"
+        },
+        {
+          "frame": 155,
+          "track_id": 60,
+          "candidate_id": "155:box_candidate:3",
+          "role": "assistant"
+        },
+        {
+          "frame": 155,
+          "track_id": 64,
+          "candidate_id": "155:box_candidate:44",
+          "role": "gymnast"
+        },
+        {
+          "frame": 160,
+          "track_id": 64,
+          "candidate_id": "160:box_candidate:178",
+          "role": "gymnast"
+        },
+        {
+          "frame": 166,
+          "track_id": 82,
+          "candidate_id": "166:box_candidate:10",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            136,
+            155
+          ],
+          "reason": "Límit exacte pendent. Al 150 la caixa del 60 barreja actors."
+        },
+        {
+          "frames": [
+            161,
+            175
+          ],
+          "reason": "Cal delimitar les observacions útils del 64 en la transició al 82."
+        }
+      ],
+      "notes": "L’ID 60 passa a l’assistent de darrere del llit. El 64 és útil en àncores concretes i després apareix el 82. Contrasta només trams nets de cada ID."
+    },
+    {
+      "id": "age3-preserve-reappearance",
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "start": 194,
+      "stop": 242,
+      "crop": [
+        430,
+        165,
+        850,
+        935
+      ],
+      "type": "preserve_id",
+      "expected": "preserve_with_gap",
+      "focus_ids": [
+        82
+      ],
+      "samples": [
+        208,
+        217,
+        223,
+        228,
+        233,
+        239
+      ],
+      "anchors": [
+        {
+          "frame": 208,
+          "track_id": 82,
+          "candidate_id": "208:box_candidate:4",
+          "role": "gymnast"
+        },
+        {
+          "frame": 217,
+          "track_id": 82,
+          "candidate_id": "217:box_candidate:10",
+          "role": "gymnast"
+        },
+        {
+          "frame": 223,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 228,
+          "track_id": 82,
+          "candidate_id": "228:box_candidate:22",
+          "role": "gymnast"
+        },
+        {
+          "frame": 233,
+          "track_id": 82,
+          "candidate_id": "233:box_candidate:166",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            223,
+            224
+          ],
+          "reason": "Disponibilitat de candidata útil pendent de revisió."
+        }
+      ],
+      "notes": "Control d’identitat estable als dos costats d’un buit durant el salt. El 82 manté la identitat entre les àncores."
+    },
+    {
+      "id": "age3-preserve-inversion",
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "start": 242,
+      "stop": 302,
+      "crop": [
+        430,
+        165,
+        850,
+        935
+      ],
+      "type": "preserve_id",
+      "expected": "preserve_identity",
+      "focus_ids": [
+        82
+      ],
+      "samples": [
+        244,
+        250,
+        255,
+        260,
+        266,
+        275
+      ],
+      "anchors": [
+        {
+          "frame": 244,
+          "track_id": 82,
+          "candidate_id": "244:box_candidate:0",
+          "role": "gymnast"
+        },
+        {
+          "frame": 255,
+          "track_id": 82,
+          "candidate_id": "255:box_candidate:13",
+          "role": "gymnast"
+        },
+        {
+          "frame": 260,
+          "track_id": 82,
+          "candidate_id": "260:box_candidate:30",
+          "role": "gymnast"
+        },
+        {
+          "frame": 266,
+          "track_id": 82,
+          "candidate_id": "266:box_candidate:10",
+          "role": "gymnast"
+        },
+        {
+          "frame": 275,
+          "track_id": 82,
+          "candidate_id": "275:box_candidate:15",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [],
+      "notes": "El 82 conserva el gimnasta en diferents orientacions. Algunes caixes de fons i de l’assistent hi passen a prop."
+    },
+    {
+      "id": "age3-gap-occlusion",
+      "case_id": "JPN_AGE_3_001351_19.0",
+      "start": 409,
+      "stop": 469,
+      "crop": [
+        430,
+        165,
+        850,
+        935
+      ],
+      "type": "gap",
+      "expected": "review_link_between_clean_segments",
+      "focus_ids": [
+        117,
+        145
+      ],
+      "samples": [
+        415,
+        424,
+        430,
+        440,
+        446,
+        451,
+        455,
+        458,
+        460,
+        462
+      ],
+      "anchors": [
+        {
+          "frame": 440,
+          "track_id": 117,
+          "candidate_id": "440:box_candidate:10",
+          "role": "gymnast"
+        },
+        {
+          "frame": 446,
+          "track_id": 117,
+          "candidate_id": "446:box_candidate:43",
+          "role": "mixed"
+        },
+        {
+          "frame": 451,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 455,
+          "track_id": null,
+          "candidate_id": null,
+          "role": "gymnast"
+        },
+        {
+          "frame": 458,
+          "track_id": 145,
+          "candidate_id": "458:box_candidate:11",
+          "role": "gymnast"
+        },
+        {
+          "frame": 462,
+          "track_id": 145,
+          "candidate_id": "462:box_candidate:3",
+          "role": "gymnast"
+        }
+      ],
+      "unresolved": [
+        {
+          "frames": [
+            446,
+            456
+          ],
+          "reason": "Barreja de caixa parcial, proximitat dels assistents i oclusió del gimnasta al llit."
+        }
+      ],
+      "notes": "El tram del 117 té un buit al 424 i torna al 430. Més tard hi ha oclusió al llit i es reprèn l’observació amb el 145. Contrasta l’enllaç entre els trams nets i deixa marcat l’efecte de l’oclusió."
+    }
+  ]
+}

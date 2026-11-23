@@ -23,3 +23,5 @@ però la seva eficàcia sobre trampolí encara s'ha de mesurar.
 
 - [0010 — Fragments observats i buits explícits abans del rematching](0010-observed-fragments-and-explicit-gaps.md), implementada a 0.6.0.
 - [0011 — Auditoria i perfils experimentals de recovery](0011-experimental-recovery-audit-and-profiles.md), mode audit implementat a 0.7.0; fiabilitat d'identitat i apply pendents.
+- [0012 — Considerar totes les caixes seleccionades per mantenir un ID](0012-tracking-candidates-without-confidence-cutoff.md), decisió acceptada per al tracker propi.
+- [0013 — Velocitat simple com a base experimental del reconciliador](0013-simple-velocity-baseline-for-reconciliation.md), decisió acceptada per a les proves de recuperació.

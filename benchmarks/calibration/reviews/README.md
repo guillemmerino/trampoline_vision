@@ -7,3 +7,12 @@
 
 Les decisions i els informes generats viuen a `runs/`, no al codi de la pàgina.
 [Guia de treball](../docs/HUMAN_REVIEW.md).
+
+## Revisions d’estudis en curs
+
+[Continuïtat d’identitat v1](identity-continuity-v1/README.md): integritat
+del run de tres vídeos, diagnòstic dispers, observacions provisionals i dos
+contraexemples visuals seleccionats. L’anotació temporal completa continua pendent.
+
+[Casos de recovery](recovery-case-catalog-v1/README.md) amb dos exemples
+visuals de la primera passada del catàleg provisional.
